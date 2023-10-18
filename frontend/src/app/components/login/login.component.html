@@ -1,0 +1,49 @@
+
+<!-- Formulario -->
+<div class="container-fluid d-flex justify-content-center align-items-center vh-100">
+    <div class="card p-4">
+        <div class="card-body">
+            <h5 class="card-title mb-4 fs-4">INICIAR SESIÓN</h5>
+            <form>
+                <div class="group-input d-flex">
+                    <span class="input-group-text"><i class="bi bi-person-fill"></i></span>
+                    <input type="text" class="input" [(ngModel)]="datos.username" name="username" required>
+                    <label for="" class="label">Nombre de Usuario</label>
+                </div>
+
+                <div class="group-input d-flex">
+                    <span class="input-group-text"><i class="bi bi-key-fill"></i></span>
+                    <input type="password" class="input" id="input-pwd" [(ngModel)]="datos.password" name="password" required>
+                    <label for="" class="label">Contraseña</label>
+                    <div class="container-icon-pwd">
+                        <i class="bi bi-eye-slash-fill icon-pwd hide"></i>
+                    </div>
+                </div>
+
+                <!-- <div class="mb-3 form-check">
+                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                </div> -->
+
+                <!-- <a href="../menu/menu.html" class="btn btn-primary w-100">Ingresar</a> -->
+                <!-- "<a>" SOLO ES PARA HACER LA SIMULACION DE INGRESO -->
+                <button type="submit" class="btn btn-primary w-100" (click)="loginUsuario()">Ingresar</button>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- Formulario -->
+
+<!-- Footer -->
+<footer>
+    <div class="waves">
+        <div class="wave" id="wave1"></div>
+        <div class="wave" id="wave2"></div>
+        <div class="wave" id="wave3"></div>
+        <div class="wave" id="wave4"></div>
+    </div>
+</footer>
+<!-- Footer -->
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+<script src="../../../script.js"></script>
