@@ -13,7 +13,7 @@
             <h5 style="font-weight: 350;"><b style="font-weight: 500;">PROTOCOLO:</b> PERFIL INFLAMATORIO EN PACIENTES CON CÁNCER DE MAMA Y SU ASOCIACIÓN CON EL VALOR PRONÓSTICO DE LA ENFERMERDAD</h5>
         </div>
         <div class="border p-3 bg-white">
-            <h5 style="font-weight: 350;"><b style="font-weight: 500;">FORMATO N° 004:</b> DATOS CLÍNICOS DEL PACIENTE</h5>
+            <h5 style="font-weight: 350;"><b style="font-weight: 500;">FORMATO N° 004:</b> CRITERIOS DE SELECCIÓN / SCREENING</h5>
         </div>
         <div class="border p-3 bg-white">
             <h5 style="font-weight: 350;"><b style="font-weight: 500;">VERSIÓN:</b></h5>
@@ -59,88 +59,239 @@
                 </div>
             </div>
 
-            <!-- <h3 class="mb-4">TRATAMIENTO:</h3> -->
-            <div class="col mb-4">
-                <div class="d-flex align-items-center gap-3 mb-3">
-                    <label for="startDate" style="width: 40%;">1. SIGNOS O SÍNTOMAS DE INICIO:</label>
-                    <input type="text" class="form-control py-3 w-100" id="startDate">
-                </div>
-                <div class="group-textarea d-flex mb-3">
-                    <textarea name="" id="signos_vitales" cols="30" rows="7" class="textarea" required></textarea>
-                    <label for="signos_vitales" class="label_textarea"></label>
-                </div>
-                <div class="d-flex align-items-center gap-3 mb-3">
-                    <label for="startDate">2. FECHA DE INICIO DE SÍNTOMAS O SIGNOS:</label>
-                    <input type="date" class="form-control py-3 w-25" id="startDate">
-                </div>
-                <div class="d-flex align-items-center gap-3 mb-3">
-                    <label for="startDate">3. TIEMPO EN MESES HASTA EL DIAGNÓSTICO *:</label>
-                    <input type="text" class="form-control py-3 w-25" id="startDate">
-                    <label for="">MESES</label>
-                </div>
-                <p class="ms-3">
-                    <i>* Tiempo transcurrido desde el inicio de los síntomas hasta el diagnóstico.</i>
-                </p>
-                <div class="d-flex align-items-center gap-3 mb-3">
-                    <label for="startDate">4. TAMAÑO DEL TUMOR:</label>
-                    <input type="text" class="form-control py-3 w-25" id="startDate">
-                    <label for="">mm.x</label>
-                    <input type="text" class="form-control py-3 w-25" id="startDate">
-                    <label for="">mm</label>
-                </div>
-                <div class="d-flex align-items-center gap-3 mb-3">
-                    <label for="startDate">5. GANGLIOS AXILARES PRESENTES:</label>
-                    <div class="d-flex justify-content-around w-25">
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="ganglios_axilares" id="ganglios_axilares_si" value="ganglios_axilares_si" style="cursor: pointer;">
-                            <label class="form-check-label" for="ganglios_axilares_si" style="cursor: pointer;">SÍ</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="ganglios_axilares" id="ganglios_axilares_no" value="ganglios_axilares_no" style="cursor: pointer;">
-                            <label class="form-check-label" for="ganglios_axilares_no" style="cursor: pointer;">NO</label>
-                        </div>
-                    </div>
-                </div>
-                <div class="d-flex align-items-center gap-3 mb-3">
-                    <label for="startDate">6. TIPO HISTOLÓGICO:</label>
-                    <select class="form-select" style="width: 40%;">
-                        <option selected>DUCTAL INFILTRANTE</option>
-                        <option value="1">LOBULILLAR INFILTRANTE</option>
-                        <option value="1">MIXTO DUCTO-LOBULILLAR</option>
-                        <option value="1">MUCINOSO</option>
-                        <option value="1">TUBULAR</option>
-                        <option value="1">MEDULAR</option>
-                        <option value="1">PAPILAR</option>
-                        <option value="1">PLEOMÓRFICO</option>
-                        <option value="1">METAPLASIA FUSOCELULAR Y ESCAMOSO</option>
-                    </select>
-                </div>
-                <p><u>CONCLUSIÓN DEL INFORME</u> (Transcribir la conclusión del informe Histológico):</p>
-                <div class="group-textarea d-flex mb-3">
-                    <textarea name="" id="signos_vitales" cols="30" rows="7" class="textarea" required></textarea>
-                    <label for="signos_vitales" class="label_textarea"></label>
-                </div>
-                <div class="d-flex align-items-center gap-3 mb-3">
-                    <label for="startDate">7. CLASIFICACIÓN MOLECULAR:</label>
-                    <div class="d-flex justify-content-around w-75">
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="clasificacion_molecular" id="triple_negativo" value="triple_negativo" style="cursor: pointer;">
-                            <label class="form-check-label" for="triple_negativo" style="cursor: pointer;">TRIPLE NEGATIVO</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="clasificacion_molecular" id="luminal" value="luminal" style="cursor: pointer;">
-                            <label class="form-check-label" for="luminal" style="cursor: pointer;">LUMINAL</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="clasificacion_molecular" id="her2_positivo" value="her2_positivo" style="cursor: pointer;">
-                            <label class="form-check-label" for="her2_positivo" style="cursor: pointer;">HER2 POSITIVO</label>
-                        </div>
-                    </div>
-                </div>
+            <!-- CRITERIOS DE INCLUSIÓN -->
+            <table>
+                <thead>
+                    <tr>
+                        <th>CRITERIOS DE INCLUSIÓN</th>
+                        <th style="text-align: center;">SI</th>
+                        <th style="text-align: center;">NO</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1. PACIENTE MAYOR DE 18 AÑOS DE EDAD.</td>
+                        <td>
+                            <div class="form-check form-check-inline m-0">
+                                <input class="form-check-input" type="radio" name="institucion" id="si" value="option1" style="cursor: pointer;">
+                            </div>
+                        </td>
+                        <td style="background-color: #FFCDFA;">
+                            <div class="form-check form-check-inline m-0">
+                                <input class="form-check-input" type="radio" name="institucion" id="no" value="option1" style="cursor: pointer;">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>2. PACIENTE CON DIAGNÓSTICO DE CÁNCER DE MAMA CONFIRMADO PATOLÓGICAMENTE.</td>
+                        <td>
+                            <div class="form-check form-check-inline m-0">
+                                <input class="form-check-input" type="radio" name="institucion" id="si" value="option1" style="cursor: pointer;">
+                            </div>
+                        </td>
+                        <td style="background-color: #FFCDFA;">
+                            <div class="form-check form-check-inline m-0">
+                                <input class="form-check-input" type="radio" name="institucion" id="no" value="option1" style="cursor: pointer;">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>3. PACIENTE CON ESTADO II O III DE CÁNCER DE MAMA.</td>
+                        <td>
+                            <div class="form-check form-check-inline m-0">
+                                <input class="form-check-input" type="radio" name="institucion" id="si" value="option1" style="cursor: pointer;">
+                            </div>
+                        </td>
+                        <td style="background-color: #FFCDFA;">
+                            <div class="form-check form-check-inline m-0">
+                                <input class="form-check-input" type="radio" name="institucion" id="no" value="option1" style="cursor: pointer;">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>4. PACIENTE CON DIAGNÓSTICO CONFIRMADO POR BIOPSIA O PROCEDIMIENTO QUIRÚRGICO QUE SUBSECUENTEMENTE SE ENCUENTREN EN CONDICIONES DE PRECIBIR TRATAMIENTOS ONCOLÓGICOS CON QUIMIOTERAPIA ESTÁNDAR.</td>
+                        <td>
+                            <div class="form-check form-check-inline m-0">
+                                <input class="form-check-input" type="radio" name="institucion" id="si" value="option1" style="cursor: pointer;">
+                            </div>
+                        </td>
+                        <td style="background-color: #FFCDFA;">
+                            <div class="form-check form-check-inline m-0">
+                                <input class="form-check-input" type="radio" name="institucion" id="no" value="option1" style="cursor: pointer;">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>5. PACIENTE QUE MUESTRE COMPROMISO PARA EL SEGUIMIENTO EN LOS CENTROS DE ESTUDIO.</td>
+                        <td>
+                            <div class="form-check form-check-inline m-0">
+                                <input class="form-check-input" type="radio" name="institucion" id="si" value="option1" style="cursor: pointer;">
+                            </div>
+                        </td>
+                        <td style="background-color: #FFCDFA;">
+                            <div class="form-check form-check-inline m-0">
+                                <input class="form-check-input" type="radio" name="institucion" id="no" value="option1" style="cursor: pointer;">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>6. PACIENTE QUE ACEPTA PARTICIPAR EN EL ESTUDIO Y FIRMÓ EL DOCUMENTO DE CONSENTIMIENTO INFORMADO.</td>
+                        <td>
+                            <div class="form-check form-check-inline m-0">
+                                <input class="form-check-input" type="radio" name="institucion" id="si" value="option1" style="cursor: pointer;">
+                            </div>
+                        </td>
+                        <td style="background-color: #FFCDFA;">
+                            <div class="form-check form-check-inline m-0">
+                                <input class="form-check-input" type="radio" name="institucion" id="no" value="option1" style="cursor: pointer;">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>7. PACIENTE CON CLASIFICACIÓN MOLECULAR TRIPLE NEGATIVO O LUMINAL O HER2 POSITIVO DE CÁNCER DE MAMA.</td>
+                        <td>
+                            <div class="form-check form-check-inline m-0">
+                                <input class="form-check-input" type="radio" name="institucion" id="si" value="option1" style="cursor: pointer;">
+                            </div>
+                        </td>
+                        <td style="background-color: #FFCDFA;">
+                            <div class="form-check form-check-inline m-0">
+                                <input class="form-check-input" type="radio" name="institucion" id="no" value="option1" style="cursor: pointer;">
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <!-- CRITERIOS DE INCLUSIÓN -->
+
+            <!-- CRITERIOS DE EXCLUSIÓN -->
+            <table>
+                <thead>
+                    <tr>
+                        <th>CRITERIOS DE INCLUSIÓN</th>
+                        <th style="text-align: center;">SI</th>
+                        <th style="text-align: center;">NO</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1. PACIENTE GESTANTE.</td>
+                        <td style="background-color: #FFCDFA;">
+                            <div class="form-check form-check-inline m-0">
+                                <input class="form-check-input" type="radio" name="institucion" id="si" value="option1" style="cursor: pointer;">
+                            </div>
+                        </td>
+                        <td >
+                            <div class="form-check form-check-inline m-0">
+                                <input class="form-check-input" type="radio" name="institucion" id="no" value="option1" style="cursor: pointer;">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>2. PACIENTE CON CÁNCER DE MAMA TIPO INFLAMATORIO.</td>
+                        <td style="background-color: #FFCDFA;">
+                            <div class="form-check form-check-inline m-0">
+                                <input class="form-check-input" type="radio" name="institucion" id="si" value="option1" style="cursor: pointer;">
+                            </div>
+                        </td>
+                        <td >
+                            <div class="form-check form-check-inline m-0">
+                                <input class="form-check-input" type="radio" name="institucion" id="no" value="option1" style="cursor: pointer;">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>3. PACIENTE CON QUIMIOTERAPIA O TRATAMIENTO PREVIO DESCONOCIDO O QUIMIOTERAPIA NEOADYUVANTE.</td>
+                        <td style="background-color: #FFCDFA;">
+                            <div class="form-check form-check-inline m-0">
+                                <input class="form-check-input" type="radio" name="institucion" id="si" value="option1" style="cursor: pointer;">
+                            </div>
+                        </td>
+                        <td >
+                            <div class="form-check form-check-inline m-0">
+                                <input class="form-check-input" type="radio" name="institucion" id="no" value="option1" style="cursor: pointer;">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>4. PACIENTE QUE RECIBE TRATAMIENTO CON CORTICOIDES POR MÁS DE 6 MESES O TERAPIA INMUNOSUPRESORA.</td>
+                        <td style="background-color: #FFCDFA;">
+                            <div class="form-check form-check-inline m-0">
+                                <input class="form-check-input" type="radio" name="institucion" id="si" value="option1" style="cursor: pointer;">
+                            </div>
+                        </td>
+                        <td >
+                            <div class="form-check form-check-inline m-0">
+                                <input class="form-check-input" type="radio" name="institucion" id="no" value="option1" style="cursor: pointer;">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>5. PACIENTE CON ENFERMEDADES CRÓNICAS PREVIAMENTE REPORTADAS QUE PUEDAN AFECTAR EL ESTUDIO DE ACUERDO A CRITERIO DEL MÉDICO TRATANTE.</td>
+                        <td style="background-color: #FFCDFA;">
+                            <div class="form-check form-check-inline m-0">
+                                <input class="form-check-input" type="radio" name="institucion" id="si" value="option1" style="cursor: pointer;">
+                            </div>
+                        </td>
+                        <td >
+                            <div class="form-check form-check-inline m-0">
+                                <input class="form-check-input" type="radio" name="institucion" id="no" value="option1" style="cursor: pointer;">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>6. PACIENTE QUE NO ACEPTE FIRMAR EL CONSENTIMIENTO INFORMADO.</td>
+                        <td style="background-color: #FFCDFA;">
+                            <div class="form-check form-check-inline m-0">
+                                <input class="form-check-input" type="radio" name="institucion" id="si" value="option1" style="cursor: pointer;">
+                            </div>
+                        </td>
+                        <td >
+                            <div class="form-check form-check-inline m-0">
+                                <input class="form-check-input" type="radio" name="institucion" id="no" value="option1" style="cursor: pointer;">
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <!-- CRITERIOS DE EXCLUSIÓN -->
+
+            <div class="d-flex align-items-center gap-2 mb-5">
+                <div style="width: 50px; height: 30px; background: #FFCDFA; border-radius: 4px;"></div>
+                <span>* En caso de que el criterio se encuentre coloreado, evaluar la participación de la paciente en el estudio.</span>
             </div>
+
+            <!-- CRITERIOS DE ELEGIBILIDAD -->
+            <h5>REUNE LOS CRITERIOS DE ELEGIBILIDAD PARA EL ESTUDIO</h5>
+            <table class="w-100">
+                <thead>
+                    <tr>
+                        <th class="w-100"></th>
+                        <th style="text-align: center;">SI</th>
+                        <th style="text-align: center;">NO</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="w-100">CUMPLE CRITERIOS DE ELEGIBILIDAD</td>
+                        <td>
+                            <div class="form-check form-check-inline m-0">
+                                <input class="form-check-input" type="radio" name="institucion" id="si" value="option1" style="cursor: pointer;">
+                            </div>
+                        </td>
+                        <td >
+                            <div class="form-check form-check-inline m-0">
+                                <input class="form-check-input" type="radio" name="institucion" id="no" value="option1" style="cursor: pointer;">
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <!-- CRITERIOS DE ELEGIBILIDAD -->
+
             <!-- Boton -->
             <div class="d-flex justify-content-end">
-                <button type="submit">Siguiente: Exámenes Complementarios</button>
+                <button type="submit">Siguiente: Datos Clínicos del Paciente</button>
             </div>
             <!-- Boton -->
         </form>
