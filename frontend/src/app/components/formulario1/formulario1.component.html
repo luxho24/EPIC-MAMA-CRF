@@ -38,17 +38,26 @@
                         <input type="text" class="input" required>
                         <label for="" class="label">Iniciales Paciente</label>
                     </div>
-                    <div class="group-input d-flex">
-                        <input type="text" class="input" required>
-                        <label for="" class="label">Número DNI</label>
+                    <div class="form-floating w-100">
+                        <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
+                            <option selected>DNI</option>
+                            <option value="1">Carnet de extranjería</option>
+                            <option value="2">Otros (Pasaporte)</option>
+                        </select>
+                        <label for="floatingSelect">Tipo de Documento</label>
                     </div>
                     <div class="group-input d-flex">
                         <input type="text" class="input" required>
                         <label for="" class="label">Celular</label>
                     </div>
-                    <div class="group-input d-flex">
-                        <input type="text" class="input" required>
-                        <label for="" class="label">Ciudad donde reside</label>
+                    <div class="form-floating mb-3 w-100">
+                        <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
+                            <option selected>Lima</option>
+                            <option value="1">Arequipa</option>
+                            <option value="2">Trujillo</option>
+                            <option value="3">Otros</option>
+                        </select>
+                        <label for="floatingSelect">Ciudad donde reside</label>
                     </div>
                     <div class="d-flex align-items-center">
                         <div class="group-input d-flex m-0 w-100">
@@ -133,20 +142,25 @@
                         <input type="text" class="input" required>
                         <label for="" class="label">Número de HC</label>
                     </div>
-                    <div class="form-floating w-100">
-                        <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
-                            <option selected>DNI</option>
-                            <option value="1">Carnet de extranjería</option>
-                        </select>
-                        <label for="floatingSelect">Otro Documento</label>
+                    <div class="group-input d-flex">
+                        <input type="text" class="input" required>
+                        <label for="" class="label">Número de documento</label>
                     </div>
                     <div class="group-input d-flex">
                         <input type="text" class="input" required>
                         <label for="" class="label">Correo electrónico</label>
                     </div>
-                    <div class="group-input d-flex">
+                    <!-- <div class="group-input d-flex">
                         <input type="text" class="input" required>
                         <label for="" class="label">Centro o Institución de atención</label>
+                    </div> -->
+                    <div class="form-floating mb-3 w-100">
+                        <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
+                            <option selected>INEN LIMA</option>
+                            <option value="1">INEN AREQUIPA</option>
+                            <option value="2">INEN TRUJILLO</option>
+                        </select>
+                        <label for="floatingSelect">Centro o Institución de atención</label>
                     </div>
                     <div class="group-input d-flex">
                         <input type="text" class="input" required>
@@ -205,20 +219,20 @@
                         </select>
                         <label for="floatingSelect">Raza o Grupo Étnico</label>
                     </div>
-                    <div class="d-flex justify-content-between align-items-center" style="height: 60px; margin: 20px 0;">
+                    <div class="my-3">
                         <span style="margin-bottom: .125rem;">Datos Antropométricos:</span>
                         <div class="d-flex justify-content-between">
-                            <div class="group-input d-flex w-100 ms-2">
+                            <div class="group-input d-flex w-100">
                                 <input type="text" class="input" required>
-                                <label for="" class="label">Peso</label>
+                                <label for="" class="label">Peso (kg)</label>
                             </div>
-                            <div class="group-input d-flex w-100 ms-2">
+                            <div class="group-input d-flex w-100">
                                 <input type="text" class="input" required>
-                                <label for="" class="label">Talla</label>
+                                <label for="" class="label">Talla (cm)</label>
                             </div>
-                            <div class="group-input d-flex w-100 ms-2">
+                            <div class="group-input d-flex w-100">
                                 <input type="text" class="input" required>
-                                <label for="" class="label">Cintura Abdominal</label>
+                                <label for="" class="label">Cintura Abdominal (cm)</label>
                             </div>
                         </div>
                     </div>
@@ -226,10 +240,29 @@
                         <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
                         <label for="floatingTextarea2">Signos Vitales</label>
                     </div> -->
-                    <div class="group-textarea d-flex">
-                        <!-- <input type="text" class="input" required> -->
-                        <textarea name="" id="signos_vitales" cols="30" rows="7" class="textarea" required></textarea>
-                        <label for="signos_vitales" class="label_textarea">Signos Vitales</label>
+                    
+                    <div class="my-3">
+                        <span style="margin-bottom: .125rem;">Signos Vitales</span>
+                        <div class="d-flex align-items-center justify-content-between gap-3 mb-3">
+                            <label for="startDate">Frecuencia cardiaca:</label>
+                            <input type="text" class="form-control py-3" style="width: 180px;" id="startDate">
+                            <label>Ipm</label>
+                        </div>
+                        <div class="d-flex align-items-center justify-content-between gap-3 mb-3">
+                            <label for="startDate">Presión arterial:</label>
+                            <input type="text" class="form-control py-3" style="width: 180px;" id="startDate" placeholder="ejm: 10 / 20">
+                            <label>mmHg</label>
+                        </div>
+                        <div class="d-flex align-items-center justify-content-between gap-3 mb-3">
+                            <label for="startDate">Frecuencia respiratoria:</label>
+                            <input type="text" class="form-control py-3" style="width: 180px;" id="startDate">
+                            <label>RPM</label>
+                        </div>
+                        <div class="d-flex align-items-center justify-content-between gap-3 mb-3">
+                            <label for="startDate">Temperatura:</label>
+                            <input type="text" class="form-control py-3" style="width: 180px;" id="startDate">
+                            <label>°C</label>
+                        </div>
                     </div>
                 </div>
                 <!-- Columna Der. -->
