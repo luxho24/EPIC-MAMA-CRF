@@ -5,3 +5,181 @@
 <br>
 <br>
 <br>
+<!-- Container -->
+<div>
+    <!-- Header -->
+    <div class="container-xl">
+        <div class="border p-3 bg-white">
+            <h5 style="font-weight: 350;"><b style="font-weight: 500;">PROTOCOLO:</b> PERFIL INFLAMATORIO EN PACIENTES CON CÁNCER DE MAMA Y SU ASOCIACIÓN CON EL VALOR PRONÓSTICO DE LA ENFERMERDAD</h5>
+        </div>
+        <div class="border p-3 bg-white">
+            <h5 style="font-weight: 350;"><b style="font-weight: 500;">FORMATO N° 002:</b> DATOS CLÍNICOS DE LA PACIENTE</h5>
+        </div>
+        <div class="border p-3 bg-white">
+            <h5 style="font-weight: 350;"><b style="font-weight: 500;">VERSIÓN:</b></h5>
+        </div>
+        <br>
+        <hr>
+    </div>
+    <!-- Header -->
+
+    <br>
+
+    <!-- Formulario -->
+    <div class="container-xl" style="margin-bottom: 200px;">
+
+        <form class="w-75 m-auto mb-5">
+            <h3>DATOS DE IDENTIFICACIÓN</h3>
+            <div class="col mb-4">
+                <div class="d-flex align-items-center gap-4">
+                    <div class="group-input d-flex">
+                        <input type="text" class="input" required>
+                        <label for="" class="label">Iniciales de la paciente</label>
+                    </div>
+                    <div class="group-input d-flex">
+                        <input type="text" class="input" required>
+                        <label for="" class="label">Número de HC</label>
+                    </div>
+                </div>
+
+                <h3 class="mb-3">Centro o Institución de atención</h3>
+                <div class="d-flex justify-content-between mb-4">
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="institucion" id="inen_lima" value="option1" style="cursor: pointer;">
+                        <label class="form-check-label" for="inen_lima" style="cursor: pointer;">INEN LIMA</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="institucion" id="inen_arequipa" value="option2" style="cursor: pointer;">
+                        <label class="form-check-label" for="inen_arequipa" style="cursor: pointer;">INEN AREQUIPA</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="institucion" id="inen_trujillo" value="option1" style="cursor: pointer;">
+                        <label class="form-check-label" for="inen_trujillo" style="cursor: pointer;">INEN TRUJILLO</label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- <h3 class="mb-4">TRATAMIENTO:</h3> -->
+            <div class="col mb-4">
+                <div class="d-flex align-items-center gap-3 mb-3">
+                    <label for="startDate" style="width: 40%;">1. SIGNOS O SÍNTOMAS DE INICIO:</label>
+                    <input type="text" class="form-control py-3 w-100" id="startDate">
+                </div>
+                <div class="group-textarea d-flex mb-3">
+                    <textarea name="" id="signos_vitales" cols="30" rows="7" class="textarea" required></textarea>
+                    <label for="signos_vitales" class="label_textarea"></label>
+                </div>
+                <div class="d-flex align-items-center gap-3 mb-3">
+                    <label for="startDate">2. FECHA DE INICIO DE SÍNTOMAS O SIGNOS:</label>
+                    <input type="date" class="form-control py-3 w-25" id="startDate">
+                </div>
+                <div class="d-flex align-items-center gap-3 mb-3">
+                    <label for="startDate">3. TIEMPO EN MESES HASTA EL DIAGNÓSTICO *:</label>
+                    <input type="text" class="form-control py-3 w-25" id="startDate">
+                    <label for="">MESES</label>
+                </div>
+                <p class="ms-3">
+                    <i>* Tiempo transcurrido desde el inicio de los síntomas hasta el diagnóstico.</i>
+                </p>
+                <div class="d-flex align-items-center gap-3 mb-3">
+                    <label for="startDate">4. TAMAÑO DEL TUMOR:</label>
+                    <input type="text" class="form-control py-3 w-25" id="startDate">
+                    <label for="">mm.x</label>
+                    <input type="text" class="form-control py-3 w-25" id="startDate">
+                    <label for="">mm</label>
+                </div>
+                <div class="d-flex align-items-center gap-3 mb-3">
+                    <label for="startDate">5. GANGLIOS AXILARES PRESENTES:</label>
+                    <div class="d-flex justify-content-around w-25">
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="ganglios_axilares" id="ganglios_axilares_si" value="ganglios_axilares_si" style="cursor: pointer;">
+                            <label class="form-check-label" for="ganglios_axilares_si" style="cursor: pointer;">SÍ</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="ganglios_axilares" id="ganglios_axilares_no" value="ganglios_axilares_no" style="cursor: pointer;">
+                            <label class="form-check-label" for="ganglios_axilares_no" style="cursor: pointer;">NO</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex align-items-center gap-3 mb-3">
+                    <label for="startDate">6. TIPO HISTOLÓGICO:</label>
+                    <select class="form-select" style="width: 40%;">
+                        <option selected>DUCTAL INFILTRANTE</option>
+                        <option value="1">LOBULILLAR INFILTRANTE</option>
+                        <option value="1">MIXTO DUCTO-LOBULILLAR</option>
+                        <option value="1">MUCINOSO</option>
+                        <option value="1">TUBULAR</option>
+                        <option value="1">MEDULAR</option>
+                        <option value="1">PAPILAR</option>
+                        <option value="1">PLEOMÓRFICO</option>
+                        <option value="1">METAPLASIA FUSOCELULAR Y ESCAMOSO</option>
+                    </select>
+                </div>
+                <p><u>CONCLUSIÓN DEL INFORME</u> (Transcribir la conclusión del informe Histológico):</p>
+                <div class="group-textarea d-flex mb-3">
+                    <textarea name="" id="signos_vitales" cols="30" rows="7" class="textarea" required></textarea>
+                    <label for="signos_vitales" class="label_textarea"></label>
+                </div>
+                <div class="d-flex align-items-center gap-3 mb-3">
+                    <label for="startDate">7. CLASIFICACIÓN MOLECULAR:</label>
+                    <div class="d-flex justify-content-around w-75">
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="clasificacion_molecular" id="triple_negativo" value="triple_negativo" style="cursor: pointer;">
+                            <label class="form-check-label" for="triple_negativo" style="cursor: pointer;">TRIPLE NEGATIVO</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="clasificacion_molecular" id="luminal" value="luminal" style="cursor: pointer;">
+                            <label class="form-check-label" for="luminal" style="cursor: pointer;">LUMINAL</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="clasificacion_molecular" id="her2_positivo" value="her2_positivo" style="cursor: pointer;">
+                            <label class="form-check-label" for="her2_positivo" style="cursor: pointer;">HER2 POSITIVO</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Boton -->
+            <div class="d-flex justify-content-end">
+                <button type="submit">Siguiente: Exámenes Complementarios</button>
+            </div>
+            <!-- Boton -->
+        </form>
+
+        <!-- Seccion: Llenado por el PL -->
+        <div class="container-xl">
+            <hr>
+            <br>
+            <form class="row g-3 m-auto border px-5 py-3 bg-white">
+                <div class="col-6">
+                    <p>Firma:</p>
+                </div>
+                <div class="col-6">
+                    <p>Fecha:</p>
+                </div>
+                <div class="col-12">
+                    <p>Nombre:</p>
+                </div>
+                <div class="col-12">
+                    <b><i><p>**Nota: Se recomienda que sea llenado por el PL.</p></i></b>
+                </div>
+            </form>
+        </div>
+        <!-- Seccion: Llenado por el PL -->
+
+    </div>
+    <!-- Formulario -->
+
+    <!-- 0099ff a2d9ff A2F0FF-->
+
+    <!-- Footer -->
+    <footer>
+        <div class="waves">
+            <div class="wave" id="wave1"></div>
+            <div class="wave" id="wave2"></div>
+            <div class="wave" id="wave3"></div>
+            <div class="wave" id="wave4"></div>
+        </div>
+    </footer>
+    <!-- Footer -->
+</div>
+<!-- Container -->
