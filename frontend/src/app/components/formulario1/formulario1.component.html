@@ -5,292 +5,472 @@
 <br>
 <br>
 <br>
-<!-- Container -->
-<div>
-    <!-- Header -->
-    <div class="container-xl">
-        <div class="border p-3 bg-white">
-            <h5 style="font-weight: 350;"><b style="font-weight: 500;">PROTOCOLO:</b> PERFIL INFLAMATORIO EN PACIENTES CON CÁNCER DE MAMA Y SU ASOCIACIÓN CON EL VALOR PRONÓSTICO DE LA ENFERMERDAD</h5>
+    <!-- Container -->
+    <div>
+        <!-- Header -->
+        <div class="container-xl">
+            <div class="border p-3 bg-white">
+                <h5 style="font-weight: 350;"><b style="font-weight: 500;">PROTOCOLO:</b> PERFIL INFLAMATORIO EN PACIENTES CON CÁNCER DE MAMA Y SU ASOCIACIÓN CON EL VALOR PRONÓSTICO DE LA ENFERMERDAD</h5>
+            </div>
+            <div class="border p-3 bg-white">
+                <h5 style="font-weight: 350;"><b style="font-weight: 500;">FORMATO N° 001:</b> DATOS SOCIODEMOGRAFICOS DE LA PACIENTE</h5>
+            </div>
+            <div class="border p-3 bg-white">
+                <h5 style="font-weight: 350;"><b style="font-weight: 500;">VERSIÓN:</b></h5>
+            </div>
+            <br>
+            <hr>
         </div>
-        <div class="border p-3 bg-white">
-            <h5 style="font-weight: 350;"><b style="font-weight: 500;">FORMATO N° 001:</b> DATOS SOCIODEMOGRÁFICOS DE LA PACIENTE</h5>
-        </div>
-        <div class="border p-3 bg-white">
-            <h5 style="font-weight: 350;"><b style="font-weight: 500;">VERSIÓN:</b></h5>
-        </div>
+        <!-- Header -->
+
         <br>
-        <hr>
-    </div>
-    <!-- Header -->
 
-    <br>
-
-    <!-- Formulario -->
-    <div class="container-xl" style="margin-bottom: 200px;">
-
-        <form class="w-75 m-auto">
-            <h3>DATOS DEL PACIENTE</h3>
-            <div class="d-flex">
-                
-                <!-- Columna Izq. -->
-                <div class="col me-3 mb-4">
-                    <div class="group-input d-flex">
-                        <input type="text" class="input" required>
-                        <label for="" class="label">Iniciales Paciente</label>
+        <!-- Formulario -->
+        <div class="container-xl">
+            <form class="row g-3">
+                <div class="col-md-6 d-flex align-items-center justify-content-between pe-4">
+                    <b><label for="startDate" class="form-label">1. INICIALES DE LA PACIENTE:</label></b>
+                    <input type="text" class="form-control py-3" id="startDate" style="width: 60%;">
+                </div>
+                <div class="col-md-6 d-flex align-items-center justify-content-between ps-4">
+                    <b><label for="startDate" class="form-label">2. NÚMERO DE HC:</label></b>
+                    <input type="text" class="form-control py-3" id="startDate" style="width: 75%;">
+                </div>
+                <div class="col-md-6 d-flex align-items-center justify-content-between pe-4">
+                    <b><label for="inputState" class="form-label">3. TIPO DE DOCUMENTO:</label></b>
+                    <select id="inputState" class="form-select py-3" style="width: 65%;">
+                        <option selected>DNI</option>
+                        <option>Carnet de extranjería</option>
+                        <option>Otros (Pasaporte)</option>
+                    </select>
+                </div>
+                <div class="col-md-6 d-flex align-items-center justify-content-between ps-4">
+                    <b><label for="startDate" class="form-label">4. NÚMERO DE DOCUMENTO:</label></b>
+                    <input type="text" class="form-control py-3" id="startDate" style="width: 60%;">
+                </div>
+                <div class="col-md-6 d-flex align-items-center justify-content-between pe-4">
+                    <b><label for="startDate" class="form-label">5. CELULAR:</label></b>
+                    <input type="text" class="form-control py-3" id="startDate" style="width: 80%;">
+                </div>
+                <div class="col-md-6 d-flex align-items-center justify-content-between ps-4">
+                    <b><label for="startDate" class="form-label">6. E-MAIL:</label></b>
+                    <input type="text" class="form-control py-3" id="startDate" style="width: 85%;">
+                </div>
+                <div class="col-md-6 d-flex align-items-center justify-content-between pe-4">
+                    <b><label for="startDate" class="form-label">7. FECHA DE NACIMIENTO:</label></b>
+                    <input type="date" class="form-control py-3" id="startDate" style="width: 65%;">
+                </div>
+                <div class="col-md-6 d-flex align-items-center justify-content-between ps-4">
+                    <b><label for="startDate" class="form-label">8. EDAD DE LA PACIENTE:</label></b>
+                    <input type="number" class="form-control py-3" id="startDate" style="width: 60%;">
+                    <label for="startDate" class="form-label">AÑOS</label>
+                </div>
+                <div class="col-md-6 d-flex align-items-center justify-content-between pe-4">
+                    <b><label for="inputState" class="form-label">9. CIUDAD DONDE RESIDE:</label></b>
+                    <select id="inputState" class="form-select py-3" style="width: 65%;">
+                        <option selected>LIMA</option>
+                        <option>AREQUIPA</option>
+                        <option>TRUJILLO</option>
+                        <option>OTRO</option>
+                    </select>
+                </div>
+                <div class="col-md-6 d-flex align-items-center justify-content-between ps-4">
+                    <b><label for="inputState" class="form-label">10. CENTRO O INSTITUCIÓN DE ATENCIÓN:</label></b>
+                    <select id="inputState" class="form-select py-3" style="width: 45%;">
+                        <option selected>INEN LIMA</option>
+                        <option>INEM AREQUIPA</option>
+                        <option>INEN TRUJILLO</option>
+                    </select>
+                </div>
+                <div class="col-md-6 d-flex align-items-center justify-content-between pe-4">
+                    <b><label for="inputState" class="form-label">11. ESTADO CIVIL:</label></b>
+                    <select id="inputState" class="form-select py-3" style="width: 75%;">
+                        <option selected>CASADA</option>
+                        <option>CONVIVIENTE</option>
+                        <option>SOLTERA</option>
+                        <option>SEPARADA</option>
+                        <option>VIUDA</option>
+                        <option>DIVORCIADA</option>
+                    </select>
+                </div>
+                <div class="col-md-6 d-flex align-items-center justify-content-between ps-4">
+                    <b><label for="startDate" class="form-label">12. TIPO DE PARTO AL NACER:</label></b>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="ganglios_axilares" id="ganglios_axilares_si" value="ganglios_axilares_si" style="cursor: pointer;">
+                        <label class="form-check-label" for="ganglios_axilares_si" style="cursor: pointer;">PARTO VAGINAL</label>
                     </div>
-                    <div class="form-floating w-100">
-                        <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
-                            <option selected>DNI</option>
-                            <option value="1">Carnet de extranjería</option>
-                            <option value="2">Otros (Pasaporte)</option>
-                        </select>
-                        <label for="floatingSelect">Tipo de Documento</label>
-                    </div>
-                    <div class="group-input d-flex">
-                        <input type="text" class="input" required>
-                        <label for="" class="label">Celular</label>
-                    </div>
-                    <div class="form-floating mb-3 w-100">
-                        <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
-                            <option selected>Lima</option>
-                            <option value="1">Arequipa</option>
-                            <option value="2">Trujillo</option>
-                            <option value="3">Otros</option>
-                        </select>
-                        <label for="floatingSelect">Ciudad donde reside</label>
-                    </div>
-                    <div class="d-flex align-items-center">
-                        <div class="group-input d-flex m-0 w-100">
-                            <input type="text" class="input" required>
-                            <label for="" class="label">Edad de la paciente</label>
-                        </div>
-                        <div class="form-floating ms-3 w-100">
-                            <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
-                                <option selected>Casada</option>
-                                <option value="1">Conviviente</option>
-                                <option value="1">Soltera</option>
-                                <option value="1">Separada</option>
-                                <option value="1">Viuda</option>
-                                <option value="1">Divorciada</option>
-                            </select>
-                            <label for="floatingSelect">Estado Civil</label>
-                        </div>
-                    </div>
-                    <div class="group-input d-flex">
-                        <input type="text" class="input" required>
-                        <label for="" class="label">Número de Gestaciones o embarazos</label>
-                    </div>
-                    <div class="d-flex justify-content-between align-items-center" style="height: 60px; margin: 20px 0;">
-                        <div>
-                            <span style="margin-bottom: .125rem;">Uso de anticonceptivos:</span>
-                            <div class="d-flex justify-content-between">
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="anticonceptivos" id="anticonceptivos_si" value="option1" style="cursor: pointer;">
-                                    <label class="form-check-label" for="anticonceptivos_si" style="cursor: pointer;">Sí</label>
-                                </div>
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="anticonceptivos" id="anticonceptivos_no" value="option2" style="cursor: pointer;">
-                                    <label class="form-check-label" for="anticonceptivos_no" style="cursor: pointer;">No</label>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="group-input d-flex w-50">
-                            <input type="text" class="input" required>
-                            <label for="" class="label">Tiempo (meses)</label>
-                        </div>
-                    </div>
-                    <div class="d-flex justify-content-between align-items-center" style="height: 60px; margin: 20px 0;">
-                        <span style="margin-bottom: .125rem;">Antecedente Familiar de Cáncer de Mama:</span>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="cancer_mama" id="cancer_mama_si" value="option1" style="cursor: pointer;">
-                            <label class="form-check-label" for="cancer_mama_si" style="cursor: pointer;">Sí</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="cancer_mama" id="cancer_mama_no" value="option2" style="cursor: pointer;">
-                            <label class="form-check-label" for="cancer_mama_no" style="cursor: pointer;">No</label>
-                        </div>
-                    </div>
-                    <div class="group-input d-flex">
-                        <input type="text" class="input" required>
-                        <label for="" class="label">Ocupación</label>
-                    </div>
-                    <div class="form-floating w-100" style="height: 60px; margin: 20px 0;">
-                        <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
-                            <option selected>Analfabeto</option>
-                            <option value="1">Primaria</option>
-                            <option value="1">Secundaria</option>
-                            <option value="1">Superior o Técnica</option>
-                            <option value="1">Superior Universitaria</option>
-                        </select>
-                        <label for="floatingSelect">Nivel Educativo</label>
-                    </div>
-                    <!-- <div class="form-floating" style="height: 60px; margin: 20px 0;">
-                        <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
-                        <label for="floatingTextarea2">Antecedentes de Patologías Crónicas y Síndrome Metabólico</label>
-                    </div> -->
-                    <div class="group-textarea d-flex">
-                        <!-- <input type="text" class="input" required> -->
-                        <textarea name="" id="patologia_sindrome" cols="30" rows="7" class="textarea" required></textarea>
-                        <label for="patologia_sindrome" class="label_textarea">Antecedentes de Patologías Crónicas y Síndrome Metabólico</label>
+                    <div class="form-check form-check-inline pe-3">
+                        <input class="form-check-input" type="radio" name="ganglios_axilares" id="ganglios_axilares_no" value="ganglios_axilares_no" style="cursor: pointer;">
+                        <label class="form-check-label" for="ganglios_axilares_no" style="cursor: pointer;">CESAREA</label>
                     </div>
                 </div>
-                <!-- Columna Izq. -->
-
-                <!-- Columna Der. -->
-                <div class="col ms-4 mb-4">
-                    <div class="group-input d-flex">
-                        <input type="text" class="input" required>
-                        <label for="" class="label">Número de HC</label>
-                    </div>
-                    <div class="group-input d-flex">
-                        <input type="text" class="input" required>
-                        <label for="" class="label">Número de documento</label>
-                    </div>
-                    <div class="group-input d-flex">
-                        <input type="text" class="input" required>
-                        <label for="" class="label">Correo electrónico</label>
-                    </div>
-                    <!-- <div class="group-input d-flex">
-                        <input type="text" class="input" required>
-                        <label for="" class="label">Centro o Institución de atención</label>
-                    </div> -->
-                    <div class="form-floating mb-3 w-100">
-                        <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
-                            <option selected>INEN LIMA</option>
-                            <option value="1">INEN AREQUIPA</option>
-                            <option value="2">INEN TRUJILLO</option>
-                        </select>
-                        <label for="floatingSelect">Centro o Institución de atención</label>
-                    </div>
-                    <div class="group-input d-flex">
-                        <input type="text" class="input" required>
-                        <label for="" class="label">Número de Hijos</label>
-                    </div>
-                    <div class="d-flex justify-content-between align-items-center" style="height: 60px; margin: 20px 0;">
-                        <span style="margin-bottom: .125rem;">Lactancia:</span>
+                <div class="col-md-6 d-flex align-items-center justify-content-between pe-4">
+                    <b><label for="startDate" class="form-label">13. NÚMERO DE HIJOS:</label></b>
+                    <input type="text" class="form-control py-3 ms-3" id="startDate" style="width: 65%;">
+                </div>
+                <div class="col-md-6 d-flex align-items-center justify-content-between ps-4">
+                    <b><label for="startDate" class="form-label">14. NÚMERO DE GESTACIONES O EMBARAZOS:</label></b>
+                    <input type="text" class="form-control py-3 ms-3" id="startDate" style="width: 40%;">
+                </div>
+                <div class="col-md-6 d-flex align-items-center justify-content-between pe-4">
+                    <b><label for="startDate" class="form-label">15. LACTANCIA:</label></b>
+                    <div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="lactancia" id="lactancia_si" value="option1" style="cursor: pointer;">
-                            <label class="form-check-label" for="lactancia_si" style="cursor: pointer;">Sí</label>
+                            <input class="form-check-input" type="radio" name="ganglios_axilares" id="ganglios_axilares_si" value="ganglios_axilares_si" style="cursor: pointer;">
+                            <label class="form-check-label" for="ganglios_axilares_si" style="cursor: pointer;">SI</label>
                         </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="lactancia" id="lactancia_no" value="option2" style="cursor: pointer;">
-                            <label class="form-check-label" for="lactancia_no" style="cursor: pointer;">No</label>
-                        </div>
-                        <div class="group-input d-flex w-50">
-                            <input type="text" class="input" required>
-                            <label for="" class="label">Tiempo (meses)</label>
+                        <div class="form-check form-check-inline pe-3">
+                            <input class="form-check-input" type="radio" name="ganglios_axilares" id="ganglios_axilares_no" value="ganglios_axilares_no" style="cursor: pointer;">
+                            <label class="form-check-label" for="ganglios_axilares_no" style="cursor: pointer;">NO</label>
                         </div>
                     </div>
-                    <div class="d-flex justify-content-between align-items-center" style="height: 60px; margin: 20px 0;">
-                        <span style="margin-bottom: .125rem;">Antecedente Familiar de Cáncer:</span>
+                    <div class="col-md-6 d-flex align-items-center justify-content-between">
+                        <label for="startDate" class="form-label">TIEMPO (MESES):</label>
+                        <input type="text" class="form-control py-3" id="startDate" style="width: 50%;">
+                    </div>
+                </div>
+                <div class="col-md-6 d-flex align-items-center justify-content-between ps-4">
+                    <b><label for="startDate" class="form-label">16. USO DE ANTICONCEPTIVOS:</label></b>
+                    <div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="cancer" id="cancer_si" value="option1" style="cursor: pointer;">
-                            <label class="form-check-label" for="cancer_si" style="cursor: pointer;">Sí</label>
+                            <input class="form-check-input" type="radio" name="ganglios_axilares" id="ganglios_axilares_si" value="ganglios_axilares_si" style="cursor: pointer;">
+                            <label class="form-check-label" for="ganglios_axilares_si" style="cursor: pointer;">SI</label>
                         </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="cancer" id="cancer_no" value="option2" style="cursor: pointer;">
-                            <label class="form-check-label" for="cancer_no" style="cursor: pointer;">No</label>
+                        <div class="form-check form-check-inline pe-3">
+                            <input class="form-check-input" type="radio" name="ganglios_axilares" id="ganglios_axilares_no" value="ganglios_axilares_no" style="cursor: pointer;">
+                            <label class="form-check-label" for="ganglios_axilares_no" style="cursor: pointer;">NO</label>
                         </div>
                     </div>
-                    <div class="d-flex justify-content-between align-items-center" style="height: 60px; margin: 20px 0;">
-                        <span style="margin-bottom: .125rem;">Trabaja:</span>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="trabaja" id="trabaja_si" value="option1" style="cursor: pointer;">
-                            <label class="form-check-label" for="trabaja_si" style="cursor: pointer;">Sí</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="trabaja" id="trabaja_no" value="option2" style="cursor: pointer;">
-                            <label class="form-check-label" for="trabaja_no" style="cursor: pointer;">No</label>
-                        </div>
-                        <div class="form-floating w-50">
-                            <input id="startDate" class="form-control" type="date" />
-                            <label for="floatingSelect">Fecha de Nacimiento</label>
-                        </div>
+                    <div class="col-md-4 d-flex align-items-center justify-content-between">
+                        <label for="startDate" class="form-label">TIEMPO (MESES):</label>
+                        <input type="text" class="form-control py-3" id="startDate" style="width: 35%;">
                     </div>
-                    <div class="form-floating w-100">
-                        <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
-                            <option selected>Aymara</option>
-                            <option value="1">Blanco</option>
-                            <option value="1">Mestizo</option>
-                            <option value="1">Nativo o Indígena de la Amazonía</option>
-                            <option value="1">Negro/Moreno/Zambo/Mulato/Afroperuano</option>
-                            <option value="1">Quechua</option>
-                            <option value="1">Perteneciente o parte de otro pueblo indígena u originario</option>
-                        </select>
-                        <label for="floatingSelect">Raza o Grupo Étnico</label>
+                </div>
+                <div class="col-md-6 d-flex align-items-center justify-content-between pe-4 py-3">
+                    <b><label for="startDate" class="form-label">17. ANTECEDENTE FAMILIAR DE CÁNCER:</label></b>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="ganglios_axilares" id="ganglios_axilares_si" value="ganglios_axilares_si" style="cursor: pointer;">
+                        <label class="form-check-label" for="ganglios_axilares_si" style="cursor: pointer;">SI</label>
                     </div>
-                    <div class="my-3">
-                        <span style="margin-bottom: .125rem;">Datos Antropométricos:</span>
-                        <div class="d-flex justify-content-between">
-                            <div class="group-input d-flex w-100">
-                                <input type="text" class="input" required>
-                                <label for="" class="label">Peso (kg)</label>
-                            </div>
-                            <div class="group-input d-flex w-100">
-                                <input type="text" class="input" required>
-                                <label for="" class="label">Talla (cm)</label>
-                            </div>
-                            <div class="group-input d-flex w-100">
-                                <input type="text" class="input" required>
-                                <label for="" class="label">Cintura Abdominal (cm)</label>
-                            </div>
-                        </div>
+                    <div class="form-check form-check-inline pe-3">
+                        <input class="form-check-input" type="radio" name="ganglios_axilares" id="ganglios_axilares_no" value="ganglios_axilares_no" style="cursor: pointer;">
+                        <label class="form-check-label" for="ganglios_axilares_no" style="cursor: pointer;">NO</label>
                     </div>
-                    <!-- <div class="form-floating" style="height: 60px; margin: 20px 0;">
-                        <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
-                        <label for="floatingTextarea2">Signos Vitales</label>
-                    </div> -->
-                    
-                    <div class="my-3">
-                        <span style="margin-bottom: .125rem;">Signos Vitales</span>
-                        <div class="d-flex align-items-center justify-content-between gap-3 mb-3">
-                            <label for="startDate">Frecuencia cardiaca:</label>
-                            <input type="text" class="form-control py-3" style="width: 180px;" id="startDate">
-                            <label>Ipm</label>
+                </div>
+                <div class="col-md-6 d-flex align-items-center justify-content-between ps-4 py-3">
+                    <b><label for="startDate" class="form-label">18. ANTECEDENTE FAMILIAR DE CÁNCER DE MAMA:</label></b>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="ganglios_axilares" id="ganglios_axilares_si" value="ganglios_axilares_si" style="cursor: pointer;">
+                        <label class="form-check-label" for="ganglios_axilares_si" style="cursor: pointer;">SI</label>
+                    </div>
+                    <div class="form-check form-check-inline pe-3">
+                        <input class="form-check-input" type="radio" name="ganglios_axilares" id="ganglios_axilares_no" value="ganglios_axilares_no" style="cursor: pointer;">
+                        <label class="form-check-label" for="ganglios_axilares_no" style="cursor: pointer;">NO</label>
+                    </div>
+                </div>
+                <div class="col-md-3 d-flex align-items-center justify-content-between">
+                    <b><label for="startDate" class="form-label">19. TRABAJA:</label></b>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="ganglios_axilares" id="ganglios_axilares_si" value="ganglios_axilares_si" style="cursor: pointer;">
+                        <label class="form-check-label" for="ganglios_axilares_si" style="cursor: pointer;">SI</label>
+                    </div>
+                    <div class="form-check form-check-inline pe-4">
+                        <input class="form-check-input" type="radio" name="ganglios_axilares" id="ganglios_axilares_no" value="ganglios_axilares_no" style="cursor: pointer;">
+                        <label class="form-check-label" for="ganglios_axilares_no" style="cursor: pointer;">NO</label>
+                    </div>
+                </div>
+                <div class="col-md-5 d-flex align-items-center justify-content-between">
+                    <b><label for="startDate" class="form-label">20. OCUPACIÓN:</label></b>
+                    <input type="text" class="form-control py-3" id="startDate" style="width: 70%;">
+                </div>
+                <div class="col-md-4 d-flex align-items-center justify-content-between">
+                    <b><label for="inputState" class="form-label">21. NIVEL EDUCATIVO:</label></b>
+                    <select id="inputState" class="form-select py-3" style="width: 55%;">
+                        <option selected>ANALFABETO</option>
+                        <option>PRIMARIA</option>
+                        <option>SECUNDARIA</option>
+                        <option>SUPERIOR TÉCNICA</option>
+                        <option>SUPERIOR UNIIVERSITARIA</option>
+                    </select>
+                </div>
+                <div class="col-md-6 pe-4">
+                    <b><label for="inputState" class="form-label">22. RAZA O GRUPO ÉTNICO: (ENAHO-2017)</label></b>
+                    <select id="inputState" class="form-select py-3">
+                        <option selected>AYMARA</option>
+                        <option>BLANCO</option>
+                        <option>MESTIZO</option>
+                        <option>NATIVO O INDÍGENA DE LA AMAZONÍA</option>
+                        <option>NEGRO/MORENO/ZAMBO/MULATO/AFROPERUANO</option>
+                        <option>QUECHUA</option>
+                        <option>PRETENECIENTE O PARTE DE OTRO PUEBLO INDÍGENA U ORIGINARIO</option>
+                    </select>
+                </div>
+                <div class="col-md-6 ps-4">
+                    <b><label for="startDate" class="form-label">23. DATOS ANTROPOMÉTRICOS:</label></b>
+                    <div class="d-flex align-items-center justify-content-between">
+                        <div class="col-md-4 d-flex align-items-center">
+                            <label for="startDate" class="form-label">A) PESO:</label>
+                            <input type="text" class="form-control py-3 mx-1" id="startDate" style="width: 35%;">
+                            <label for="startDate" class="form-label">kg</label>
                         </div>
-                        <div class="d-flex align-items-center justify-content-between gap-3 mb-3">
-                            <label for="startDate">Presión arterial:</label>
-                            <input type="text" class="form-control py-3" style="width: 180px;" id="startDate" placeholder="ejm: 10 / 20">
-                            <label>mmHg</label>
+                        <div class="col-md-4 d-flex align-items-center">
+                            <label for="startDate" class="form-label">B) TALLA:</label>
+                            <input type="text" class="form-control py-3 mx-1" id="startDate" style="width: 35%;">
+                            <label for="startDate" class="form-label">cm</label>
                         </div>
-                        <div class="d-flex align-items-center justify-content-between gap-3 mb-3">
-                            <label for="startDate">Frecuencia respiratoria:</label>
-                            <input type="text" class="form-control py-3" style="width: 180px;" id="startDate">
-                            <label>RPM</label>
-                        </div>
-                        <div class="d-flex align-items-center justify-content-between gap-3 mb-3">
-                            <label for="startDate">Temperatura:</label>
-                            <input type="text" class="form-control py-3" style="width: 180px;" id="startDate">
-                            <label>°C</label>
+                        <div class="col-md-4 d-flex align-items-center">
+                            <label for="startDate" class="form-label">C) CINTURA ABDOMINAL:</label>
+                            <input type="text" class="form-control py-3 mx-1" id="startDate" style="width: 35%;">
+                            <label for="startDate" class="form-label">cm</label>
                         </div>
                     </div>
                 </div>
-                <!-- Columna Der. -->
-                
+                <div class="col-md-12">
+                    <b><label for="startDate" class="form-label">24. SIGNOS VITALES:</label></b>
+                    <div class="d-flex align-items-center justify-content-between row g-5">
+                        <div class="col-md-6 d-flex align-items-center justify-content-between">
+                            <label for="startDate" class="form-label">FRECUENCIA CARDIACA:</label>
+                            <input type="text" class="form-control py-3 mx-1" id="startDate" style="width: 65%;">
+                            <label for="startDate" class="form-label">Ipm</label>
+                        </div>
+                        <div class="col-md-6 d-flex align-items-center justify-content-between">
+                            <label for="startDate" class="form-label">FRECUENCIA RESPIRATORIA:</label>
+                            <input type="text" class="form-control py-3 mx-1" id="startDate" style="width: 60%;">
+                            <label for="startDate" class="form-label">RPM</label>
+                        </div>
+                        <div class="col-md-6 d-flex align-items-center justify-content-between">
+                            <label for="startDate" class="form-label">PRESIÓN ARTERIAL:</label>
+                            <input type="text" class="form-control py-3 mx-1" id="startDate" placeholder="Ejemplo: XX / XX" style="width: 65%;">
+                            <label for="startDate" class="form-label">mmHg</label>
+                        </div>
+                        <div class="col-md-6 d-flex align-items-center justify-content-between">
+                            <label for="startDate" class="form-label">TEMPERATURA:</label>
+                            <input type="text" class="form-control py-3 mx-1" id="startDate" style="width: 75%;">
+                            <label for="startDate" class="form-label">°C</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <b><label for="startDate" class="form-label">25. ANTECEDENTES DE PATOLOGÍAS CRÓNICAS:</label></b>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="7" style="resize: none;"></textarea>
+                </div>
+                <div class="col-md-12 d-flex align-items-center justify-content-between gap-5">
+                    <b><label for="startDate" class="form-label">26. HÁBITO DE FUMAR:</label></b>
+                    <div class="col-md-2 d-flex align-items-center justify-content-between">
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="ganglios_axilares" id="ganglios_axilares_si" value="ganglios_axilares_si" style="cursor: pointer;">
+                            <label class="form-check-label" for="ganglios_axilares_si" style="cursor: pointer;">SI</label>
+                        </div>
+                        <div class="form-check form-check-inline pe-5">
+                            <input class="form-check-input" type="radio" name="ganglios_axilares" id="ganglios_axilares_no" value="ganglios_axilares_no" style="cursor: pointer;">
+                            <label class="form-check-label" for="ganglios_axilares_no" style="cursor: pointer;">NO</label>
+                        </div>
+                    </div>
+                    <div class="col-md-3 d-flex align-items-center justify-content-between">
+                        <label for="startDate" class="form-label">¿CUÁNTOS CIGARRILLOS POR DÍA?:</label>
+                        <input type="text" class="form-control py-3" id="startDate" style="width: 20%;">
+                    </div>
+                    <div class="col-md-3 d-flex align-items-center justify-content-end">
+                        <label for="startDate" class="form-label">TIEMPO DE FUMAR:</label>
+                        <input type="text" class="form-control py-3 mx-3" id="startDate" style="width: 20%;">
+                        <label for="startDate" class="form-label">AÑOS</label>
+                    </div>
+                </div>
+                <div class="col-md-12 d-flex align-items-center justify-content-between">
+                    <b><label for="startDate" class="form-label">27. HORAS PROMEDIO DE SUEÑO POR DÍA:</label></b>
+                    <input type="text" class="form-control py-3" id="startDate" style="width: 70%;">
+                </div>
+                <div class="col-md-12">
+                    <b><label for="startDate" class="form-label">28. SÍNDROME METABÓLICO:</label></b>
+                    <!-- SÍNDROME METABÓLICO -->
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>CRITERIOS DIAGNÓSTICO EN MUJERES (ATP III)</th>
+                                <th style="text-align: center;">SI</th>
+                                <th style="text-align: center;">NO</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Obesidad Abdominal (Circunferencia abdominal ≥ 88 cm)</td>
+                                <td>
+                                    <div class="form-check form-check-inline m-0">
+                                        <input class="form-check-input" type="radio" name="institucion" id="si" value="option1" style="cursor: pointer;">
+                                    </div>
+                                </td>
+                                <td style="background-color: #FFCDFA;">
+                                    <div class="form-check form-check-inline m-0">
+                                        <input class="form-check-input" type="radio" name="institucion" id="no" value="option1" style="cursor: pointer;">
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Triglicéridos ≥ 150 mg/dL</td>
+                                <td>
+                                    <div class="form-check form-check-inline m-0">
+                                        <input class="form-check-input" type="radio" name="institucion" id="si" value="option1" style="cursor: pointer;">
+                                    </div>
+                                </td>
+                                <td style="background-color: #FFCDFA;">
+                                    <div class="form-check form-check-inline m-0">
+                                        <input class="form-check-input" type="radio" name="institucion" id="no" value="option1" style="cursor: pointer;">
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Colesterol HDL < 50 mg/dL</td>
+                                <td>
+                                    <div class="form-check form-check-inline m-0">
+                                        <input class="form-check-input" type="radio" name="institucion" id="si" value="option1" style="cursor: pointer;">
+                                    </div>
+                                </td>
+                                <td style="background-color: #FFCDFA;">
+                                    <div class="form-check form-check-inline m-0">
+                                        <input class="form-check-input" type="radio" name="institucion" id="no" value="option1" style="cursor: pointer;">
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Presión Arterial ≥ 130 / ≥ 85 mmHg</td>
+                                <td>
+                                    <div class="form-check form-check-inline m-0">
+                                        <input class="form-check-input" type="radio" name="institucion" id="si" value="option1" style="cursor: pointer;">
+                                    </div>
+                                </td>
+                                <td style="background-color: #FFCDFA;">
+                                    <div class="form-check form-check-inline m-0">
+                                        <input class="form-check-input" type="radio" name="institucion" id="no" value="option1" style="cursor: pointer;">
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Glucosa ≥ 110 mg/dL</td>
+                                <td>
+                                    <div class="form-check form-check-inline m-0">
+                                        <input class="form-check-input" type="radio" name="institucion" id="si" value="option1" style="cursor: pointer;">
+                                    </div>
+                                </td>
+                                <td style="background-color: #FFCDFA;">
+                                    <div class="form-check form-check-inline m-0">
+                                        <input class="form-check-input" type="radio" name="institucion" id="no" value="option1" style="cursor: pointer;">
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <!-- SÍNDROME METABÓLICO -->
+                </div>
+
+                <div class="col-md-12">
+                    <b><label for="startDate" class="form-label">29. TRATAMIENTO HABITUAL:</label></b>
+                    <div class="d-flex align-items-center justify-content-between mb-3">
+                        <label for="startDate" class="form-label">Medicamento 01:</label>
+                        <input type="text" class="form-control py-3" id="startDate" style="width: 88%;">
+                    </div>
+                    <div class="d-flex align-items-center justify-content-between mb-3">
+                        <label for="startDate" class="form-label">Medicamento 02:</label>
+                        <input type="text" class="form-control py-3" id="startDate" style="width: 88%;">
+                    </div>
+                    <div class="d-flex align-items-center justify-content-between mb-3">
+                        <label for="startDate" class="form-label">Medicamento 03:</label>
+                        <input type="text" class="form-control py-3" id="startDate" style="width: 88%;">
+                    </div>
+                    <div class="d-flex align-items-center justify-content-between mb-3">
+                        <label for="startDate" class="form-label">Medicamento 04:</label>
+                        <input type="text" class="form-control py-3" id="startDate" style="width: 88%;">
+                    </div>
+                    <div class="col-md-6 d-flex align-items-center justify-content-between mb-3">
+                        <label for="startDate" class="form-label">¿Ha utilizado Antibióticos en los últimos 03 a 06 meses?</label>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="ganglios_axilares" id="ganglios_axilares_si" value="ganglios_axilares_si" style="cursor: pointer;">
+                            <label class="form-check-label" for="ganglios_axilares_si" style="cursor: pointer;">SI</label>
+                        </div>
+                        <div class="form-check form-check-inline pe-4">
+                            <input class="form-check-input" type="radio" name="ganglios_axilares" id="ganglios_axilares_no" value="ganglios_axilares_no" style="cursor: pointer;">
+                            <label class="form-check-label" for="ganglios_axilares_no" style="cursor: pointer;">NO</label>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-center justify-content-between gap-3 mb-3">
+                        <label for="startDate" class="form-label">¿Cuál?:</label>
+                        <input type="text" class="form-control py-3" id="startDate">
+                    </div>
+                </div>
+
+                <!-- Boton -->
+                <div class="d-flex justify-content-end">
+                    <button type="submit">Siguiente: Tratamiento Oncológico</button>
+                </div>
+                <!-- Boton -->
+            </form>
+
+            <!-- Seccion: Llenado por el PL -->
+            <div class="container-xl">
+                <hr>
+                <br>
+                <form class="row g-3 m-auto border px-5 py-3 bg-white">
+                    <div class="col-6">
+                        <p>Firma:</p>
+                    </div>
+                    <div class="col-6">
+                        <p>Fecha:</p>
+                    </div>
+                    <div class="col-12">
+                        <p>Nombre:</p>
+                    </div>
+                    <div class="col-12">
+                        <b><i><p>**Nota: Se recomienda que sea llenado por el PL.</p></i></b>
+                    </div>
+                </form>
             </div>
+            <!-- Seccion: Llenado por el PL -->
 
-            <!-- Boton -->
-            <div class="d-flex justify-content-end">
-                <button type="submit">Siguiente: Criterios de Selección</button>
-            </div>
-            <!-- Boton -->
-        </form>
-
-    </div>
-    <!-- Formulario -->
-
-    <!-- 0099ff a2d9ff A2F0FF-->
-
-    <!-- Footer -->
-    <footer>
-        <div class="waves">
-            <div class="wave" id="wave1"></div>
-            <div class="wave" id="wave2"></div>
-            <div class="wave" id="wave3"></div>
-            <div class="wave" id="wave4"></div>
         </div>
-    </footer>
-    <!-- Footer -->
+        <!-- Formulario -->
 
-</div>
-<!-- Container -->
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+
+        <!-- 0099ff a2d9ff A2F0FF-->
+
+        <!-- Footer -->
+        <footer>
+            <div class="waves">
+                <div class="wave" id="wave1"></div>
+                <div class="wave" id="wave2"></div>
+                <div class="wave" id="wave3"></div>
+                <div class="wave" id="wave4"></div>
+            </div>
+        </footer>
+        <!-- Footer -->
+
+        <!-- Curva -->
+        <!-- <div class="curved">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+                <path fill="#0099ff" fill-opacity="0.8"
+                    d="M0,96L48,122.7C96,149,192,203,288,192C384,181,480,107,576,96C672,85,768,139,864,160C960,181,1056,171,1152,154.7C1248,139,1344,117,1392,106.7L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z">
+                </path>
+            </svg>
+
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+                <path fill="#a2d9ff" fill-opacity="0.6"
+                    d="M0,224L26.7,224C53.3,224,107,224,160,197.3C213.3,171,267,117,320,128C373.3,139,427,213,480,218.7C533.3,224,587,160,640,149.3C693.3,139,747,181,800,208C853.3,235,907,245,960,224C1013.3,203,1067,149,1120,144C1173.3,139,1227,181,1280,192C1333.3,203,1387,181,1413,170.7L1440,160L1440,320L1413.3,320C1386.7,320,1333,320,1280,320C1226.7,320,1173,320,1120,320C1066.7,320,1013,320,960,320C906.7,320,853,320,800,320C746.7,320,693,320,640,320C586.7,320,533,320,480,320C426.7,320,373,320,320,320C266.7,320,213,320,160,320C106.7,320,53,320,27,320L0,320Z">
+                </path>
+            </svg>
+
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+                <path fill="#A2F0FF" fill-opacity="0.6"
+                    d="M0,256L26.7,234.7C53.3,213,107,171,160,154.7C213.3,139,267,149,320,170.7C373.3,192,427,224,480,240C533.3,256,587,256,640,245.3C693.3,235,747,213,800,186.7C853.3,160,907,128,960,133.3C1013.3,139,1067,181,1120,213.3C1173.3,245,1227,267,1280,261.3C1333.3,256,1387,224,1413,208L1440,192L1440,320L1413.3,320C1386.7,320,1333,320,1280,320C1226.7,320,1173,320,1120,320C1066.7,320,1013,320,960,320C906.7,320,853,320,800,320C746.7,320,693,320,640,320C586.7,320,533,320,480,320C426.7,320,373,320,320,320C266.7,320,213,320,160,320C106.7,320,53,320,27,320L0,320Z">
+                </path>
+            </svg>
+        </div> -->
+        <!-- Curva -->
+    </div>
+    <!-- Container -->
