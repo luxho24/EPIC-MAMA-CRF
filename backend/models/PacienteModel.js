@@ -146,7 +146,7 @@ const pacienteSchema = new Schema (
             type: String,
             require: true,
         },
-        horas_sueño_por_dia: {
+        horas_sueno_por_dia: {
             type: String,
             require: true,
         },
@@ -159,7 +159,7 @@ const pacienteSchema = new Schema (
                 type: String,
                 require: true,
             },
-            coresterol: {
+            colesterol: {
                 type: String,
                 require: true,
             },
