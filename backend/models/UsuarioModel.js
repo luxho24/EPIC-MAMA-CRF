@@ -1,5 +1,6 @@
 import { Schema, model } from "mongoose";
 import bcrypt from "bcrypt";
+import generarId from "../helpers/generarId.js"
 
 const usuarioSchema = new Schema (
     {
@@ -10,6 +11,10 @@ const usuarioSchema = new Schema (
         password: {
             type: String,
             require: true,
+        },
+        token: {
+            type: String,
+            default: generarId(),
         },
     }
 )
