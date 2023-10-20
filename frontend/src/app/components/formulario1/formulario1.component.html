@@ -31,179 +31,185 @@
             <form class="row g-3">
                 <div class="col-md-6 d-flex align-items-center justify-content-between pe-4">
                     <b><label for="startDate" class="form-label">1. INICIALES DE LA PACIENTE:</label></b>
-                    <input type="text" class="form-control py-3" id="startDate" style="width: 60%;">
+                    <input type="text" class="form-control py-3" id="startDate" [(ngModel)]="datos.iniciales_paciente" name="iniciales_paciente" style="width: 60%;">
                 </div>
                 <div class="col-md-6 d-flex align-items-center justify-content-between ps-4">
                     <b><label for="startDate" class="form-label">2. NÚMERO DE HC:</label></b>
-                    <input type="text" class="form-control py-3" id="startDate" style="width: 75%;">
+                    <input type="text" class="form-control py-3" id="startDate" [(ngModel)]="datos.numero_hc" name="numero_hc" style="width: 75%;">
                 </div>
                 <div class="col-md-6 d-flex align-items-center justify-content-between pe-4">
                     <b><label for="inputState" class="form-label">3. TIPO DE DOCUMENTO:</label></b>
-                    <select id="inputState" class="form-select py-3" style="width: 65%;">
-                        <option selected>DNI</option>
+                    <select id="inputState" class="form-select py-3" [(ngModel)]="datos.tipo_documento" [ngModelOptions]="{standalone: true}" style="width: 65%;">
+                        <!-- <option selected>DNI</option>
                         <option>Carnet de extranjería</option>
-                        <option>Otros (Pasaporte)</option>
+                        <option>Otros (Pasaporte)</option> -->
+                        <option *ngFor="let tipo of tipo_documento" [value]="tipo.tipo">{{tipo.tipo}}</option>
                     </select>
                 </div>
                 <div class="col-md-6 d-flex align-items-center justify-content-between ps-4">
                     <b><label for="startDate" class="form-label">4. NÚMERO DE DOCUMENTO:</label></b>
-                    <input type="text" class="form-control py-3" id="startDate" style="width: 60%;">
+                    <input type="text" class="form-control py-3" id="startDate" [(ngModel)]="datos.numero_documento" name="numero_documento" style="width: 60%;">
                 </div>
                 <div class="col-md-6 d-flex align-items-center justify-content-between pe-4">
                     <b><label for="startDate" class="form-label">5. CELULAR:</label></b>
-                    <input type="text" class="form-control py-3" id="startDate" style="width: 80%;">
+                    <input type="text" class="form-control py-3" id="startDate" [(ngModel)]="datos.celular" name="celular" style="width: 80%;">
                 </div>
                 <div class="col-md-6 d-flex align-items-center justify-content-between ps-4">
                     <b><label for="startDate" class="form-label">6. E-MAIL:</label></b>
-                    <input type="text" class="form-control py-3" id="startDate" style="width: 85%;">
+                    <input type="text" class="form-control py-3" id="startDate" [(ngModel)]="datos.email" name="email" style="width: 85%;">
                 </div>
                 <div class="col-md-6 d-flex align-items-center justify-content-between pe-4">
                     <b><label for="startDate" class="form-label">7. FECHA DE NACIMIENTO:</label></b>
-                    <input type="date" class="form-control py-3" id="startDate" style="width: 65%;">
+                    <input type="date" class="form-control py-3" id="startDate" [(ngModel)]="datos.fecha_nacimiento" name="fecha_nacimiento" style="width: 65%;">
                 </div>
                 <div class="col-md-6 d-flex align-items-center justify-content-between ps-4">
                     <b><label for="startDate" class="form-label">8. EDAD DE LA PACIENTE:</label></b>
-                    <input type="number" class="form-control py-3" id="startDate" style="width: 60%;">
+                    <input type="number" class="form-control py-3" id="startDate" [(ngModel)]="datos.edad_paciente" name="edad_paciente" style="width: 60%;">
                     <label for="startDate" class="form-label">AÑOS</label>
                 </div>
                 <div class="col-md-6 d-flex align-items-center justify-content-between pe-4">
                     <b><label for="inputState" class="form-label">9. CIUDAD DONDE RESIDE:</label></b>
-                    <select id="inputState" class="form-select py-3" style="width: 65%;">
-                        <option selected>LIMA</option>
+                    <select id="inputState" class="form-select py-3" [(ngModel)]="datos.ciudad_reside" [ngModelOptions]="{standalone: true}" style="width: 65%;">
+                        <!-- <option selected>LIMA</option>
                         <option>AREQUIPA</option>
                         <option>TRUJILLO</option>
-                        <option>OTRO</option>
+                        <option>OTRO</option> -->
+                        <option *ngFor="let ciudad of ciudad_reside" [value]="ciudad.ciudad">{{ciudad.ciudad}}</option>
                     </select>
                 </div>
                 <div class="col-md-6 d-flex align-items-center justify-content-between ps-4">
                     <b><label for="inputState" class="form-label">10. CENTRO O INSTITUCIÓN DE ATENCIÓN:</label></b>
-                    <select id="inputState" class="form-select py-3" style="width: 45%;">
-                        <option selected>INEN LIMA</option>
+                    <select id="inputState" class="form-select py-3" [(ngModel)]="datos.centro_institucion_atencion" [ngModelOptions]="{standalone: true}" style="width: 45%;">
+                        <!-- <option selected>INEN LIMA</option>
                         <option>INEM AREQUIPA</option>
-                        <option>INEN TRUJILLO</option>
+                        <option>INEN TRUJILLO</option> -->
+                        <option *ngFor="let institucion of centro_institucion_atencion" [value]="institucion.institucion">{{institucion.institucion}}</option>
                     </select>
                 </div>
                 <div class="col-md-6 d-flex align-items-center justify-content-between pe-4">
                     <b><label for="inputState" class="form-label">11. ESTADO CIVIL:</label></b>
-                    <select id="inputState" class="form-select py-3" style="width: 75%;">
-                        <option selected>CASADA</option>
+                    <select id="inputState" class="form-select py-3" [(ngModel)]="datos.estado_civil" [ngModelOptions]="{standalone: true}" style="width: 75%;">
+                        <!-- <option selected>CASADA</option>
                         <option>CONVIVIENTE</option>
                         <option>SOLTERA</option>
                         <option>SEPARADA</option>
                         <option>VIUDA</option>
-                        <option>DIVORCIADA</option>
+                        <option>DIVORCIADA</option> -->
+                        <option *ngFor="let estado of estado_civil" [value]="estado.estado">{{estado.estado}}</option>
                     </select>
                 </div>
                 <div class="col-md-6 d-flex align-items-center justify-content-between ps-4">
                     <b><label for="startDate" class="form-label">12. TIPO DE PARTO AL NACER:</label></b>
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="ganglios_axilares" id="ganglios_axilares_si" value="ganglios_axilares_si" style="cursor: pointer;">
-                        <label class="form-check-label" for="ganglios_axilares_si" style="cursor: pointer;">PARTO VAGINAL</label>
+                        <input class="form-check-input" type="radio" name="tipo_parto_nacer" id="tipo_parto_nacer_vaginal" value="Parto vaginal" [(ngModel)]="datos.tipo_parto_nacer" style="cursor: pointer;">
+                        <label class="form-check-label" for="tipo_parto_nacer_vaginal" style="cursor: pointer;">PARTO VAGINAL</label>
                     </div>
                     <div class="form-check form-check-inline pe-3">
-                        <input class="form-check-input" type="radio" name="ganglios_axilares" id="ganglios_axilares_no" value="ganglios_axilares_no" style="cursor: pointer;">
-                        <label class="form-check-label" for="ganglios_axilares_no" style="cursor: pointer;">CESAREA</label>
+                        <input class="form-check-input" type="radio" name="tipo_parto_nacer" id="tipo_parto_nacer_cesarea" value="Cesarea" [(ngModel)]="datos.tipo_parto_nacer" style="cursor: pointer;">
+                        <label class="form-check-label" for="tipo_parto_nacer_cesarea" style="cursor: pointer;">CESAREA</label>
                     </div>
                 </div>
                 <div class="col-md-6 d-flex align-items-center justify-content-between pe-4">
                     <b><label for="startDate" class="form-label">13. NÚMERO DE HIJOS:</label></b>
-                    <input type="text" class="form-control py-3 ms-3" id="startDate" style="width: 65%;">
+                    <input type="text" class="form-control py-3 ms-3" id="startDate" [(ngModel)]="datos.numero_hijos" name="numero_hijos" style="width: 65%;">
                 </div>
                 <div class="col-md-6 d-flex align-items-center justify-content-between ps-4">
                     <b><label for="startDate" class="form-label">14. NÚMERO DE GESTACIONES O EMBARAZOS:</label></b>
-                    <input type="text" class="form-control py-3 ms-3" id="startDate" style="width: 40%;">
+                    <input type="text" class="form-control py-3 ms-3" id="startDate" [(ngModel)]="datos.numero_gestaciones_embarazos" name="numero_gestaciones_embarazos" style="width: 40%;">
                 </div>
                 <div class="col-md-6 d-flex align-items-center justify-content-between pe-4">
                     <b><label for="startDate" class="form-label">15. LACTANCIA:</label></b>
                     <div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="ganglios_axilares" id="ganglios_axilares_si" value="ganglios_axilares_si" style="cursor: pointer;">
-                            <label class="form-check-label" for="ganglios_axilares_si" style="cursor: pointer;">SI</label>
+                            <input class="form-check-input" type="radio" name="lactancia" id="lactancia_si" value="SI" [(ngModel)]="datos.lactancia" style="cursor: pointer;">
+                            <label class="form-check-label" for="lactancia_si" style="cursor: pointer;">SI</label>
                         </div>
                         <div class="form-check form-check-inline pe-3">
-                            <input class="form-check-input" type="radio" name="ganglios_axilares" id="ganglios_axilares_no" value="ganglios_axilares_no" style="cursor: pointer;">
-                            <label class="form-check-label" for="ganglios_axilares_no" style="cursor: pointer;">NO</label>
+                            <input class="form-check-input" type="radio" name="lactancia" id="lactancia_no" value="NO" [(ngModel)]="datos.lactancia" style="cursor: pointer;">
+                            <label class="form-check-label" for="lactancia_no" style="cursor: pointer;">NO</label>
                         </div>
                     </div>
                     <div class="col-md-6 d-flex align-items-center justify-content-between">
                         <label for="startDate" class="form-label">TIEMPO (MESES):</label>
-                        <input type="text" class="form-control py-3" id="startDate" style="width: 50%;">
+                        <input type="text" class="form-control py-3" id="startDate" [(ngModel)]="datos.tiempo_lactancia" name="tiempo_lactancia" style="width: 50%;">
                     </div>
                 </div>
                 <div class="col-md-6 d-flex align-items-center justify-content-between ps-4">
                     <b><label for="startDate" class="form-label">16. USO DE ANTICONCEPTIVOS:</label></b>
                     <div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="ganglios_axilares" id="ganglios_axilares_si" value="ganglios_axilares_si" style="cursor: pointer;">
-                            <label class="form-check-label" for="ganglios_axilares_si" style="cursor: pointer;">SI</label>
+                            <input class="form-check-input" type="radio" name="uso_anticonceptivos" id="uso_anticonceptivos_si" value="SI" [(ngModel)]="datos.uso_anticonceptivos" style="cursor: pointer;">
+                            <label class="form-check-label" for="uso_anticonceptivos_si" style="cursor: pointer;">SI</label>
                         </div>
                         <div class="form-check form-check-inline pe-3">
-                            <input class="form-check-input" type="radio" name="ganglios_axilares" id="ganglios_axilares_no" value="ganglios_axilares_no" style="cursor: pointer;">
-                            <label class="form-check-label" for="ganglios_axilares_no" style="cursor: pointer;">NO</label>
+                            <input class="form-check-input" type="radio" name="uso_anticonceptivos" id="uso_anticonceptivos_no" value="NO" [(ngModel)]="datos.uso_anticonceptivos" style="cursor: pointer;">
+                            <label class="form-check-label" for="uso_anticonceptivos_no" style="cursor: pointer;">NO</label>
                         </div>
                     </div>
                     <div class="col-md-4 d-flex align-items-center justify-content-between">
                         <label for="startDate" class="form-label">TIEMPO (MESES):</label>
-                        <input type="text" class="form-control py-3" id="startDate" style="width: 35%;">
+                        <input type="text" class="form-control py-3" id="startDate" [(ngModel)]="datos.tiempo_uso_anticonceptivos" name="tiempo_uso_anticonceptivos" style="width: 35%;">
                     </div>
                 </div>
                 <div class="col-md-6 d-flex align-items-center justify-content-between pe-4 py-3">
                     <b><label for="startDate" class="form-label">17. ANTECEDENTE FAMILIAR DE CÁNCER:</label></b>
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="ganglios_axilares" id="ganglios_axilares_si" value="ganglios_axilares_si" style="cursor: pointer;">
-                        <label class="form-check-label" for="ganglios_axilares_si" style="cursor: pointer;">SI</label>
+                        <input class="form-check-input" type="radio" name="antecedente_familiar_cancer" id="antecedente_familiar_cancer_si" value="SI" [(ngModel)]="datos.antecedente_familiar_cancer" style="cursor: pointer;">
+                        <label class="form-check-label" for="antecedente_familiar_cancer_si" style="cursor: pointer;">SI</label>
                     </div>
                     <div class="form-check form-check-inline pe-3">
-                        <input class="form-check-input" type="radio" name="ganglios_axilares" id="ganglios_axilares_no" value="ganglios_axilares_no" style="cursor: pointer;">
-                        <label class="form-check-label" for="ganglios_axilares_no" style="cursor: pointer;">NO</label>
+                        <input class="form-check-input" type="radio" name="antecedente_familiar_cancer" id="antecedente_familiar_cancer_no" value="NO" [(ngModel)]="datos.antecedente_familiar_cancer" style="cursor: pointer;">
+                        <label class="form-check-label" for="antecedente_familiar_cancer_no" style="cursor: pointer;">NO</label>
                     </div>
                 </div>
                 <div class="col-md-6 d-flex align-items-center justify-content-between ps-4 py-3">
                     <b><label for="startDate" class="form-label">18. ANTECEDENTE FAMILIAR DE CÁNCER DE MAMA:</label></b>
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="ganglios_axilares" id="ganglios_axilares_si" value="ganglios_axilares_si" style="cursor: pointer;">
-                        <label class="form-check-label" for="ganglios_axilares_si" style="cursor: pointer;">SI</label>
+                        <input class="form-check-input" type="radio" name="antecedente_familiar_cancer_mama" id="antecedente_familiar_cancer_mama_si" value="SI" [(ngModel)]="datos.antecedente_familiar_cancer_mama" style="cursor: pointer;">
+                        <label class="form-check-label" for="antecedente_familiar_cancer_mama_si" style="cursor: pointer;">SI</label>
                     </div>
                     <div class="form-check form-check-inline pe-3">
-                        <input class="form-check-input" type="radio" name="ganglios_axilares" id="ganglios_axilares_no" value="ganglios_axilares_no" style="cursor: pointer;">
-                        <label class="form-check-label" for="ganglios_axilares_no" style="cursor: pointer;">NO</label>
+                        <input class="form-check-input" type="radio" name="antecedente_familiar_cancer_mama" id="antecedente_familiar_cancer_mama_no" value="NO" [(ngModel)]="datos.antecedente_familiar_cancer_mama" style="cursor: pointer;">
+                        <label class="form-check-label" for="antecedente_familiar_cancer_mama_no" style="cursor: pointer;">NO</label>
                     </div>
                 </div>
                 <div class="col-md-3 d-flex align-items-center justify-content-between">
                     <b><label for="startDate" class="form-label">19. TRABAJA:</label></b>
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="ganglios_axilares" id="ganglios_axilares_si" value="ganglios_axilares_si" style="cursor: pointer;">
-                        <label class="form-check-label" for="ganglios_axilares_si" style="cursor: pointer;">SI</label>
+                        <input class="form-check-input" type="radio" name="trabaja" id="trabaja_si" value="SI" [(ngModel)]="datos.trabaja" style="cursor: pointer;">
+                        <label class="form-check-label" for="trabaja_si" style="cursor: pointer;">SI</label>
                     </div>
                     <div class="form-check form-check-inline pe-4">
-                        <input class="form-check-input" type="radio" name="ganglios_axilares" id="ganglios_axilares_no" value="ganglios_axilares_no" style="cursor: pointer;">
-                        <label class="form-check-label" for="ganglios_axilares_no" style="cursor: pointer;">NO</label>
+                        <input class="form-check-input" type="radio" name="trabaja" id="trabaja_no" value="NO" [(ngModel)]="datos.trabaja" style="cursor: pointer;">
+                        <label class="form-check-label" for="trabaja_no" style="cursor: pointer;">NO</label>
                     </div>
                 </div>
                 <div class="col-md-5 d-flex align-items-center justify-content-between">
                     <b><label for="startDate" class="form-label">20. OCUPACIÓN:</label></b>
-                    <input type="text" class="form-control py-3" id="startDate" style="width: 70%;">
+                    <input type="text" class="form-control py-3" id="startDate" [(ngModel)]="datos.ocupacion" name="ocupacion" style="width: 70%;">
                 </div>
                 <div class="col-md-4 d-flex align-items-center justify-content-between">
                     <b><label for="inputState" class="form-label">21. NIVEL EDUCATIVO:</label></b>
-                    <select id="inputState" class="form-select py-3" style="width: 55%;">
-                        <option selected>ANALFABETO</option>
+                    <select id="inputState" class="form-select py-3" [(ngModel)]="datos.nivel_educativo" [ngModelOptions]="{standalone: true}" style="width: 55%;">
+                        <!-- <option selected>ANALFABETO</option>
                         <option>PRIMARIA</option>
                         <option>SECUNDARIA</option>
                         <option>SUPERIOR TÉCNICA</option>
-                        <option>SUPERIOR UNIIVERSITARIA</option>
+                        <option>SUPERIOR UNIIVERSITARIA</option> -->
+                        <option *ngFor="let nivel of nivel_educativo" [value]="nivel.nivel">{{nivel.nivel}}</option>
                     </select>
                 </div>
                 <div class="col-md-6 pe-4">
                     <b><label for="inputState" class="form-label">22. RAZA O GRUPO ÉTNICO: (ENAHO-2017)</label></b>
-                    <select id="inputState" class="form-select py-3">
-                        <option selected>AYMARA</option>
+                    <select id="inputState" class="form-select py-3" [(ngModel)]="datos.raza_grupo_etnico" [ngModelOptions]="{standalone: true}">
+                        <!-- <option selected>AYMARA</option>
                         <option>BLANCO</option>
                         <option>MESTIZO</option>
                         <option>NATIVO O INDÍGENA DE LA AMAZONÍA</option>
                         <option>NEGRO/MORENO/ZAMBO/MULATO/AFROPERUANO</option>
                         <option>QUECHUA</option>
-                        <option>PRETENECIENTE O PARTE DE OTRO PUEBLO INDÍGENA U ORIGINARIO</option>
+                        <option>PRETENECIENTE O PARTE DE OTRO PUEBLO INDÍGENA U ORIGINARIO</option> -->
+                        <option *ngFor="let raza of raza_grupo_etnico" [value]="raza.raza">{{raza.raza}}</option>
                     </select>
                 </div>
                 <div class="col-md-6 ps-4">
@@ -211,17 +217,17 @@
                     <div class="d-flex align-items-center justify-content-between">
                         <div class="col-md-4 d-flex align-items-center">
                             <label for="startDate" class="form-label">A) PESO:</label>
-                            <input type="text" class="form-control py-3 mx-1" id="startDate" style="width: 35%;">
+                            <input type="text" class="form-control py-3 mx-1" id="startDate" [(ngModel)]="datos.peso" name="peso" style="width: 35%;">
                             <label for="startDate" class="form-label">kg</label>
                         </div>
                         <div class="col-md-4 d-flex align-items-center">
                             <label for="startDate" class="form-label">B) TALLA:</label>
-                            <input type="text" class="form-control py-3 mx-1" id="startDate" style="width: 35%;">
+                            <input type="text" class="form-control py-3 mx-1" id="startDate" [(ngModel)]="datos.talla" name="talla" style="width: 35%;">
                             <label for="startDate" class="form-label">cm</label>
                         </div>
                         <div class="col-md-4 d-flex align-items-center">
                             <label for="startDate" class="form-label">C) CINTURA ABDOMINAL:</label>
-                            <input type="text" class="form-control py-3 mx-1" id="startDate" style="width: 35%;">
+                            <input type="text" class="form-control py-3 mx-1" id="startDate" [(ngModel)]="datos.cintura_abdominal" name="cintura_abdominal" style="width: 35%;">
                             <label for="startDate" class="form-label">cm</label>
                         </div>
                     </div>
@@ -231,55 +237,55 @@
                     <div class="d-flex align-items-center justify-content-between row g-5">
                         <div class="col-md-6 d-flex align-items-center justify-content-between">
                             <label for="startDate" class="form-label">FRECUENCIA CARDIACA:</label>
-                            <input type="text" class="form-control py-3 mx-1" id="startDate" style="width: 65%;">
+                            <input type="text" class="form-control py-3 mx-1" id="startDate" [(ngModel)]="datos.frecuencia_cardiaca" name="frecuencia_cardiaca" style="width: 65%;">
                             <label for="startDate" class="form-label">Ipm</label>
                         </div>
                         <div class="col-md-6 d-flex align-items-center justify-content-between">
                             <label for="startDate" class="form-label">FRECUENCIA RESPIRATORIA:</label>
-                            <input type="text" class="form-control py-3 mx-1" id="startDate" style="width: 60%;">
+                            <input type="text" class="form-control py-3 mx-1" id="startDate" [(ngModel)]="datos.frecuencia_respiratoria" name="tiempo_uso_anticonceptivos" style="width: 60%;">
                             <label for="startDate" class="form-label">RPM</label>
                         </div>
                         <div class="col-md-6 d-flex align-items-center justify-content-between">
                             <label for="startDate" class="form-label">PRESIÓN ARTERIAL:</label>
-                            <input type="text" class="form-control py-3 mx-1" id="startDate" placeholder="Ejemplo: XX / XX" style="width: 65%;">
+                            <input type="text" class="form-control py-3 mx-1" id="startDate" [(ngModel)]="datos.signos_vitales_presion_arterial" name="tiempo_uso_anticonceptivos" placeholder="Ejemplo: XX / XX" style="width: 65%;">
                             <label for="startDate" class="form-label">mmHg</label>
                         </div>
                         <div class="col-md-6 d-flex align-items-center justify-content-between">
                             <label for="startDate" class="form-label">TEMPERATURA:</label>
-                            <input type="text" class="form-control py-3 mx-1" id="startDate" style="width: 75%;">
+                            <input type="text" class="form-control py-3 mx-1" id="startDate" [(ngModel)]="datos.temperatura" name="tiempo_uso_anticonceptivos" style="width: 75%;">
                             <label for="startDate" class="form-label">°C</label>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-12">
                     <b><label for="startDate" class="form-label">25. ANTECEDENTES DE PATOLOGÍAS CRÓNICAS:</label></b>
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="7" style="resize: none;"></textarea>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="7" [(ngModel)]="datos.antecedentes_patologias_cronicas" name="antecedentes_patologias_cronicas" style="resize: none;"></textarea>
                 </div>
                 <div class="col-md-12 d-flex align-items-center justify-content-between gap-5">
                     <b><label for="startDate" class="form-label">26. HÁBITO DE FUMAR:</label></b>
                     <div class="col-md-2 d-flex align-items-center justify-content-between">
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="ganglios_axilares" id="ganglios_axilares_si" value="ganglios_axilares_si" style="cursor: pointer;">
-                            <label class="form-check-label" for="ganglios_axilares_si" style="cursor: pointer;">SI</label>
+                            <input class="form-check-input" type="radio" name="habito_fumar" id="habito_fumar_si" value="SI" [(ngModel)]="datos.habito_fumar" style="cursor: pointer;">
+                            <label class="form-check-label" for="habito_fumar_si" style="cursor: pointer;">SI</label>
                         </div>
                         <div class="form-check form-check-inline pe-5">
-                            <input class="form-check-input" type="radio" name="ganglios_axilares" id="ganglios_axilares_no" value="ganglios_axilares_no" style="cursor: pointer;">
-                            <label class="form-check-label" for="ganglios_axilares_no" style="cursor: pointer;">NO</label>
+                            <input class="form-check-input" type="radio" name="habito_fumar" id="habito_fumar_no" value="NO" [(ngModel)]="datos.habito_fumar" style="cursor: pointer;">
+                            <label class="form-check-label" for="habito_fumar_no" style="cursor: pointer;">NO</label>
                         </div>
                     </div>
                     <div class="col-md-3 d-flex align-items-center justify-content-between">
                         <label for="startDate" class="form-label">¿CUÁNTOS CIGARRILLOS POR DÍA?:</label>
-                        <input type="text" class="form-control py-3" id="startDate" style="width: 20%;">
+                        <input type="text" class="form-control py-3" id="startDate" [(ngModel)]="datos.cigarrillos_por_dia" name="cigarrillos_por_dia" style="width: 20%;">
                     </div>
                     <div class="col-md-3 d-flex align-items-center justify-content-end">
                         <label for="startDate" class="form-label">TIEMPO DE FUMAR:</label>
-                        <input type="text" class="form-control py-3 mx-3" id="startDate" style="width: 20%;">
+                        <input type="text" class="form-control py-3 mx-3" id="startDate" [(ngModel)]="datos.tiempo_fumar" name="tiempo_fumar" style="width: 20%;">
                         <label for="startDate" class="form-label">AÑOS</label>
                     </div>
                 </div>
                 <div class="col-md-12 d-flex align-items-center justify-content-between">
                     <b><label for="startDate" class="form-label">27. HORAS PROMEDIO DE SUEÑO POR DÍA:</label></b>
-                    <input type="text" class="form-control py-3" id="startDate" style="width: 70%;">
+                    <input type="text" class="form-control py-3" id="startDate" [(ngModel)]="datos.horas_sueno_por_dia" name="horas_sueno_por_dia" style="width: 70%;">
                 </div>
                 <div class="col-md-12">
                     <b><label for="startDate" class="form-label">28. SÍNDROME METABÓLICO:</label></b>
@@ -297,12 +303,12 @@
                                 <td>Obesidad Abdominal (Circunferencia abdominal ≥ 88 cm)</td>
                                 <td>
                                     <div class="form-check form-check-inline m-0">
-                                        <input class="form-check-input" type="radio" name="institucion" id="si" value="option1" style="cursor: pointer;">
+                                        <input class="form-check-input" type="radio" name="obesidad_abdominal" id="obesidad_abdominal_si" value="SI" [(ngModel)]="datos.obesidad_abdominal" style="cursor: pointer;">
                                     </div>
                                 </td>
                                 <td style="background-color: #FFCDFA;">
                                     <div class="form-check form-check-inline m-0">
-                                        <input class="form-check-input" type="radio" name="institucion" id="no" value="option1" style="cursor: pointer;">
+                                        <input class="form-check-input" type="radio" name="obesidad_abdominal" id="obesidad_abdominal_no" value="NO" [(ngModel)]="datos.obesidad_abdominal" style="cursor: pointer;">
                                     </div>
                                 </td>
                             </tr>
@@ -310,12 +316,12 @@
                                 <td>Triglicéridos ≥ 150 mg/dL</td>
                                 <td>
                                     <div class="form-check form-check-inline m-0">
-                                        <input class="form-check-input" type="radio" name="institucion" id="si" value="option1" style="cursor: pointer;">
+                                        <input class="form-check-input" type="radio" name="trigliceridos" id="trigliceridos_si" value="SI" [(ngModel)]="datos.trigliceridos" style="cursor: pointer;">
                                     </div>
                                 </td>
                                 <td style="background-color: #FFCDFA;">
                                     <div class="form-check form-check-inline m-0">
-                                        <input class="form-check-input" type="radio" name="institucion" id="no" value="option1" style="cursor: pointer;">
+                                        <input class="form-check-input" type="radio" name="trigliceridos" id="trigliceridos_no" value="NO" [(ngModel)]="datos.trigliceridos" style="cursor: pointer;">
                                     </div>
                                 </td>
                             </tr>
@@ -323,12 +329,12 @@
                                 <td>Colesterol HDL < 50 mg/dL</td>
                                 <td>
                                     <div class="form-check form-check-inline m-0">
-                                        <input class="form-check-input" type="radio" name="institucion" id="si" value="option1" style="cursor: pointer;">
+                                        <input class="form-check-input" type="radio" name="colesterol" id="colesterol_si" value="SI" [(ngModel)]="datos.colesterol" style="cursor: pointer;">
                                     </div>
                                 </td>
                                 <td style="background-color: #FFCDFA;">
                                     <div class="form-check form-check-inline m-0">
-                                        <input class="form-check-input" type="radio" name="institucion" id="no" value="option1" style="cursor: pointer;">
+                                        <input class="form-check-input" type="radio" name="colesterol" id="colesterol_no" value="NO" [(ngModel)]="datos.colesterol" style="cursor: pointer;">
                                     </div>
                                 </td>
                             </tr>
@@ -336,12 +342,12 @@
                                 <td>Presión Arterial ≥ 130 / ≥ 85 mmHg</td>
                                 <td>
                                     <div class="form-check form-check-inline m-0">
-                                        <input class="form-check-input" type="radio" name="institucion" id="si" value="option1" style="cursor: pointer;">
+                                        <input class="form-check-input" type="radio" name="sindrome_metabolico_presion_arterial" id="sindrome_metabolico_presion_arterial_si" value="SI" [(ngModel)]="datos.sindrome_metabolico_presion_arterial" style="cursor: pointer;">
                                     </div>
                                 </td>
                                 <td style="background-color: #FFCDFA;">
                                     <div class="form-check form-check-inline m-0">
-                                        <input class="form-check-input" type="radio" name="institucion" id="no" value="option1" style="cursor: pointer;">
+                                        <input class="form-check-input" type="radio" name="sindrome_metabolico_presion_arterial" id="sindrome_metabolico_presion_arterial_no" value="NO" [(ngModel)]="datos.sindrome_metabolico_presion_arterial" style="cursor: pointer;">
                                     </div>
                                 </td>
                             </tr>
@@ -349,12 +355,12 @@
                                 <td>Glucosa ≥ 110 mg/dL</td>
                                 <td>
                                     <div class="form-check form-check-inline m-0">
-                                        <input class="form-check-input" type="radio" name="institucion" id="si" value="option1" style="cursor: pointer;">
+                                        <input class="form-check-input" type="radio" name="glucosa" id="glucosa_si" value="SI" [(ngModel)]="datos.glucosa" style="cursor: pointer;">
                                     </div>
                                 </td>
                                 <td style="background-color: #FFCDFA;">
                                     <div class="form-check form-check-inline m-0">
-                                        <input class="form-check-input" type="radio" name="institucion" id="no" value="option1" style="cursor: pointer;">
+                                        <input class="form-check-input" type="radio" name="glucosa" id="glucosa_no" value="NO" [(ngModel)]="datos.glucosa" style="cursor: pointer;">
                                     </div>
                                 </td>
                             </tr>
@@ -367,40 +373,40 @@
                     <b><label for="startDate" class="form-label">29. TRATAMIENTO HABITUAL:</label></b>
                     <div class="d-flex align-items-center justify-content-between mb-3">
                         <label for="startDate" class="form-label">Medicamento 01:</label>
-                        <input type="text" class="form-control py-3" id="startDate" style="width: 88%;">
+                        <input type="text" class="form-control py-3" id="startDate" [(ngModel)]="datos.medicamento_1" name="medicamento_1" style="width: 88%;">
                     </div>
                     <div class="d-flex align-items-center justify-content-between mb-3">
                         <label for="startDate" class="form-label">Medicamento 02:</label>
-                        <input type="text" class="form-control py-3" id="startDate" style="width: 88%;">
+                        <input type="text" class="form-control py-3" id="startDate" [(ngModel)]="datos.medicamento_2" name="medicamento_2" style="width: 88%;">
                     </div>
                     <div class="d-flex align-items-center justify-content-between mb-3">
                         <label for="startDate" class="form-label">Medicamento 03:</label>
-                        <input type="text" class="form-control py-3" id="startDate" style="width: 88%;">
+                        <input type="text" class="form-control py-3" id="startDate" [(ngModel)]="datos.medicamento_3" name="medicamento_3" style="width: 88%;">
                     </div>
                     <div class="d-flex align-items-center justify-content-between mb-3">
                         <label for="startDate" class="form-label">Medicamento 04:</label>
-                        <input type="text" class="form-control py-3" id="startDate" style="width: 88%;">
+                        <input type="text" class="form-control py-3" id="startDate" [(ngModel)]="datos.medicamento_4" name="medicamento_4" style="width: 88%;">
                     </div>
                     <div class="col-md-6 d-flex align-items-center justify-content-between mb-3">
                         <label for="startDate" class="form-label">¿Ha utilizado Antibióticos en los últimos 03 a 06 meses?</label>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="ganglios_axilares" id="ganglios_axilares_si" value="ganglios_axilares_si" style="cursor: pointer;">
-                            <label class="form-check-label" for="ganglios_axilares_si" style="cursor: pointer;">SI</label>
+                            <input class="form-check-input" type="radio" name="uso_antibioticos_ultimos_meses" id="uso_antibioticos_ultimos_meses_si" value="SI" [(ngModel)]="datos.uso_antibioticos_ultimos_meses" style="cursor: pointer;">
+                            <label class="form-check-label" for="uso_antibioticos_ultimos_meses_si" style="cursor: pointer;">SI</label>
                         </div>
                         <div class="form-check form-check-inline pe-4">
-                            <input class="form-check-input" type="radio" name="ganglios_axilares" id="ganglios_axilares_no" value="ganglios_axilares_no" style="cursor: pointer;">
-                            <label class="form-check-label" for="ganglios_axilares_no" style="cursor: pointer;">NO</label>
+                            <input class="form-check-input" type="radio" name="uso_antibioticos_ultimos_meses" id="uso_antibioticos_ultimos_meses_no" value="NO" [(ngModel)]="datos.uso_antibioticos_ultimos_meses" style="cursor: pointer;">
+                            <label class="form-check-label" for="uso_antibioticos_ultimos_meses_no" style="cursor: pointer;">NO</label>
                         </div>
                     </div>
                     <div class="d-flex align-items-center justify-content-between gap-3 mb-3">
                         <label for="startDate" class="form-label">¿Cuál?:</label>
-                        <input type="text" class="form-control py-3" id="startDate">
+                        <input type="text" class="form-control py-3" [(ngModel)]="datos.antibioticos" name="antibioticos" id="startDate">
                     </div>
                 </div>
 
                 <!-- Boton -->
                 <div class="d-flex justify-content-end">
-                    <button type="submit">Siguiente: Tratamiento Oncológico</button>
+                    <button type="submit" (click)="registrarForm1()">Siguiente: Tratamiento Oncológico</button>
                 </div>
                 <!-- Boton -->
             </form>
