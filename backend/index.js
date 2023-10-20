@@ -3,6 +3,7 @@ import cors from "cors";
 import {config} from "dotenv";
 import connectDB from "./config/db.js";
 import usuarioRoutes from "./routes/usuarioRoutes.js"
+import pacienteRoutes from "./routes/pacienteRoutes.js"
 
 const app = express();
 
@@ -13,6 +14,7 @@ config();
 connectDB();
 
 app.use("/api/usuarios", usuarioRoutes);
+app.use("/api/pacientes", pacienteRoutes);
 
 
 

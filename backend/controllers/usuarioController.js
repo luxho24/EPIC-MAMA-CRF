@@ -35,6 +35,7 @@ const autenticar = async (req, res) => {
     }
 
     if (await usuario.comprobarPassword(password)) {
+        console.log(usuario._id);
         res.json({
             _id: usuario._id,
             username: usuario.username,
