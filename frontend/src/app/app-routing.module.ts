@@ -17,6 +17,7 @@ const routes: Routes = [
   {path: "menu", component: MenuComponent, canActivate: [AuthGuard]},
   {path: "formulario1", component: Formulario1Component, canActivate: [AuthGuard]},
   {path: "formulario2", component: Formulario2Component, canActivate: [AuthGuard]},
+  // {path: "formulario2/:idUsuario/:idPaciente", component: Formulario2Component, canActivate: [AuthGuard]},
   {path: "formulario3", component: Formulario3Component, canActivate: [AuthGuard]},
   {path: "formulario4", component: Formulario4Component, canActivate: [AuthGuard]},
   {path: "formulario5", component: Formulario5Component, canActivate: [AuthGuard]},

@@ -20,6 +20,16 @@
     transition: .5s;
 }
 
+/* Estilo personalizado para el boton del formulario 1 */
+.btn-f1 {
+    transition: .5s;
+}
+.btn-f1:hover {
+    transform: scale(1.02);
+    -webkit-transform: scale(1.02);
+    transition: .5s;
+}
+
 .btn-pink {
     background: #ff6bdc;
 }
