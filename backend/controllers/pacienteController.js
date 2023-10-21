@@ -26,12 +26,9 @@ const registrarPacienteForm2 = async (req, res) => {
     const form2 = new Formulario2Model(req.body);
     form2.usuario = req.usuario._id;
     form2.paciente = req.paciente._id;
-
-    console.log(form2.paciente);
     
     const existePaciente = await Formulario2Model.findOne({ numero_hc });
     
-
     if (existePaciente) {
         const error = new Error("El paciente ya existe");
         // console.log(object);

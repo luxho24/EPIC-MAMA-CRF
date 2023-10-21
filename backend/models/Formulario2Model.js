@@ -29,7 +29,11 @@ const formulario2Schema = new Schema (
             type: String,
             require: true,
         },
-        tamano_tumor: {
+        tamano_tumor_campo1: {
+            type: String,
+            require: true,
+        },
+        tamano_tumor_campo2: {
             type: String,
             require: true,
         },

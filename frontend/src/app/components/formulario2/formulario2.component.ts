@@ -10,6 +10,17 @@ import { PacienteService } from 'src/app/services/paciente.service';
 })
 export class Formulario2Component implements OnInit {
   datos = <Formulario2>{};
+  tipo_histologico = [
+    {tipo: "DUCTAL INFILTRANTE"},
+    {tipo: "LOBULILLAR INFILTRANTE"},
+    {tipo: "MIXTO DUCTO-LOBULILLAR"},
+    {tipo: "MUCINOSO"},
+    {tipo: "TUBULAR"},
+    {tipo: "MEDULAR"},
+    {tipo: "PAPILAR"},
+    {tipo: "PLEOMÓRFICO"},
+    {tipo: "METAPLASIA FUSOCELULAR Y ESCAMOSO"}
+  ]
 
   constructor(private _pacienteService: PacienteService, private router: Router){}
 
