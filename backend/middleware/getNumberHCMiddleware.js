@@ -9,7 +9,6 @@ const obtenerPacientePorNumeroHC = async (req, res, next) => {
             return res.status(400).json({ msg: "Paciente no encontrado" });
         }
         req.paciente = paciente;
-        console.log(req.paciente);
         next();
     } catch (error) {
         console.error(error);
