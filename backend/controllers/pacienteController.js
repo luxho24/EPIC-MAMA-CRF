@@ -23,15 +23,11 @@ const registrarPacienteForm1 = async (req, res) => {
 
 const registrarPacienteForm2 = async (req, res) => {
     const {numero_hc} = req.body;
-
-    // Asegúrate de que req.paciente contenga el paciente encontrado
-    if (!req.paciente) {
-        return res.status(400).json({ msg: "Paciente no encontrado" });
-    }
-
     const form2 = new Formulario2Model(req.body);
     form2.usuario = req.usuario._id;
     form2.paciente = req.paciente._id;
+
+    console.log(form2.paciente);
     
     const existePaciente = await Formulario2Model.findOne({ numero_hc });
     
