@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Paciente } from 'src/app/models/paciente.model';
-import { AuthService } from 'src/app/services/auth.service';
+import { PacienteService } from 'src/app/services/paciente.service';
 
 @Component({
   selector: 'app-formulario1',
@@ -51,13 +51,21 @@ export class Formulario1Component implements OnInit {
     {raza: "PRETENECIENTE O PARTE DE OTRO PUEBLO INDÍGENA U ORIGINARIO"}
   ]
 
-  constructor(private _authService: AuthService, private router: Router){}
+  constructor(private _pacienteService: PacienteService, private router: Router){}
 
   ngOnInit(): void {
     
   }
 
   registrarForm1() {
-    console.log(this.datos);
+    this._pacienteService.registerForm1(this.datos).subscribe(
+      (res) => {
+        console.log(res);
+        return this.router.navigate(['/formulario2']);
+      },
+      (error) => {
+        console.log(error);
+      }
+    )
   }
 }
