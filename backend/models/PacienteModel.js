@@ -70,7 +70,7 @@ const pacienteSchema = new Schema (
             type: String,
             require: true,
         },
-        uso_anticonceptivos_tiempo: {
+        tiempo_uso_anticonceptivos: {
             type: String,
             require: true,
         },
@@ -98,37 +98,33 @@ const pacienteSchema = new Schema (
             type: String,
             require: true,
         },
-        datos_antropometricos: {
-            peso: {
-                type: String,
-                require: true,
-            },
-            talla: {
-                type: String,
-                require: true,
-            },
-            cintura_abdominal: {
-                type: String,
-                require: true,
-            },
+        peso: {
+            type: String,
+            require: true,
         },
-        signos_vitales: {
-            frecuencia_cardiaca: {
-                type: String,
-                require: true,
-            },
-            frecuencia_respiratoria: {
-                type: String,
-                require: true,
-            },
-            presion_arterial: {
-                type: String,
-                require: true,
-            },
-            temperatura: {
-                type: String,
-                require: true,
-            },
+        talla: {
+            type: String,
+            require: true,
+        },
+        cintura_abdominal: {
+            type: String,
+            require: true,
+        },
+        frecuencia_cardiaca: {
+            type: String,
+            require: true,
+        },
+        frecuencia_respiratoria: {
+            type: String,
+            require: true,
+        },
+        signos_vitales_presion_arterial: {
+            type: String,
+            require: true,
+        },
+        temperatura: {
+            type: String,
+            require: true,
         },
         antecedentes_patologias_cronicas: {
             type: String,
@@ -150,54 +146,50 @@ const pacienteSchema = new Schema (
             type: String,
             require: true,
         },
-        sindrome_metabolico: {
-            obesidad_abdominal: {
-                type: String,
-                require: true,
-            },
-            trigliceridos: {
-                type: String,
-                require: true,
-            },
-            colesterol: {
-                type: String,
-                require: true,
-            },
-            presion_arterial: {
-                type: String,
-                require: true,
-            },
-            glucosa: {
-                type: String,
-                require: true,
-            },
+        obesidad_abdominal: {
+            type: String,
+            require: true,
         },
-        tratamiento_habitual: {
-            medicamento_1: {
-                type: String,
-                require: true,
-            },
-            medicamento_2: {
-                type: String,
-                require: true,
-            },
-            medicamento_3: {
-                type: String,
-                require: true,
-            },
-            medicamento_4: {
-                type: String,
-                require: true,
-            },
-            uso_antibioticos_ultimos_meses: {
-                type: String,
-                require: true,
-            },
-            antibioticos: {
-                type: String,
-                require: true,
-                default: "-",
-            },
+        trigliceridos: {
+            type: String,
+            require: true,
+        },
+        colesterol: {
+            type: String,
+            require: true,
+        },
+        sindrome_metabolico_presion_arterial: {
+            type: String,
+            require: true,
+        },
+        glucosa: {
+            type: String,
+            require: true,
+        },
+        medicamento_1: {
+            type: String,
+            require: true,
+        },
+        medicamento_2: {
+            type: String,
+            require: true,
+        },
+        medicamento_3: {
+            type: String,
+            require: true,
+        },
+        medicamento_4: {
+            type: String,
+            require: true,
+        },
+        uso_antibioticos_ultimos_meses: {
+            type: String,
+            require: true,
+        },
+        antibioticos: {
+            type: String,
+            require: true,
+            default: "-",
         },
         usuario: {
             type: Schema.Types.ObjectId,
