@@ -43,7 +43,32 @@ const registrarPacienteForm2 = async (req, res) => {
     }
 };
 
+const obtenerPaciente = async (req, res) => {
+    const { numero_hc } = req.query;
+    try {
+        const paciente = await PacienteModel.findOne({numero_hc});
+        if (!paciente) return res.status(404).json({ msg: "No encontrado" });
+        // res.status(200).json(paciente);
+        res.status(200).json({msg: "Paciente encontrado"});
+    } catch (error) {
+        res.status(500).json({ msg: "A ocurrido un error" });
+    }
+};
+
+const obtenerPacientePorId = async (req, res) => {
+    const { id } = req.params;
+    try {
+        const paciente = await PacienteModel.findById(id);
+        if (!paciente) return res.status(404).json({ msg: "No encontrado" });
+        res.status(200).json(paciente);
+    } catch (error) {
+        res.status(500).json({ msg: "A ocurrido un error" });
+    }
+};
+
 export {
     registrarPacienteForm1,
     registrarPacienteForm2,
+    obtenerPaciente,
+    obtenerPacientePorId
 }
