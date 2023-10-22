@@ -14,10 +14,13 @@ export class LoginComponent implements OnInit {
   constructor(private _authService: AuthService, private router: Router) {}
 
   ngOnInit(): void {
+    // if (this._authService.loggedin()) {
+    //   this.router.navigateByUrl('/', { replaceUrl: true }).then(() => {
+    //     this.router.navigate([this.router.url]);
+    //   });
+    // }
     if (this._authService.loggedin()) {
-      this.router.navigateByUrl('/', { replaceUrl: true }).then(() => {
-        this.router.navigate([this.router.url]);
-      });
+      this.router.navigate(['/menu']); // Redirige a la página principal si ya hay una sesión iniciada
     }
   }
 
