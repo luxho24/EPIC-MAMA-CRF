@@ -23,4 +23,12 @@ export class PacienteService {
   obtenerPaciente(numero_hc: string): Observable<any> {
     return this.httpClient.get(`${this.url}/obtenerPaciente?numero_hc=${numero_hc}`);
   }
+
+  obtenerIds(numero_hc: string): Observable<any> {
+    return this.httpClient.get<any>(`${this.url}/obtenerIds?numero_hc=${numero_hc}`);
+  }
+
+  obtenerPacientePorId(idUsuario:any, idPaciente: any): Observable<any> {
+    return this.httpClient.get(`${this.url}/obtenerPacientePorId/${idUsuario}/${idPaciente}`);
+  }
 }
