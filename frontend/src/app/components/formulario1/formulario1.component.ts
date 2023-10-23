@@ -50,7 +50,6 @@ export class Formulario1Component implements OnInit {
     {raza: "QUECHUA"},
     {raza: "PRETENECIENTE O PARTE DE OTRO PUEBLO INDÍGENA U ORIGINARIO"}
   ]
-  // numero_hc: string = '';
 
   constructor(private _pacienteService: PacienteService, private router: Router){}
 
@@ -58,6 +57,7 @@ export class Formulario1Component implements OnInit {
     
   }
 
+  // Funcion para registrar pacientes en el formulario 1
   registrarForm1() {
     this._pacienteService.registerForm1(this.datos).subscribe(
       (res) => {
@@ -67,8 +67,6 @@ export class Formulario1Component implements OnInit {
             console.log(result.idUsuario);
             console.log(result.idPaciente);
             this.router.navigate(['/formulario2/usuario/', result.idUsuario, 'paciente', result.idPaciente]);
-            // Aca va la logica de habilitar nuevamente los botones para ingresar a los formularios
-            // Tambien colocar la logica de autocompletar los datos del paciente registrado por medio del id en la url
           },
           (err) => {
             console.log(err);

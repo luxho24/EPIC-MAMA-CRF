@@ -27,14 +27,13 @@ export class MenuComponent implements OnInit {
     
   }
 
+  // Funcion para traer el "numero_hc" del paciente que YA se encuentre registrado en la base de datos
   obtenerPaciente() {
     this._pacienteService.obtenerPaciente(this.numero_hc).subscribe(
       (res) => {
         console.log(res);
         this.botonesHabilitados = true; // Habilita los botones
         this.botonesHabilitadosForm1 = false; // Habilita los botones
-        // Aca va la logica de habilitar nuevamente los botones para ingresar a los formularios
-        // Tambien colocar la logica de autocompletar los datos del paciente registrado por medio del id en la url
       },
       (error) => {
         console.log(error);
@@ -45,7 +44,8 @@ export class MenuComponent implements OnInit {
     // console.log(this.numero_hc);
   }
   
-  obtenerIds() {
+  // Funcion para obtener los ids del usuario y paciente para luego colocarlos en la url y posteriormente autocompletar los campos requeridos en el html
+  ingresarFormulario2() {
     console.log(this.numero_hc);
 
     this._pacienteService.obtenerIds(this.numero_hc).subscribe(
@@ -53,8 +53,6 @@ export class MenuComponent implements OnInit {
         console.log(res.idUsuario);
         console.log(res.idPaciente);
         this.router.navigate(['/formulario2/usuario/', res.idUsuario, 'paciente', res.idPaciente]);
-        // Aca va la logica de habilitar nuevamente los botones para ingresar a los formularios
-        // Tambien colocar la logica de autocompletar los datos del paciente registrado por medio del id en la url
       },
       (error) => {
         console.log(error);
