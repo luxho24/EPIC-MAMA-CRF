@@ -33,6 +33,7 @@ export class Formulario2Component implements OnInit {
     this.mostrarDatos();
   }
 
+  // Funcion para autocompletar los campos segun el id del paciente en la url
   mostrarDatos() {
     if (this.idPaciente !== null) {
       this._pacienteService.obtenerPacientePorId(this.idUsuario, this.idPaciente).subscribe(
@@ -50,7 +51,16 @@ export class Formulario2Component implements OnInit {
     }
   }
 
+  // Funcion para registrar los datos del paciente del formulario 2
   registrarForm2() {
     console.log(this.datos);
+    this._pacienteService.registerForm2(this.datos).subscribe(
+      (res) => {
+        console.log(res);
+      },
+      (error) => {
+        console.log(error);
+      }
+    )
   }
 }
