@@ -59,4 +59,84 @@ export class MenuComponent implements OnInit {
       }
     )
   }
+  
+  // Funcion para obtener los ids del usuario y paciente para luego colocarlos en la url y posteriormente autocompletar los campos requeridos en el html
+  ingresarFormulario3() {
+    console.log(this.numero_hc);
+
+    this._pacienteService.obtenerIds(this.numero_hc).subscribe(
+      (res) => {
+        console.log(res.idUsuario);
+        console.log(res.idPaciente);
+        this.router.navigate(['/formulario3/usuario/', res.idUsuario, 'paciente', res.idPaciente]);
+      },
+      (error) => {
+        console.log(error);
+      }
+    )
+  }
+
+  // Funcion para obtener los ids del usuario y paciente para luego colocarlos en la url y posteriormente autocompletar los campos requeridos en el html
+  ingresarFormulario4() {
+    console.log(this.numero_hc);
+
+    this._pacienteService.obtenerIds(this.numero_hc).subscribe(
+      (res) => {
+        console.log(res.idUsuario);
+        console.log(res.idPaciente);
+        this.router.navigate(['/formulario4/usuario/', res.idUsuario, 'paciente', res.idPaciente]);
+      },
+      (error) => {
+        console.log(error);
+      }
+    )
+  }
+
+  // Funcion para obtener los ids del usuario y paciente para luego colocarlos en la url y posteriormente autocompletar los campos requeridos en el html
+  ingresarFormulario5() {
+    console.log(this.numero_hc);
+
+    this._pacienteService.obtenerIds(this.numero_hc).subscribe(
+      (res) => {
+        console.log(res.idUsuario);
+        console.log(res.idPaciente);
+        this.router.navigate(['/formulario5/usuario/', res.idUsuario, 'paciente', res.idPaciente]);
+      },
+      (error) => {
+        console.log(error);
+      }
+    )
+  }
+
+  // Funcion para obtener los ids del usuario y paciente para luego colocarlos en la url y posteriormente autocompletar los campos requeridos en el html
+  ingresarFormulario6() {
+    console.log(this.numero_hc);
+
+    this._pacienteService.obtenerIds(this.numero_hc).subscribe(
+      (res) => {
+        console.log(res.idUsuario);
+        console.log(res.idPaciente);
+        this.router.navigate(['/formulario6/usuario/', res.idUsuario, 'paciente', res.idPaciente]);
+      },
+      (error) => {
+        console.log(error);
+      }
+    )
+  }
+
+  // Funcion para obtener los ids del usuario y paciente para luego colocarlos en la url y posteriormente autocompletar los campos requeridos en el html
+  ingresarFormulario7() {
+    console.log(this.numero_hc);
+
+    this._pacienteService.obtenerIds(this.numero_hc).subscribe(
+      (res) => {
+        console.log(res.idUsuario);
+        console.log(res.idPaciente);
+        this.router.navigate(['/formulario7/usuario/', res.idUsuario, 'paciente', res.idPaciente]);
+      },
+      (error) => {
+        console.log(error);
+      }
+    )
+  }
 }

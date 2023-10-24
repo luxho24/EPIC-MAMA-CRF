@@ -26,28 +26,28 @@
                 </button>
             </div> -->
             <div class="col-md-4">
-                <button [routerLink]="['/formulario3']" class="btn btn-primary w-100 py-5" [disabled]="!botonesHabilitados" style="background-image: url('../../../assets/svg/health_worker_form.svg'); background-repeat: no-repeat; background-position-y: 10px; background-position-x: -30px; background-size: 140px;">
+                <button class="btn btn-primary w-100 py-5" [disabled]="!botonesHabilitados" (click)="ingresarFormulario3()" style="background-image: url('../../../assets/svg/health_worker_form.svg'); background-repeat: no-repeat; background-position-y: 10px; background-position-x: -30px; background-size: 140px;">
                     III. Consentimientos Informados
                 </button>
             </div>
             <div class="col-md-4">
-                <button [routerLink]="['/formulario4']" class="btn btn-warning w-100 py-5" [disabled]="!botonesHabilitados" style="background-image: url('../../../assets/svg/clinical_f.svg'); background-repeat: no-repeat; background-position-y: 10px; background-position-x: -30px; background-size: 140px;">
+                <button class="btn btn-warning w-100 py-5" [disabled]="!botonesHabilitados" (click)="ingresarFormulario4()" style="background-image: url('../../../assets/svg/clinical_f.svg'); background-repeat: no-repeat; background-position-y: 10px; background-position-x: -30px; background-size: 140px;">
                     IV. Criterios de Selección / Sreening
                     <!-- IV. Datos Clínicos del Paciente -->
                 </button>
             </div>
             <div class="col-md-4">
-                <button [routerLink]="['/formulario5']" class="btn btn-info w-100 py-5" [disabled]="!botonesHabilitados" style="background-image: url('../../../assets/svg/outpatient_department.svg'); background-repeat: no-repeat; background-position-y: 10px; background-position-x: -30px; background-size: 140px;">
+                <button class="btn btn-info w-100 py-5" [disabled]="!botonesHabilitados" (click)="ingresarFormulario5()" style="background-image: url('../../../assets/svg/outpatient_department.svg'); background-repeat: no-repeat; background-position-y: 10px; background-position-x: -30px; background-size: 140px;">
                     V. Exámenes Complementarios
                 </button>
             </div>
             <div class="col-md-4">
-                <button [routerLink]="['/formulario6']" class="btn btn-pink w-100 py-5" [disabled]="!botonesHabilitados" style="background-image: url('../../../assets/svg/oncology.svg'); background-repeat: no-repeat; background-position-y: 10px; background-position-x: -30px; background-size: 140px;">
+                <button class="btn btn-pink w-100 py-5" [disabled]="!botonesHabilitados" (click)="ingresarFormulario6()" style="background-image: url('../../../assets/svg/oncology.svg'); background-repeat: no-repeat; background-position-y: 10px; background-position-x: -30px; background-size: 140px;">
                     VI. Tratamiento Oncológico
                 </button>
             </div>
             <div class="col-md-4">
-                <button [routerLink]="['/formulario7']" class="btn btn-danger w-100 py-5" [disabled]="!botonesHabilitados" style="background-image: url('../../../assets/svg/blood_a_p.svg'); background-repeat: no-repeat; background-position-y: 10px; background-position-x: -30px; background-size: 140px;">
+                <button class="btn btn-danger w-100 py-5" [disabled]="!botonesHabilitados" (click)="ingresarFormulario7()" style="background-image: url('../../../assets/svg/blood_a_p.svg'); background-repeat: no-repeat; background-position-y: 10px; background-position-x: -30px; background-size: 140px;">
                     VII. Ciclos de Tratamiento Quimioterápico
                 </button>
             </div>

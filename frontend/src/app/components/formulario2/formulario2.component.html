@@ -63,7 +63,7 @@
             <div class="col mb-4">
                 <div class="d-flex align-items-center gap-3 mb-3">
                     <label for="startDate" style="width: 40%;">1. SIGNOS O SÍNTOMAS DE INICIO:</label>
-                    <input type="text" class="form-control py-3 w-100" id="startDate" disabled>
+                    <!-- <input type="text" class="form-control py-3 w-100" id="startDate" disabled> -->
                 </div>
                 <div class="group-textarea d-flex mb-3">
                     <textarea class="textarea" cols="30" rows="7" [(ngModel)]="datos.signos_sintomas_inicio" name="signos_sintomas_inicio" required></textarea>
@@ -140,9 +140,11 @@
                     </div>
                 </div>
             </div>
+            <br>
+            <br>
             <!-- Boton -->
             <div class="d-flex justify-content-end">
-                <button type="submit" (click)="registrarForm2()">Siguiente: Consentimiento Informado</button>
+                <button type="submit" (click)="registrarForm2()">Registrar y Siguiente: Consentimiento Informado</button>
             </div>
             <!-- Boton -->
         </form>

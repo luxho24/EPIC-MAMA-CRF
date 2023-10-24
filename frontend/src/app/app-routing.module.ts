@@ -19,11 +19,11 @@ const routes: Routes = [
   {path: "formulario1", component: Formulario1Component, canActivate: [AuthGuard]},
   {path: "formulario2/usuario/:idUsuario/paciente/:idPaciente", component: Formulario2Component, canActivate: [AuthGuard]},
   // {path: "formulario2", component: Formulario2Component, canActivate: [AuthGuard]},
-  {path: "formulario3", component: Formulario3Component, canActivate: [AuthGuard]},
-  {path: "formulario4", component: Formulario4Component, canActivate: [AuthGuard]},
-  {path: "formulario5", component: Formulario5Component, canActivate: [AuthGuard]},
-  {path: "formulario6", component: Formulario6Component, canActivate: [AuthGuard]},
-  {path: "formulario7", component: Formulario7Component, canActivate: [AuthGuard]},
+  {path: "formulario3/usuario/:idUsuario/paciente/:idPaciente", component: Formulario3Component, canActivate: [AuthGuard]},
+  {path: "formulario4/usuario/:idUsuario/paciente/:idPaciente", component: Formulario4Component, canActivate: [AuthGuard]},
+  {path: "formulario5/usuario/:idUsuario/paciente/:idPaciente", component: Formulario5Component, canActivate: [AuthGuard]},
+  {path: "formulario6/usuario/:idUsuario/paciente/:idPaciente", component: Formulario6Component, canActivate: [AuthGuard]},
+  {path: "formulario7/usuario/:idUsuario/paciente/:idPaciente", component: Formulario7Component, canActivate: [AuthGuard]},
 ];
 
 @NgModule({

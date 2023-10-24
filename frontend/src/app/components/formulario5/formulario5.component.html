@@ -33,11 +33,11 @@
             <div class="col mb-4">
                 <div class="d-flex align-items-center gap-4">
                     <div class="group-input d-flex">
-                        <input type="text" class="input" required>
+                        <input type="text" class="input" [(ngModel)]="datos.iniciales_paciente" name="iniciales_paciente" required>
                         <label for="" class="label">Iniciales de la paciente</label>
                     </div>
                     <div class="group-input d-flex">
-                        <input type="text" class="input" required>
+                        <input type="text" class="input" [(ngModel)]="datos.numero_hc" name="numero_hc" required>
                         <label for="" class="label">Número de HC</label>
                     </div>
                 </div>
@@ -45,16 +45,16 @@
                 <h3 class="mb-3">Centro o Institución de atención</h3>
                 <div class="d-flex justify-content-between mb-4">
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="institucion" id="inen_lima" value="option1" style="cursor: pointer;">
-                        <label class="form-check-label" for="inen_lima" style="cursor: pointer;">INEN LIMA</label>
+                        <input class="form-check-input" type="radio" name="centro_institucion_atencion" id="centro_institucion_atencion_inen_lima" value="INEN LIMA" [(ngModel)]="datos.centro_institucion_atencion" style="cursor: pointer;">
+                        <label class="form-check-label" for="centro_institucion_atencion_inen_lima" style="cursor: pointer;">INEN LIMA</label>
                     </div>
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="institucion" id="inen_arequipa" value="option2" style="cursor: pointer;">
-                        <label class="form-check-label" for="inen_arequipa" style="cursor: pointer;">INEN AREQUIPA</label>
+                        <input class="form-check-input" type="radio" name="centro_institucion_atencion" id="centro_institucion_atencion_inen_arequipa" value="INEN AREQUIPA" [(ngModel)]="datos.centro_institucion_atencion" style="cursor: pointer;">
+                        <label class="form-check-label" for="centro_institucion_atencion_inen_arequipa" style="cursor: pointer;">INEN AREQUIPA</label>
                     </div>
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="institucion" id="inen_trujillo" value="option1" style="cursor: pointer;">
-                        <label class="form-check-label" for="inen_trujillo" style="cursor: pointer;">INEN TRUJILLO</label>
+                        <input class="form-check-input" type="radio" name="centro_institucion_atencion" id="centro_institucion_atencion_inen_trujillo" value="INEN TRUJILLO" [(ngModel)]="datos.centro_institucion_atencion" style="cursor: pointer;">
+                        <label class="form-check-label" for="centro_institucion_atencion_inen_trujillo" style="cursor: pointer;">INEN TRUJILLO</label>
                     </div>
                 </div>
             </div>
@@ -63,27 +63,27 @@
             <div class="col mb-4">
                 <div class="d-flex align-items-center gap-3 mb-3">
                     <label for="startDate">1. FECHA DE HEMOGRAMA BASAL:</label>
-                    <input type="date" class="form-control py-3 w-25" id="startDate">
+                    <input type="date" class="form-control py-3 w-25" id="startDate" [(ngModel)]="datos.fecha_hemograma_basal" name="fecha_hemograma_basal">
                 </div>
                 <div class="d-flex align-items-center gap-3 mb-3">
                     <label for="startDate">2. RESULTADOS DE LA HEMOGRAMA:</label>
-                    <input type="text" class="form-control py-3 w-25" id="startDate">
+                    <input type="text" class="form-control py-3 w-25" id="startDate" [(ngModel)]="datos.resultados_hemograma" name="resultados_hemograma">
                 </div>
                 <div class="d-flex align-items-center gap-3 mb-3">
                     <label for="startDate">3. FECHA DE OTROS ESTUDIOS DE LABORATORIO:</label>
-                    <input type="date" class="form-control py-3 w-25" id="startDate">
+                    <input type="date" class="form-control py-3 w-25" id="startDate" [(ngModel)]="datos.fecha_otros_estudios_laboratorio" name="fecha_otros_estudios_laboratorio">
                 </div>
                 <div class="d-flex align-items-center gap-3 mb-3">
                     <label for="startDate">4. RESULTADOS DE OTROS ESTUDIOS:</label>
-                    <input type="text" class="form-control py-3 w-25" id="startDate">
+                    <input type="text" class="form-control py-3 w-25" id="startDate" [(ngModel)]="datos.resultados_otros_estudios" name="resultados_otros_estudios">
                 </div>
                 <div class="d-flex align-items-center gap-3 mb-3">
                     <label for="startDate">5. FECHA DE MUESTRA PARA MARCADORES INFLAMATORIOS PRETRATAMIENTO:</label>
-                    <input type="date" class="form-control py-3 w-25" id="startDate">
+                    <input type="date" class="form-control py-3 w-25" id="startDate" [(ngModel)]="datos.fecha_muestra_marcadores_inflamatorios_pretratamiento" name="fecha_muestra_marcadores_inflamatorios_pretratamiento">
                 </div>
                 <div class="d-flex align-items-center gap-3 mb-3">
                     <label for="startDate">6. CODIGO DE MUESTRA PARA MARCADORES INFLAMATORIOS PRETRATAMIENTO:</label>
-                    <input type="date" class="form-control py-3 w-25" id="startDate">
+                    <input type="text" class="form-control py-3 w-25" id="startDate" [(ngModel)]="datos.codigo_muestra_marcadores_inflamatorios_pretratamiento" name="codigo_muestra_marcadores_inflamatorios_pretratamiento">
                 </div>
             </div>
 
@@ -118,61 +118,61 @@
             <h3 class="mb-4">III. RESULTADOS DE EXAMENES DE PATOLOGIA:</h3>
             <div class="col mb-4">
                 <div class="d-flex justify-content-between mb-4">
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="tumor">
-                        <label class="form-check-label" for="tumor">
-                            Tumor(T)
-                        </label>
+                    <div class="d-flex align-items-center gap-3 mb-3">
+                        <label for="startDate">Tumor(T)</label>
+                        <select class="form-select" [(ngModel)]="datos.tumor" [ngModelOptions]="{standalone: true}" style="width: 40%;">
+                            <!-- <option selected>T1</option>
+                            <option value="1">T2</option>
+                            <option value="1">T3</option>
+                            <option value="1">T4</option> -->
+                            <option *ngFor="let tumor of resultados_tumor" [value]="tumor.tumor">{{tumor.tumor}}</option>
+                        </select>
                     </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="nodulo">
-                        <label class="form-check-label" for="nodulo">
-                            Nódulo(N)
-                        </label>
+                    <div class="d-flex align-items-center gap-3 mb-3">
+                        <label for="startDate">Nódulo(N)</label>
+                        <select class="form-select" [(ngModel)]="datos.nodulo" [ngModelOptions]="{standalone: true}" style="width: 40%;">
+                            <!-- <option selected>N0</option>
+                            <option value="1">N1</option>
+                            <option value="1">N2</option> -->
+                            <option *ngFor="let nodulo of resultados_nodulo" [value]="nodulo.nodulo">{{nodulo.nodulo}}</option>
+                        </select>
                     </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="metastasis">
-                        <label class="form-check-label" for="metastasis">
-                            Metástasis(M)
-                        </label>
+                    <div class="d-flex align-items-center gap-3 mb-3">
+                        <label for="startDate">Metástasis(M)</label>
+                        <select class="form-select" [(ngModel)]="datos.metastasis" [ngModelOptions]="{standalone: true}" style="width: 40%;">
+                            <!-- <option selected>M0</option>
+                            <option value="1">M1</option> -->
+                            <option *ngFor="let metastasis of resultados_metastasis" [value]="metastasis.metastasis">{{metastasis.metastasis}}</option>
+                        </select>
                     </div>
                 </div>
             </div>
 
             <h3 class="mb-4">IV. ESTADIFICACION DE LA PACIENTE:</h3>
             <div class="col mb-4">
-
                 <div class="d-flex justify-content-between mb-4">
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="estadio_ii_a">
-                        <label class="form-check-label" for="estadio_ii_a">
-                            Estadio II A
-                        </label>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="estadificacion_paciente" id="estadificacion_paciente_estadio_ii_a" value="Estadio II A" [(ngModel)]="datos.estadificacion_paciente" style="cursor: pointer;">
+                        <label class="form-check-label" for="estadificacion_paciente_estadio_ii_a" style="cursor: pointer;">Estadio II A</label>
                     </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="estadio_ii_b">
-                        <label class="form-check-label" for="estadio_ii_b">
-                            Estadio II B
-                        </label>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="estadificacion_paciente" id="estadificacion_paciente_estadio_ii_b" value="Estadio II B" [(ngModel)]="datos.estadificacion_paciente" style="cursor: pointer;">
+                        <label class="form-check-label" for="estadificacion_paciente_estadio_ii_b" style="cursor: pointer;">Estadio II B</label>
                     </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="estadio_iii_a">
-                        <label class="form-check-label" for="estadio_iii_a">
-                            Estadio III A
-                        </label>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="estadificacion_paciente" id="estadificacion_paciente_estadio_iii_a" value="Estadio III A" [(ngModel)]="datos.estadificacion_paciente" style="cursor: pointer;">
+                        <label class="form-check-label" for="estadificacion_paciente_estadio_iii_a" style="cursor: pointer;">Estadio III A</label>
                     </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="estadio_iii_b">
-                        <label class="form-check-label" for="estadio_iii_b">
-                            Estadio III B
-                        </label>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="estadificacion_paciente" id="estadificacion_paciente_estadio_iii_b" value="Estadio III B" [(ngModel)]="datos.estadificacion_paciente" style="cursor: pointer;">
+                        <label class="form-check-label" for="estadificacion_paciente_estadio_iii_b" style="cursor: pointer;">Estadio III B</label>
                     </div>
                 </div>
             </div>
 
             <!-- Boton -->
             <div class="d-flex justify-content-end">
-                <button type="submit">Siguiente: Tratamiento Oncológico</button>
+                <button type="submit" (click)="registrarForm5()">Registrar y Siguiente: Tratamiento Oncológico</button>
             </div>
             <!-- Boton -->
         </form>
