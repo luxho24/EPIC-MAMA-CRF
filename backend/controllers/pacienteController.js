@@ -216,11 +216,11 @@ const registrarPacienteForm7 = async (req, res) => {
 };
 
 // * Obtencion de datos requeridos 
-// Funcion para verificar si existe el paciente por medio de "numero_hc"
+// Funcion para verificar si existe el paciente por medio de "numero_hc", segun el id del usuairo que se encuentre autenticado en ese momento
 const obtenerPaciente = async (req, res) => {
     const { numero_hc } = req.query;
     try {
-        const paciente = await PacienteModel.findOne({numero_hc});
+        const paciente = await PacienteModel.findOne({numero_hc, usuario: req.usuario._id}); // Verifica si existe el paciente segun el numero_hc y tambien revisa si coincide el id del usuario en el modelo Paciente con el id del usuario que esta autenticado en ese momento
         if (!paciente) return res.status(404).json({ msg: "No encontrado" });
         // res.status(200).json(paciente);
         res.status(200).json({msg: "Paciente encontrado"});
@@ -273,6 +273,21 @@ const obtenerPacientePorId = async (req, res) => {
         res.status(500).json({ msg: "Ha ocurrido un error" });
     }
 };
+
+// * Funcion para el SUPER ADMIN
+// Funcion para verificar si existe el paciente por medio de "numero_hc", SIN RESTRICCION por id de usuario
+// ! Aun no esta comprobado si funciona 👇
+// const obtenerPacienteSinRestriccion = async (req, res) => {
+//     const { numero_hc } = req.query;
+//     try {
+//         const paciente = await PacienteModel.findOne({numero_hc});
+//         if (!paciente) return res.status(404).json({ msg: "No encontrado" });
+//         // res.status(200).json(paciente);
+//         res.status(200).json({msg: "Paciente encontrado"});
+//     } catch (error) {
+//         res.status(500).json({ msg: "A ocurrido un error" });
+//     }
+// };
 
 export {
     registrarPacienteForm1,

@@ -4,10 +4,16 @@
         <h2>Menú de navegación</h2>
         <hr>
         <br>
-        <form action="">
-            <input type="search" class="w-25 mb-3" name="numero_hc" [(ngModel)]="numero_hc" placeholder="Buscar por numero de documento">
+        <!-- <form action="">
+            <input type="search" class="w-25 mb-3" name="numero_hc" [(ngModel)]="numero_hc" placeholder="Buscar por numero de HC">
             <button type="submit" (click)="obtenerPaciente()">Buscar</button>
+        </form> -->
+
+        <form class="d-flex w-25 mb-4" role="search">
+            <input class="form-control me-2" type="search" name="numero_hc" [(ngModel)]="numero_hc" placeholder="Buscar por numero de HC" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit" (click)="obtenerPaciente()">Buscar</button>
         </form>
+
         <form class="row g-3 px-1 form">
 
             <div class="col-md-12">
