@@ -5,4 +5,126 @@
 <br>
 <br>
 <br>
-<p>CONSENTIMIENTO INFORMADO</p>
+<!-- Container -->
+<div>
+    <!-- Header -->
+    <div class="container-xl">
+        <div class="border p-3 bg-white">
+            <h5 style="font-weight: 350;"><b style="font-weight: 500;">PROTOCOLO:</b> PERFIL INFLAMATORIO EN PACIENTES CON CÁNCER DE MAMA Y SU ASOCIACIÓN CON EL VALOR PRONÓSTICO DE LA ENFERMERDAD</h5>
+        </div>
+        <div class="border p-3 bg-white">
+            <h5 style="font-weight: 350;"><b style="font-weight: 500;">FORMATO N° 003:</b> CONSENTIMIENTO INFORMADO</h5>
+        </div>
+        <div class="border p-3 bg-white">
+            <h5 style="font-weight: 350;"><b style="font-weight: 500;">VERSIÓN:</b> 001</h5>
+        </div>
+        <br>
+        <hr>
+    </div>
+    <!-- Header -->
+
+    <br>
+
+    <!-- Formulario -->
+    <div class="container-xl" style="margin-bottom: 200px;">
+
+        <form class="w-75 m-auto mb-5">
+            <h3>DATOS DE IDENTIFICACIÓN</h3>
+            <div class="col mb-4">
+                <div class="d-flex align-items-center gap-4">
+                    <div class="group-input d-flex">
+                        <input type="text" class="input" [(ngModel)]="datos.iniciales_paciente" name="iniciales_paciente" required>
+                        <label for="" class="label">Iniciales de la paciente</label>
+                    </div>
+                    <div class="group-input d-flex">
+                        <input type="text" class="input" [(ngModel)]="datos.numero_hc" name="numero_hc" required>
+                        <label for="" class="label">Número de HC</label>
+                    </div>
+                </div>
+
+                <h3 class="mb-3">Centro o Institución de atención</h3>
+                <div class="d-flex justify-content-between mb-4">
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="centro_institucion_atencion" id="centro_institucion_atencion_inen_lima" value="INEN LIMA" [(ngModel)]="datos.centro_institucion_atencion" style="cursor: pointer;">
+                        <label class="form-check-label" for="centro_institucion_atencion_inen_lima" style="cursor: pointer;">INEN LIMA</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="centro_institucion_atencion" id="centro_institucion_atencion_inen_arequipa" value="INEN AREQUIPA" [(ngModel)]="datos.centro_institucion_atencion" style="cursor: pointer;">
+                        <label class="form-check-label" for="centro_institucion_atencion_inen_arequipa" style="cursor: pointer;">INEN AREQUIPA</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="centro_institucion_atencion" id="centro_institucion_atencion_inen_trujillo" value="INEN TRUJILLO" [(ngModel)]="datos.centro_institucion_atencion" style="cursor: pointer;">
+                        <label class="form-check-label" for="centro_institucion_atencion_inen_trujillo" style="cursor: pointer;">INEN TRUJILLO</label>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <br>
+            <br>
+            <!-- <h3 class="mb-4">TRATAMIENTO:</h3> -->
+            <div class="col mb-4">
+                <div class="d-flex align-items-center gap-3 mb-3">
+                    <b><label for="startDate">1. ¿CUENTA CON CONSENTIMIENTO INFORMADO?</label></b>
+                    <div class="d-flex justify-content-around w-25">
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="cuenta_consentimiento_informado" id="cuenta_consentimiento_informado_si" value="SI" [(ngModel)]="datos.cuenta_consentimiento_informado" style="cursor: pointer;">
+                            <label class="form-check-label" for="cuenta_consentimiento_informado_si" style="cursor: pointer;">SÍ</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="cuenta_consentimiento_informado" id="cuenta_consentimiento_informado_no" value="NO" [(ngModel)]="datos.cuenta_consentimiento_informado" style="cursor: pointer;">
+                            <label class="form-check-label" for="cuenta_consentimiento_informado_no" style="cursor: pointer;">NO</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex align-items-center gap-3 mb-3">
+                    <b><label for="startDate">2. FECHA DEL CONSENTIMIENTO INFORMADO:</label></b>
+                    <input type="date" class="form-control py-3 w-25" id="startDate" [(ngModel)]="datos.fecha_consentimiento_informado" name="fecha_consentimiento_informado">
+                </div>
+
+            </div>
+            <br>
+            <br>
+            <br>
+            <!-- Boton -->
+            <div class="d-flex justify-content-end">
+                <button type="submit" (click)="registrarForm3()">Registrar y Siguiente: Criterios de selección / Screening</button>
+            </div>
+            <!-- Boton -->
+        </form>
+
+        <!-- Seccion: Llenado por el PL -->
+        <div class="container-xl">
+            <hr>
+            <br>
+            <form class="row g-3 m-auto border px-5 py-3 bg-white">
+                <div class="col-6">
+                    <p>Firma:</p>
+                </div>
+                <div class="col-6">
+                    <p>Fecha:</p>
+                </div>
+                <div class="col-12">
+                    <p>Nombre:</p>
+                </div>
+                <div class="col-12">
+                    <b><i><p>**Nota: Se recomienda que sea llenado por el PL.</p></i></b>
+                </div>
+            </form>
+        </div>
+        <!-- Seccion: Llenado por el PL -->
+
+    </div>
+    <!-- Formulario -->
+
+    <!-- Footer -->
+    <footer>
+        <div class="waves">
+            <div class="wave" id="wave1"></div>
+            <div class="wave" id="wave2"></div>
+            <div class="wave" id="wave3"></div>
+            <div class="wave" id="wave4"></div>
+        </div>
+    </footer>
+    <!-- Footer -->
+</div>
+<!-- Container -->

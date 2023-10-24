@@ -61,16 +61,16 @@ export class Formulario2Component implements OnInit {
          * Verificar el codigo de abajo 👇
         */
 
-        // this._pacienteService.obtenerIds(this.datos.numero_hc).subscribe(
-        //   (result) => {
-        //     console.log(result.idUsuario);
-        //     console.log(result.idPaciente);
-        //     this.router.navigate(['/formulario2/usuario/', result.idUsuario, 'paciente', result.idPaciente]);
-        //   },
-        //   (err) => {
-        //     console.log(err);
-        //   }
-        // )
+        this._pacienteService.obtenerIds(this.datos.numero_hc).subscribe(
+          (result) => {
+            console.log(result.idUsuario);
+            console.log(result.idPaciente);
+            this.router.navigate(['/formulario3/usuario/', result.idUsuario, 'paciente', result.idPaciente]);
+          },
+          (err) => {
+            console.log(err);
+          }
+        )
       },
       (error) => {
         console.log(error);

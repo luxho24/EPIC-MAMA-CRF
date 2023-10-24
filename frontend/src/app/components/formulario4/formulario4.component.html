@@ -33,11 +33,11 @@
             <div class="col mb-4">
                 <div class="d-flex align-items-center gap-4">
                     <div class="group-input d-flex">
-                        <input type="text" class="input" required>
+                        <input type="text" class="input" [(ngModel)]="datos.iniciales_paciente" name="iniciales_paciente" required>
                         <label for="" class="label">Iniciales de la paciente</label>
                     </div>
                     <div class="group-input d-flex">
-                        <input type="text" class="input" required>
+                        <input type="text" class="input" [(ngModel)]="datos.numero_hc" name="numero_hc" required>
                         <label for="" class="label">Número de HC</label>
                     </div>
                 </div>
@@ -45,16 +45,16 @@
                 <h3 class="mb-3">Centro o Institución de atención</h3>
                 <div class="d-flex justify-content-between mb-4">
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="institucion" id="inen_lima" value="option1" style="cursor: pointer;">
-                        <label class="form-check-label" for="inen_lima" style="cursor: pointer;">INEN LIMA</label>
+                        <input class="form-check-input" type="radio" name="centro_institucion_atencion" id="centro_institucion_atencion_inen_lima" value="INEN LIMA" [(ngModel)]="datos.centro_institucion_atencion" style="cursor: pointer;">
+                        <label class="form-check-label" for="centro_institucion_atencion_inen_lima" style="cursor: pointer;">INEN LIMA</label>
                     </div>
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="institucion" id="inen_arequipa" value="option2" style="cursor: pointer;">
-                        <label class="form-check-label" for="inen_arequipa" style="cursor: pointer;">INEN AREQUIPA</label>
+                        <input class="form-check-input" type="radio" name="centro_institucion_atencion" id="centro_institucion_atencion_inen_arequipa" value="INEN AREQUIPA" [(ngModel)]="datos.centro_institucion_atencion" style="cursor: pointer;">
+                        <label class="form-check-label" for="centro_institucion_atencion_inen_arequipa" style="cursor: pointer;">INEN AREQUIPA</label>
                     </div>
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="institucion" id="inen_trujillo" value="option1" style="cursor: pointer;">
-                        <label class="form-check-label" for="inen_trujillo" style="cursor: pointer;">INEN TRUJILLO</label>
+                        <input class="form-check-input" type="radio" name="centro_institucion_atencion" id="centro_institucion_atencion_inen_trujillo" value="INEN TRUJILLO" [(ngModel)]="datos.centro_institucion_atencion" style="cursor: pointer;">
+                        <label class="form-check-label" for="centro_institucion_atencion_inen_trujillo" style="cursor: pointer;">INEN TRUJILLO</label>
                     </div>
                 </div>
             </div>
@@ -73,12 +73,12 @@
                         <td>1. PACIENTE MAYOR DE 18 AÑOS DE EDAD.</td>
                         <td>
                             <div class="form-check form-check-inline m-0">
-                                <input class="form-check-input" type="radio" name="institucion" id="si" value="option1" style="cursor: pointer;">
+                                <input class="form-check-input" type="radio" name="criterios_inclusion_1" id="criterios_inclusion_1_si" value="SI" [(ngModel)]="datos.criterios_inclusion_1" style="cursor: pointer;">
                             </div>
                         </td>
                         <td style="background-color: #FFCDFA;">
                             <div class="form-check form-check-inline m-0">
-                                <input class="form-check-input" type="radio" name="institucion" id="no" value="option1" style="cursor: pointer;">
+                                <input class="form-check-input" type="radio" name="criterios_inclusion_1" id="criterios_inclusion_1_no" value="NO" [(ngModel)]="datos.criterios_inclusion_1" style="cursor: pointer;">
                             </div>
                         </td>
                     </tr>
@@ -86,12 +86,12 @@
                         <td>2. PACIENTE CON DIAGNÓSTICO DE CÁNCER DE MAMA CONFIRMADO PATOLÓGICAMENTE.</td>
                         <td>
                             <div class="form-check form-check-inline m-0">
-                                <input class="form-check-input" type="radio" name="institucion" id="si" value="option1" style="cursor: pointer;">
+                                <input class="form-check-input" type="radio" name="criterios_inclusion_2" id="criterios_inclusion_2_si" value="SI" [(ngModel)]="datos.criterios_inclusion_2" style="cursor: pointer;">
                             </div>
                         </td>
                         <td style="background-color: #FFCDFA;">
                             <div class="form-check form-check-inline m-0">
-                                <input class="form-check-input" type="radio" name="institucion" id="no" value="option1" style="cursor: pointer;">
+                                <input class="form-check-input" type="radio" name="criterios_inclusion_2" id="criterios_inclusion_2_no" value="NO" [(ngModel)]="datos.criterios_inclusion_2" style="cursor: pointer;">
                             </div>
                         </td>
                     </tr>
@@ -99,12 +99,12 @@
                         <td>3. PACIENTE CON ESTADO II O III DE CÁNCER DE MAMA.</td>
                         <td>
                             <div class="form-check form-check-inline m-0">
-                                <input class="form-check-input" type="radio" name="institucion" id="si" value="option1" style="cursor: pointer;">
+                                <input class="form-check-input" type="radio" name="criterios_inclusion_3" id="criterios_inclusion_3_si" value="SI" [(ngModel)]="datos.criterios_inclusion_3" style="cursor: pointer;">
                             </div>
                         </td>
                         <td style="background-color: #FFCDFA;">
                             <div class="form-check form-check-inline m-0">
-                                <input class="form-check-input" type="radio" name="institucion" id="no" value="option1" style="cursor: pointer;">
+                                <input class="form-check-input" type="radio" name="criterios_inclusion_3" id="criterios_inclusion_3_no" value="NO" [(ngModel)]="datos.criterios_inclusion_3" style="cursor: pointer;">
                             </div>
                         </td>
                     </tr>
@@ -112,12 +112,12 @@
                         <td>4. PACIENTE CON DIAGNÓSTICO CONFIRMADO POR BIOPSIA O PROCEDIMIENTO QUIRÚRGICO QUE SUBSECUENTEMENTE SE ENCUENTREN EN CONDICIONES DE PRECIBIR TRATAMIENTOS ONCOLÓGICOS CON QUIMIOTERAPIA ESTÁNDAR.</td>
                         <td>
                             <div class="form-check form-check-inline m-0">
-                                <input class="form-check-input" type="radio" name="institucion" id="si" value="option1" style="cursor: pointer;">
+                                <input class="form-check-input" type="radio" name="criterios_inclusion_4" id="criterios_inclusion_4_si" value="SI" [(ngModel)]="datos.criterios_inclusion_4" style="cursor: pointer;">
                             </div>
                         </td>
                         <td style="background-color: #FFCDFA;">
                             <div class="form-check form-check-inline m-0">
-                                <input class="form-check-input" type="radio" name="institucion" id="no" value="option1" style="cursor: pointer;">
+                                <input class="form-check-input" type="radio" name="criterios_inclusion_4" id="criterios_inclusion_4_no" value="NO" [(ngModel)]="datos.criterios_inclusion_4" style="cursor: pointer;">
                             </div>
                         </td>
                     </tr>
@@ -125,12 +125,12 @@
                         <td>5. PACIENTE QUE MUESTRE COMPROMISO PARA EL SEGUIMIENTO EN LOS CENTROS DE ESTUDIO.</td>
                         <td>
                             <div class="form-check form-check-inline m-0">
-                                <input class="form-check-input" type="radio" name="institucion" id="si" value="option1" style="cursor: pointer;">
+                                <input class="form-check-input" type="radio" name="criterios_inclusion_5" id="criterios_inclusion_5_si" value="SI" [(ngModel)]="datos.criterios_inclusion_5" style="cursor: pointer;">
                             </div>
                         </td>
                         <td style="background-color: #FFCDFA;">
                             <div class="form-check form-check-inline m-0">
-                                <input class="form-check-input" type="radio" name="institucion" id="no" value="option1" style="cursor: pointer;">
+                                <input class="form-check-input" type="radio" name="criterios_inclusion_5" id="criterios_inclusion_5_no" value="NO" [(ngModel)]="datos.criterios_inclusion_5" style="cursor: pointer;">
                             </div>
                         </td>
                     </tr>
@@ -138,12 +138,12 @@
                         <td>6. PACIENTE QUE ACEPTA PARTICIPAR EN EL ESTUDIO Y FIRMÓ EL DOCUMENTO DE CONSENTIMIENTO INFORMADO.</td>
                         <td>
                             <div class="form-check form-check-inline m-0">
-                                <input class="form-check-input" type="radio" name="institucion" id="si" value="option1" style="cursor: pointer;">
+                                <input class="form-check-input" type="radio" name="criterios_inclusion_6" id="criterios_inclusion_6_si" value="SI" [(ngModel)]="datos.criterios_inclusion_6" style="cursor: pointer;">
                             </div>
                         </td>
                         <td style="background-color: #FFCDFA;">
                             <div class="form-check form-check-inline m-0">
-                                <input class="form-check-input" type="radio" name="institucion" id="no" value="option1" style="cursor: pointer;">
+                                <input class="form-check-input" type="radio" name="criterios_inclusion_6" id="criterios_inclusion_6_no" value="NO" [(ngModel)]="datos.criterios_inclusion_6" style="cursor: pointer;">
                             </div>
                         </td>
                     </tr>
@@ -151,12 +151,12 @@
                         <td>7. PACIENTE CON CLASIFICACIÓN MOLECULAR TRIPLE NEGATIVO O LUMINAL O HER2 POSITIVO DE CÁNCER DE MAMA.</td>
                         <td>
                             <div class="form-check form-check-inline m-0">
-                                <input class="form-check-input" type="radio" name="institucion" id="si" value="option1" style="cursor: pointer;">
+                                <input class="form-check-input" type="radio" name="criterios_inclusion_7" id="criterios_inclusion_7_si" value="SI" [(ngModel)]="datos.criterios_inclusion_7" style="cursor: pointer;">
                             </div>
                         </td>
                         <td style="background-color: #FFCDFA;">
                             <div class="form-check form-check-inline m-0">
-                                <input class="form-check-input" type="radio" name="institucion" id="no" value="option1" style="cursor: pointer;">
+                                <input class="form-check-input" type="radio" name="criterios_inclusion_7" id="criterios_inclusion_7_no" value="NO" [(ngModel)]="datos.criterios_inclusion_7" style="cursor: pointer;">
                             </div>
                         </td>
                     </tr>
@@ -168,7 +168,7 @@
             <table>
                 <thead>
                     <tr>
-                        <th>CRITERIOS DE INCLUSIÓN</th>
+                        <th>CRITERIOS DE EXCLUSIÓN</th>
                         <th style="text-align: center;">SI</th>
                         <th style="text-align: center;">NO</th>
                     </tr>
@@ -178,12 +178,12 @@
                         <td>1. PACIENTE GESTANTE.</td>
                         <td style="background-color: #FFCDFA;">
                             <div class="form-check form-check-inline m-0">
-                                <input class="form-check-input" type="radio" name="institucion" id="si" value="option1" style="cursor: pointer;">
+                                <input class="form-check-input" type="radio" name="criterios_exclusion_1" id="criterios_exclusion_1_si" value="SI" [(ngModel)]="datos.criterios_exclusion_1" style="cursor: pointer;">
                             </div>
                         </td>
                         <td >
                             <div class="form-check form-check-inline m-0">
-                                <input class="form-check-input" type="radio" name="institucion" id="no" value="option1" style="cursor: pointer;">
+                                <input class="form-check-input" type="radio" name="criterios_exclusion_1" id="criterios_exclusion_1_no" value="NO" [(ngModel)]="datos.criterios_exclusion_1" style="cursor: pointer;">
                             </div>
                         </td>
                     </tr>
@@ -191,12 +191,12 @@
                         <td>2. PACIENTE CON CÁNCER DE MAMA TIPO INFLAMATORIO.</td>
                         <td style="background-color: #FFCDFA;">
                             <div class="form-check form-check-inline m-0">
-                                <input class="form-check-input" type="radio" name="institucion" id="si" value="option1" style="cursor: pointer;">
+                                <input class="form-check-input" type="radio" name="criterios_exclusion_2" id="criterios_exclusion_2_si" value="SI" [(ngModel)]="datos.criterios_exclusion_2" style="cursor: pointer;">
                             </div>
                         </td>
                         <td >
                             <div class="form-check form-check-inline m-0">
-                                <input class="form-check-input" type="radio" name="institucion" id="no" value="option1" style="cursor: pointer;">
+                                <input class="form-check-input" type="radio" name="criterios_exclusion_2" id="criterios_exclusion_2_no" value="NO" [(ngModel)]="datos.criterios_exclusion_2" style="cursor: pointer;">
                             </div>
                         </td>
                     </tr>
@@ -204,12 +204,12 @@
                         <td>3. PACIENTE CON QUIMIOTERAPIA O TRATAMIENTO PREVIO DESCONOCIDO O QUIMIOTERAPIA NEOADYUVANTE.</td>
                         <td style="background-color: #FFCDFA;">
                             <div class="form-check form-check-inline m-0">
-                                <input class="form-check-input" type="radio" name="institucion" id="si" value="option1" style="cursor: pointer;">
+                                <input class="form-check-input" type="radio" name="criterios_exclusion_3" id="criterios_exclusion_3_si" value="SI" [(ngModel)]="datos.criterios_exclusion_3" style="cursor: pointer;">
                             </div>
                         </td>
                         <td >
                             <div class="form-check form-check-inline m-0">
-                                <input class="form-check-input" type="radio" name="institucion" id="no" value="option1" style="cursor: pointer;">
+                                <input class="form-check-input" type="radio" name="criterios_exclusion_3" id="criterios_exclusion_3_no" value="NO" [(ngModel)]="datos.criterios_exclusion_3" style="cursor: pointer;">
                             </div>
                         </td>
                     </tr>
@@ -217,12 +217,12 @@
                         <td>4. PACIENTE QUE RECIBE TRATAMIENTO CON CORTICOIDES POR MÁS DE 6 MESES O TERAPIA INMUNOSUPRESORA.</td>
                         <td style="background-color: #FFCDFA;">
                             <div class="form-check form-check-inline m-0">
-                                <input class="form-check-input" type="radio" name="institucion" id="si" value="option1" style="cursor: pointer;">
+                                <input class="form-check-input" type="radio" name="criterios_exclusion_4" id="criterios_exclusion_4_si" value="SI" [(ngModel)]="datos.criterios_exclusion_4" style="cursor: pointer;">
                             </div>
                         </td>
                         <td >
                             <div class="form-check form-check-inline m-0">
-                                <input class="form-check-input" type="radio" name="institucion" id="no" value="option1" style="cursor: pointer;">
+                                <input class="form-check-input" type="radio" name="criterios_exclusion_4" id="criterios_exclusion_4_no" value="NO" [(ngModel)]="datos.criterios_exclusion_4" style="cursor: pointer;">
                             </div>
                         </td>
                     </tr>
@@ -230,12 +230,12 @@
                         <td>5. PACIENTE CON ENFERMEDADES CRÓNICAS PREVIAMENTE REPORTADAS QUE PUEDAN AFECTAR EL ESTUDIO DE ACUERDO A CRITERIO DEL MÉDICO TRATANTE.</td>
                         <td style="background-color: #FFCDFA;">
                             <div class="form-check form-check-inline m-0">
-                                <input class="form-check-input" type="radio" name="institucion" id="si" value="option1" style="cursor: pointer;">
+                                <input class="form-check-input" type="radio" name="criterios_exclusion_5" id="criterios_exclusion_5_si" value="SI" [(ngModel)]="datos.criterios_exclusion_5" style="cursor: pointer;">
                             </div>
                         </td>
                         <td >
                             <div class="form-check form-check-inline m-0">
-                                <input class="form-check-input" type="radio" name="institucion" id="no" value="option1" style="cursor: pointer;">
+                                <input class="form-check-input" type="radio" name="criterios_exclusion_5" id="criterios_exclusion_5_no" value="NO" [(ngModel)]="datos.criterios_exclusion_5" style="cursor: pointer;">
                             </div>
                         </td>
                     </tr>
@@ -243,12 +243,12 @@
                         <td>6. PACIENTE QUE NO ACEPTE FIRMAR EL CONSENTIMIENTO INFORMADO.</td>
                         <td style="background-color: #FFCDFA;">
                             <div class="form-check form-check-inline m-0">
-                                <input class="form-check-input" type="radio" name="institucion" id="si" value="option1" style="cursor: pointer;">
+                                <input class="form-check-input" type="radio" name="criterios_exclusion_6" id="criterios_exclusion_6_si" value="SI" [(ngModel)]="datos.criterios_exclusion_6" style="cursor: pointer;">
                             </div>
                         </td>
                         <td >
                             <div class="form-check form-check-inline m-0">
-                                <input class="form-check-input" type="radio" name="institucion" id="no" value="option1" style="cursor: pointer;">
+                                <input class="form-check-input" type="radio" name="criterios_exclusion_6" id="criterios_exclusion_6_no" value="NO" [(ngModel)]="datos.criterios_exclusion_6" style="cursor: pointer;">
                             </div>
                         </td>
                     </tr>
@@ -276,12 +276,12 @@
                         <td class="w-100">CUMPLE CRITERIOS DE ELEGIBILIDAD</td>
                         <td>
                             <div class="form-check form-check-inline m-0">
-                                <input class="form-check-input" type="radio" name="institucion" id="si" value="option1" style="cursor: pointer;">
+                                <input class="form-check-input" type="radio" name="criterios_elegibilidad_estudio" id="criterios_elegibilidad_estudio_si" value="SI" [(ngModel)]="datos.criterios_elegibilidad_estudio" style="cursor: pointer;">
                             </div>
                         </td>
                         <td >
                             <div class="form-check form-check-inline m-0">
-                                <input class="form-check-input" type="radio" name="institucion" id="no" value="option1" style="cursor: pointer;">
+                                <input class="form-check-input" type="radio" name="criterios_elegibilidad_estudio" id="criterios_elegibilidad_estudio_no" value="NO" [(ngModel)]="datos.criterios_elegibilidad_estudio" style="cursor: pointer;">
                             </div>
                         </td>
                     </tr>
@@ -291,7 +291,7 @@
 
             <!-- Boton -->
             <div class="d-flex justify-content-end">
-                <button type="submit">Siguiente: Datos Clínicos del Paciente</button>
+                <button type="submit" (click)="registrarForm4()">Registrar y Siguiente: Exámenes Complementarios</button>
             </div>
             <!-- Boton -->
         </form>
