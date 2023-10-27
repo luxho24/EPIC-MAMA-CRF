@@ -9,10 +9,13 @@
             <button type="submit" (click)="obtenerPaciente()">Buscar</button>
         </form> -->
 
-        <form class="d-flex w-25 mb-4" role="search">
-            <input class="form-control me-2" type="search" name="numero_hc" [(ngModel)]="numero_hc" placeholder="Buscar por numero de HC" aria-label="Search">
-            <button class="btn btn-outline-success" type="submit" (click)="obtenerPaciente()">Buscar</button>
-        </form>
+        <div class="d-flex justify-content-between">
+            <form class="d-flex w-25 mb-4" role="search">
+                <input class="form-control me-2" type="search" name="numero_hc" [(ngModel)]="numero_hc" placeholder="Buscar por numero de HC" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit" (click)="obtenerPaciente()">Buscar</button>
+            </form>
+            <button class="btn btn-info h-25 text-white" (click)="ingresarVerPacientes()">Ver Pacientes</button>
+        </div>
 
         <form class="row g-3 px-1 form">
 
