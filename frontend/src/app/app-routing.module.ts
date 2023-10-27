@@ -10,12 +10,14 @@ import { Formulario5Component } from './components/formulario5/formulario5.compo
 import { Formulario6Component } from './components/formulario6/formulario6.component';
 import { Formulario7Component } from './components/formulario7/formulario7.component';
 import { AuthGuard } from './guards/auth.guard';
+import { VisualizarPacientesComponent } from './components/visualizar-pacientes/visualizar-pacientes.component';
 
 const routes: Routes = [
   {path: "", redirectTo: "login", pathMatch: "full"},
   {path: "login", component: LoginComponent},
   {path: "menu", component: MenuComponent, canActivate: [AuthGuard]},
   {path: "menu/usuario/:idUsuario/paciente/:idPaciente", component: MenuComponent, canActivate: [AuthGuard]},
+  {path: "visualizar-pacientes", component: VisualizarPacientesComponent, canActivate: [AuthGuard]},
   {path: "formulario1", component: Formulario1Component, canActivate: [AuthGuard]},
   {path: "formulario2/usuario/:idUsuario/paciente/:idPaciente", component: Formulario2Component, canActivate: [AuthGuard]},
   // {path: "formulario2", component: Formulario2Component, canActivate: [AuthGuard]},

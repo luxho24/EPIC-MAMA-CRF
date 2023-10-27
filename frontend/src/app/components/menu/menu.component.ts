@@ -139,4 +139,9 @@ export class MenuComponent implements OnInit {
       }
     )
   }
+  
+  // Funcion para obtener los ids del usuario y paciente para luego colocarlos en la url y posteriormente autocompletar los campos requeridos en el html
+  ingresarVerPacientes() {
+    this.router.navigate(['/visualizar-pacientes']);
+  }
 }

@@ -17,6 +17,7 @@ import { Formulario4Component } from './components/formulario4/formulario4.compo
 import { Formulario5Component } from './components/formulario5/formulario5.component';
 import { Formulario6Component } from './components/formulario6/formulario6.component';
 import { Formulario7Component } from './components/formulario7/formulario7.component';
+import { VisualizarPacientesComponent } from './components/visualizar-pacientes/visualizar-pacientes.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { Formulario7Component } from './components/formulario7/formulario7.compo
     Formulario5Component,
     Formulario6Component,
     Formulario7Component,
-    MenuComponent
+    MenuComponent,
+    VisualizarPacientesComponent
   ],
   imports: [
     BrowserModule,
