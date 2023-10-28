@@ -27,4 +27,10 @@ export class AuthService {
     sessionStorage.removeItem('token');
     this.router.navigate(['/login']);
   }
+
+
+
+  obtenerUsuarioPorId(idUsuario: string) {
+    return this.httpClient.get<any>(this.url + '/obtenerUsuarioPorId/' + idUsuario);
+  }
 }

@@ -42,7 +42,16 @@
               </span> -->
           <!-- </div> -->
       </div>
-  </nav>
+    </nav>
+    
+    <div class="d-flex justify-content-end">
+        <ng-container *ngIf="!_authService.loggedin(); else loggedin">
+          <!-- No muestra nada -->
+        </ng-container>
+        <ng-template #loggedin>
+          <button class="btn btn-primary me-5" style="cursor: pointer" (click)="_authService.logout()">Cerrar Sesión</button>
+        </ng-template>
+    </div>
 </div>
 <!-- NavBar -->
 

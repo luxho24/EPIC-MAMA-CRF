@@ -48,7 +48,24 @@ const autenticar = async (req, res) => {
     }
 }
 
+const obtenerUsuarioPorId = async (req, res) => {
+    const {idUsuario} = req.params;
+    const usuario = await UsuarioModel.findById(idUsuario);
+
+    try {
+        if (!usuario) {
+            const error = new Error("El usuario no existe");
+            return res.status(404).json({msg: error.message})
+        }
+
+        return res.status(200).json(usuario)
+    } catch (error) {
+        
+    }
+}
+
 export {
     registrar,
-    autenticar
+    autenticar,
+    obtenerUsuarioPorId
 }

@@ -27,9 +27,10 @@ export class LoginComponent implements OnInit {
   loginUsuario() {
     this._authService.login(this.datos).subscribe(
       (res) => {
+        console.log(res);
         /** ESTE CODIGO GUARDA EL ROL EN EL LOCALSTORAGE */
         sessionStorage.setItem('token', res.token); // Me salio un error, pero era por falta de <any> en el AuthService
-        return this.router.navigate(['/menu']);
+        return this.router.navigate(['/menu/usuario', res._id]);
         
       },
       (error) => {
