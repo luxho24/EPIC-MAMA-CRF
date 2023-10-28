@@ -18,7 +18,7 @@ const routes: Routes = [
   {path: "menu", component: MenuComponent, canActivate: [AuthGuard]},
   {path: "menu/usuario/:idUsuario", component: MenuComponent, canActivate: [AuthGuard]},
   {path: "menu/usuario/:idUsuario/paciente/:idPaciente", component: MenuComponent, canActivate: [AuthGuard]},
-  {path: "visualizar-pacientes", component: VisualizarPacientesComponent, canActivate: [AuthGuard]},
+  {path: "visualizar-pacientes/usuario/:idUsuario", component: VisualizarPacientesComponent, canActivate: [AuthGuard]},
   // {path: "formulario1", component: Formulario1Component, canActivate: [AuthGuard]},
   {path: "formulario1/usuario/:idUsuario", component: Formulario1Component, canActivate: [AuthGuard]},
   {path: "formulario2/usuario/:idUsuario/paciente/:idPaciente", component: Formulario2Component, canActivate: [AuthGuard]},

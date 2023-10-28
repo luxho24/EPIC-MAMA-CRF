@@ -1,10 +1,5 @@
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
+<app-navbar></app-navbar>
+
 <!--  Formulario -->
 <div class="container">
     <h2>Pacientes Registrados</h2>
@@ -12,50 +7,280 @@
     <br>
     <div class="contenido">
         <div class="left">
-            <button (click)="mostrarTabla(1)">Botón 1</button><br>
-            <button (click)="mostrarTabla(2)">Botón 2</button><br>
-            <button (click)="mostrarTabla(3)">Botón 3</button><br>
-            <button (click)="mostrarTabla(4)">Botón 4</button><br>
-            <button (click)="mostrarTabla(5)">Botón 5</button><br>
-            <button (click)="mostrarTabla(6)">Botón 6</button><br>
-            <button (click)="mostrarTabla(7)">Botón 7</button><br>
+            <button class="btn btn-primary" [ngClass]="{'active': isButtonSelected === 1}" (click)="mostrarTabla(1)">I. Datos Sociodemográficos de la Paciente</button><br>
+            <button class="btn btn-primary" [ngClass]="{'active': isButtonSelected === 2}" (click)="mostrarTabla(2)">II. Datos Clínicos de la Paciente</button><br>
+            <button class="btn btn-primary" [ngClass]="{'active': isButtonSelected === 3}" (click)="mostrarTabla(3)">III. Consentimientos Informados</button><br>
+            <button class="btn btn-primary" [ngClass]="{'active': isButtonSelected === 4}" (click)="mostrarTabla(4)">IV. Criterios de Selección / Sreening</button><br>
+            <button class="btn btn-primary" [ngClass]="{'active': isButtonSelected === 5}" (click)="mostrarTabla(5)" disabled>V. Exámenes Complementarios</button><br>
+            <button class="btn btn-primary" [ngClass]="{'active': isButtonSelected === 6}" (click)="mostrarTabla(6)" disabled>VI. Tratamiento Oncológico</button><br>
+            <button class="btn btn-primary" [ngClass]="{'active': isButtonSelected === 7}" (click)="mostrarTabla(7)" disabled>VII. Ciclos de Tratamiento Quimioterápico</button>
         </div>
         <div class="right">
-            <table *ngIf="tablaVisible === 1">
-                <tr>
-                    <td>Contenido de la Tabla 1</td>
-                </tr>
-            </table>
-            <table *ngIf="tablaVisible === 2">
-                <tr>
-                    <td>Contenido de la Tabla 2</td>
-                </tr>
-            </table>
-            <table *ngIf="tablaVisible === 3">
-                <tr>
-                    <td>Contenido de la Tabla 3</td>
-                </tr>
-            </table>
-            <table *ngIf="tablaVisible === 4">
-                <tr>
-                    <td>Contenido de la Tabla 4</td>
-                </tr>
-            </table>
-            <table *ngIf="tablaVisible === 5">
-                <tr>
-                    <td>Contenido de la Tabla 5</td>
-                </tr>
-            </table>
-            <table *ngIf="tablaVisible === 6">
-                <tr>
-                    <td>Contenido de la Tabla 6</td>
-                </tr>
-            </table>
-            <table *ngIf="tablaVisible === 7">
-                <tr>
-                    <td>Contenido de la Tabla 7</td>
-                </tr>
-            </table>
+            <!-- Tabla Formulario 1 -->
+            <div class="table-wrapper" *ngIf="tablaVisible === 1">
+                <h3 class="mb-3">I. Datos Sociodemográficos de la Paciente</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th scope="col">Iniciales de la paciente</th>
+                            <th scope="col">Número de HC</th>
+                            <th scope="col">Tipo de documento</th>
+                            <th scope="col">Número de documento</th>
+                            <th scope="col">Celular</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">Fecha de nacimiento</th>
+                            <th scope="col">Edad de la paciente</th>
+                            <th scope="col">Ciudad donde reside</th>
+                            <th scope="col">Centro o institucion de atención</th>
+                            <th scope="col">Estado Civil</th>
+                            <th scope="col">Tipo de parto al nacer</th>
+                            <th scope="col">Número de Hijos</th>
+                            <th scope="col">Número de gestaciones o embarazos</th>
+                            <th scope="col">Lactancia</th>
+                            <th scope="col">Tiempo de lactancia</th>
+                            <th scope="col">Uso de anticonceptivos</th>
+                            <th scope="col">Tiempo de uso de anticonceptivos</th>
+                            <th scope="col">Antecedente familiar de cáncer</th>
+                            <th scope="col">Antecedente familiar de cáncer de mama</th>
+                            <th scope="col">Trabaja</th>
+                            <th scope="col">Ocupación</th>
+                            <th scope="col">Nivel educativo</th>
+                            <th scope="col">Raza o grupo étnico (ENAHO-2017)</th>
+                            <th scope="col">Peso</th>
+                            <th scope="col">Talla</th>
+                            <th scope="col">Cintura Abdominal</th>
+                            <th scope="col">Frecuencia cardiaca</th>
+                            <th scope="col">Frecuencia respiratoria</th>
+                            <th scope="col">Presión arterial (Signos vitales)</th>
+                            <th scope="col">Temperatura</th>
+                            <th scope="col">Antecedente de patologías crónicas</th>
+                            <th scope="col">Hábito de fumar</th>
+                            <th scope="col">¿Cuántos cigarrillos por día?</th>
+                            <th scope="col">Tiempo de fumar</th>
+                            <th scope="col">Horas promedio de suelo por día</th>
+                            <th scope="col">Obesidad abdominal</th>
+                            <th scope="col">triglicedidos</th>
+                            <th scope="col">Colesterol</th>
+                            <th scope="col">Presion arterial (Síndrome metabólico)</th>
+                            <th scope="col">Glucosa</th>
+                            <th scope="col">Medicamento 01</th>
+                            <th scope="col">Medicamento 02</th>
+                            <th scope="col">Medicamento 03</th>
+                            <th scope="col">Medicamento 04</th>
+                            <th scope="col">Uso antibióticos ultimos 03 o 06 meses</th>
+                            <th scope="col">¿Cuál?</th>
+                        </tr>
+                    </thead>
+                    <tbody *ngIf="pacientes.length > 0">
+                        <tr *ngFor="let paciente of pacientes">
+                            <td>{{paciente.iniciales_paciente}}</td>
+                            <td>{{paciente.numero_hc}}</td>
+                            <td>{{paciente.tipo_documento}}</td>
+                            <td>{{paciente.numero_documento}}</td>
+                            <td>{{paciente.celular}}</td>
+                            <td>{{paciente.email}}</td>
+                            <td>{{paciente.fecha_nacimiento}}</td>
+                            <td>{{paciente.edad_paciente}}</td>
+                            <td>{{paciente.ciudad_reside}}</td>
+                            <td>{{paciente.centro_institucion_atencion}}</td>
+                            <td>{{paciente.estado_civil}}</td>
+                            <td>{{paciente.tipo_parto_nacer}}</td>
+                            <td>{{paciente.numero_hijos}}</td>
+                            <td>{{paciente.numero_gestaciones_embarazos}}</td>
+                            <td>{{paciente.lactancia}}</td>
+                            <td>{{paciente.tiempo_lactancia}}</td>
+                            <td>{{paciente.uso_anticonceptivos}}</td>
+                            <td>{{paciente.tiempo_uso_anticonceptivos}}</td>
+                            <td>{{paciente.antecedente_familiar_cancer}}</td>
+                            <td>{{paciente.antecedente_familiar_cancer_mama}}</td>
+                            <td>{{paciente.trabaja}}</td>
+                            <td>{{paciente.ocupacion}}</td>
+                            <td>{{paciente.nivel_educativo}}</td>
+                            <td>{{paciente.raza_grupo_etnico}}</td>
+                            <td>{{paciente.peso}}</td>
+                            <td>{{paciente.talla}}</td>
+                            <td>{{paciente.cintura_abdominal}}</td>
+                            <td>{{paciente.frecuencia_cardiaca}}</td>
+                            <td>{{paciente.frecuencia_respiratoria}}</td>
+                            <td>{{paciente.signos_vitales_presion_arterial}}</td>
+                            <td>{{paciente.temperatura}}</td>
+                            <td>{{paciente.antecedentes_patologias_cronicas}}</td>
+                            <td>{{paciente.habito_fumar}}</td>
+                            <td>{{paciente.cigarrillos_por_dia}}</td>
+                            <td>{{paciente.tiempo_fumar}}</td>
+                            <td>{{paciente.horas_sueno_por_dia}}</td>
+                            <td>{{paciente.obesidad_abdominal}}</td>
+                            <td>{{paciente.trigliceridos}}</td>
+                            <td>{{paciente.colesterol}}</td>
+                            <td>{{paciente.sindrome_metabolico_presion_arterial}}</td>
+                            <td>{{paciente.glucosa}}</td>
+                            <td>{{paciente.medicamento_1}}</td>
+                            <td>{{paciente.medicamento_2}}</td>
+                            <td>{{paciente.medicamento_3}}</td>
+                            <td>{{paciente.medicamento_4}}</td>
+                            <td>{{paciente.uso_antibioticos_ultimos_meses}}</td>
+                            <td>{{paciente.antibioticos}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <h5 style="text-align: start; margin-top: 10px" *ngIf="pacientes.length == 0">
+                    No hay pacientes registrados
+                </h5>
+            </div>
+            <!-- Tabla Formulario 1 -->
+
+            <!-- Tabla Formulario 2 -->
+            <div class="table-wrapper" *ngIf="tablaVisible === 2">
+                <h3 class="mb-3">II. Datos Clínicos de la Paciente</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th scope="col">Iniciales de la paciente</th>
+                            <th scope="col">Número de HC</th>
+                            <th scope="col">Centro o institución de atención</th>
+                            <th scope="col">Signos o síntomas de inicio</th>
+                            <th scope="col">Fecha de inicio de síntomas o signos</th>
+                            <th scope="col">Tiempo en meses hasta el diagnóstico</th>
+                            <th scope="col">Tamaño del tumor</th>
+                            <th scope="col">Ganglios axilares presentes</th>
+                            <th scope="col">Tipo histológico</th>
+                            <th scope="col">Conclusión del informe</th>
+                            <th scope="col">Clasificación molecular</th>
+                        </tr>
+                    </thead>
+                    <tbody *ngIf="datosf2.length > 0">
+                        <tr *ngFor="let pacientef2 of datosf2">
+                            <td>{{pacientef2.iniciales_paciente}}</td>
+                            <td>{{pacientef2.numero_hc}}</td>
+                            <td>{{pacientef2.centro_institucion_atencion}}</td>
+                            <td>{{pacientef2.signos_sintomas_inicio}}</td>
+                            <td>{{pacientef2.fecha_inicio_sintomas_signos}}</td>
+                            <td>{{pacientef2.tiempo_meses_diagnostico}}</td>
+                            <td>{{pacientef2.tamano_tumor_campo1}}mm x {{pacientef2.tamano_tumor_campo2}}mm</td>
+                            <td>{{pacientef2.ganglios_axilares}}</td>
+                            <td>{{pacientef2.tipo_histologico}}</td>
+                            <td>{{pacientef2.conclusion_informe}}</td>
+                            <td>{{pacientef2.clasificacion_molecular}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <h5 style="text-align: start; margin-top: 10px" *ngIf="datosf2.length == 0">
+                    No hay pacientes registrados
+                </h5>
+            </div>
+            <!-- Tabla Formulario 2 -->
+
+            <!-- Tabla Formulario 3 -->
+            <div class="table-wrapper" *ngIf="tablaVisible === 3">
+                <h3 class="mb-3">III. Consentimientos Informados</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th scope="col">Iniciales de la paciente</th>
+                            <th scope="col">Número de HC</th>
+                            <th scope="col">Centro o institución de atención</th>
+                            <th scope="col">¿Cuenta con consentimiento informado?</th>
+                            <th scope="col">Fecha de consentimiento informado</th>
+                        </tr>
+                    </thead>
+                    <tbody *ngIf="datosf3.length > 0">
+                        <tr *ngFor="let pacientef3 of datosf3">
+                            <td>{{pacientef3.iniciales_paciente}}</td>
+                            <td>{{pacientef3.numero_hc}}</td>
+                            <td>{{pacientef3.centro_institucion_atencion}}</td>
+                            <td>{{pacientef3.cuenta_consentimiento_informado}}</td>
+                            <td>{{pacientef3.fecha_consentimiento_informado}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <h5 style="text-align: start; margin-top: 10px" *ngIf="datosf3.length == 0">
+                    No hay pacientes registrados
+                </h5>
+            </div>
+            <!-- Tabla Formulario 3 -->
+
+            <!-- Tabla Formulario 4 -->
+            <div class="table-wrapper" *ngIf="tablaVisible === 4">
+                <h3 class="mb-3">IV. Criterios de Selección / Sreening</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th scope="col">Iniciales de la paciente</th>
+                            <th scope="col">Número de HC</th>
+                            <th scope="col">Centro o institución de atención</th>
+                            <th scope="col">Criterio de inclusión 1</th>
+                            <th scope="col">Criterio de inclusión 2</th>
+                            <th scope="col">Criterio de inclusión 3</th>
+                            <th scope="col">Criterio de inclusión 4</th>
+                            <th scope="col">Criterio de inclusión 5</th>
+                            <th scope="col">Criterio de inclusión 6</th>
+                            <th scope="col">Criterio de inclusión 7</th>
+                            <th scope="col">Criterio de exclusión 1</th>
+                            <th scope="col">Criterio de exclusión 2</th>
+                            <th scope="col">Criterio de exclusión 3</th>
+                            <th scope="col">Criterio de exclusión 4</th>
+                            <th scope="col">Criterio de exclusión 5</th>
+                            <th scope="col">Criterio de exclusión 6</th>
+                            <th scope="col">Cumple criterios de elegibilidad</th>
+                        </tr>
+                    </thead>
+                    <tbody *ngIf="datosf4.length > 0">
+                        <tr *ngFor="let pacientef4 of datosf4">
+                            <td>{{pacientef4.iniciales_paciente}}</td>
+                            <td>{{pacientef4.numero_hc}}</td>
+                            <td>{{pacientef4.centro_institucion_atencion}}</td>
+                            <td>{{pacientef4.criterios_inclusion_1}}</td>
+                            <td>{{pacientef4.criterios_inclusion_2}}</td>
+                            <td>{{pacientef4.criterios_inclusion_3}}</td>
+                            <td>{{pacientef4.criterios_inclusion_4}}</td>
+                            <td>{{pacientef4.criterios_inclusion_5}}</td>
+                            <td>{{pacientef4.criterios_inclusion_6}}</td>
+                            <td>{{pacientef4.criterios_inclusion_7}}</td>
+                            <td>{{pacientef4.criterios_exclusion_1}}</td>
+                            <td>{{pacientef4.criterios_exclusion_2}}</td>
+                            <td>{{pacientef4.criterios_exclusion_3}}</td>
+                            <td>{{pacientef4.criterios_exclusion_4}}</td>
+                            <td>{{pacientef4.criterios_exclusion_5}}</td>
+                            <td>{{pacientef4.criterios_exclusion_6}}</td>
+                            <td>{{pacientef4.criterios_elegibilidad_estudio}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <h5 style="text-align: start; margin-top: 10px" *ngIf="datosf4.length == 0">
+                    No hay pacientes registrados
+                </h5>
+            </div>
+            <!-- Tabla Formulario 4 -->
+
+            <!-- Tabla Formulario 5 -->
+            <div class="table-wrapper">
+                <table *ngIf="tablaVisible === 5">
+                    <tr>
+                        <td>Contenido de la Tabla 5</td>
+                    </tr>
+                </table>
+            </div>
+            <!-- Tabla Formulario 5 -->
+
+            <!-- Tabla Formulario 6 -->
+            <div class="table-wrapper">
+                <table *ngIf="tablaVisible === 6">
+                    <tr>
+                        <td>Contenido de la Tabla 6</td>
+                    </tr>
+                </table>
+            </div>
+            <!-- Tabla Formulario 6 -->
+
+            <!-- Tabla Formulario 7 -->
+            <div class="table-wrapper">
+                <table *ngIf="tablaVisible === 7">
+                    <tr>
+                        <td>Contenido de la Tabla 7</td>
+                    </tr>
+                </table>
+            </div>
+            <!-- Tabla Formulario 7 -->
         </div>
     </div>
 </div>

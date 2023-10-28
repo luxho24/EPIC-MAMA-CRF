@@ -5,6 +5,12 @@
     }
 }
 
+.formulario {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
 
 /* Input */
 .group-input {
@@ -75,7 +81,8 @@ footer {
 
 footer .wave {
     position: absolute;
-    top: -100px;
+    /* top: -100px; */
+    top: 43.45rem;
     left: 0;
     width: 100%;
     height: 100px;

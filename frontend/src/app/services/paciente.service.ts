@@ -42,6 +42,36 @@ export class PacienteService {
     return this.httpClient.post<any>(this.url + '/registerPatientsForm7', paciente);
   }
 
+  // * Registro de los formularios con datos del paciente
+  // Funcion para obtener pacientes del formulario 1
+  obtenerPacientesForm1(idUsuario: any): Observable<any> {
+    return this.httpClient.get(`${this.url}/obtenerPacientesForm1/${idUsuario}`);
+  }
+  // Funcion para obtener pacientes del formulario 2
+  obtenerPacientesForm2(idUsuario: any): Observable<any> {
+    return this.httpClient.get(`${this.url}/obtenerPacientesForm2/${idUsuario}`);
+  }
+  // Funcion para obtener pacientes del formulario 3
+  obtenerPacientesForm3(idUsuario: any): Observable<any> {
+    return this.httpClient.get(`${this.url}/obtenerPacientesForm3/${idUsuario}`);
+  }
+  // Funcion para obtener pacientes del formulario 4
+  obtenerPacientesForm4(idUsuario: any): Observable<any> {
+    return this.httpClient.get(`${this.url}/obtenerPacientesForm4/${idUsuario}`);
+  }
+  // Funcion para obtener pacientes del formulario 5
+  obtenerPacientesForm5(idUsuario: any): Observable<any> {
+    return this.httpClient.get(`${this.url}/obtenerPacientesForm5/${idUsuario}`);
+  }
+  // Funcion para obtener pacientes del formulario 6
+  obtenerPacientesForm6(idUsuario: any): Observable<any> {
+    return this.httpClient.get(`${this.url}/obtenerPacientesForm6/${idUsuario}`);
+  }
+  // Funcion para obtener pacientes del formulario 7
+  obtenerPacientesForm7(idUsuario: any): Observable<any> {
+    return this.httpClient.get(`${this.url}/obtenerPacientesForm7/${idUsuario}`);
+  }
+
   // * Obtencion de datos requeridos
   // Funcion para obtener verificar si existe el paciente de acuerdo al "numero_hc" (Usado en el boton buscar de "menu.ts")
   obtenerPaciente(numero_hc: string): Observable<any> {

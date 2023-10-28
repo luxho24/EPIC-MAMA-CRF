@@ -4,42 +4,80 @@
 
 .left {
     width: 20%; /* Aumenta el ancho del contenedor izquierdo */
-    background-color: #3498db; /* Color de fondo del contenedor izquierdo */
+    /* Color de fondo del contenedor izquierdo */
+    /* background-color: #3498db; */
     padding: 20px;
     color: white;
     display: flex; /* Para centrar contenido verticalmente */
     flex-direction: column; /* Para que los botones se coloquen en columna */
     align-items: center; /* Centra horizontalmente los elementos */
+    border-right: 1px solid #c2c8c9;
 }
 
-.left button {
-    display: block;
-    width: 100%; /* Botones ocupan todo el ancho del contenedor izquierdo */
-    margin-bottom: 5px; /* Espacio entre botones */
-    background-color: #578ac4; /* Color de fondo de los botones */
-    color: white;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    border-radius: 10px; /* Borde redondeado */
-}
-
-.left button:first-child {
-    margin-top: 0; /* Eliminar espacio superior para el primer botón */
-}
-
-.left button:last-child {
-    margin-bottom: 0; /* Eliminar espacio superior para el último botón */
-}
-
-.left button:hover {
-    background-color: #c0392b; /* Color de fondo al pasar el ratón por encima de los botones */
-}
+.active {
+    background-color: #009679; /* Cambia el color de fondo a verde cuando se selecciona */
+    color: white; /* Cambia el color del texto a blanco cuando se selecciona */
+  }
 
 .right {
-    width: 70%; /* Ancho del contenedor derecho */
-    background-color: #e74c3c; /* Color de fondo del contenedor derecho */
+    width: 80%; /* Ancho del contenedor derecho */
+    /* Color de fondo del contenedor derecho */
+    /* background-color: #e74c3c; */
     padding: 20px;
-    color: white;
+    /* color: white; */
+}
+
+.table-wrapper {
+    overflow: auto;
+    max-height: 550px;
+}
+
+.table-wrapper table {
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+.table-wrapper table thead {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    left: 0;
+    background: #009679;
+}
+
+.table-wrapper table thead tr {
+    text-align: left;
+    font-weight: bold;
+    color: #fff;
+}
+
+.table-wrapper table thead tr th {
+    white-space: nowrap;
+    padding: 20px;
+}
+
+.table-wrapper table thead tr th,
+.table-wrapper table thead tr td {
+    border: solid 1px #dddddd;
+    padding: 12px 15px;
+}
+
+.table-wrapper table tbody {
+    background: #fff;
+}
+
+.table-wrapper table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.table-wrapper table tbody tr td {
+    padding: 10px;
+}
+
+.table-wrapper table tbody tr:nth-of-type(even){
+    background-color: #f3f3f3;
+}
+
+.table-wrapper table tbody tr:last-of-type {
+    border-bottom: 2px solid #009679;
 }
