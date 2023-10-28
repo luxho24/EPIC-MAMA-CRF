@@ -10,5 +10,53 @@
     <h2>Pacientes Registrados</h2>
     <hr>
     <br>
+    <div class="contenido">
+        <div class="left">
+            <button (click)="mostrarTabla(1)">Botón 1</button><br>
+            <button (click)="mostrarTabla(2)">Botón 2</button><br>
+            <button (click)="mostrarTabla(3)">Botón 3</button><br>
+            <button (click)="mostrarTabla(4)">Botón 4</button><br>
+            <button (click)="mostrarTabla(5)">Botón 5</button><br>
+            <button (click)="mostrarTabla(6)">Botón 6</button><br>
+            <button (click)="mostrarTabla(7)">Botón 7</button><br>
+        </div>
+        <div class="right">
+            <table *ngIf="tablaVisible === 1">
+                <tr>
+                    <td>Contenido de la Tabla 1</td>
+                </tr>
+            </table>
+            <table *ngIf="tablaVisible === 2">
+                <tr>
+                    <td>Contenido de la Tabla 2</td>
+                </tr>
+            </table>
+            <table *ngIf="tablaVisible === 3">
+                <tr>
+                    <td>Contenido de la Tabla 3</td>
+                </tr>
+            </table>
+            <table *ngIf="tablaVisible === 4">
+                <tr>
+                    <td>Contenido de la Tabla 4</td>
+                </tr>
+            </table>
+            <table *ngIf="tablaVisible === 5">
+                <tr>
+                    <td>Contenido de la Tabla 5</td>
+                </tr>
+            </table>
+            <table *ngIf="tablaVisible === 6">
+                <tr>
+                    <td>Contenido de la Tabla 6</td>
+                </tr>
+            </table>
+            <table *ngIf="tablaVisible === 7">
+                <tr>
+                    <td>Contenido de la Tabla 7</td>
+                </tr>
+            </table>
+        </div>
+    </div>
 </div>
 <!--  Formulario -->-
