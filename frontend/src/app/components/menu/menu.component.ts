@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Paciente } from 'src/app/models/paciente.model';
 import { Usuario } from 'src/app/models/usuario.model';
+import { AuthService } from 'src/app/services/auth.service';
 import { PacienteService } from 'src/app/services/paciente.service';
 
 @Component({
@@ -21,10 +22,10 @@ export class MenuComponent implements OnInit {
   botonesHabilitados = false;
   botonesHabilitadosForm1 = true;
 
-  constructor(private _pacienteService: PacienteService, private router: Router){}
+  constructor(private _pacienteService: PacienteService, private _authService:AuthService, private router: Router, private aRoute: ActivatedRoute){}
 
   ngOnInit(): void {
-    
+    this.idUsuario = this.aRoute.snapshot.paramMap.get('idUsuario');
   }
 
   // Funcion para traer el "numero_hc" del paciente que YA se encuentre registrado en la base de datos
@@ -42,6 +43,22 @@ export class MenuComponent implements OnInit {
       }
     )
     // console.log(this.numero_hc);
+  }
+
+  // Funcion para obtener el id del usuario y paciente para luego colocarlos en la url y posteriormente autocompletar los campos requeridos en el html
+  ingresarFormulario1() {
+
+    if (this.idPaciente !== null) {
+      this._authService.obtenerUsuarioPorId(this.idUsuario).subscribe(
+        (res) => {
+          console.log(res);
+          this.router.navigate(['/formulario1/usuario/', res._id]);
+        },
+        (error) => {
+          console.log(error);
+        }
+      )
+    }
   }
   
   // Funcion para obtener los ids del usuario y paciente para luego colocarlos en la url y posteriormente autocompletar los campos requeridos en el html
