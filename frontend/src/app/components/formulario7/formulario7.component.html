@@ -1,207 +1,202 @@
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-    <!-- Container -->
-    <div>
-        <!-- Header -->
-        <div class="container-xl">
-            <div class="border p-3 bg-white">
-                <h5 style="font-weight: 350;"><b style="font-weight: 500;">PROTOCOLO:</b> PERFIL INFLAMATORIO EN PACIENTES CON CÁNCER DE MAMA Y SU ASOCIACIÓN CON EL VALOR PRONÓSTICO DE LA ENFERMERDAD</h5>
-            </div>
-            <div class="border p-3 bg-white">
-                <h5 style="font-weight: 350;"><b style="font-weight: 500;">FORMATO N° 007:</b> CICLOS DE TRATAMIENTO QUIROPRÁCTICO</h5>
-            </div>
-            <div class="border p-3 bg-white">
-                <h5 style="font-weight: 350;"><b style="font-weight: 500;">VERSIÓN:</b> 001</h5>
-            </div>
-            <br>
-            <hr>
-        </div>
-        <!-- Header -->
+<app-navbar></app-navbar>
 
+<!-- Container -->
+<div>
+    <!-- Header -->
+    <div class="container-xl">
+        <div class="border p-3 bg-white">
+            <h5 style="font-weight: 350;"><b style="font-weight: 500;">PROTOCOLO:</b> PERFIL INFLAMATORIO EN PACIENTES CON CÁNCER DE MAMA Y SU ASOCIACIÓN CON EL VALOR PRONÓSTICO DE LA ENFERMERDAD</h5>
+        </div>
+        <div class="border p-3 bg-white">
+            <h5 style="font-weight: 350;"><b style="font-weight: 500;">FORMATO N° 007:</b> CICLOS DE TRATAMIENTO QUIROPRÁCTICO</h5>
+        </div>
+        <div class="border p-3 bg-white">
+            <h5 style="font-weight: 350;"><b style="font-weight: 500;">VERSIÓN:</b> 001</h5>
+        </div>
         <br>
+        <hr>
+    </div>
+    <!-- Header -->
 
-        <!-- Formulario -->
-        <div class="container-xl" style="margin-bottom: 200px;">
+    <br>
 
-            <form class="w-75 m-auto mb-5">
-                <h3>DATOS DE IDENTIFICACIÓN</h3>
-                <div class="col mb-4">
-                    <div class="d-flex align-items-center gap-4">
-                        <div class="group-input d-flex">
-                            <input type="text" class="input" required>
-                            <label for="" class="label">Iniciales de la paciente</label>
+    <!-- Formulario -->
+    <div class="container-xl" style="margin-bottom: 200px;">
+
+        <form class="w-75 m-auto mb-5">
+            <h3>DATOS DE IDENTIFICACIÓN</h3>
+            <div class="col mb-4">
+                <div class="d-flex align-items-center gap-4">
+                    <div class="group-input d-flex">
+                        <input type="text" class="input" style="pointer-events: none;" disabled required>
+                        <label for="" class="label" style="top: 25%; font-size: 12px;">Iniciales de la paciente</label>
+                    </div>
+                    <div class="group-input d-flex">
+                        <input type="text" class="input" style="pointer-events: none;" disabled required>
+                        <label for="" class="label" style="top: 25%; font-size: 12px;">Número de HC</label>
+                    </div>
+                </div>
+
+                <h3 class="mb-3">Centro o Institución de atención</h3>
+                <div class="d-flex justify-content-between mb-4">
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="institucion" id="inen_lima" value="option1" style="cursor: pointer; pointer-events: none;" readonly>
+                        <label class="form-check-label" for="inen_lima" style="cursor: pointer; pointer-events: none; user-select: none;">INEN LIMA</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="institucion" id="inen_arequipa" value="option2" style="cursor: pointer; pointer-events: none;" readonly>
+                        <label class="form-check-label" for="inen_arequipa" style="cursor: pointer; pointer-events: none; user-select: none;">INEN AREQUIPA</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="institucion" id="inen_trujillo" value="option1" style="cursor: pointer; pointer-events: none;" readonly>
+                        <label class="form-check-label" for="inen_trujillo" style="cursor: pointer; pointer-events: none; user-select: none;">INEN TRUJILLO</label>
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="mb-4">TRATAMIENTO:</h3>
+            <div class="col mb-4">
+                <div class="group-textarea d-flex mb-3">
+                    <textarea name="" id="signos_vitales" cols="30" rows="7" class="textarea" required></textarea>
+                    <label for="signos_vitales" class="label_textarea">ESQUEMA DEL TRATAMIENTO:</label>
+                </div>
+                <div class="d-flex align-items-center gap-3 mb-3">
+                    <label for="startDate">FECHA DEL TRATAMIENTO:</label>
+                    <input type="date" class="form-control py-3 w-25" id="startDate">
+                </div>
+                <div class="d-flex flex-column">
+                    <div class="d-flex align-items-center justify-content-between mb-4">
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="ciclo" id="ciclo_1" value="ciclo_1" onclick="removerHidden()" style="cursor: pointer;">
+                            <label class="form-check-label" for="ciclo_1" style="cursor: pointer;">CICLO 01</label>
                         </div>
-                        <div class="group-input d-flex">
-                            <input type="text" class="input" required>
-                            <label for="" class="label">Número de HC</label>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="ciclo" id="ciclo_2" value="ciclo_2" onclick="removerHidden()" style="cursor: pointer;">
+                            <label class="form-check-label" for="ciclo_2" style="cursor: pointer;">CICLO 02</label>
+                        </div>
+                        <div class="form-check form-check-inline" style="padding: 5px 5px 5px 30px; background-color: #FFCDFA; border-radius: 4px;">
+                            <input class="form-check-input" type="radio" name="ciclo" id="ciclo_3" value="ciclo_3" onclick="removerHidden()" style="cursor: pointer;">
+                            <label class="form-check-label" for="ciclo_3" style="cursor: pointer;">CICLO 03</label>
                         </div>
                     </div>
-
-                    <h3 class="mb-3">Centro o Institución de atención</h3>
+                </div>
+                <div class="d-flex flex-column">
+                    <div class="d-flex align-items-center justify-content-between mb-4">
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="ciclo" id="ciclo_4" value="ciclo_4" onclick="removerHidden()" style="cursor: pointer;">
+                            <label class="form-check-label" for="ciclo_4" style="cursor: pointer;">CICLO 04</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="ciclo" id="ciclo_5" value="ciclo_5" onclick="removerHidden()" style="cursor: pointer;">
+                            <label class="form-check-label" for="ciclo_5" style="cursor: pointer;">CICLO 05</label>
+                        </div>
+                        <div class="form-check form-check-inline" style="padding: 5px 5px 5px 30px; background-color: #FFCDFA; border-radius: 4px;">
+                            <input class="form-check-input" type="radio" name="ciclo" id="ciclo_6" value="ciclo_6" onclick="removerHidden()" style="cursor: pointer;">
+                            <label class="form-check-label" for="ciclo_6" style="cursor: pointer;">CICLO 06</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex flex-column">
                     <div class="d-flex justify-content-between mb-4">
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="institucion" id="inen_lima" value="option1" style="cursor: pointer;">
-                            <label class="form-check-label" for="inen_lima" style="cursor: pointer;">INEN LIMA</label>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="buena_tolerancia" style="cursor: pointer;">
+                            <label class="form-check-label" for="buena_tolerancia" style="cursor: pointer;">
+                                BUENA TOLERANCIA
+                            </label>
                         </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="institucion" id="inen_arequipa" value="option2" style="cursor: pointer;">
-                            <label class="form-check-label" for="inen_arequipa" style="cursor: pointer;">INEN AREQUIPA</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="institucion" id="inen_trujillo" value="option1" style="cursor: pointer;">
-                            <label class="form-check-label" for="inen_trujillo" style="cursor: pointer;">INEN TRUJILLO</label>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="no_buena_tolerancia" style="cursor: pointer;">
+                            <label class="form-check-label" for="no_buena_tolerancia" style="cursor: pointer;">
+                                NO BUENA TOLERANCIA
+                            </label>
                         </div>
                     </div>
                 </div>
 
-                <h3 class="mb-4">TRATAMIENTO:</h3>
-                <div class="col mb-4">
-                    <div class="group-textarea d-flex mb-3">
-                        <textarea name="" id="signos_vitales" cols="30" rows="7" class="textarea" required></textarea>
-                        <label for="signos_vitales" class="label_textarea">ESQUEMA DEL TRATAMIENTO:</label>
-                    </div>
-                    <div class="d-flex align-items-center gap-3 mb-3">
-                        <label for="startDate">FECHA DEL TRATAMIENTO:</label>
-                        <input type="date" class="form-control py-3 w-25" id="startDate">
-                    </div>
-                    <div class="d-flex flex-column">
-                        <div class="d-flex align-items-center justify-content-between mb-4">
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="ciclo" id="ciclo_1" value="ciclo_1" onclick="removerHidden()" style="cursor: pointer;">
-                                <label class="form-check-label" for="ciclo_1" style="cursor: pointer;">CICLO 01</label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="ciclo" id="ciclo_2" value="ciclo_2" onclick="removerHidden()" style="cursor: pointer;">
-                                <label class="form-check-label" for="ciclo_2" style="cursor: pointer;">CICLO 02</label>
-                            </div>
-                            <div class="form-check form-check-inline" style="padding: 5px 5px 5px 30px; background-color: #FFCDFA; border-radius: 4px;">
-                                <input class="form-check-input" type="radio" name="ciclo" id="ciclo_3" value="ciclo_3" onclick="removerHidden()" style="cursor: pointer;">
-                                <label class="form-check-label" for="ciclo_3" style="cursor: pointer;">CICLO 03</label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="d-flex flex-column">
-                        <div class="d-flex align-items-center justify-content-between mb-4">
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="ciclo" id="ciclo_4" value="ciclo_4" onclick="removerHidden()" style="cursor: pointer;">
-                                <label class="form-check-label" for="ciclo_4" style="cursor: pointer;">CICLO 04</label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="ciclo" id="ciclo_5" value="ciclo_5" onclick="removerHidden()" style="cursor: pointer;">
-                                <label class="form-check-label" for="ciclo_5" style="cursor: pointer;">CICLO 05</label>
-                            </div>
-                            <div class="form-check form-check-inline" style="padding: 5px 5px 5px 30px; background-color: #FFCDFA; border-radius: 4px;">
-                                <input class="form-check-input" type="radio" name="ciclo" id="ciclo_6" value="ciclo_6" onclick="removerHidden()" style="cursor: pointer;">
-                                <label class="form-check-label" for="ciclo_6" style="cursor: pointer;">CICLO 06</label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="d-flex flex-column">
-                        <div class="d-flex justify-content-between mb-4">
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="buena_tolerancia" style="cursor: pointer;">
-                                <label class="form-check-label" for="buena_tolerancia" style="cursor: pointer;">
-                                    BUENA TOLERANCIA
-                                </label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="no_buena_tolerancia" style="cursor: pointer;">
-                                <label class="form-check-label" for="no_buena_tolerancia" style="cursor: pointer;">
-                                    NO BUENA TOLERANCIA
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="d-flex align-items-center gap-2">
-                        <div style="width: 50px; height: 30px; background: #FFCDFA; border-radius: 4px;"></div>
-                        <span>En caso de estar coloreada la casilla , PREVIAMENTE evaluar:</span>
-                    </div>
+                <div class="d-flex align-items-center gap-2">
+                    <div style="width: 50px; height: 30px; background: #FFCDFA; border-radius: 4px;"></div>
+                    <span>En caso de estar coloreada la casilla , PREVIAMENTE evaluar:</span>
                 </div>
+            </div>
 
-                <div class="col mb-4 hidden" id="evaluacion_respuesta_tratamiento">
-                    <h3 class="mb-4">EVALUACIÓN DE RESPUESTA AL TRATAMIENTO:</h3>
-                    <div class="d-flex flex-column">
-                        <div class="d-flex justify-content-between mb-4">
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="respuesta_completa" style="cursor: pointer;">
-                                <label class="form-check-label" for="respuesta_completa" style="cursor: pointer;">
-                                    RESPUESTA COMPLETA
-                                </label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="respuesta_parcial" style="cursor: pointer;">
-                                <label class="form-check-label" for="respuesta_parcial" style="cursor: pointer;">
-                                    RESPUESTA PARCIAL
-                                </label>
-                            </div>
+            <div class="col mb-4 hidden" id="evaluacion_respuesta_tratamiento">
+                <h3 class="mb-4">EVALUACIÓN DE RESPUESTA AL TRATAMIENTO:</h3>
+                <div class="d-flex flex-column">
+                    <div class="d-flex justify-content-between mb-4">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="respuesta_completa" style="cursor: pointer;">
+                            <label class="form-check-label" for="respuesta_completa" style="cursor: pointer;">
+                                RESPUESTA COMPLETA
+                            </label>
                         </div>
-                    </div>
-                    <div class="d-flex flex-column">
-                        <div class="d-flex justify-content-between mb-4">
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="enfermedad_estable" style="cursor: pointer;">
-                                <label class="form-check-label" for="enfermedad_estable" style="cursor: pointer;">
-                                    ENFERMEDAD ESTABLE
-                                </label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="progresion" style="cursor: pointer;">
-                                <label class="form-check-label" for="progresion" style="cursor: pointer;">
-                                    PROGRESIÓN
-                                </label>
-                            </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="respuesta_parcial" style="cursor: pointer;">
+                            <label class="form-check-label" for="respuesta_parcial" style="cursor: pointer;">
+                                RESPUESTA PARCIAL
+                            </label>
                         </div>
                     </div>
                 </div>
-                <!-- Boton -->
-                <!-- <div class="d-flex justify-content-end">
-                    <button type="submit">Siguiente: Datos clínicos</button>
-                </div> -->
-                <!-- Boton -->
+                <div class="d-flex flex-column">
+                    <div class="d-flex justify-content-between mb-4">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="enfermedad_estable" style="cursor: pointer;">
+                            <label class="form-check-label" for="enfermedad_estable" style="cursor: pointer;">
+                                ENFERMEDAD ESTABLE
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="progresion" style="cursor: pointer;">
+                            <label class="form-check-label" for="progresion" style="cursor: pointer;">
+                                PROGRESIÓN
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Boton -->
+            <!-- <div class="d-flex justify-content-end">
+                <button type="submit">Siguiente: Datos clínicos</button>
+            </div> -->
+            <!-- Boton -->
+        </form>
+
+        <!-- Seccion: Llenado por el PL -->
+        <div class="container-xl">
+            <hr>
+            <br>
+            <form class="row g-3 m-auto border px-5 py-3 bg-white">
+                <div class="col-6">
+                    <p>Firma:</p>
+                </div>
+                <div class="col-6">
+                    <p>Fecha:</p>
+                </div>
+                <div class="col-12">
+                    <p>Nombre:</p>
+                </div>
+                <div class="col-12">
+                    <b><i><p>**Nota: Se recomienda que sea llenado por el PL.</p></i></b>
+                </div>
             </form>
-
-            <!-- Seccion: Llenado por el PL -->
-            <div class="container-xl">
-                <hr>
-                <br>
-                <form class="row g-3 m-auto border px-5 py-3 bg-white">
-                    <div class="col-6">
-                        <p>Firma:</p>
-                    </div>
-                    <div class="col-6">
-                        <p>Fecha:</p>
-                    </div>
-                    <div class="col-12">
-                        <p>Nombre:</p>
-                    </div>
-                    <div class="col-12">
-                        <b><i><p>**Nota: Se recomienda que sea llenado por el PL.</p></i></b>
-                    </div>
-                </form>
-            </div>
-            <!-- Seccion: Llenado por el PL -->
-
         </div>
-        <!-- Formulario -->
-
-        <!-- 0099ff a2d9ff A2F0FF-->
-
-        <!-- Footer -->
-        <footer>
-            <div class="waves">
-                <div class="wave" id="wave1"></div>
-                <div class="wave" id="wave2"></div>
-                <div class="wave" id="wave3"></div>
-                <div class="wave" id="wave4"></div>
-            </div>
-        </footer>
-        <!-- Footer -->
+        <!-- Seccion: Llenado por el PL -->
 
     </div>
-    <!-- Container -->
+    <!-- Formulario -->
+
+    <!-- 0099ff a2d9ff A2F0FF-->
+
+    <!-- Footer -->
+    <footer>
+        <div class="waves">
+            <div class="wave" id="wave1"></div>
+            <div class="wave" id="wave2"></div>
+            <div class="wave" id="wave3"></div>
+            <div class="wave" id="wave4"></div>
+        </div>
+    </footer>
+    <!-- Footer -->
+
+</div>
+<!-- Container -->

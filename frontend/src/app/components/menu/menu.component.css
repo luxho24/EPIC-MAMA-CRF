@@ -44,7 +44,8 @@ footer {
 
 footer .wave {
     position: absolute;
-    top: -100px;
+    /* top: -100px; */
+    top: 102px;
     left: 0;
     width: 100%;
     height: 100px;

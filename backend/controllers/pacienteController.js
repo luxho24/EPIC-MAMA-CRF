@@ -215,6 +215,120 @@ const registrarPacienteForm7 = async (req, res) => {
     }
 };
 
+// * Obtencion de los datos del paciente
+// Funcion para obtener pacientes del formulario 1
+const obtenerPacientesForm1 = async (req, res) => {
+    const {idUsuario} = req.params;
+    try {
+        const paciente = await PacienteModel.find({usuario: idUsuario});
+
+        if (!paciente) {
+            const error = new Error("No hay pacientes registrados");
+            return res.status(400).json({ msg: error.message });
+        }
+
+        res.status(200).json(paciente);
+    } catch (error) {
+        console.log(error);
+    }
+};
+// Funcion para obtener pacientes del formulario 2
+const obtenerPacientesForm2 = async (req, res) => {
+    const {idUsuario} = req.params;
+    try {
+        const pacientef2 = await Formulario2Model.find({usuario: idUsuario});
+
+        if (!pacientef2) {
+            const error = new Error("No hay pacientes registrados");
+            return res.status(400).json({ msg: error.message });
+        }
+
+        res.status(200).json(pacientef2);
+    } catch (error) {
+        console.log(error);
+    }
+};
+// Funcion para obtener pacientes del formulario 3
+const obtenerPacientesForm3 = async (req, res) => {
+    const {idUsuario} = req.params;
+    try {
+        const pacientef3 = await Formulario3Model.find({usuario: idUsuario});
+
+        if (!pacientef3) {
+            const error = new Error("No hay pacientes registrados");
+            return res.status(400).json({ msg: error.message });
+        }
+
+        res.status(200).json(pacientef3);
+    } catch (error) {
+        console.log(error);
+    }
+};
+// Funcion para obtener pacientes del formulario 4
+const obtenerPacientesForm4 = async (req, res) => {
+    const {idUsuario} = req.params;
+    try {
+        const pacientef4 = await Formulario4Model.find({usuario: idUsuario});
+
+        if (!pacientef4) {
+            const error = new Error("No hay pacientes registrados");
+            return res.status(400).json({ msg: error.message });
+        }
+
+        res.status(200).json(pacientef4);
+    } catch (error) {
+        console.log(error);
+    }
+};
+// Funcion para obtener pacientes del formulario 5
+const obtenerPacientesForm5 = async (req, res) => {
+    const {idUsuario} = req.params;
+    try {
+        const pacientef5 = await Formulario5Model.find({usuario: idUsuario});
+
+        if (!pacientef5) {
+            const error = new Error("No hay pacientes registrados");
+            return res.status(400).json({ msg: error.message });
+        }
+
+        res.status(200).json(pacientef5);
+    } catch (error) {
+        console.log(error);
+    }
+};
+// Funcion para obtener pacientes del formulario 6
+const obtenerPacientesForm6 = async (req, res) => {
+    const {idUsuario} = req.params;
+    try {
+        const pacientef6 = await Formulario6Model.find({usuario: idUsuario});
+
+        if (!pacientef6) {
+            const error = new Error("No hay pacientes registrados");
+            return res.status(400).json({ msg: error.message });
+        }
+
+        res.status(200).json(pacientef6);
+    } catch (error) {
+        console.log(error);
+    }
+};
+// Funcion para obtener pacientes del formulario 7
+const obtenerPacientesForm7 = async (req, res) => {
+    const {idUsuario} = req.params;
+    try {
+        const pacientef7 = await Formulario7Model.find({usuario: idUsuario});
+
+        if (!pacientef7) {
+            const error = new Error("No hay pacientes registrados");
+            return res.status(400).json({ msg: error.message });
+        }
+
+        res.status(200).json(pacientef7);
+    } catch (error) {
+        console.log(error);
+    }
+};
+
 // * Obtencion de datos requeridos 
 // Funcion para verificar si existe el paciente por medio de "numero_hc", segun el id del usuairo que se encuentre autenticado en ese momento
 const obtenerPaciente = async (req, res) => {
@@ -297,6 +411,13 @@ export {
     registrarPacienteForm5,
     registrarPacienteForm6,
     registrarPacienteForm7,
+    obtenerPacientesForm1,
+    obtenerPacientesForm2,
+    obtenerPacientesForm3,
+    obtenerPacientesForm4,
+    obtenerPacientesForm5,
+    obtenerPacientesForm6,
+    obtenerPacientesForm7,
     obtenerPaciente,
     obtenerIds,
     obtenerPacientePorId

@@ -1,10 +1,5 @@
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
+<app-navbar></app-navbar>
+
 <!-- Container -->
 <div>
     <!-- Header -->
@@ -33,28 +28,28 @@
             <div class="col mb-4">
                 <div class="d-flex align-items-center gap-4">
                     <div class="group-input d-flex">
-                        <input type="text" class="input" [(ngModel)]="datos.iniciales_paciente" name="iniciales_paciente" required>
-                        <label for="" class="label">Iniciales de la paciente</label>
+                        <input type="text" class="input" [(ngModel)]="datos.iniciales_paciente" name="iniciales_paciente" style="pointer-events: none;" disabled required>
+                        <label for="" class="label" style="top: 25%; font-size: 12px;">Iniciales de la paciente</label>
                     </div>
                     <div class="group-input d-flex">
-                        <input type="text" class="input" [(ngModel)]="datos.numero_hc" name="numero_hc" required>
-                        <label for="" class="label">Número de HC</label>
+                        <input type="text" class="input" [(ngModel)]="datos.numero_hc" name="numero_hc" style="pointer-events: none;" disabled required>
+                        <label for="" class="label" style="top: 25%; font-size: 12px;">Número de HC</label>
                     </div>
                 </div>
 
                 <h3 class="mb-3">Centro o Institución de atención</h3>
                 <div class="d-flex justify-content-between mb-4">
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="centro_institucion_atencion" id="centro_institucion_atencion_inen_lima" value="INEN LIMA" [(ngModel)]="datos.centro_institucion_atencion" style="cursor: pointer;">
-                        <label class="form-check-label" for="centro_institucion_atencion_inen_lima" style="cursor: pointer;">INEN LIMA</label>
+                        <input class="form-check-input" type="radio" name="centro_institucion_atencion" id="centro_institucion_atencion_inen_lima" value="INEN LIMA" [(ngModel)]="datos.centro_institucion_atencion" style="cursor: pointer; pointer-events: none;" readonly>
+                        <label class="form-check-label" for="centro_institucion_atencion_inen_lima" style="cursor: pointer; pointer-events: none; user-select: none;">INEN LIMA</label>
                     </div>
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="centro_institucion_atencion" id="centro_institucion_atencion_inen_arequipa" value="INEN AREQUIPA" [(ngModel)]="datos.centro_institucion_atencion" style="cursor: pointer;">
-                        <label class="form-check-label" for="centro_institucion_atencion_inen_arequipa" style="cursor: pointer;">INEN AREQUIPA</label>
+                        <input class="form-check-input" type="radio" name="centro_institucion_atencion" id="centro_institucion_atencion_inen_arequipa" value="INEN AREQUIPA" [(ngModel)]="datos.centro_institucion_atencion" style="cursor: pointer; pointer-events: none;" readonly>
+                        <label class="form-check-label" for="centro_institucion_atencion_inen_arequipa" style="cursor: pointer; pointer-events: none; user-select: none;">INEN AREQUIPA</label>
                     </div>
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="centro_institucion_atencion" id="centro_institucion_atencion_inen_trujillo" value="INEN TRUJILLO" [(ngModel)]="datos.centro_institucion_atencion" style="cursor: pointer;">
-                        <label class="form-check-label" for="centro_institucion_atencion_inen_trujillo" style="cursor: pointer;">INEN TRUJILLO</label>
+                        <input class="form-check-input" type="radio" name="centro_institucion_atencion" id="centro_institucion_atencion_inen_trujillo" value="INEN TRUJILLO" [(ngModel)]="datos.centro_institucion_atencion" style="cursor: pointer; pointer-events: none;" readonly>
+                        <label class="form-check-label" for="centro_institucion_atencion_inen_trujillo" style="cursor: pointer; pointer-events: none; user-select: none;">INEN TRUJILLO</label>
                     </div>
                 </div>
             </div>
