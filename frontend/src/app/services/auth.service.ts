@@ -33,4 +33,9 @@ export class AuthService {
   obtenerUsuarioPorId(idUsuario: string) {
     return this.httpClient.get<any>(this.url + '/obtenerUsuarioPorId/' + idUsuario);
   }
+
+  obtenerIdUsuarioDesdeToken(token: string) {
+    // Realiza una solicitud al servidor para obtener el ID del usuario basado en el token
+    return this.httpClient.post(`${this.url}/obtenerIdUsuarioToken`, { token });
+  }
 }

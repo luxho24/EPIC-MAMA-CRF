@@ -20,7 +20,22 @@ export class LoginComponent implements OnInit {
     //   });
     // }
     if (this._authService.loggedin()) {
-      this.router.navigate(['/menu']); // Redirige a la página principal si ya hay una sesión iniciada
+      //this.router.navigate(['/menu']); // Redirige a la página principal si ya hay una sesión iniciada
+      const token = sessionStorage.getItem('token')
+
+      if (token) {
+        this._authService.obtenerIdUsuarioDesdeToken(token).subscribe(
+          (response) => {
+            console.log(response);
+            // const idUsuario = response.idUsuario;
+            // console.log('ID del usuario:', idUsuario);
+            this.router.navigate(['/menu/usuario', response])
+          },
+          (err) => {
+            console.log(err);
+          }
+        )
+      }
     }
   }
 
