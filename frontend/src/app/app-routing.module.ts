@@ -15,7 +15,7 @@ import { VisualizarPacientesComponent } from './components/visualizar-pacientes/
 const routes: Routes = [
   {path: "", redirectTo: "login", pathMatch: "full"},
   {path: "login", component: LoginComponent},
-  {path: "menu", component: MenuComponent, canActivate: [AuthGuard]},
+  // {path: "menu", component: MenuComponent, canActivate: [AuthGuard]},
   {path: "menu/usuario/:idUsuario", component: MenuComponent, canActivate: [AuthGuard]},
   {path: "menu/usuario/:idUsuario/paciente/:idPaciente", component: MenuComponent, canActivate: [AuthGuard]},
   {path: "visualizar-pacientes/usuario/:idUsuario", component: VisualizarPacientesComponent, canActivate: [AuthGuard]},
