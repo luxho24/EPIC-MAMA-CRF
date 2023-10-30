@@ -6,6 +6,7 @@ import { Formulario4 } from 'src/app/models/formulario4.model';
 import { Formulario5 } from 'src/app/models/formulario5.model';
 import { Paciente } from 'src/app/models/paciente.model';
 import { PacienteService } from 'src/app/services/paciente.service';
+import * as XLSX from 'xlsx';
 
 @Component({
   selector: 'app-visualizar-pacientes',
@@ -151,4 +152,41 @@ export class VisualizarPacientesComponent implements OnInit {
   //     )
   //   }
   // }
+
+  /*==================================== EXPORTAR A EXCEL ===================================*/
+  exportExcelForm(id: string): void{
+    // Busca la tabla por su identificador
+    let element = document.getElementById(id);
+
+    if (!element) {
+      console.error('Tabla no encontrada');
+      return;
+    }
+
+    const ws: XLSX.WorkSheet = XLSX.utils.table_to_sheet(element);
+
+    // generate workbook and add the worksheet
+    const wb: XLSX.WorkBook = XLSX.utils.book_new();
+    XLSX.utils.book_append_sheet(wb, ws, 'Sheet1');
+
+    // Genera un nombre de archivo único para cada formulario (puedes personalizarlo)
+    const fileName = `ExportSheet_${id}.xlsx`;
+
+    // Guarda el archivo con el nombre único
+    XLSX.writeFile(wb, fileName);
+  }
+
+  // Validacion existe datos en la tabla
+  hasData(id: string): boolean {
+    let element = document.getElementById(id);
+  
+    if (!element) {
+      return false;
+    }
+  
+    // Verifica si hay elementos <tr> (filas) en la tabla
+    const rows = element.getElementsByTagName('tr');
+    return rows.length > 1; // Considera que puede haber una fila de encabezado
+  }
+  /*==================================== EXPORTAR A EXCEL ===================================*/
 }
