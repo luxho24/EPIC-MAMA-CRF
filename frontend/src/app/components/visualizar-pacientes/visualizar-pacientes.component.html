@@ -20,9 +20,9 @@
             <div class="table-wrapper" *ngIf="tablaVisible === 1">
                 <div class="d-flex justify-content-between mb-3">
                     <h3>I. Datos Sociodemográficos de la Paciente</h3>
-                    <button class="btn btn-success d-flex align-items-center" (click)="exportExcelForm('excel-table-1')" [disabled]="!hasData('excel-table-1')"><i class="fa-solid fa-file-excel fs-4 me-2"></i>Exportar a Excel</button>
+                    <button class="btn btn-success d-flex align-items-center" (click)="exportExcelForm('Datos_Sociodemograficos')" [disabled]="!hasData('Datos_Sociodemograficos')"><i class="fa-solid fa-file-excel fs-4 me-2"></i>Exportar a Excel</button>
                 </div>
-                <table id="excel-table-1">
+                <table id="Datos_Sociodemograficos">
                     <thead>
                         <tr>
                             <th scope="col">Iniciales de la paciente</th>
@@ -136,9 +136,9 @@
             <div class="table-wrapper" *ngIf="tablaVisible === 2">
                 <div class="d-flex justify-content-between mb-3">
                     <h3>II. Datos Clínicos de la Paciente</h3>
-                    <button class="btn btn-success d-flex align-items-center" (click)="exportExcelForm('excel-table-2')" [disabled]="!hasData('excel-table-2')"><i class="fa-solid fa-file-excel fs-4 me-2"></i>Exportar a Excel</button>
+                    <button class="btn btn-success d-flex align-items-center" (click)="exportExcelForm('Datos_Clinicos')" [disabled]="!hasData('Datos_Clinicos')"><i class="fa-solid fa-file-excel fs-4 me-2"></i>Exportar a Excel</button>
                 </div>
-                <table id="excel-table-2">
+                <table id="Datos_Clinicos">
                     <thead>
                         <tr>
                             <th scope="col">Iniciales de la paciente</th>
@@ -180,9 +180,9 @@
             <div class="table-wrapper" *ngIf="tablaVisible === 3">
                 <div class="d-flex justify-content-between mb-3">
                     <h3>III. Consentimientos Informados</h3>
-                    <button class="btn btn-success d-flex align-items-center" (click)="exportExcelForm('excel-table-3')" [disabled]="!hasData('excel-table-3')"><i class="fa-solid fa-file-excel fs-4 me-2"></i>Exportar a Excel</button>
+                    <button class="btn btn-success d-flex align-items-center" (click)="exportExcelForm('Consentimientos_Informados')" [disabled]="!hasData('Consentimientos_Informados')"><i class="fa-solid fa-file-excel fs-4 me-2"></i>Exportar a Excel</button>
                 </div>
-                <table id="excel-table-3">
+                <table id="Consentimientos_Informados">
                     <thead>
                         <tr>
                             <th scope="col">Iniciales de la paciente</th>
@@ -212,9 +212,9 @@
             <div class="table-wrapper" *ngIf="tablaVisible === 4">
                 <div class="d-flex justify-content-between mb-3">
                     <h3>IV. Criterios de Selección / Sreening</h3>
-                    <button class="btn btn-success d-flex align-items-center" (click)="exportExcelForm('excel-table-4')" [disabled]="!hasData('excel-table-4')"><i class="fa-solid fa-file-excel fs-4 me-2"></i>Exportar a Excel</button>
+                    <button class="btn btn-success d-flex align-items-center" (click)="exportExcelForm('Criterios_de_Seleccion_/_Sreening')" [disabled]="!hasData('Criterios_de_Seleccion_/_Sreening')"><i class="fa-solid fa-file-excel fs-4 me-2"></i>Exportar a Excel</button>
                 </div>
-                <table id="excel-table-4">
+                <table id="Criterios_de_Seleccion_/_Sreening">
                     <thead>
                         <tr>
                             <th scope="col">Iniciales de la paciente</th>
