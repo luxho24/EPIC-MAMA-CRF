@@ -5,6 +5,7 @@ import { Formulario3 } from 'src/app/models/formulario3.model';
 import { Formulario4 } from 'src/app/models/formulario4.model';
 import { Formulario5 } from 'src/app/models/formulario5.model';
 import { Paciente } from 'src/app/models/paciente.model';
+import { AuthService } from 'src/app/services/auth.service';
 import { PacienteService } from 'src/app/services/paciente.service';
 import * as XLSX from 'xlsx';
 
@@ -26,7 +27,7 @@ export class VisualizarPacientesComponent implements OnInit {
   // datosf7: Formulario7[] = [];
 
   idUsuario!: any;
-  constructor(private _pacienteService: PacienteService, private aRoute: ActivatedRoute){}
+  constructor(private _authService: AuthService, private _pacienteService: PacienteService, private aRoute: ActivatedRoute){}
 
   ngOnInit(): void {
     this.idUsuario = this.aRoute.snapshot.paramMap.get('idUsuario');
@@ -167,13 +168,26 @@ export class VisualizarPacientesComponent implements OnInit {
 
     // generate workbook and add the worksheet
     const wb: XLSX.WorkBook = XLSX.utils.book_new();
-    XLSX.utils.book_append_sheet(wb, ws, 'Sheet1');
+    // XLSX.utils.book_append_sheet(wb, ws, 'Sheet1');
+    XLSX.utils.book_append_sheet(wb, ws, `${id}`);
 
-    // Genera un nombre de archivo único para cada formulario (puedes personalizarlo)
-    const fileName = `ExportSheet_${id}.xlsx`;
+    // Trae el nombre del usuario para posteriormente colocarlo como nombre en el archivo excel
+    const token = sessionStorage.getItem('token')
+    if (token) {
+      this._authService.obtenerUsuarioDesdeToken(token).subscribe(
+        (res) => {
+          // Genera un nombre de archivo único para cada formulario (puedes personalizarlo)
+          // const fileName = `ExportSheet_${id}.xlsx`;
+          const fileName = `${res}_${id}.xlsx`;
 
-    // Guarda el archivo con el nombre único
-    XLSX.writeFile(wb, fileName);
+          // Guarda el archivo con el nombre único
+          XLSX.writeFile(wb, fileName);
+        },
+        (error) => {
+          console.log(error);
+        }
+      )
+    }
   }
 
   // Validacion existe datos en la tabla

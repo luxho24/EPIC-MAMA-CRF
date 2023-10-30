@@ -34,8 +34,15 @@ export class AuthService {
     return this.httpClient.get<any>(this.url + '/obtenerUsuarioPorId/' + idUsuario);
   }
 
+  // Obtiene solo el id del usuario por su token
   obtenerIdUsuarioDesdeToken(token: string) {
     // Realiza una solicitud al servidor para obtener el ID del usuario basado en el token
     return this.httpClient.post(`${this.url}/obtenerIdUsuarioToken`, { token });
+  }
+  
+  // Obtiene todos los datos de un solo usuario por su token
+  obtenerUsuarioDesdeToken(token: string) {
+    // Realiza una solicitud al servidor para obtener el ID del usuario basado en el token
+    return this.httpClient.post(`${this.url}/obtenerUsuarioToken`, { token });
   }
 }
