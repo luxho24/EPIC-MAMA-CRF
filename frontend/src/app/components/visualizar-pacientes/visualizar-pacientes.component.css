@@ -81,3 +81,19 @@
 .table-wrapper table tbody tr:last-of-type {
     border-bottom: 2px solid #009679;
 }
+
+/* Estilo de la última columna fija */
+.fixed-column-th {
+    background-color: #009679;
+}
+
+.fixed-column-td {
+    background-color: #fff;
+}
+
+.fixed-column-th,
+.fixed-column-td {
+    position: sticky;
+    right: 0;
+    /* background-color: #f5f5f5; */
+}

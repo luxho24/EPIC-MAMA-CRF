@@ -53,6 +53,9 @@ export class Paciente {
     uso_antibioticos_ultimos_meses: string;
     antibioticos: string;
     
+    nombre: string;
+    fecha: string;
+    firma: string;
   
     constructor(
         iniciales_paciente: string,
@@ -107,6 +110,10 @@ export class Paciente {
         medicamento_4: string,
         uso_antibioticos_ultimos_meses: string,
         antibioticos: string,
+
+        nombre: string,
+        fecha: string,
+        firma: string,
     ) {
         this.iniciales_paciente = iniciales_paciente;
         this.numero_hc = numero_hc;
@@ -160,5 +167,9 @@ export class Paciente {
         this.medicamento_4 = medicamento_4;
         this.uso_antibioticos_ultimos_meses = uso_antibioticos_ultimos_meses;
         this.antibioticos = antibioticos;
+
+        this.nombre = nombre;
+        this.fecha = fecha;
+        this.firma = firma;
     }
   }

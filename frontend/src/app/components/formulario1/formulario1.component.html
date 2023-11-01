@@ -23,7 +23,7 @@
     <!-- Formulario -->
     <div class="container-xl">
         <h2 class="mb-5">DATOS DE LA PACIENTE</h2>
-        <form class="row g-3">
+        <form class="row g-3" enctype="multipart/form-data">
             <div class="col-md-6 d-flex align-items-center justify-content-between pe-4">
                 <b><label for="startDate" class="form-label">1. INICIALES DE LA PACIENTE:</label></b>
                 <input type="text" class="form-control py-3" id="startDate" [(ngModel)]="datos.iniciales_paciente" name="iniciales_paciente" style="width: 60%;">
@@ -364,7 +364,7 @@
                 <!-- SÍNDROME METABÓLICO -->
             </div>
 
-            <div class="col-md-12 mb-5">
+            <div class="col-md-12 mb-3">
                 <b><label for="startDate" class="form-label">29. TRATAMIENTO HABITUAL:</label></b>
                 <div class="d-flex align-items-center justify-content-between mb-3">
                     <label for="startDate" class="form-label">Medicamento 01:</label>
@@ -400,18 +400,20 @@
             </div>
             
             <!-- Boton -->
-            <div class="d-flex justify-content-end">
+            <!-- <div class="d-flex justify-content-end">
                 <button type="submit" (click)="registrarForm1()">Registrar y Siguiente: Datos Clínicos de la Paciente</button>
-            </div>
+            </div> -->
             <!-- Boton -->
-        </form>
+        <!-- </form> -->
 
         <!-- Seccion: Llenado por el PL -->
-        <div class="container-xl">
-            <hr>
-            <br>
-            <form class="row g-3 m-auto border px-5 py-3 bg-white">
-                <div class="col-6">
+        <hr>
+        <br>
+        <br>
+        <br>
+        <div class="row g-3 m-auto border px-5 py-3 mb-5 bg-white">
+            <!-- <form class="row g-3 m-auto border px-5 py-3 bg-white" enctype="multipart/form-data"> -->
+                <!-- <div class="col-6">
                     <p>Firma:</p>
                 </div>
                 <div class="col-6">
@@ -419,12 +421,32 @@
                 </div>
                 <div class="col-12">
                     <p>Nombre:</p>
+                </div> -->
+                <div class="col-6 d-flex align-items-center justify-content-between mb-3">
+                    <label for="startDate" class="form-label">Nombre:</label>
+                    <input type="text" class="form-control py-3" id="startDate" [(ngModel)]="datos.medicamento_1" name="medicamento_1" style="width: 86%;">
                 </div>
+                <div class="col-6 d-flex align-items-center justify-content-between mb-3">
+                    <label for="formFile" class="form-label">Firma:</label>
+                    <!-- <input class="form-control" type="file" id="formFile" style="width: 86%;"> -->
+                    <input class="form-control" type="file" id="formFile" name="imagen" (change)="onSelectFile($event)" style="width: 86%;">
+                </div>
+                <div class="col-6 d-flex align-items-center justify-content-between mb-3">
+                    <label for="startDate" class="form-label">Fecha:</label>
+                    <input type="date" class="form-control py-3" id="startDate" [(ngModel)]="datos.fecha_nacimiento" name="fecha_nacimiento" style="width: 86%;">
+                </div>
+                
                 <div class="col-12">
-                    <b><i><p>**Nota: Se recomienda que sea llenado por el PL.</p></i></b>
+                    <b><i><p>**Nota: Se recomienda que sea llenado por el investigador principal.</p></i></b>
                 </div>
-            </form>
+            <!-- </form> -->
         </div>
+        <!-- Boton -->
+        <div class="d-flex justify-content-end">
+            <button type="submit" (click)="registrarForm1()">Registrar y Siguiente: Datos Clínicos de la Paciente</button>
+        </div>
+        <!-- Boton -->
+        </form>
         <!-- Seccion: Llenado por el PL -->
 
     </div>
