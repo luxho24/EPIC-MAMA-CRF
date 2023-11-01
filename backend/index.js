@@ -4,14 +4,18 @@ import {config} from "dotenv";
 import connectDB from "./config/db.js";
 import usuarioRoutes from "./routes/usuarioRoutes.js"
 import pacienteRoutes from "./routes/pacienteRoutes.js"
+import multerImage from "./middleware/imageMiddleware.js";
 
 const app = express();
 
 app.use(cors());
 app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
 
 config();
 connectDB();
+
+app.use(multerImage)
 
 app.use("/api/usuarios", usuarioRoutes);
 app.use("/api/pacientes", pacienteRoutes);

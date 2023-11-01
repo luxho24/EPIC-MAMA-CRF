@@ -7,12 +7,20 @@ import Formulario5Model from "../models/Formulario5Model.js";
 import Formulario6Model from "../models/Formulario6Model.js";
 import Formulario7Model from "../models/Formulario7Model.js";
 
+import cloudinary from "../keys/cloudinary.js";
+
 // * Registro de los formularios con datos del paciente
 // Funcion para registrar paciente del formulario 1
 const registrarPacienteForm1 = async (req, res) => {
+
+    console.log(req.file);
+    const result = await cloudinary.uploader.upload(req.file.path);
+    console.log(result);
+
     const {numero_documento} = req.body;
     const paciente = new PacienteModel(req.body);
     paciente.usuario = req.usuario._id;
+    paciente.firma = result.secure_url;
 
     const existePaciente = await PacienteModel.findOne({ numero_documento });
 

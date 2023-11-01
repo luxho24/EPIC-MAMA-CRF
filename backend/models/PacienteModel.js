@@ -191,6 +191,21 @@ const pacienteSchema = new Schema (
             require: true,
             default: "-",
         },
+        nombre: {
+            type: String,
+            require: true,
+            default: "-",
+        },
+        fecha: {
+            type: String,
+            require: true,
+            default: "-",
+        },
+        firma: {
+            type: String,
+            require: true,
+            default: "-",
+        },
         usuario: {
             type: Schema.Types.ObjectId,
             ref: "UsuarioModel",
