@@ -20,12 +20,13 @@
             <div *ngIf="tablaVisible === 1">
                 <div class="d-flex justify-content-between mb-3">
                     <h3>I. Datos Sociodemográficos de la Paciente</h3>
-                    <button class="btn btn-success d-flex align-items-center" (click)="exportExcelForm('Datos_Sociodemograficos')" [disabled]="!hasData('Datos_Sociodemograficos')"><i class="fa-solid fa-file-excel fs-4 me-2"></i>Exportar a Excel</button>
+                    <button class="btn btn-success d-flex align-items-center" *ngIf="isAdmin" (click)="exportExcelForm('Datos_Sociodemograficos')" [disabled]="!hasData('Datos_Sociodemograficos')"><i class="fa-solid fa-file-excel fs-4 me-2"></i>Exportar a Excel</button>
                 </div>
                 <div class="table-wrapper">
                     <table id="Datos_Sociodemograficos">
                         <thead>
                             <tr>
+                                <th scope="col">#</th>
                                 <th scope="col">Iniciales de la paciente</th>
                                 <th scope="col">Número de HC</th>
                                 <th scope="col">Tipo de documento</th>
@@ -73,11 +74,12 @@
                                 <th scope="col">Medicamento 04</th>
                                 <th scope="col">Uso antibióticos ultimos 03 o 06 meses</th>
                                 <th scope="col">¿Cuál?</th>
-                                <th scope="col" class="fixed-column-th">Acción</th>
+                                <th scope="col" class="fixed-column-th" *ngIf="isAdmin">Acción</th>
                             </tr>
                         </thead>
                         <tbody *ngIf="pacientes.length > 0">
-                            <tr *ngFor="let paciente of pacientes">
+                            <tr *ngFor="let paciente of pacientes; let i = index">
+                                <td>{{ i + 1 }}</td>
                                 <td>{{paciente.iniciales_paciente}}</td>
                                 <td>{{paciente.numero_hc}}</td>
                                 <td>{{paciente.tipo_documento}}</td>
@@ -125,7 +127,7 @@
                                 <td>{{paciente.medicamento_4}}</td>
                                 <td>{{paciente.uso_antibioticos_ultimos_meses}}</td>
                                 <td>{{paciente.antibioticos}}</td>
-                                <td class="fixed-column-td">
+                                <td class="fixed-column-td" *ngIf="isAdmin">
                                     <button class="btn btn-warning">Editar</button>
                                 </td>
                             </tr>
@@ -142,12 +144,13 @@
             <div *ngIf="tablaVisible === 2">
                 <div class="d-flex justify-content-between mb-3">
                     <h3>II. Datos Clínicos de la Paciente</h3>
-                    <button class="btn btn-success d-flex align-items-center" (click)="exportExcelForm('Datos_Clinicos')" [disabled]="!hasData('Datos_Clinicos')"><i class="fa-solid fa-file-excel fs-4 me-2"></i>Exportar a Excel</button>
+                    <button class="btn btn-success d-flex align-items-center" *ngIf="isAdmin" (click)="exportExcelForm('Datos_Clinicos')" [disabled]="!hasData('Datos_Clinicos')"><i class="fa-solid fa-file-excel fs-4 me-2"></i>Exportar a Excel</button>
                 </div>
                 <div class="table-wrapper">
                     <table id="Datos_Clinicos">
                         <thead>
                             <tr>
+                                <th scope="col">#</th>
                                 <th scope="col">Iniciales de la paciente</th>
                                 <th scope="col">Número de HC</th>
                                 <th scope="col">Centro o institución de atención</th>
@@ -159,10 +162,12 @@
                                 <th scope="col">Tipo histológico</th>
                                 <th scope="col">Conclusión del informe</th>
                                 <th scope="col">Clasificación molecular</th>
+                                <th scope="col" class="fixed-column-th" *ngIf="isAdmin">Acción</th>
                             </tr>
                         </thead>
                         <tbody *ngIf="datosf2.length > 0">
-                            <tr *ngFor="let pacientef2 of datosf2">
+                            <tr *ngFor="let pacientef2 of datosf2; let i = index">
+                                <td>{{ i + 1 }}</td>
                                 <td>{{pacientef2.iniciales_paciente}}</td>
                                 <td>{{pacientef2.numero_hc}}</td>
                                 <td>{{pacientef2.centro_institucion_atencion}}</td>
@@ -174,6 +179,9 @@
                                 <td>{{pacientef2.tipo_histologico}}</td>
                                 <td>{{pacientef2.conclusion_informe}}</td>
                                 <td>{{pacientef2.clasificacion_molecular}}</td>
+                                <td class="fixed-column-td" *ngIf="isAdmin">
+                                    <button class="btn btn-warning">Editar</button>
+                                </td>
                             </tr>
                         </tbody>
                     </table>
@@ -188,26 +196,32 @@
             <div *ngIf="tablaVisible === 3">
                 <div class="d-flex justify-content-between mb-3">
                     <h3>III. Consentimientos Informados</h3>
-                    <button class="btn btn-success d-flex align-items-center" (click)="exportExcelForm('Consentimientos_Informados')" [disabled]="!hasData('Consentimientos_Informados')"><i class="fa-solid fa-file-excel fs-4 me-2"></i>Exportar a Excel</button>
+                    <button class="btn btn-success d-flex align-items-center" *ngIf="isAdmin" (click)="exportExcelForm('Consentimientos_Informados')" [disabled]="!hasData('Consentimientos_Informados')"><i class="fa-solid fa-file-excel fs-4 me-2"></i>Exportar a Excel</button>
                 </div>
                 <div class="table-wrapper">
                     <table id="Consentimientos_Informados">
                         <thead>
                             <tr>
+                                <th scope="col">#</th>
                                 <th scope="col">Iniciales de la paciente</th>
                                 <th scope="col">Número de HC</th>
                                 <th scope="col">Centro o institución de atención</th>
                                 <th scope="col">¿Cuenta con consentimiento informado?</th>
                                 <th scope="col">Fecha de consentimiento informado</th>
+                                <th scope="col" class="fixed-column-th" *ngIf="isAdmin">Acción</th>
                             </tr>
                         </thead>
                         <tbody *ngIf="datosf3.length > 0">
-                            <tr *ngFor="let pacientef3 of datosf3">
+                            <tr *ngFor="let pacientef3 of datosf3; let i = index">
+                                <td>{{ i + 1 }}</td>
                                 <td>{{pacientef3.iniciales_paciente}}</td>
                                 <td>{{pacientef3.numero_hc}}</td>
                                 <td>{{pacientef3.centro_institucion_atencion}}</td>
                                 <td>{{pacientef3.cuenta_consentimiento_informado}}</td>
                                 <td>{{pacientef3.fecha_consentimiento_informado}}</td>
+                                <td class="fixed-column-td" *ngIf="isAdmin">
+                                    <button class="btn btn-warning">Editar</button>
+                                </td>
                             </tr>
                         </tbody>
                     </table>
@@ -222,12 +236,13 @@
             <div *ngIf="tablaVisible === 4">
                 <div class="d-flex justify-content-between mb-3">
                     <h3>IV. Criterios de Selección / Sreening</h3>
-                    <button class="btn btn-success d-flex align-items-center" (click)="exportExcelForm('Criterios_de_Seleccion_/_Sreening')" [disabled]="!hasData('Criterios_de_Seleccion_/_Sreening')"><i class="fa-solid fa-file-excel fs-4 me-2"></i>Exportar a Excel</button>
+                    <button class="btn btn-success d-flex align-items-center" *ngIf="isAdmin" (click)="exportExcelForm('Criterios_de_Seleccion_/_Sreening')" [disabled]="!hasData('Criterios_de_Seleccion_/_Sreening')"><i class="fa-solid fa-file-excel fs-4 me-2"></i>Exportar a Excel</button>
                 </div>
                 <div class="table-wrapper">
                     <table id="Criterios_de_Seleccion_/_Sreening">
                         <thead>
                             <tr>
+                                <th scope="col">#</th>
                                 <th scope="col">Iniciales de la paciente</th>
                                 <th scope="col">Número de HC</th>
                                 <th scope="col">Centro o institución de atención</th>
@@ -245,10 +260,12 @@
                                 <th scope="col">Criterio de exclusión 5</th>
                                 <th scope="col">Criterio de exclusión 6</th>
                                 <th scope="col">Cumple criterios de elegibilidad</th>
+                                <th scope="col" class="fixed-column-th" *ngIf="isAdmin">Acción</th>
                             </tr>
                         </thead>
                         <tbody *ngIf="datosf4.length > 0">
-                            <tr *ngFor="let pacientef4 of datosf4">
+                            <tr *ngFor="let pacientef4 of datosf4; let i = index">
+                                <td>{{ i + 1 }}</td>
                                 <td>{{pacientef4.iniciales_paciente}}</td>
                                 <td>{{pacientef4.numero_hc}}</td>
                                 <td>{{pacientef4.centro_institucion_atencion}}</td>
@@ -266,6 +283,9 @@
                                 <td>{{pacientef4.criterios_exclusion_5}}</td>
                                 <td>{{pacientef4.criterios_exclusion_6}}</td>
                                 <td>{{pacientef4.criterios_elegibilidad_estudio}}</td>
+                                <td class="fixed-column-td" *ngIf="isAdmin">
+                                    <button class="btn btn-warning">Editar</button>
+                                </td>
                             </tr>
                         </tbody>
                     </table>

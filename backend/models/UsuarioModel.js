@@ -16,6 +16,11 @@ const usuarioSchema = new Schema (
             type: String,
             default: generarId(),
         },
+        rol: {
+            type: String,
+            require: true,
+            default: 'usuario',
+        }
     }
 )
 

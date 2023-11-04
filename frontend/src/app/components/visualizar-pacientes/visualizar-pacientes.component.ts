@@ -27,10 +27,15 @@ export class VisualizarPacientesComponent implements OnInit {
   // datosf7: Formulario7[] = [];
 
   idUsuario!: any;
+
+  public isAdmin: boolean = false;
+  public isUser: boolean = false;
+
   constructor(private _authService: AuthService, private _pacienteService: PacienteService, private aRoute: ActivatedRoute){}
 
   ngOnInit(): void {
     this.idUsuario = this.aRoute.snapshot.paramMap.get('idUsuario');
+    this.setRoleState();
   }
   
   mostrarTabla(numeroTabla: number): void {
@@ -58,99 +63,288 @@ export class VisualizarPacientesComponent implements OnInit {
 
   obtenerPacientesForm1(){
     if (this.idUsuario !== null) {
-      this._pacienteService.obtenerPacientesForm1(this.idUsuario).subscribe(
-        (res) => {
-          console.log(res);
-          this.pacientes = res
-        },
-        (error) => {
-          console.log(error);
-        }
-      )
+
+      const token = sessionStorage.getItem('token')
+      if (token) {
+        this._authService.obtenerRolUsuarioDesdeToken(token).subscribe(
+          (res) => {
+            console.log(res);
+            this.isAdmin = res === 'administrador';
+            // * Si el token le pertenece al administrador, entonces en la tabla mostrara todos los datos de los pacientes
+            // * registrados en cada formulario sin restriccion de id de usuario
+            if (res === 'administrador') {
+              this._pacienteService.obtenerPacientesSAForm1(token).subscribe(
+                (res) => {
+                  console.log(res);
+                  this.pacientes = res
+                },
+                (error) => {
+                  console.log(error);
+                }
+              )
+            } else {
+              this._pacienteService.obtenerPacientesForm1(this.idUsuario).subscribe(
+                (res) => {
+                  console.log(res);
+                  this.pacientes = res
+                },
+                (error) => {
+                  console.log(error);
+                }
+              )
+            }
+          },
+          (error) => {
+            console.log(error);
+          }
+        );
+      }
     }
   }
 
   obtenerPacientesForm2(){
     if (this.idUsuario !== null) {
-      this._pacienteService.obtenerPacientesForm2(this.idUsuario).subscribe(
-        (res) => {
-          console.log(res);
-          this.datosf2 = res
-        },
-        (error) => {
-          console.log(error);
-        }
-      )
+
+      const token = sessionStorage.getItem('token')
+      if (token) {
+        this._authService.obtenerRolUsuarioDesdeToken(token).subscribe(
+          (res) => {
+            console.log(res);
+            this.isAdmin = res === 'administrador';
+            // * Si el token le pertenece al administrador, entonces en la tabla mostrara todos los datos de los pacientes
+            // * registrados en cada formulario sin restriccion de id de usuario
+            if (this.isAdmin) {
+              this._pacienteService.obtenerPacientesSAForm2(token).subscribe(
+                (res) => {
+                  console.log(res);
+                  this.datosf2 = res
+                },
+                (error) => {
+                  console.log(error);
+                }
+              )
+            } else {
+              this._pacienteService.obtenerPacientesForm2(this.idUsuario).subscribe(
+                (res) => {
+                  console.log(res);
+                  this.datosf2 = res
+                },
+                (error) => {
+                  console.log(error);
+                }
+              )
+            }
+          },
+          (error) => {
+            console.log(error);
+          }
+        );
+      }
     }
   }
 
   obtenerPacientesForm3(){
     if (this.idUsuario !== null) {
-      this._pacienteService.obtenerPacientesForm3(this.idUsuario).subscribe(
-        (res) => {
-          console.log(res);
-          this.datosf3 = res
-        },
-        (error) => {
-          console.log(error);
-        }
-      )
+
+      const token = sessionStorage.getItem('token')
+      if (token) {
+        this._authService.obtenerRolUsuarioDesdeToken(token).subscribe(
+          (res) => {
+            console.log(res);
+            this.isAdmin = res === 'administrador';
+            // * Si el token le pertenece al administrador, entonces en la tabla mostrara todos los datos de los pacientes
+            // * registrados en cada formulario sin restriccion de id de usuario
+            if (this.isAdmin) {
+              this._pacienteService.obtenerPacientesSAForm3(token).subscribe(
+                (res) => {
+                  console.log(res);
+                  this.datosf3 = res
+                },
+                (error) => {
+                  console.log(error);
+                }
+              )
+            } else {
+              this._pacienteService.obtenerPacientesForm3(this.idUsuario).subscribe(
+                (res) => {
+                  console.log(res);
+                  this.datosf3 = res
+                },
+                (error) => {
+                  console.log(error);
+                }
+              )
+            }
+          },
+          (error) => {
+            console.log(error);
+          }
+        );
+      }
     }
   }
 
   obtenerPacientesForm4(){
     if (this.idUsuario !== null) {
-      this._pacienteService.obtenerPacientesForm4(this.idUsuario).subscribe(
-        (res) => {
-          console.log(res);
-          this.datosf4 = res
-        },
-        (error) => {
-          console.log(error);
-        }
-      )
+
+      const token = sessionStorage.getItem('token')
+      if (token) {
+        this._authService.obtenerRolUsuarioDesdeToken(token).subscribe(
+          (res) => {
+            console.log(res);
+            this.isAdmin = res === 'administrador';
+            // * Si el token le pertenece al administrador, entonces en la tabla mostrara todos los datos de los pacientes
+            // * registrados en cada formulario sin restriccion de id de usuario
+            if (this.isAdmin) {
+              this._pacienteService.obtenerPacientesSAForm4(token).subscribe(
+                (res) => {
+                  console.log(res);
+                  this.datosf4 = res
+                },
+                (error) => {
+                  console.log(error);
+                }
+              )
+            } else {
+              this._pacienteService.obtenerPacientesForm4(this.idUsuario).subscribe(
+                (res) => {
+                  console.log(res);
+                  this.datosf4 = res
+                },
+                (error) => {
+                  console.log(error);
+                }
+              )
+            }
+          },
+          (error) => {
+            console.log(error);
+          }
+        );
+      }
     }
   }
 
   obtenerPacientesForm5(){
     if (this.idUsuario !== null) {
-      this._pacienteService.obtenerPacientesForm5(this.idUsuario).subscribe(
-        (res) => {
-          console.log(res);
-          this.datosf5 = res
-        },
-        (error) => {
-          console.log(error);
-        }
-      )
+
+      const token = sessionStorage.getItem('token')
+      if (token) {
+        this._authService.obtenerRolUsuarioDesdeToken(token).subscribe(
+          (res) => {
+            console.log(res);
+            this.isAdmin = res === 'administrador';
+            // * Si el token le pertenece al administrador, entonces en la tabla mostrara todos los datos de los pacientes
+            // * registrados en cada formulario sin restriccion de id de usuario
+            if (this.isAdmin) {
+              this._pacienteService.obtenerPacientesSAForm5(token).subscribe(
+                (res) => {
+                  console.log(res);
+                  this.datosf5 = res
+                },
+                (error) => {
+                  console.log(error);
+                }
+              )
+            } else {
+              this._pacienteService.obtenerPacientesForm5(this.idUsuario).subscribe(
+                (res) => {
+                  console.log(res);
+                  this.datosf5 = res
+                },
+                (error) => {
+                  console.log(error);
+                }
+              )
+            }
+          },
+          (error) => {
+            console.log(error);
+          }
+        );
+      }
     }
   }
 
   // obtenerPacientesForm6(){
   //   if (this.idUsuario !== null) {
-  //     this._pacienteService.obtenerPacientesForm6(this.idUsuario).subscribe(
-  //       (res) => {
-  //         console.log(res);
-  //         this.datosf6 = res
-  //       },
-  //       (error) => {
-  //         console.log(error);
-  //       }
-  //     )
+
+  //     const token = sessionStorage.getItem('token')
+  //     if (token) {
+  //       this._authService.obtenerRolUsuarioDesdeToken(token).subscribe(
+  //         (res) => {
+  //           console.log(res);
+  //           this.isAdmin = res === 'administrador';
+  //           // * Si el token le pertenece al administrador, entonces en la tabla mostrara todos los datos de los pacientes
+  //           // * registrados en cada formulario sin restriccion de id de usuario
+  //           if (this.isAdmin) {
+  //             this._pacienteService.obtenerPacientesSAForm6(token).subscribe(
+  //               (res) => {
+  //                 console.log(res);
+  //                 this.datosf6 = res
+  //               },
+  //               (error) => {
+  //                 console.log(error);
+  //               }
+  //             )
+  //           } else {
+  //             this._pacienteService.obtenerPacientesForm6(this.idUsuario).subscribe(
+  //               (res) => {
+  //                 console.log(res);
+  //                 this.datosf6 = res
+  //               },
+  //               (error) => {
+  //                 console.log(error);
+  //               }
+  //             )
+  //           }
+  //         },
+  //         (error) => {
+  //           console.log(error);
+  //         }
+  //       );
+  //     }
   //   }
   // }
 
   // obtenerPacientesForm7(){
   //   if (this.idUsuario !== null) {
-  //     this._pacienteService.obtenerPacientesForm7(this.idUsuario).subscribe(
-  //       (res) => {
-  //         console.log(res);
-  //         this.datosf7 = res
-  //       },
-  //       (error) => {
-  //         console.log(error);
-  //       }
-  //     )
+
+  //     const token = sessionStorage.getItem('token')
+  //     if (token) {
+  //       this._authService.obtenerRolUsuarioDesdeToken(token).subscribe(
+  //         (res) => {
+  //           console.log(res);
+  //           this.isAdmin = res === 'administrador';
+  //           // * Si el token le pertenece al administrador, entonces en la tabla mostrara todos los datos de los pacientes
+  //           // * registrados en cada formulario sin restriccion de id de usuario
+  //           if (this.isAdmin) {
+  //             this._pacienteService.obtenerPacientesSAForm7(token).subscribe(
+  //               (res) => {
+  //                 console.log(res);
+  //                 this.datosf7 = res
+  //               },
+  //               (error) => {
+  //                 console.log(error);
+  //               }
+  //             )
+  //           } else {
+  //             this._pacienteService.obtenerPacientesForm7(this.idUsuario).subscribe(
+  //               (res) => {
+  //                 console.log(res);
+  //                 this.datosf7 = res
+  //               },
+  //               (error) => {
+  //                 console.log(error);
+  //               }
+  //             )
+  //           }
+  //         },
+  //         (error) => {
+  //           console.log(error);
+  //         }
+  //       );
+  //     }
   //   }
   // }
 
@@ -203,4 +397,22 @@ export class VisualizarPacientesComponent implements OnInit {
     return rows.length > 1; // Considera que puede haber una fila de encabezado
   }
   /*==================================== EXPORTAR A EXCEL ===================================*/
+
+  /*==================================== VERIFICAR ROL ===================================*/
+  private setRoleState() {
+    const token = sessionStorage.getItem('token')
+    if (token) {
+      this._authService.obtenerRolUsuarioDesdeToken(token).subscribe(
+        (res) => {
+          console.log(res);
+          this.isAdmin = res === 'administrador';
+          this.isUser = res === 'usuario';
+        },
+        (error) => {
+          console.log(error);
+        }
+      );
+    }
+  }
+  /*==================================== VERIFICAR ROL ===================================*/
 }

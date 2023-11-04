@@ -40,6 +40,7 @@ const autenticar = async (req, res) => {
             _id: usuario._id,
             username: usuario.username,
             password: usuario.password,
+            rol: usuario.rol,
             token: generarJWT(usuario.id)
         })
     } else {

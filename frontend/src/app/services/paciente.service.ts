@@ -42,7 +42,7 @@ export class PacienteService {
     return this.httpClient.post<any>(this.url + '/registerPatientsForm7', paciente);
   }
 
-  // * Registro de los formularios con datos del paciente
+  // * Obtencion de los formularios con datos del paciente
   // Funcion para obtener pacientes del formulario 1
   obtenerPacientesForm1(idUsuario: any): Observable<any> {
     return this.httpClient.get(`${this.url}/obtenerPacientesForm1/${idUsuario}`);
@@ -70,6 +70,36 @@ export class PacienteService {
   // Funcion para obtener pacientes del formulario 7
   obtenerPacientesForm7(idUsuario: any): Observable<any> {
     return this.httpClient.get(`${this.url}/obtenerPacientesForm7/${idUsuario}`);
+  }
+
+  // * Obtencion de los formularios con todos los datos del paciente sin restriccion de rol de usuario
+  // Funcion para obtener todos los pacientes del formulario 1 sin resticcion de rol de usuario
+  obtenerPacientesSAForm1(idUsuario: any): Observable<any> {
+    return this.httpClient.get(`${this.url}/obtenerPacientesSAForm1/${idUsuario}`);
+  }
+  // Funcion para obtener todos los pacientes del formulario 2 sin resticcion de rol de usuario
+  obtenerPacientesSAForm2(idUsuario: any): Observable<any> {
+    return this.httpClient.get(`${this.url}/obtenerPacientesSAForm2/${idUsuario}`);
+  }
+  // Funcion para obtener todos los pacientes del formulario 3 sin resticcion de rol de usuario
+  obtenerPacientesSAForm3(idUsuario: any): Observable<any> {
+    return this.httpClient.get(`${this.url}/obtenerPacientesSAForm3/${idUsuario}`);
+  }
+  // Funcion para obtener todos los pacientes del formulario 4 sin resticcion de rol de usuario
+  obtenerPacientesSAForm4(idUsuario: any): Observable<any> {
+    return this.httpClient.get(`${this.url}/obtenerPacientesSAForm4/${idUsuario}`);
+  }
+  // Funcion para obtener todos los pacientes del formulario 5 sin resticcion de rol de usuario
+  obtenerPacientesSAForm5(idUsuario: any): Observable<any> {
+    return this.httpClient.get(`${this.url}/obtenerPacientesSAForm5/${idUsuario}`);
+  }
+  // Funcion para obtener todos los pacientes del formulario 6 sin resticcion de rol de usuario
+  obtenerPacientesSAForm6(idUsuario: any): Observable<any> {
+    return this.httpClient.get(`${this.url}/obtenerPacientesSAForm6/${idUsuario}`);
+  }
+  // Funcion para obtener todos los pacientes del formulario 7 sin resticcion de rol de usuario
+  obtenerPacientesSAForm7(idUsuario: any): Observable<any> {
+    return this.httpClient.get(`${this.url}/obtenerPacientesSAForm7/${idUsuario}`);
   }
 
   // * Obtencion de datos requeridos

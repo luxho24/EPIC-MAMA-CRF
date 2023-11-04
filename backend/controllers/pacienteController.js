@@ -6,6 +6,7 @@ import Formulario4Model from "../models/Formulario4Model.js";
 import Formulario5Model from "../models/Formulario5Model.js";
 import Formulario6Model from "../models/Formulario6Model.js";
 import Formulario7Model from "../models/Formulario7Model.js";
+import getRolUserToken from "../middleware/getRolUserToken.js"
 
 import cloudinary from "../keys/cloudinary.js";
 
@@ -223,7 +224,7 @@ const registrarPacienteForm7 = async (req, res) => {
     }
 };
 
-// * Obtencion de los datos del paciente
+// * Obtencion de los datos del paciente segun el idUsuario
 // Funcion para obtener pacientes del formulario 1
 const obtenerPacientesForm1 = async (req, res) => {
     const {idUsuario} = req.params;
@@ -396,6 +397,100 @@ const obtenerPacientePorId = async (req, res) => {
     }
 };
 
+// * Obtencion de los datos de todos los pacientes registrados por todos los Usuarios
+// Funcion para obtener pacientes del formulario 1
+const obtenerPacientesSAForm1 = async (req, res) => {
+    try {
+        // console.log(req.usuario.rol);
+        if (req.usuario.rol === "administrador") {
+            const paciente = await PacienteModel.find();
+            res.status(200).json(paciente);
+        } else {
+            res.status(400).json("No es administrador");
+        }
+    } catch (error) {
+        res.status(500).json({ msg: error.message });
+    }
+};
+// Funcion para obtener pacientes del formulario 2
+const obtenerPacientesSAForm2 = async (req, res) => {
+    try {
+        if (req.usuario.rol === "administrador") {
+            const pacientef2 = await Formulario2Model.find();
+            res.status(200).json(pacientef2);
+        } else {
+            res.status(400).json("No es administrador");
+        }
+    } catch (error) {
+        res.status(500).json({ msg: error.message });
+    }
+};
+// Funcion para obtener pacientes del formulario 3
+const obtenerPacientesSAForm3 = async (req, res) => {
+    try {
+        if (req.usuario.rol === "administrador") {
+            const pacientef3 = await Formulario3Model.find();
+            res.status(200).json(pacientef3);
+        } else {
+            res.status(400).json("No es administrador");
+        }
+    } catch (error) {
+        res.status(500).json({ msg: error.message });
+    }
+};
+// Funcion para obtener pacientes del formulario 4
+const obtenerPacientesSAForm4 = async (req, res) => {
+    try {
+        if (req.usuario.rol === "administrador") {
+            const pacientef4 = await Formulario4Model.find();
+            res.status(200).json(pacientef4);
+        } else {
+            res.status(400).json("No es administrador");
+        }
+    } catch (error) {
+        res.status(500).json({ msg: error.message });
+    }
+};
+// Funcion para obtener pacientes del formulario 5
+const obtenerPacientesSAForm5 = async (req, res) => {
+    try {
+        if (req.usuario.rol === "administrador") {
+            const pacientef5 = await Formulario5Model.find();
+            res.status(200).json(pacientef5);
+        } else {
+            res.status(400).json("No es administrador");
+        }
+    } catch (error) {
+        res.status(500).json({ msg: error.message });
+    }
+};
+// Funcion para obtener pacientes del formulario 6
+const obtenerPacientesSAForm6 = async (req, res) => {
+    try {
+        if (req.usuario.rol === "administrador") {
+            const pacientef6 = await Formulario6Model.find();
+            res.status(200).json(pacientef6);
+        } else {
+            res.status(400).json("No es administrador");
+        }
+    } catch (error) {
+        res.status(500).json({ msg: error.message });
+    }
+};
+// Funcion para obtener pacientes del formulario 7
+const obtenerPacientesSAForm7 = async (req, res) => {
+    try {
+        if (req.usuario.rol === "administrador") {
+            const pacientef7 = await Formulario7Model.find();
+            res.status(200).json(pacientef7);
+        } else {
+            res.status(400).json("No es administrador");
+        }
+    } catch (error) {
+        res.status(500).json({ msg: error.message });
+    }
+};
+
 // * Funcion para el SUPER ADMIN
 // Funcion para verificar si existe el paciente por medio de "numero_hc", SIN RESTRICCION por id de usuario
 // ! Aun no esta comprobado si funciona 👇
@@ -426,6 +521,13 @@ export {
     obtenerPacientesForm5,
     obtenerPacientesForm6,
     obtenerPacientesForm7,
+    obtenerPacientesSAForm1,
+    obtenerPacientesSAForm2,
+    obtenerPacientesSAForm3,
+    obtenerPacientesSAForm4,
+    obtenerPacientesSAForm5,
+    obtenerPacientesSAForm6,
+    obtenerPacientesSAForm7,
     obtenerPaciente,
     obtenerIds,
     obtenerPacientePorId

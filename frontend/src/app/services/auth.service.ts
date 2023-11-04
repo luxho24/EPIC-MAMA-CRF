@@ -45,4 +45,10 @@ export class AuthService {
     // Realiza una solicitud al servidor para obtener el ID del usuario basado en el token
     return this.httpClient.post(`${this.url}/obtenerUsuarioToken`, { token });
   }
+
+  // Obtiene el rol del usuario por su token
+  obtenerRolUsuarioDesdeToken(token: string) {
+    // Realiza una solicitud al servidor para obtener el ROL del usuario basado en el token
+    return this.httpClient.post(`${this.url}/obtenerRolUsuarioToken`, { token });
+  }
 }
