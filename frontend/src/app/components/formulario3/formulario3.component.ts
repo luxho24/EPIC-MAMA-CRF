@@ -19,6 +19,7 @@ export class Formulario3Component implements OnInit {
   ngOnInit(): void {
     this.idUsuario = this.aRoute.snapshot.paramMap.get('idUsuario');
     this.idPaciente = this.aRoute.snapshot.paramMap.get('idPaciente');
+    this.mostrarDatosPacienteSA();
     this.mostrarDatos();
   }
 
@@ -32,6 +33,30 @@ export class Formulario3Component implements OnInit {
           this.datos.iniciales_paciente = res.paciente.iniciales_paciente;
           this.datos.numero_hc = res.paciente.numero_hc;
           this.datos.centro_institucion_atencion = res.paciente.centro_institucion_atencion;
+          
+          // this.datos.cuenta_consentimiento_informado = res.paciente.cuenta_consentimiento_informado;
+          // this.datos.fecha_consentimiento_informado = res.paciente.fecha_consentimiento_informado;
+        },
+        (error) => {
+          console.log(error);
+        }
+      )
+    }
+  }
+
+  mostrarDatosPacienteSA() {
+    if (this.idPaciente !== null) {
+      console.log(this.idPaciente);
+      this._pacienteService.obtenerPacienteForm3PorIdPaciente(this.idPaciente).subscribe(
+        (res) => {
+          console.log(res);
+          // Rellenar los campos con los datos obtenidos
+          this.datos.iniciales_paciente = res.paciente.iniciales_paciente;
+          this.datos.numero_hc = res.paciente.numero_hc;
+          this.datos.centro_institucion_atencion = res.paciente.centro_institucion_atencion;
+          
+          this.datos.cuenta_consentimiento_informado = res.paciente.cuenta_consentimiento_informado;
+          this.datos.fecha_consentimiento_informado = res.paciente.fecha_consentimiento_informado;
         },
         (error) => {
           console.log(error);

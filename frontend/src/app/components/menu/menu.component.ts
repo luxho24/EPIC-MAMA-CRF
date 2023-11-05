@@ -22,10 +22,24 @@ export class MenuComponent implements OnInit {
   botonesHabilitados = false;
   botonesHabilitadosForm1 = true;
 
+  nombreUsuario: string = '';
+
   constructor(private _pacienteService: PacienteService, private _authService:AuthService, private router: Router, private aRoute: ActivatedRoute){}
 
   ngOnInit(): void {
     this.idUsuario = this.aRoute.snapshot.paramMap.get('idUsuario');
+    
+    if (this.idPaciente !== null) {
+      this._authService.obtenerUsuarioPorId(this.idUsuario).subscribe(
+        (res) => {
+          console.log(res);
+          this.nombreUsuario = res.username
+        },
+        (error) => {
+          console.log(error);
+        }
+      )
+    }
   }
 
   // Funcion para traer el "numero_hc" del paciente que YA se encuentre registrado en la base de datos

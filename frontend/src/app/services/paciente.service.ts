@@ -115,4 +115,34 @@ export class PacienteService {
   obtenerPacientePorId(idUsuario:any, idPaciente: any): Observable<any> {
     return this.httpClient.get(`${this.url}/obtenerPacientePorId/${idUsuario}/${idPaciente}`);
   }
+
+  // * Obtener los datos del paciente solo por el idPaciente
+  // Funcion para obetner los datos del paciente para el formulario 1 solo con el idPaciente
+  obtenerPacienteForm1PorIdPaciente(idPaciente: any): Observable<any> {
+    return this.httpClient.get(`${this.url}/obtenerPacienteForm1PorIdPaciente/${idPaciente}`);
+  }
+  // Funcion para obetner los datos del paciente para el formulario 2 solo con el idPaciente
+  obtenerPacienteForm2PorIdPaciente(idPaciente: any): Observable<any> {
+    return this.httpClient.get(`${this.url}/obtenerPacienteForm2PorIdPaciente/${idPaciente}`);
+  }
+  // Funcion para obetner los datos del paciente para el formulario 3 solo con el idPaciente
+  obtenerPacienteForm3PorIdPaciente(idPaciente: any): Observable<any> {
+    return this.httpClient.get(`${this.url}/obtenerPacienteForm3PorIdPaciente/${idPaciente}`);
+  }
+  // Funcion para obetner los datos del paciente para el formulario 4 solo con el idPaciente
+  obtenerPacienteForm4PorIdPaciente(idPaciente: any): Observable<any> {
+    return this.httpClient.get(`${this.url}/obtenerPacienteForm4PorIdPaciente/${idPaciente}`);
+  }
+  // Funcion para obetner los datos del paciente para el formulario 5 solo con el idPaciente
+  obtenerPacienteForm5PorIdPaciente(idPaciente: any): Observable<any> {
+    return this.httpClient.get(`${this.url}/obtenerPacienteForm5PorIdPaciente/${idPaciente}`);
+  }
+  // Funcion para obetner los datos del paciente para el formulario 6 solo con el idPaciente
+  obtenerPacienteForm6PorIdPaciente(idPaciente: any): Observable<any> {
+    return this.httpClient.get(`${this.url}/obtenerPacienteForm6PorIdPaciente/${idPaciente}`);
+  }
+  // Funcion para obetner los datos del paciente para el formulario 7 solo con el idPaciente
+  obtenerPacienteForm7PorIdPaciente(idPaciente: any): Observable<any> {
+    return this.httpClient.get(`${this.url}/obtenerPacienteForm7PorIdPaciente/${idPaciente}`);
+  }
 }

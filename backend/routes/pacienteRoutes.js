@@ -24,6 +24,13 @@ import {
     obtenerPacientesSAForm5,
     obtenerPacientesSAForm6,
     obtenerPacientesSAForm7,
+    obtenerPacienteForm1PorIdPaciente,
+    obtenerPacienteForm2PorIdPaciente,
+    obtenerPacienteForm3PorIdPaciente,
+    obtenerPacienteForm4PorIdPaciente,
+    obtenerPacienteForm5PorIdPaciente,
+    obtenerPacienteForm6PorIdPaciente,
+    obtenerPacienteForm7PorIdPaciente,
 } from "../controllers/pacienteController.js";
 import checkAuth from "../middleware/authMiddleware.js";
 import obtenerPacientePorNumeroHC from "../middleware/getNumberHCMiddleware.js";
@@ -58,5 +65,13 @@ router.get("/obtenerPaciente", checkAuth, obtenerPaciente);
 router.get("/obtenerIds", checkAuth, obtenerIds);
 router.get("/obtenerPacientePorId", checkAuth, obtenerPacientePorId);
 router.get("/obtenerPacientePorId/:idUsuario/:idPaciente", checkAuth, obtenerPacientePorId)
+
+router.get("/obtenerPacienteForm1PorIdPaciente/:idPaciente", checkAuth, obtenerPacienteForm1PorIdPaciente)
+router.get("/obtenerPacienteForm2PorIdPaciente/:idPaciente", checkAuth, obtenerPacienteForm2PorIdPaciente)
+router.get("/obtenerPacienteForm3PorIdPaciente/:idPaciente", checkAuth, obtenerPacienteForm3PorIdPaciente)
+router.get("/obtenerPacienteForm4PorIdPaciente/:idPaciente", checkAuth, obtenerPacienteForm4PorIdPaciente)
+router.get("/obtenerPacienteForm5PorIdPaciente/:idPaciente", checkAuth, obtenerPacienteForm5PorIdPaciente)
+router.get("/obtenerPacienteForm6PorIdPaciente/:idPaciente", checkAuth, obtenerPacienteForm6PorIdPaciente)
+router.get("/obtenerPacienteForm7PorIdPaciente/:idPaciente", checkAuth, obtenerPacienteForm7PorIdPaciente)
 
 export default router;

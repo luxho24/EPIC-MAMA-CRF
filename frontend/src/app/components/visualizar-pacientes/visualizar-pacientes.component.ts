@@ -27,6 +27,9 @@ export class VisualizarPacientesComponent implements OnInit {
   // datosf7: Formulario7[] = [];
 
   idUsuario!: any;
+  idPaciente!: any;
+
+  nombreUsuario: string = '';
 
   public isAdmin: boolean = false;
   public isUser: boolean = false;
@@ -35,6 +38,20 @@ export class VisualizarPacientesComponent implements OnInit {
 
   ngOnInit(): void {
     this.idUsuario = this.aRoute.snapshot.paramMap.get('idUsuario');
+    this.idPaciente = this.aRoute.snapshot.paramMap.get('idPaciente');
+
+    if (this.idUsuario !== null) {
+      this._authService.obtenerUsuarioPorId(this.idUsuario).subscribe(
+        (res) => {
+          console.log(res);
+          this.nombreUsuario = res.username
+        },
+        (error) => {
+          console.log(error);
+        }
+      )
+    }
+
     this.setRoleState();
   }
   
