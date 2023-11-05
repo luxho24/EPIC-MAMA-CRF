@@ -3,6 +3,11 @@ import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { environment } from 'src/app/environment/environment';
+import { Paciente } from '../models/paciente.model';
+import { Formulario2 } from '../models/formulario2.model';
+import { Formulario3 } from '../models/formulario3.model';
+import { Formulario4 } from '../models/formulario4.model';
+import { Formulario5 } from '../models/formulario5.model';
 
 @Injectable({
   providedIn: 'root'
@@ -145,4 +150,27 @@ export class PacienteService {
   obtenerPacienteForm7PorIdPaciente(idPaciente: any): Observable<any> {
     return this.httpClient.get(`${this.url}/obtenerPacienteForm7PorIdPaciente/${idPaciente}`);
   }
+
+  // * Funcion para editar datos del paciente sin restriccion de rol de usuario
+  editarPacienteForm1(idPaciente: any, paciente: Paciente): Observable<any> {
+    return this.httpClient.put(`${this.url}/editarPacienteForm1/${idPaciente}`, paciente);
+  }
+  editarPacienteForm2(idPaciente: any, paciente: Formulario2): Observable<any> {
+    return this.httpClient.put(`${this.url}/editarPacienteForm2/${idPaciente}`, paciente);
+  }
+  editarPacienteForm3(idPaciente: any, paciente: Formulario3): Observable<any> {
+    return this.httpClient.put(`${this.url}/editarPacienteForm3/${idPaciente}`, paciente);
+  }
+  editarPacienteForm4(idPaciente: any, paciente: Formulario4): Observable<any> {
+    return this.httpClient.put(`${this.url}/editarPacienteForm4/${idPaciente}`, paciente);
+  }
+  editarPacienteForm5(idPaciente: any, paciente: Formulario5): Observable<any> {
+    return this.httpClient.put(`${this.url}/editarPacienteForm5/${idPaciente}`, paciente);
+  }
+  // editarPacienteForm6(idPaciente: any, paciente: Formulario6): Observable<any> {
+  //   return this.httpClient.put(`${this.url}/editarPacienteForm6/${idPaciente}`, paciente);
+  // }
+  // editarPacienteForm7(idPaciente: any, paciente: Formulario7): Observable<any> {
+  //   return this.httpClient.put(`${this.url}/editarPacienteForm7/${idPaciente}`, paciente);
+  // }
 }

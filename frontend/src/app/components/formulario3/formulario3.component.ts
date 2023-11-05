@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Formulario3 } from 'src/app/models/formulario3.model'
+import { AuthService } from 'src/app/services/auth.service';
 import { PacienteService } from 'src/app/services/paciente.service';
 
 @Component({
@@ -14,7 +15,11 @@ export class Formulario3Component implements OnInit {
   idUsuario!: any;
   idPaciente!: any;
 
-  constructor(private _pacienteService: PacienteService, private router: Router, private aRoute: ActivatedRoute){}
+  // model!: Formulario3;
+
+  esModoEdicion: boolean = false;
+
+  constructor(private _pacienteService: PacienteService, private _authService: AuthService, private router: Router, private aRoute: ActivatedRoute){}
 
   ngOnInit(): void {
     this.idUsuario = this.aRoute.snapshot.paramMap.get('idUsuario');
@@ -43,7 +48,7 @@ export class Formulario3Component implements OnInit {
       )
     }
   }
-
+  
   mostrarDatosPacienteSA() {
     if (this.idPaciente !== null) {
       console.log(this.idPaciente);
@@ -57,6 +62,8 @@ export class Formulario3Component implements OnInit {
           
           this.datos.cuenta_consentimiento_informado = res.paciente.cuenta_consentimiento_informado;
           this.datos.fecha_consentimiento_informado = res.paciente.fecha_consentimiento_informado;
+
+          this.esModoEdicion = true;
         },
         (error) => {
           console.log(error);
@@ -68,27 +75,69 @@ export class Formulario3Component implements OnInit {
   // Funcion para registrar los datos del paciente del formulario 3
   registrarForm3() {
     console.log(this.datos);
-    this._pacienteService.registerForm3(this.datos).subscribe(
-      (res) => {
-        console.log(res);
-        /* 
-          * Verificar el codigo de abajo 👇
-        */
-
-        this._pacienteService.obtenerIds(this.datos.numero_hc).subscribe(
-          (result) => {
-            console.log(result.idUsuario);
-            console.log(result.idPaciente);
-            this.router.navigate(['/formulario4/usuario/', result.idUsuario, 'paciente', result.idPaciente]);
-          },
-          (err) => {
-            console.log(err);
-          }
-        )
-      },
-      (error) => {
-        console.log(error);
-      }
-    )
+    if (this.esModoEdicion) {
+      this._pacienteService.editarPacienteForm3(this.idPaciente, this.datos).subscribe(
+        (res) => {
+          console.log(res);
+          this._authService.obtenerUsuarioPorId(this.idUsuario).subscribe(
+            (res) => {
+              // console.log(res);
+              this.router.navigate(['/visualizar-pacientes/usuario/', res._id]);
+            },
+            (error) => {
+              console.log(error);
+            }
+          )
+        },
+        (error) => {
+          console.log(error);
+        }
+      )
+    } else {
+      this._pacienteService.registerForm3(this.datos).subscribe(
+        (res) => {
+          console.log(res);
+          /* 
+            * Verificar el codigo de abajo 👇
+          */
+  
+          this._pacienteService.obtenerIds(this.datos.numero_hc).subscribe(
+            (result) => {
+              console.log(result.idUsuario);
+              console.log(result.idPaciente);
+              this.router.navigate(['/formulario4/usuario/', result.idUsuario, 'paciente', result.idPaciente]);
+            },
+            (err) => {
+              console.log(err);
+            }
+          )
+        },
+        (error) => {
+          console.log(error);
+        }
+      )
+    }
   }
+
+  // editarPacienteForm3(pacientef3: Formulario3) {
+  //   if (this.idPaciente !== null) {
+  //     this._pacienteService.editarPacienteForm3(this.idPaciente, pacientef3).subscribe(
+  //       (res) => {
+  //         console.log(res);
+  //         this._authService.obtenerUsuarioPorId(this.idUsuario).subscribe(
+  //           (res) => {
+  //             // console.log(res);
+  //             this.router.navigate(['/visualizar-pacientes/usuario/', res._id]);
+  //           },
+  //           (error) => {
+  //             console.log(error);
+  //           }
+  //         )
+  //       },
+  //       (error) => {
+  //         console.log(error);
+  //       }
+  //     )
+  //   }
+  // }
 }

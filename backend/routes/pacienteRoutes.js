@@ -31,6 +31,13 @@ import {
     obtenerPacienteForm5PorIdPaciente,
     obtenerPacienteForm6PorIdPaciente,
     obtenerPacienteForm7PorIdPaciente,
+    editarPacienteForm1,
+    editarPacienteForm2,
+    editarPacienteForm3,
+    editarPacienteForm4,
+    editarPacienteForm5,
+    editarPacienteForm6,
+    editarPacienteForm7,
 } from "../controllers/pacienteController.js";
 import checkAuth from "../middleware/authMiddleware.js";
 import obtenerPacientePorNumeroHC from "../middleware/getNumberHCMiddleware.js";
@@ -73,5 +80,13 @@ router.get("/obtenerPacienteForm4PorIdPaciente/:idPaciente", checkAuth, obtenerP
 router.get("/obtenerPacienteForm5PorIdPaciente/:idPaciente", checkAuth, obtenerPacienteForm5PorIdPaciente)
 router.get("/obtenerPacienteForm6PorIdPaciente/:idPaciente", checkAuth, obtenerPacienteForm6PorIdPaciente)
 router.get("/obtenerPacienteForm7PorIdPaciente/:idPaciente", checkAuth, obtenerPacienteForm7PorIdPaciente)
+
+router.put("/editarPacienteForm1/:idPaciente", checkAuth, editarPacienteForm1)
+router.put("/editarPacienteForm2/:idPaciente", checkAuth, editarPacienteForm2)
+router.put("/editarPacienteForm3/:idPaciente", checkAuth, editarPacienteForm3)
+router.put("/editarPacienteForm4/:idPaciente", checkAuth, editarPacienteForm4)
+router.put("/editarPacienteForm5/:idPaciente", checkAuth, editarPacienteForm5)
+router.put("/editarPacienteForm6/:idPaciente", checkAuth, editarPacienteForm6)
+router.put("/editarPacienteForm7/:idPaciente", checkAuth, editarPacienteForm7)
 
 export default router;

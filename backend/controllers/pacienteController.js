@@ -14,14 +14,14 @@ import cloudinary from "../keys/cloudinary.js";
 // Funcion para registrar paciente del formulario 1
 const registrarPacienteForm1 = async (req, res) => {
 
-    console.log(req.file);
-    const result = await cloudinary.uploader.upload(req.file.path);
-    console.log(result);
+    // console.log(req.file);
+    // const result = await cloudinary.uploader.upload(req.file.path);
+    // console.log(result);
 
     const {numero_documento} = req.body;
     const paciente = new PacienteModel(req.body);
     paciente.usuario = req.usuario._id;
-    paciente.firma = result.secure_url;
+    // paciente.firma = result.secure_url;
 
     const existePaciente = await PacienteModel.findOne({ numero_documento });
 
@@ -640,6 +640,92 @@ const obtenerPacienteForm7PorIdPaciente = async (req, res) => {
     }
 };
 
+// * Funcion para actualizar los datos de un paciente para el SA
+const editarPacienteForm1 = async (req, res) => {
+    const {idPaciente} = req.params;
+    try {
+        const pacienteActualizado = await PacienteModel.findByIdAndUpdate({_id: idPaciente}, req.body, {new: true});
+        if (!pacienteActualizado) {
+            return res.status(404).json({ msg: "No encontrado" });
+        }
+        res.status(200).json(pacienteActualizado);
+    } catch (error) {
+        res.status(500).json({ msg: error.message });
+    }
+}
+const editarPacienteForm2 = async (req, res) => {
+    const {idPaciente} = req.params;
+    try {
+        const pacientef2Actualizado = await Formulario2Model.findByIdAndUpdate({_id: idPaciente}, req.body, {new: true});
+        if (!pacientef2Actualizado) {
+            return res.status(404).json({ msg: "No encontrado" });
+        }
+        res.status(200).json(pacientef2Actualizado);
+    } catch (error) {
+        res.status(500).json({ msg: error.message });
+    }
+}
+const editarPacienteForm3 = async (req, res) => {
+    const {idPaciente} = req.params;
+    try {
+        const pacientef3Actualizado = await Formulario3Model.findByIdAndUpdate({_id: idPaciente}, req.body, {new: true});
+        if (!pacientef3Actualizado) {
+            return res.status(404).json({ msg: "No encontrado" });
+        }
+        res.status(200).json(pacientef3Actualizado);
+    } catch (error) {
+        res.status(500).json({ msg: error.message });
+    }
+}
+const editarPacienteForm4 = async (req, res) => {
+    const {idPaciente} = req.params;
+    try {
+        const pacientef4Actualizado = await Formulario4Model.findByIdAndUpdate({_id: idPaciente}, req.body, {new: true});
+        if (!pacientef4Actualizado) {
+            return res.status(404).json({ msg: "No encontrado" });
+        }
+        res.status(200).json(pacientef4Actualizado);
+    } catch (error) {
+        res.status(500).json({ msg: error.message });
+    }
+}
+const editarPacienteForm5 = async (req, res) => {
+    const {idPaciente} = req.params;
+    try {
+        const pacientef5Actualizado = await Formulario5Model.findByIdAndUpdate({_id: idPaciente}, req.body, {new: true});
+        if (!pacientef5Actualizado) {
+            return res.status(404).json({ msg: "No encontrado" });
+        }
+        res.status(200).json(pacientef5Actualizado);
+    } catch (error) {
+        res.status(500).json({ msg: error.message });
+    }
+}
+const editarPacienteForm6 = async (req, res) => {
+    const {idPaciente} = req.params;
+    try {
+        const pacientef6Actualizado = await Formulario6Model.findByIdAndUpdate({_id: idPaciente}, req.body, {new: true});
+        if (!pacientef6Actualizado) {
+            return res.status(404).json({ msg: "No encontrado" });
+        }
+        res.status(200).json(pacientef6Actualizado);
+    } catch (error) {
+        res.status(500).json({ msg: error.message });
+    }
+}
+const editarPacienteForm7 = async (req, res) => {
+    const {idPaciente} = req.params;
+    try {
+        const pacientef7Actualizado = await Formulario7Model.findByIdAndUpdate({_id: idPaciente}, req.body, {new: true});
+        if (!pacientef7Actualizado) {
+            return res.status(404).json({ msg: "No encontrado" });
+        }
+        res.status(200).json(pacientef7Actualizado);
+    } catch (error) {
+        res.status(500).json({ msg: error.message });
+    }
+}
+
 // * Funcion para el SUPER ADMIN
 // Funcion para verificar si existe el paciente por medio de "numero_hc", SIN RESTRICCION por id de usuario
 // ! Aun no esta comprobado si funciona 👇
@@ -687,4 +773,11 @@ export {
     obtenerPacienteForm5PorIdPaciente,
     obtenerPacienteForm6PorIdPaciente,
     obtenerPacienteForm7PorIdPaciente,
+    editarPacienteForm1,
+    editarPacienteForm2,
+    editarPacienteForm3,
+    editarPacienteForm4,
+    editarPacienteForm5,
+    editarPacienteForm6,
+    editarPacienteForm7,
 }
