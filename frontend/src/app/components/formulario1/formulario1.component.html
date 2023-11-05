@@ -428,8 +428,8 @@
                 </div>
                 <div class="col-6 d-flex align-items-center justify-content-between mb-3">
                     <label for="formFile" class="form-label">Firma:</label>
-                    <!-- <input class="form-control" type="file" id="formFile" style="width: 86%;"> -->
-                    <input class="form-control" type="file" id="formFile" name="imagen" (change)="onSelectFile($event)" style="width: 86%;">
+                    <input type="text" class="form-control py-3" id="startDate" [(ngModel)]="datos.firma" name="firma" style="width: 86%;">
+                    <!-- <input class="form-control" type="file" id="formFile" name="imagen" (change)="onSelectFile($event)" style="width: 86%;"> -->
                 </div>
                 <div class="col-6 d-flex align-items-center justify-content-between mb-3">
                     <label for="startDate" class="form-label">Fecha:</label>
@@ -443,7 +443,7 @@
         </div>
         <!-- Boton -->
         <div class="d-flex justify-content-end">
-            <button type="submit" (click)="registrarForm1()">Registrar y Siguiente: Datos Clínicos de la Paciente</button>
+            <button type="submit" (click)="registrarForm1()">{{ esModoEdicion ? 'Actualizar' : 'Registrar y Siguiente: Datos Clínicos de la Paciente'}}</button>
         </div>
         <!-- Boton -->
         </form>

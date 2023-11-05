@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Formulario2 } from 'src/app/models/formulario2.model';
+import { AuthService } from 'src/app/services/auth.service';
 import { PacienteService } from 'src/app/services/paciente.service';
 
 @Component({
@@ -25,7 +26,9 @@ export class Formulario2Component implements OnInit {
   idUsuario!: any;
   idPaciente!: any;
 
-  constructor(private _pacienteService: PacienteService, private router: Router, private aRoute: ActivatedRoute){}
+  esModoEdicion: boolean = false;
+
+  constructor(private _pacienteService: PacienteService, private _authService: AuthService, private router: Router, private aRoute: ActivatedRoute){}
 
   ngOnInit(): void {
     this.idUsuario = this.aRoute.snapshot.paramMap.get('idUsuario');
@@ -72,6 +75,8 @@ export class Formulario2Component implements OnInit {
           this.datos.tipo_histologico = res.paciente.tipo_histologico;
           this.datos.conclusion_informe = res.paciente.conclusion_informe;
           this.datos.clasificacion_molecular = res.paciente.clasificacion_molecular;
+
+          this.esModoEdicion = true;
         },
         (error) => {
           console.log(error);
@@ -83,27 +88,47 @@ export class Formulario2Component implements OnInit {
   // Funcion para registrar los datos del paciente del formulario 2
   registrarForm2() {
     console.log(this.datos);
-    this._pacienteService.registerForm2(this.datos).subscribe(
-      (res) => {
-        console.log(res);
-        /* 
-         * Verificar el codigo de abajo 👇
-        */
+    if (this.esModoEdicion) {
+      this._pacienteService.editarPacienteForm2(this.idPaciente, this.datos).subscribe(
+        (res) => {
+          console.log(res);
+          this._authService.obtenerUsuarioPorId(this.idUsuario).subscribe(
+            (res) => {
+              // console.log(res);
+              this.router.navigate(['/visualizar-pacientes/usuario/', res._id]);
+            },
+            (error) => {
+              console.log(error);
+            }
+          )
+        },
+        (error) => {
+          console.log(error);
+        }
+      )
+    } else {
+      this._pacienteService.registerForm2(this.datos).subscribe(
+        (res) => {
+          console.log(res);
+          /* 
+          * Verificar el codigo de abajo 👇
+          */
 
-        this._pacienteService.obtenerIds(this.datos.numero_hc).subscribe(
-          (result) => {
-            console.log(result.idUsuario);
-            console.log(result.idPaciente);
-            this.router.navigate(['/formulario3/usuario/', result.idUsuario, 'paciente', result.idPaciente]);
-          },
-          (err) => {
-            console.log(err);
-          }
-        )
-      },
-      (error) => {
-        console.log(error);
-      }
-    )
+          this._pacienteService.obtenerIds(this.datos.numero_hc).subscribe(
+            (result) => {
+              console.log(result.idUsuario);
+              console.log(result.idPaciente);
+              this.router.navigate(['/formulario3/usuario/', result.idUsuario, 'paciente', result.idPaciente]);
+            },
+            (err) => {
+              console.log(err);
+            }
+          )
+        },
+        (error) => {
+          console.log(error);
+        }
+      )
+    }
   }
 }
