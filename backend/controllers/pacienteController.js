@@ -343,10 +343,17 @@ const obtenerPacientesForm7 = async (req, res) => {
 const obtenerPaciente = async (req, res) => {
     const { numero_hc } = req.query;
     try {
-        const paciente = await PacienteModel.findOne({numero_hc, usuario: req.usuario._id}); // Verifica si existe el paciente segun el numero_hc y tambien revisa si coincide el id del usuario en el modelo Paciente con el id del usuario que esta autenticado en ese momento
-        if (!paciente) return res.status(404).json({ msg: "No encontrado" });
-        // res.status(200).json(paciente);
-        res.status(200).json({msg: "Paciente encontrado"});
+        if (req.usuario.rol === "administrador") {
+            const paciente = await PacienteModel.findOne({numero_hc}); // Verifica si existe el paciente segun el numero_hc y tambien revisa si coincide el id del usuario en el modelo Paciente con el id del usuario que esta autenticado en ese momento
+            if (!paciente) return res.status(404).json({ msg: "No encontrado" });
+            // res.status(200).json(paciente);
+            res.status(200).json({msg: "Paciente encontrado"});
+        } else {
+            const paciente = await PacienteModel.findOne({numero_hc, usuario: req.usuario._id}); // Verifica si existe el paciente segun el numero_hc y tambien revisa si coincide el id del usuario en el modelo Paciente con el id del usuario que esta autenticado en ese momento
+            if (!paciente) return res.status(404).json({ msg: "No encontrado" });
+            // res.status(200).json(paciente);
+            res.status(200).json({msg: "Paciente encontrado"});
+        }
     } catch (error) {
         res.status(500).json({ msg: "A ocurrido un error" });
     }
@@ -491,6 +498,148 @@ const obtenerPacientesSAForm7 = async (req, res) => {
     }
 };
 
+// * Funcion para poder traer los datos de los pacientes solo con idPaciente para el SA
+// Funcion para obtener pacientes del formulario 1, cuando esta autenticado SA
+const obtenerPacienteForm1PorIdPaciente = async (req, res) => {
+    const { idPaciente } = req.params;
+
+    try {
+        // Busca al paciente utilizando el pacienteId
+        const paciente = await PacienteModel.findOne({_id:idPaciente});
+
+        if (!paciente) {
+            return res.status(404).json({ msg: "Paciente no encontrado" });
+        }
+
+        // Si el paciente existe y está vinculado al usuario, lo devolvemos
+        res.status(200).json({ paciente });
+
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ msg: "Ha ocurrido un error" });
+    }
+};
+// Funcion para obtener pacientes del formulario 2, cuando esta autenticado SA
+const obtenerPacienteForm2PorIdPaciente = async (req, res) => {
+    const { idPaciente } = req.params;
+
+    try {
+        // Busca al paciente utilizando el pacienteId
+        const paciente = await Formulario2Model.findOne({_id:idPaciente});
+
+        if (!paciente) {
+            return res.status(404).json({ msg: "Paciente no encontrado" });
+        }
+
+        // Si el paciente existe y está vinculado al usuario, lo devolvemos
+        res.status(200).json({ paciente });
+
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ msg: "Ha ocurrido un error" });
+    }
+};
+// Funcion para obtener pacientes del formulario 3, cuando esta autenticado SA
+const obtenerPacienteForm3PorIdPaciente = async (req, res) => {
+    const { idPaciente } = req.params;
+
+    try {
+        // Busca al paciente utilizando el pacienteId
+        const paciente = await Formulario3Model.findOne({_id:idPaciente});
+
+        if (!paciente) {
+            return res.status(404).json({ msg: "Paciente no encontrado" });
+        }
+
+        // Si el paciente existe y está vinculado al usuario, lo devolvemos
+        res.status(200).json({ paciente });
+
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ msg: "Ha ocurrido un error" });
+    }
+};
+// Funcion para obtener pacientes del formulario 4, cuando esta autenticado SA
+const obtenerPacienteForm4PorIdPaciente = async (req, res) => {
+    const { idPaciente } = req.params;
+
+    try {
+        // Busca al paciente utilizando el pacienteId
+        const paciente = await Formulario4Model.findOne({_id:idPaciente});
+
+        if (!paciente) {
+            return res.status(404).json({ msg: "Paciente no encontrado" });
+        }
+
+        // Si el paciente existe y está vinculado al usuario, lo devolvemos
+        res.status(200).json({ paciente });
+
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ msg: "Ha ocurrido un error" });
+    }
+};
+// Funcion para obtener pacientes del formulario 5, cuando esta autenticado SA
+const obtenerPacienteForm5PorIdPaciente = async (req, res) => {
+    const { idPaciente } = req.params;
+
+    try {
+        // Busca al paciente utilizando el pacienteId
+        const paciente = await Formulario5Model.findOne({_id:idPaciente});
+
+        if (!paciente) {
+            return res.status(404).json({ msg: "Paciente no encontrado" });
+        }
+
+        // Si el paciente existe y está vinculado al usuario, lo devolvemos
+        res.status(200).json({ paciente });
+
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ msg: "Ha ocurrido un error" });
+    }
+};
+// Funcion para obtener pacientes del formulario 6, cuando esta autenticado SA
+const obtenerPacienteForm6PorIdPaciente = async (req, res) => {
+    const { idPaciente } = req.params;
+
+    try {
+        // Busca al paciente utilizando el pacienteId
+        const paciente = await Formulario6Model.findOne({_id:idPaciente});
+
+        if (!paciente) {
+            return res.status(404).json({ msg: "Paciente no encontrado" });
+        }
+
+        // Si el paciente existe y está vinculado al usuario, lo devolvemos
+        res.status(200).json({ paciente });
+
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ msg: "Ha ocurrido un error" });
+    }
+};
+// Funcion para obtener pacientes del formulario 7, cuando esta autenticado SA
+const obtenerPacienteForm7PorIdPaciente = async (req, res) => {
+    const { idPaciente } = req.params;
+
+    try {
+        // Busca al paciente utilizando el pacienteId
+        const paciente = await Formulario7Model.findOne({_id:idPaciente});
+
+        if (!paciente) {
+            return res.status(404).json({ msg: "Paciente no encontrado" });
+        }
+
+        // Si el paciente existe y está vinculado al usuario, lo devolvemos
+        res.status(200).json({ paciente });
+
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ msg: "Ha ocurrido un error" });
+    }
+};
+
 // * Funcion para el SUPER ADMIN
 // Funcion para verificar si existe el paciente por medio de "numero_hc", SIN RESTRICCION por id de usuario
 // ! Aun no esta comprobado si funciona 👇
@@ -530,5 +679,12 @@ export {
     obtenerPacientesSAForm7,
     obtenerPaciente,
     obtenerIds,
-    obtenerPacientePorId
+    obtenerPacientePorId,
+    obtenerPacienteForm1PorIdPaciente,
+    obtenerPacienteForm2PorIdPaciente,
+    obtenerPacienteForm3PorIdPaciente,
+    obtenerPacienteForm4PorIdPaciente,
+    obtenerPacienteForm5PorIdPaciente,
+    obtenerPacienteForm6PorIdPaciente,
+    obtenerPacienteForm7PorIdPaciente,
 }

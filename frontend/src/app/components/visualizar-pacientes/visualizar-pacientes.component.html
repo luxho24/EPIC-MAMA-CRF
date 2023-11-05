@@ -1,5 +1,7 @@
 <app-navbar></app-navbar>
 
+<p class="fs-2 ms-5" style="margin-top: -70px; margin-bottom: 22px;">Bienvenido usuario <b class="text-primary">{{nombreUsuario}}</b></p>
+
 <!--  Formulario -->
 <div class="container">
     <h2>Pacientes Registrados</h2>
@@ -128,7 +130,7 @@
                                 <td>{{paciente.uso_antibioticos_ultimos_meses}}</td>
                                 <td>{{paciente.antibioticos}}</td>
                                 <td class="fixed-column-td" *ngIf="isAdmin">
-                                    <button class="btn btn-warning">Editar</button>
+                                    <button class="btn btn-warning" [routerLink]="['/formulario1/usuario', idUsuario, 'editar', 'paciente', paciente._id]">Editar</button>
                                 </td>
                             </tr>
                         </tbody>
@@ -180,7 +182,7 @@
                                 <td>{{pacientef2.conclusion_informe}}</td>
                                 <td>{{pacientef2.clasificacion_molecular}}</td>
                                 <td class="fixed-column-td" *ngIf="isAdmin">
-                                    <button class="btn btn-warning">Editar</button>
+                                    <button class="btn btn-warning" [routerLink]="['/formulario2/usuario', idUsuario, 'editar', 'paciente', pacientef2._id]">Editar</button>
                                 </td>
                             </tr>
                         </tbody>
@@ -220,7 +222,7 @@
                                 <td>{{pacientef3.cuenta_consentimiento_informado}}</td>
                                 <td>{{pacientef3.fecha_consentimiento_informado}}</td>
                                 <td class="fixed-column-td" *ngIf="isAdmin">
-                                    <button class="btn btn-warning">Editar</button>
+                                    <button class="btn btn-warning" [routerLink]="['/formulario3/usuario', idUsuario, 'editar', 'paciente', pacientef3._id]">Editar</button>
                                 </td>
                             </tr>
                         </tbody>
@@ -284,7 +286,7 @@
                                 <td>{{pacientef4.criterios_exclusion_6}}</td>
                                 <td>{{pacientef4.criterios_elegibilidad_estudio}}</td>
                                 <td class="fixed-column-td" *ngIf="isAdmin">
-                                    <button class="btn btn-warning">Editar</button>
+                                    <button class="btn btn-warning" [routerLink]="['/formulario4/usuario', idUsuario, 'editar', 'paciente', pacientef4._id]">Editar</button>
                                 </td>
                             </tr>
                         </tbody>

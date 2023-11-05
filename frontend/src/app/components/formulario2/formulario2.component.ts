@@ -30,6 +30,7 @@ export class Formulario2Component implements OnInit {
   ngOnInit(): void {
     this.idUsuario = this.aRoute.snapshot.paramMap.get('idUsuario');
     this.idPaciente = this.aRoute.snapshot.paramMap.get('idPaciente');
+    this.mostrarDatosPacienteSA()
     this.mostrarDatos();
   }
 
@@ -43,6 +44,34 @@ export class Formulario2Component implements OnInit {
           this.datos.iniciales_paciente = res.paciente.iniciales_paciente;
           this.datos.numero_hc = res.paciente.numero_hc;
           this.datos.centro_institucion_atencion = res.paciente.centro_institucion_atencion;
+        },
+        (error) => {
+          console.log(error);
+        }
+      )
+    }
+  }
+
+  mostrarDatosPacienteSA() {
+    if (this.idPaciente !== null) {
+      console.log(this.idPaciente);
+      this._pacienteService.obtenerPacienteForm2PorIdPaciente(this.idPaciente).subscribe(
+        (res) => {
+          console.log(res);
+          // Rellenar los campos con los datos obtenidos
+          this.datos.iniciales_paciente = res.paciente.iniciales_paciente;
+          this.datos.numero_hc = res.paciente.numero_hc;
+          this.datos.centro_institucion_atencion = res.paciente.centro_institucion_atencion;
+          
+          this.datos.signos_sintomas_inicio = res.paciente.signos_sintomas_inicio;
+          this.datos.fecha_inicio_sintomas_signos = res.paciente.fecha_inicio_sintomas_signos;
+          this.datos.tiempo_meses_diagnostico = res.paciente.tiempo_meses_diagnostico;
+          this.datos.tamano_tumor_campo1 = res.paciente.tamano_tumor_campo1;
+          this.datos.tamano_tumor_campo2 = res.paciente.tamano_tumor_campo2;
+          this.datos.ganglios_axilares = res.paciente.ganglios_axilares;
+          this.datos.tipo_histologico = res.paciente.tipo_histologico;
+          this.datos.conclusion_informe = res.paciente.conclusion_informe;
+          this.datos.clasificacion_molecular = res.paciente.clasificacion_molecular;
         },
         (error) => {
           console.log(error);

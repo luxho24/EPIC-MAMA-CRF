@@ -19,6 +19,7 @@ export class Formulario4Component implements OnInit {
   ngOnInit(): void {
     this.idUsuario = this.aRoute.snapshot.paramMap.get('idUsuario');
     this.idPaciente = this.aRoute.snapshot.paramMap.get('idPaciente');
+    this.mostrarDatosPacienteSA()
     this.mostrarDatos();
   }
 
@@ -32,6 +33,41 @@ export class Formulario4Component implements OnInit {
           this.datos.iniciales_paciente = res.paciente.iniciales_paciente;
           this.datos.numero_hc = res.paciente.numero_hc;
           this.datos.centro_institucion_atencion = res.paciente.centro_institucion_atencion;
+        },
+        (error) => {
+          console.log(error);
+        }
+      )
+    }
+  }
+
+  mostrarDatosPacienteSA() {
+    if (this.idPaciente !== null) {
+      console.log(this.idPaciente);
+      this._pacienteService.obtenerPacienteForm4PorIdPaciente(this.idPaciente).subscribe(
+        (res) => {
+          console.log(res);
+          // Rellenar los campos con los datos obtenidos
+          this.datos.iniciales_paciente = res.paciente.iniciales_paciente;
+          this.datos.numero_hc = res.paciente.numero_hc;
+          this.datos.centro_institucion_atencion = res.paciente.centro_institucion_atencion;
+          
+          this.datos.criterios_inclusion_1 = res.paciente.criterios_inclusion_1;
+          this.datos.criterios_inclusion_2 = res.paciente.criterios_inclusion_2;
+          this.datos.criterios_inclusion_3 = res.paciente.criterios_inclusion_3;
+          this.datos.criterios_inclusion_4 = res.paciente.criterios_inclusion_4;
+          this.datos.criterios_inclusion_5 = res.paciente.criterios_inclusion_5;
+          this.datos.criterios_inclusion_6 = res.paciente.criterios_inclusion_6;
+          this.datos.criterios_inclusion_7 = res.paciente.criterios_inclusion_7;
+          
+          this.datos.criterios_exclusion_1 = res.paciente.criterios_exclusion_1;
+          this.datos.criterios_exclusion_2 = res.paciente.criterios_exclusion_2;
+          this.datos.criterios_exclusion_3 = res.paciente.criterios_exclusion_3;
+          this.datos.criterios_exclusion_4 = res.paciente.criterios_exclusion_4;
+          this.datos.criterios_exclusion_5 = res.paciente.criterios_exclusion_5;
+          this.datos.criterios_exclusion_6 = res.paciente.criterios_exclusion_6;
+          
+          this.datos.criterios_elegibilidad_estudio = res.paciente.criterios_elegibilidad_estudio;
         },
         (error) => {
           console.log(error);
