@@ -26,13 +26,39 @@ export class Formulario6Component implements OnInit {
     {metastasis: "M0"},
     // {metastasis: "M1"}
   ]
+  detallar_medicacion_paciente_toma_recibe = [
+    'Aines', 'Corticoides'
+  ]
+
+  opciones: string[] = []
 
   idUsuario!: any;
   idPaciente!: any;
 
   esModoEdicion: boolean = false;
 
-  constructor(private _pacienteService: PacienteService, private _authService: AuthService, private router: Router, private aRoute: ActivatedRoute){}
+  constructor(private _pacienteService: PacienteService, private _authService: AuthService, private router: Router, private aRoute: ActivatedRoute){
+    this.opciones = []
+  }
+
+  verificar(c: string): void {
+    let pos = this.opciones.indexOf(c)
+    if (pos === -1) {
+      this.opciones.push(c)
+      console.log('agrego:', this.opciones)
+      for (let index = 0; index < this.opciones.length; index++) {
+        console.log(`Element at index ${index} is ${this.opciones[index]}`)
+        
+      }
+    }else {
+      this.opciones.splice(pos, 1)
+      console.log('elimino:', this.opciones)
+      for (let index = 0; index < this.opciones.length; index++) {
+        console.log(`Element at index ${index} is ${this.opciones[index]}`)
+        
+      }
+    }
+  }
 
   ngOnInit(): void {
     this.idUsuario = this.aRoute.snapshot.paramMap.get('idUsuario');
@@ -89,6 +115,8 @@ export class Formulario6Component implements OnInit {
           this.datos.fecha_inicio_recibio_quimioterapia = res.fecha_inicio_recibio_quimioterapia;
           this.datos.fecha_termino_recibio_quimioterapia = res.fecha_termino_recibio_quimioterapia;
           this.datos.detallar_medicacion_paciente_toma_recibe = res.detallar_medicacion_paciente_toma_recibe;
+          // this.datos.detallar_medicacion_paciente_toma_recibe_aines = res.detallar_medicacion_paciente_toma_recibe_aines;
+          // this.datos.detallar_medicacion_paciente_toma_recibe_corticoides = res.detallar_medicacion_paciente_toma_recibe_corticoides;
           this.datos.detallar_medicacion_paciente_toma_recibe_otros = res.detallar_medicacion_paciente_toma_recibe_otros;
 
           this.datos.nombre = res.paciente.nombre;
@@ -126,6 +154,15 @@ export class Formulario6Component implements OnInit {
         }
       )
     } else {
+      for (let index = 0; index < this.opciones.length; index++) {
+        console.log(`Element at index ${index} is ${this.opciones[index]}`)
+        
+        if (index === 0) {
+          this.datos.detallar_medicacion_paciente_toma_recibe = this.opciones[index];
+        } else {
+          this.datos.detallar_medicacion_paciente_toma_recibe += ', ' + this.opciones[index];
+        }
+      }
       this._pacienteService.registerForm6(this.datos).subscribe(
         (res) => {
           console.log(res);

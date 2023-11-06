@@ -17,11 +17,23 @@ const formulario7Schema = new Schema (
         },
         // Borrar: Se traera automaticamente del modelo Paciente
 
-        cuenta_consentimiento_informado: {
+        esquema_tratamiento: {
             type: String,
             require: true,
         },
-        fecha_consentimiento_informado: {
+        fecha_tratamiento: {
+            type: String,
+            require: true,
+        },
+        ciclo: {
+            type: String,
+            require: true,
+        },
+        tolerancia: {
+            type: String,
+            require: true,
+        },
+        evaluacion_respuesta_tratamiento: {
             type: String,
             require: true,
         },

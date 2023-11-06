@@ -69,6 +69,14 @@ const formulario6Schema = new Schema (
             type: String,
             require: true,
         },
+        // detallar_medicacion_paciente_toma_recibe_aines: {
+        //     type: String,
+        //     require: true,
+        // },
+        // detallar_medicacion_paciente_toma_recibe_corticoides: {
+        //     type: String,
+        //     require: true,
+        // },
         detallar_medicacion_paciente_toma_recibe_otros: {
             type: String,
             require: true,

@@ -19,6 +19,8 @@ export class Formulario6 {
     fecha_inicio_recibio_quimioterapia: string;
     fecha_termino_recibio_quimioterapia: string;
     detallar_medicacion_paciente_toma_recibe: string;
+    // detallar_medicacion_paciente_toma_recibe_aines: string;
+    // detallar_medicacion_paciente_toma_recibe_corticoides: string;
     detallar_medicacion_paciente_toma_recibe_otros: string;
 
     nombre: string;
@@ -29,7 +31,7 @@ export class Formulario6 {
         iniciales_paciente: string,
         numero_hc: string,
         centro_institucion_atencion: string,
-    
+     
         cirugia: string,
         tipo_cirugia: string,
         fecha_procedimiento: string,
@@ -45,6 +47,8 @@ export class Formulario6 {
         fecha_inicio_recibio_quimioterapia: string,
         fecha_termino_recibio_quimioterapia: string,
         detallar_medicacion_paciente_toma_recibe: string,
+        // detallar_medicacion_paciente_toma_recibe_aines: string,
+        // detallar_medicacion_paciente_toma_recibe_corticoides: string,
         detallar_medicacion_paciente_toma_recibe_otros: string,
     
         nombre: string,
@@ -71,6 +75,8 @@ export class Formulario6 {
         this.fecha_inicio_recibio_quimioterapia = fecha_inicio_recibio_quimioterapia;
         this.fecha_termino_recibio_quimioterapia = fecha_termino_recibio_quimioterapia;
         this.detallar_medicacion_paciente_toma_recibe = detallar_medicacion_paciente_toma_recibe;
+        // this.detallar_medicacion_paciente_toma_recibe_aines = detallar_medicacion_paciente_toma_recibe_aines;
+        // this.detallar_medicacion_paciente_toma_recibe_corticoides = detallar_medicacion_paciente_toma_recibe_corticoides;
         this.detallar_medicacion_paciente_toma_recibe_otros = detallar_medicacion_paciente_toma_recibe_otros;
 
         this.nombre = nombre;

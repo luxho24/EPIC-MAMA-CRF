@@ -74,29 +74,29 @@ export class Formulario7Component {
           this.datos.numero_hc = res.paciente.numero_hc;
           this.datos.centro_institucion_atencion = res.paciente.centro_institucion_atencion;
           
-          this.datos.resultados_hemograma = res.paciente.resultados_hemograma;
-          this.datos.fecha_hemograma = res.paciente.fecha_hemograma;
-          this.datos.resultados_otros_estudios = res.paciente.resultados_otros_estudios;
-          this.datos.fecha_otros_estudios = res.paciente.fecha_otros_estudios;
-          this.datos.fecha_muestra_marcadores_inflamatorios_pretratamiento_sericos = res.paciente.fecha_muestra_marcadores_inflamatorios_pretratamiento_sericos;
-          this.datos.codigo_muestra_marcadores_inflamatorios_pretratamiento_sericos = res.paciente.codigo_muestra_marcadores_inflamatorios_pretratamiento_sericos;
+          // this.datos.resultados_hemograma = res.paciente.resultados_hemograma;
+          // this.datos.fecha_hemograma = res.paciente.fecha_hemograma;
+          // this.datos.resultados_otros_estudios = res.paciente.resultados_otros_estudios;
+          // this.datos.fecha_otros_estudios = res.paciente.fecha_otros_estudios;
+          // this.datos.fecha_muestra_marcadores_inflamatorios_pretratamiento_sericos = res.paciente.fecha_muestra_marcadores_inflamatorios_pretratamiento_sericos;
+          // this.datos.codigo_muestra_marcadores_inflamatorios_pretratamiento_sericos = res.paciente.codigo_muestra_marcadores_inflamatorios_pretratamiento_sericos;
           
-          this.datos.fecha_muestra_tumor = res.paciente.fecha_muestra_tumor;
-          this.datos.fecha_microbioma_intestinal = res.paciente.fecha_microbioma_intestinal;
-          this.datos.fecha_microbioma_salival = res.paciente.fecha_microbioma_salival;
+          // this.datos.fecha_muestra_tumor = res.paciente.fecha_muestra_tumor;
+          // this.datos.fecha_microbioma_intestinal = res.paciente.fecha_microbioma_intestinal;
+          // this.datos.fecha_microbioma_salival = res.paciente.fecha_microbioma_salival;
 
-          this.datos.ecografia = res.paciente.ecografia;
-          this.datos.mamografia = res.paciente.mamografia;
-          this.datos.gamagrafia_osea = res.paciente.gamagrafia_osea;
-          this.datos.tomografia = res.paciente.tomografia;
-          this.datos.rmn = res.paciente.rmn;
-          this.datos.pet = res.paciente.pet;
+          // this.datos.ecografia = res.paciente.ecografia;
+          // this.datos.mamografia = res.paciente.mamografia;
+          // this.datos.gamagrafia_osea = res.paciente.gamagrafia_osea;
+          // this.datos.tomografia = res.paciente.tomografia;
+          // this.datos.rmn = res.paciente.rmn;
+          // this.datos.pet = res.paciente.pet;
           
-          this.datos.tumor = res.paciente.tumor;
-          this.datos.nodulo = res.paciente.nodulo;
-          this.datos.metastasis = res.paciente.metastasis;
+          // this.datos.tumor = res.paciente.tumor;
+          // this.datos.nodulo = res.paciente.nodulo;
+          // this.datos.metastasis = res.paciente.metastasis;
 
-          this.datos.estadificacion_paciente = res.paciente.estadificacion_paciente;
+          // this.datos.estadificacion_paciente = res.paciente.estadificacion_paciente;
 
           this.datos.nombre = res.paciente.nombre;
           this.datos.fecha = res.paciente.fecha;

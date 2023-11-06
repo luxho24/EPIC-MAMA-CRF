@@ -74,21 +74,21 @@
                     <div class="d-flex align-items-center gap-3 mb-3">
                         <label for="startDate">2. TIPO DE CIRUGÍA:</label>
                         <div class="d-flex justify-content-between w-75">
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" [(ngModel)]="datos.tipo_cirugia" name="tipo_cirugia" value="Biopsia" id="biopsia">
-                                <label class="form-check-label" for="biopsia">
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="tipo_cirugia" id="tipo_cirugia_biopsia" value="Biopsia" [(ngModel)]="datos.tipo_cirugia">
+                                <label class="form-check-label" for="tipo_cirugia_biopsia">
                                     Biopsia
                                 </label>
                             </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" [(ngModel)]="datos.tipo_cirugia" name="tipo_cirugia" value="Cuadrantectomia" id="cuadrantectomia">
-                                <label class="form-check-label" for="cuadrantectomia">
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="tipo_cirugia" id="tipo_cirugia_cuadrantectomia" value="Cuadrantectomía" [(ngModel)]="datos.tipo_cirugia">
+                                <label class="form-check-label" for="tipo_cirugia_cuadrantectomia">
                                     Cuadrantectomía
                                 </label>
                             </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" [(ngModel)]="datos.tipo_cirugia" name="tipo_cirugia" value="Mastectomia" id="mastectomia">
-                                <label class="form-check-label" for="mastectomia">
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="tipo_cirugia" id="tipo_cirugia_mastectomia" value="Mastectomía" [(ngModel)]="datos.tipo_cirugia">
+                                <label class="form-check-label" for="tipo_cirugia_mastectomia">
                                     Mastectomía
                                 </label>
                             </div>
@@ -183,7 +183,11 @@
                 <div class="d-flex flex-column">
                     <label for="startDate" class="mb-3">6. DETALLAR CADA MEDICACIÓN QUE LA PACIENTE TOMA O RECIBE:</label>
                     <div class="d-flex justify-content-between mb-4">
-                        <div class="form-check">
+                        <div class="form-check" *ngFor="let c of detallar_medicacion_paciente_toma_recibe, let i = index">
+                            <input class="form-check-input" type="checkbox" [value]="c" (click)="verificar(c)" [(ngModel)]="datos.detallar_medicacion_paciente_toma_recibe" id="detallar_medicacion_paciente_toma_recibe{{i}}">
+                            <label class="form-check-label" for="detallar_medicacion_paciente_toma_recibe{{i}}">{{c}}</label>
+                        </div>
+                        <!-- <div class="form-check">
                             <input class="form-check-input" type="checkbox" [(ngModel)]="datos.detallar_medicacion_paciente_toma_recibe" name="aines" value="Aines" id="aines">
                             <label class="form-check-label" for="aines">
                                 AINES
@@ -194,7 +198,7 @@
                             <label class="form-check-label" for="corticoides">
                                 CORTICOIDES
                             </label>
-                        </div>
+                        </div> -->
                     </div>
                     <div class="group-textarea d-flex">
                         <!-- <input type="text" class="input" required> -->
