@@ -47,6 +47,10 @@ export class Formulario2Component implements OnInit {
           this.datos.iniciales_paciente = res.paciente.iniciales_paciente;
           this.datos.numero_hc = res.paciente.numero_hc;
           this.datos.centro_institucion_atencion = res.paciente.centro_institucion_atencion;
+
+          this.datos.nombre = res.paciente.nombre;
+          this.datos.fecha = res.paciente.fecha;
+          this.datos.firma = res.paciente.firma;
         },
         (error) => {
           console.log(error);
@@ -75,6 +79,10 @@ export class Formulario2Component implements OnInit {
           this.datos.tipo_histologico = res.paciente.tipo_histologico;
           this.datos.conclusion_informe = res.paciente.conclusion_informe;
           this.datos.clasificacion_molecular = res.paciente.clasificacion_molecular;
+
+          this.datos.nombre = res.paciente.nombre;
+          this.datos.fecha = res.paciente.fecha;
+          this.datos.firma = res.paciente.firma;
 
           this.esModoEdicion = true;
         },

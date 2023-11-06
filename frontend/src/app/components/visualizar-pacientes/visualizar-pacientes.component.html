@@ -13,15 +13,19 @@
             <button class="btn btn-primary" [ngClass]="{'active': isButtonSelected === 2}" (click)="mostrarTabla(2)">II. Datos Clínicos de la Paciente</button><br>
             <button class="btn btn-primary" [ngClass]="{'active': isButtonSelected === 3}" (click)="mostrarTabla(3)">III. Consentimientos Informados</button><br>
             <button class="btn btn-primary" [ngClass]="{'active': isButtonSelected === 4}" (click)="mostrarTabla(4)">IV. Criterios de Selección / Sreening</button><br>
-            <button class="btn btn-primary" [ngClass]="{'active': isButtonSelected === 5}" (click)="mostrarTabla(5)" disabled>V. Exámenes Complementarios</button><br>
-            <button class="btn btn-primary" [ngClass]="{'active': isButtonSelected === 6}" (click)="mostrarTabla(6)" disabled>VI. Tratamiento Oncológico</button><br>
-            <button class="btn btn-primary" [ngClass]="{'active': isButtonSelected === 7}" (click)="mostrarTabla(7)" disabled>VII. Ciclos de Tratamiento Quimioterápico</button>
+            <button class="btn btn-primary" [ngClass]="{'active': isButtonSelected === 5}" (click)="mostrarTabla(5)">V. Exámenes Complementarios</button><br>
+            <button class="btn btn-primary" [ngClass]="{'active': isButtonSelected === 6}" (click)="mostrarTabla(6)">VI. Tratamiento Oncológico</button><br>
+            <button class="btn btn-primary" [ngClass]="{'active': isButtonSelected === 7}" (click)="mostrarTabla(7)">VII. Ciclos de Tratamiento Quimioterápico</button>
         </div>
         <div class="right">
             <!-- Tabla Formulario 1 -->
             <div *ngIf="tablaVisible === 1">
-                <div class="d-flex justify-content-between mb-3">
-                    <h3>I. Datos Sociodemográficos de la Paciente</h3>
+                <h3>I. Datos Sociodemográficos de la Paciente</h3>
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <div class="input-group my-3 w-50">
+                        <input type="text" class="form-control form-control-lg" placeholder="Buscar paciente por numero de hc..." name="filterPaciente" [(ngModel)]="filterPaciente">
+                        <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-magnifying-glass"></i></span>
+                    </div>
                     <button class="btn btn-success d-flex align-items-center" *ngIf="isAdmin" (click)="exportExcelForm('Datos_Sociodemograficos')" [disabled]="!hasData('Datos_Sociodemograficos')"><i class="fa-solid fa-file-excel fs-4 me-2"></i>Exportar a Excel</button>
                 </div>
                 <div class="table-wrapper">
@@ -80,7 +84,7 @@
                             </tr>
                         </thead>
                         <tbody *ngIf="pacientes.length > 0">
-                            <tr *ngFor="let paciente of pacientes; let i = index">
+                            <tr *ngFor="let paciente of pacientes | filter: filterPaciente; let i = index">
                                 <td>{{ i + 1 }}</td>
                                 <td>{{paciente.iniciales_paciente}}</td>
                                 <td>{{paciente.numero_hc}}</td>
@@ -144,8 +148,12 @@
 
             <!-- Tabla Formulario 2 -->
             <div *ngIf="tablaVisible === 2">
-                <div class="d-flex justify-content-between mb-3">
-                    <h3>II. Datos Clínicos de la Paciente</h3>
+                <h3>II. Datos Clínicos de la Paciente</h3>
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <div class="input-group my-3 w-50">
+                        <input type="text" class="form-control form-control-lg" placeholder="Buscar paciente por numero de hc..." name="filterPaciente" [(ngModel)]="filterPaciente">
+                        <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-magnifying-glass"></i></span>
+                    </div>
                     <button class="btn btn-success d-flex align-items-center" *ngIf="isAdmin" (click)="exportExcelForm('Datos_Clinicos')" [disabled]="!hasData('Datos_Clinicos')"><i class="fa-solid fa-file-excel fs-4 me-2"></i>Exportar a Excel</button>
                 </div>
                 <div class="table-wrapper">
@@ -168,7 +176,7 @@
                             </tr>
                         </thead>
                         <tbody *ngIf="datosf2.length > 0">
-                            <tr *ngFor="let pacientef2 of datosf2; let i = index">
+                            <tr *ngFor="let pacientef2 of datosf2 | filter: filterPaciente; let i = index">
                                 <td>{{ i + 1 }}</td>
                                 <td>{{pacientef2.iniciales_paciente}}</td>
                                 <td>{{pacientef2.numero_hc}}</td>
@@ -196,8 +204,12 @@
 
             <!-- Tabla Formulario 3 -->
             <div *ngIf="tablaVisible === 3">
-                <div class="d-flex justify-content-between mb-3">
-                    <h3>III. Consentimientos Informados</h3>
+                <h3>III. Consentimientos Informados</h3>
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <div class="input-group my-3 w-50">
+                        <input type="text" class="form-control form-control-lg" placeholder="Buscar paciente por numero de hc..." name="filterPaciente" [(ngModel)]="filterPaciente">
+                        <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-magnifying-glass"></i></span>
+                    </div>
                     <button class="btn btn-success d-flex align-items-center" *ngIf="isAdmin" (click)="exportExcelForm('Consentimientos_Informados')" [disabled]="!hasData('Consentimientos_Informados')"><i class="fa-solid fa-file-excel fs-4 me-2"></i>Exportar a Excel</button>
                 </div>
                 <div class="table-wrapper">
@@ -214,7 +226,7 @@
                             </tr>
                         </thead>
                         <tbody *ngIf="datosf3.length > 0">
-                            <tr *ngFor="let pacientef3 of datosf3; let i = index">
+                            <tr *ngFor="let pacientef3 of datosf3 | filter: filterPaciente; let i = index">
                                 <td>{{ i + 1 }}</td>
                                 <td>{{pacientef3.iniciales_paciente}}</td>
                                 <td>{{pacientef3.numero_hc}}</td>
@@ -236,8 +248,12 @@
 
             <!-- Tabla Formulario 4 -->
             <div *ngIf="tablaVisible === 4">
-                <div class="d-flex justify-content-between mb-3">
-                    <h3>IV. Criterios de Selección / Sreening</h3>
+                <h3>IV. Criterios de Selección / Sreening</h3>
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <div class="input-group my-3 w-50">
+                        <input type="text" class="form-control form-control-lg" placeholder="Buscar paciente por numero de hc..." name="filterPaciente" [(ngModel)]="filterPaciente">
+                        <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-magnifying-glass"></i></span>
+                    </div>
                     <button class="btn btn-success d-flex align-items-center" *ngIf="isAdmin" (click)="exportExcelForm('Criterios_de_Seleccion_/_Sreening')" [disabled]="!hasData('Criterios_de_Seleccion_/_Sreening')"><i class="fa-solid fa-file-excel fs-4 me-2"></i>Exportar a Excel</button>
                 </div>
                 <div class="table-wrapper">
@@ -266,7 +282,7 @@
                             </tr>
                         </thead>
                         <tbody *ngIf="datosf4.length > 0">
-                            <tr *ngFor="let pacientef4 of datosf4; let i = index">
+                            <tr *ngFor="let pacientef4 of datosf4 | filter: filterPaciente; let i = index">
                                 <td>{{ i + 1 }}</td>
                                 <td>{{pacientef4.iniciales_paciente}}</td>
                                 <td>{{pacientef4.numero_hc}}</td>
@@ -299,32 +315,206 @@
             <!-- Tabla Formulario 4 -->
 
             <!-- Tabla Formulario 5 -->
-            <div class="table-wrapper">
-                <table *ngIf="tablaVisible === 5">
-                    <tr>
-                        <td>Contenido de la Tabla 5</td>
-                    </tr>
-                </table>
+            <div *ngIf="tablaVisible === 5">
+                <h3>V. Exámenes Complementarios</h3>
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <div class="input-group my-3 w-50">
+                        <input type="text" class="form-control form-control-lg" placeholder="Buscar paciente por numero de hc..." name="filterPaciente" [(ngModel)]="filterPaciente">
+                        <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-magnifying-glass"></i></span>
+                    </div>
+                    <button class="btn btn-success d-flex align-items-center" *ngIf="isAdmin" (click)="exportExcelForm('Examenes_Complementarios')" [disabled]="!hasData('Examenes_Complementarios')"><i class="fa-solid fa-file-excel fs-4 me-2"></i>Exportar a Excel</button>
+                </div>
+                <div class="table-wrapper">
+                    <table id="Examenes_Complementarios">
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Iniciales de la paciente</th>
+                                <th scope="col">Número de HC</th>
+                                <th scope="col">Centro o institución de atención</th>
+                                <th scope="col">Criterio de inclusión 1</th>
+                                <th scope="col">Criterio de inclusión 2</th>
+                                <th scope="col">Criterio de inclusión 3</th>
+                                <th scope="col">Criterio de inclusión 4</th>
+                                <th scope="col">Criterio de inclusión 5</th>
+                                <th scope="col">Criterio de inclusión 6</th>
+                                <th scope="col">Criterio de inclusión 7</th>
+                                <th scope="col">Criterio de exclusión 1</th>
+                                <th scope="col">Criterio de exclusión 2</th>
+                                <th scope="col">Criterio de exclusión 3</th>
+                                <th scope="col">Criterio de exclusión 4</th>
+                                <th scope="col">Criterio de exclusión 5</th>
+                                <th scope="col">Criterio de exclusión 6</th>
+                                <th scope="col">Cumple criterios de elegibilidad</th>
+                                <th scope="col" class="fixed-column-th" *ngIf="isAdmin">Acción</th>
+                            </tr>
+                        </thead>
+                        <tbody *ngIf="datosf4.length > 0">
+                            <tr *ngFor="let pacientef4 of datosf4 | filter: filterPaciente; let i = index">
+                                <td>{{ i + 1 }}</td>
+                                <td>{{pacientef4.iniciales_paciente}}</td>
+                                <td>{{pacientef4.numero_hc}}</td>
+                                <td>{{pacientef4.centro_institucion_atencion}}</td>
+                                <td>{{pacientef4.criterios_inclusion_1}}</td>
+                                <td>{{pacientef4.criterios_inclusion_2}}</td>
+                                <td>{{pacientef4.criterios_inclusion_3}}</td>
+                                <td>{{pacientef4.criterios_inclusion_4}}</td>
+                                <td>{{pacientef4.criterios_inclusion_5}}</td>
+                                <td>{{pacientef4.criterios_inclusion_6}}</td>
+                                <td>{{pacientef4.criterios_inclusion_7}}</td>
+                                <td>{{pacientef4.criterios_exclusion_1}}</td>
+                                <td>{{pacientef4.criterios_exclusion_2}}</td>
+                                <td>{{pacientef4.criterios_exclusion_3}}</td>
+                                <td>{{pacientef4.criterios_exclusion_4}}</td>
+                                <td>{{pacientef4.criterios_exclusion_5}}</td>
+                                <td>{{pacientef4.criterios_exclusion_6}}</td>
+                                <td>{{pacientef4.criterios_elegibilidad_estudio}}</td>
+                                <td class="fixed-column-td" *ngIf="isAdmin">
+                                    <button class="btn btn-warning" [routerLink]="['/formulario4/usuario', idUsuario, 'editar', 'paciente', pacientef4._id]">Editar</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <h5 style="text-align: start; margin-top: 10px" *ngIf="datosf4.length == 0">
+                        No hay pacientes registrados
+                    </h5>
+                </div>
             </div>
             <!-- Tabla Formulario 5 -->
 
             <!-- Tabla Formulario 6 -->
-            <div class="table-wrapper">
-                <table *ngIf="tablaVisible === 6">
-                    <tr>
-                        <td>Contenido de la Tabla 6</td>
-                    </tr>
-                </table>
+            <div *ngIf="tablaVisible === 6">
+                <h3>VI. Tratamiento Oncológico</h3>
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <div class="input-group my-3 w-50">
+                        <input type="text" class="form-control form-control-lg" placeholder="Buscar paciente por numero de hc..." name="filterPaciente" [(ngModel)]="filterPaciente">
+                        <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-magnifying-glass"></i></span>
+                    </div>
+                    <button class="btn btn-success d-flex align-items-center" *ngIf="isAdmin" (click)="exportExcelForm('Tratamiento_Oncologico')" [disabled]="!hasData('Tratamiento_Oncologico')"><i class="fa-solid fa-file-excel fs-4 me-2"></i>Exportar a Excel</button>
+                </div>
+                <div class="table-wrapper">
+                    <table id="Tratamiento_Oncologico">
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Iniciales de la paciente</th>
+                                <th scope="col">Número de HC</th>
+                                <th scope="col">Centro o institución de atención</th>
+                                <th scope="col">Criterio de inclusión 1</th>
+                                <th scope="col">Criterio de inclusión 2</th>
+                                <th scope="col">Criterio de inclusión 3</th>
+                                <th scope="col">Criterio de inclusión 4</th>
+                                <th scope="col">Criterio de inclusión 5</th>
+                                <th scope="col">Criterio de inclusión 6</th>
+                                <th scope="col">Criterio de inclusión 7</th>
+                                <th scope="col">Criterio de exclusión 1</th>
+                                <th scope="col">Criterio de exclusión 2</th>
+                                <th scope="col">Criterio de exclusión 3</th>
+                                <th scope="col">Criterio de exclusión 4</th>
+                                <th scope="col">Criterio de exclusión 5</th>
+                                <th scope="col">Criterio de exclusión 6</th>
+                                <th scope="col">Cumple criterios de elegibilidad</th>
+                                <th scope="col" class="fixed-column-th" *ngIf="isAdmin">Acción</th>
+                            </tr>
+                        </thead>
+                        <tbody *ngIf="datosf4.length > 0">
+                            <tr *ngFor="let pacientef4 of datosf4 | filter: filterPaciente; let i = index">
+                                <td>{{ i + 1 }}</td>
+                                <td>{{pacientef4.iniciales_paciente}}</td>
+                                <td>{{pacientef4.numero_hc}}</td>
+                                <td>{{pacientef4.centro_institucion_atencion}}</td>
+                                <td>{{pacientef4.criterios_inclusion_1}}</td>
+                                <td>{{pacientef4.criterios_inclusion_2}}</td>
+                                <td>{{pacientef4.criterios_inclusion_3}}</td>
+                                <td>{{pacientef4.criterios_inclusion_4}}</td>
+                                <td>{{pacientef4.criterios_inclusion_5}}</td>
+                                <td>{{pacientef4.criterios_inclusion_6}}</td>
+                                <td>{{pacientef4.criterios_inclusion_7}}</td>
+                                <td>{{pacientef4.criterios_exclusion_1}}</td>
+                                <td>{{pacientef4.criterios_exclusion_2}}</td>
+                                <td>{{pacientef4.criterios_exclusion_3}}</td>
+                                <td>{{pacientef4.criterios_exclusion_4}}</td>
+                                <td>{{pacientef4.criterios_exclusion_5}}</td>
+                                <td>{{pacientef4.criterios_exclusion_6}}</td>
+                                <td>{{pacientef4.criterios_elegibilidad_estudio}}</td>
+                                <td class="fixed-column-td" *ngIf="isAdmin">
+                                    <button class="btn btn-warning" [routerLink]="['/formulario4/usuario', idUsuario, 'editar', 'paciente', pacientef4._id]">Editar</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <h5 style="text-align: start; margin-top: 10px" *ngIf="datosf4.length == 0">
+                        No hay pacientes registrados
+                    </h5>
+                </div>
             </div>
             <!-- Tabla Formulario 6 -->
 
             <!-- Tabla Formulario 7 -->
-            <div class="table-wrapper">
-                <table *ngIf="tablaVisible === 7">
-                    <tr>
-                        <td>Contenido de la Tabla 7</td>
-                    </tr>
-                </table>
+            <div *ngIf="tablaVisible === 7">
+                <h3>VII. Ciclos de Tratamiento Quimioterápico</h3>
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <div class="input-group my-3 w-50">
+                        <input type="text" class="form-control form-control-lg" placeholder="Buscar paciente por numero de hc..." name="filterPaciente" [(ngModel)]="filterPaciente">
+                        <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-magnifying-glass"></i></span>
+                    </div>
+                    <button class="btn btn-success d-flex align-items-center" *ngIf="isAdmin" (click)="exportExcelForm('Ciclos_de_Tratamiento_Quimioterapico')" [disabled]="!hasData('Ciclos_de_Tratamiento_Quimioterapico')"><i class="fa-solid fa-file-excel fs-4 me-2"></i>Exportar a Excel</button>
+                </div>
+                <div class="table-wrapper">
+                    <table id="Ciclos_de_Tratamiento_Quimioterapico">
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Iniciales de la paciente</th>
+                                <th scope="col">Número de HC</th>
+                                <th scope="col">Centro o institución de atención</th>
+                                <th scope="col">Criterio de inclusión 1</th>
+                                <th scope="col">Criterio de inclusión 2</th>
+                                <th scope="col">Criterio de inclusión 3</th>
+                                <th scope="col">Criterio de inclusión 4</th>
+                                <th scope="col">Criterio de inclusión 5</th>
+                                <th scope="col">Criterio de inclusión 6</th>
+                                <th scope="col">Criterio de inclusión 7</th>
+                                <th scope="col">Criterio de exclusión 1</th>
+                                <th scope="col">Criterio de exclusión 2</th>
+                                <th scope="col">Criterio de exclusión 3</th>
+                                <th scope="col">Criterio de exclusión 4</th>
+                                <th scope="col">Criterio de exclusión 5</th>
+                                <th scope="col">Criterio de exclusión 6</th>
+                                <th scope="col">Cumple criterios de elegibilidad</th>
+                                <th scope="col" class="fixed-column-th" *ngIf="isAdmin">Acción</th>
+                            </tr>
+                        </thead>
+                        <tbody *ngIf="datosf4.length > 0">
+                            <tr *ngFor="let pacientef4 of datosf4 | filter: filterPaciente; let i = index">
+                                <td>{{ i + 1 }}</td>
+                                <td>{{pacientef4.iniciales_paciente}}</td>
+                                <td>{{pacientef4.numero_hc}}</td>
+                                <td>{{pacientef4.centro_institucion_atencion}}</td>
+                                <td>{{pacientef4.criterios_inclusion_1}}</td>
+                                <td>{{pacientef4.criterios_inclusion_2}}</td>
+                                <td>{{pacientef4.criterios_inclusion_3}}</td>
+                                <td>{{pacientef4.criterios_inclusion_4}}</td>
+                                <td>{{pacientef4.criterios_inclusion_5}}</td>
+                                <td>{{pacientef4.criterios_inclusion_6}}</td>
+                                <td>{{pacientef4.criterios_inclusion_7}}</td>
+                                <td>{{pacientef4.criterios_exclusion_1}}</td>
+                                <td>{{pacientef4.criterios_exclusion_2}}</td>
+                                <td>{{pacientef4.criterios_exclusion_3}}</td>
+                                <td>{{pacientef4.criterios_exclusion_4}}</td>
+                                <td>{{pacientef4.criterios_exclusion_5}}</td>
+                                <td>{{pacientef4.criterios_exclusion_6}}</td>
+                                <td>{{pacientef4.criterios_elegibilidad_estudio}}</td>
+                                <td class="fixed-column-td" *ngIf="isAdmin">
+                                    <button class="btn btn-warning" [routerLink]="['/formulario4/usuario', idUsuario, 'editar', 'paciente', pacientef4._id]">Editar</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <h5 style="text-align: start; margin-top: 10px" *ngIf="datosf4.length == 0">
+                        No hay pacientes registrados
+                    </h5>
+                </div>
             </div>
             <!-- Tabla Formulario 7 -->
         </div>

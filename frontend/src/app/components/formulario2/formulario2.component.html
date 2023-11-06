@@ -138,18 +138,20 @@
             <br>
             <br>
             <!-- Boton -->
-            <div class="d-flex justify-content-end">
+            <!-- <div class="d-flex justify-content-end">
                 <button type="submit" (click)="registrarForm2()">{{ esModoEdicion ? 'Actualizar' : 'Registrar y Siguiente: Consentimiento Informado'}}</button>
-            </div>
+            </div> -->
             <!-- Boton -->
-        </form>
+        <!-- </form> -->
 
         <!-- Seccion: Llenado por el PL -->
-        <div class="container-xl">
-            <hr>
-            <br>
-            <form class="row g-3 m-auto border px-5 py-3 bg-white">
-                <div class="col-6">
+        <br>
+        <hr>
+        <br>
+        <br>
+        <div class="row g-3 m-auto border px-5 py-3 mb-5 bg-white">
+            <!-- <form class="row g-3 m-auto border px-5 py-3 bg-white" enctype="multipart/form-data"> -->
+                <!-- <div class="col-6">
                     <p>Firma:</p>
                 </div>
                 <div class="col-6">
@@ -157,12 +159,32 @@
                 </div>
                 <div class="col-12">
                     <p>Nombre:</p>
+                </div> -->
+                <div class="col-6 d-flex align-items-center justify-content-between mb-3">
+                    <label for="startDate" class="form-label">Nombre:</label>
+                    <input type="text" class="form-control py-3" id="startDate" [(ngModel)]="datos.nombre" name="nombre" style="width: 86%; pointer-events: none; user-select: none;" disabled required>
                 </div>
+                <div class="col-6 d-flex align-items-center justify-content-between mb-3">
+                    <label for="formFile" class="form-label">Firma:</label>
+                    <input type="text" class="form-control py-3" id="startDate" [(ngModel)]="datos.firma" name="firma" style="width: 86%; pointer-events: none; user-select: none;" disabled required>
+                    <!-- <input class="form-control" type="file" id="formFile" name="imagen" (change)="onSelectFile($event)" style="width: 86%;"> -->
+                </div>
+                <div class="col-6 d-flex align-items-center justify-content-between mb-3">
+                    <label for="startDate" class="form-label">Fecha:</label>
+                    <input type="date" class="form-control py-3" id="startDate" [(ngModel)]="datos.fecha" name="fecha" style="width: 86%; pointer-events: none; user-select: none;" disabled required>
+                </div>
+                
                 <div class="col-12">
                     <b><i><p>**Nota: Se recomienda que sea llenado por el investigador principal.</p></i></b>
                 </div>
-            </form>
+            <!-- </form> -->
         </div>
+        <!-- Boton -->
+        <div class="d-flex justify-content-end">
+            <button type="submit" (click)="registrarForm2()">{{ esModoEdicion ? 'Actualizar' : 'Registrar y Siguiente: Consentimiento Informado'}}</button>
+        </div>
+        <!-- Boton -->
+        </form>
         <!-- Seccion: Llenado por el PL -->
 
     </div>

@@ -19,6 +19,7 @@ import { Formulario6Component } from './components/formulario6/formulario6.compo
 import { Formulario7Component } from './components/formulario7/formulario7.component';
 import { VisualizarPacientesComponent } from './components/visualizar-pacientes/visualizar-pacientes.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { FilterPipe } from './pipes/filter.pipe';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     Formulario7Component,
     MenuComponent,
     VisualizarPacientesComponent,
-    NavbarComponent
+    NavbarComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule,

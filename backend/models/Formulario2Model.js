@@ -53,6 +53,20 @@ const formulario2Schema = new Schema (
             type: String,
             require: true,
         },
+
+        nombre: {
+            type: String,
+            require: true,
+        },
+        fecha: {
+            type: String,
+            require: true,
+        },
+        firma: {
+            type: String,
+            require: true,
+        },
+
         usuario: {
             type: Schema.Types.ObjectId,
             ref: "UsuarioModel",

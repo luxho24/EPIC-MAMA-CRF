@@ -17,15 +17,12 @@ const formulario5Schema = new Schema (
         },
         // Borrar: Se traera automaticamente del modelo Paciente
 
-        fecha_hemograma_basal: {
-            type: String,
-            require: true,
-        },
+        
         resultados_hemograma: {
             type: String,
             require: true,
         },
-        fecha_otros_estudios_laboratorio: {
+        fecha_hemograma: {
             type: String,
             require: true,
         },
@@ -33,39 +30,55 @@ const formulario5Schema = new Schema (
             type: String,
             require: true,
         },
-        fecha_muestra_marcadores_inflamatorios_pretratamiento: {
+        fecha_otros_estudios: {
             type: String,
             require: true,
         },
-        codigo_muestra_marcadores_inflamatorios_pretratamiento: {
+        fecha_muestra_marcadores_inflamatorios_pretratamiento_sericos: {
+            type: String,
+            require: true,
+        },
+        codigo_muestra_marcadores_inflamatorios_pretratamiento_sericos: {
+            type: String,
+            require: true,
+        },
+        fecha_muestra_tumor: {
+            type: String,
+            require: true,
+        },
+        fecha_microbioma_intestinal: {
+            type: String,
+            require: true,
+        },
+        fecha_microbioma_salival: {
             type: String,
             require: true,
         },
 
-        // ecografia: {
-        //     type: String,
-        //     require: true,
-        // },
-        // mamografia: {
-        //     type: String,
-        //     require: true,
-        // },
-        // gamagrafia_osea: {
-        //     type: String,
-        //     require: true,
-        // },
-        // tomografia: {
-        //     type: String,
-        //     require: true,
-        // },
-        // rmn: {
-        //     type: String,
-        //     require: true,
-        // },
-        // pet: {
-        //     type: String,
-        //     require: true,
-        // },
+        ecografia: {
+            type: String,
+            require: true,
+        },
+        mamografia: {
+            type: String,
+            require: true,
+        },
+        gamagrafia_osea: {
+            type: String,
+            require: true,
+        },
+        tomografia: {
+            type: String,
+            require: true,
+        },
+        rmn: {
+            type: String,
+            require: true,
+        },
+        pet: {
+            type: String,
+            require: true,
+        },
 
         tumor: {
             type: String,
@@ -81,6 +94,19 @@ const formulario5Schema = new Schema (
         },
 
         estadificacion_paciente: {
+            type: String,
+            require: true,
+        },
+
+        nombre: {
+            type: String,
+            require: true,
+        },
+        fecha: {
+            type: String,
+            require: true,
+        },
+        firma: {
             type: String,
             require: true,
         },

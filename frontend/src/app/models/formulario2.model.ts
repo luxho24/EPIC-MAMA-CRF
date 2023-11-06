@@ -13,6 +13,10 @@ export class Formulario2 {
     tipo_histologico: string;
     conclusion_informe: string;
     clasificacion_molecular: string;
+    
+    nombre: string;
+    fecha: string;
+    firma: string;
   
     constructor(
         iniciales_paciente: string,
@@ -28,6 +32,10 @@ export class Formulario2 {
         tipo_histologico: string,
         conclusion_informe: string,
         clasificacion_molecular: string,
+        
+        nombre: string,
+        fecha: string,
+        firma: string,
     ) {
         this.iniciales_paciente = iniciales_paciente;
         this.numero_hc = numero_hc;
@@ -42,5 +50,9 @@ export class Formulario2 {
         this.tipo_histologico = tipo_histologico;
         this.conclusion_informe = conclusion_informe;
         this.clasificacion_molecular = clasificacion_molecular;
+        
+        this.nombre = nombre;
+        this.fecha = fecha;
+        this.firma = firma;
     }
   }
