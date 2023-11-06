@@ -28,11 +28,11 @@
             <div class="col mb-4">
                 <div class="d-flex align-items-center gap-4">
                     <div class="group-input d-flex">
-                        <input type="text" class="input" style="pointer-events: none;" disabled required>
+                        <input type="text" class="input" [(ngModel)]="datos.iniciales_paciente" name="iniciales_paciente" style="pointer-events: none;" disabled required>
                         <label for="" class="label" style="top: 25%; font-size: 12px;">Iniciales de la paciente</label>
                     </div>
                     <div class="group-input d-flex">
-                        <input type="text" class="input" style="pointer-events: none;" disabled required>
+                        <input type="text" class="input" [(ngModel)]="datos.numero_hc" name="numero_hc" style="pointer-events: none;" disabled required>
                         <label for="" class="label" style="top: 25%; font-size: 12px;">Número de HC</label>
                     </div>
                 </div>
@@ -40,16 +40,16 @@
                 <h3 class="mb-3">Centro o Institución de atención</h3>
                 <div class="d-flex justify-content-between mb-4">
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="institucion" id="inen_lima" value="option1" style="cursor: pointer; pointer-events: none;" readonly>
-                        <label class="form-check-label" for="inen_lima" style="cursor: pointer; pointer-events: none; user-select: none;">INEN LIMA</label>
+                        <input class="form-check-input" type="radio" name="centro_institucion_atencion" id="centro_institucion_atencion_inen_lima" value="INEN LIMA" [(ngModel)]="datos.centro_institucion_atencion" style="cursor: pointer; pointer-events: none;" readonly>
+                        <label class="form-check-label" for="centro_institucion_atencion_inen_lima" style="cursor: pointer; pointer-events: none; user-select: none;">INEN LIMA</label>
                     </div>
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="institucion" id="inen_arequipa" value="option2" style="cursor: pointer; pointer-events: none;" readonly>
-                        <label class="form-check-label" for="inen_arequipa" style="cursor: pointer; pointer-events: none; user-select: none;">INEN AREQUIPA</label>
+                        <input class="form-check-input" type="radio" name="centro_institucion_atencion" id="centro_institucion_atencion_inen_arequipa" value="INEN AREQUIPA" [(ngModel)]="datos.centro_institucion_atencion" style="cursor: pointer; pointer-events: none;" readonly>
+                        <label class="form-check-label" for="centro_institucion_atencion_inen_arequipa" style="cursor: pointer; pointer-events: none; user-select: none;">INEN AREQUIPA</label>
                     </div>
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="institucion" id="inen_trujillo" value="option1" style="cursor: pointer; pointer-events: none;" readonly>
-                        <label class="form-check-label" for="inen_trujillo" style="cursor: pointer; pointer-events: none; user-select: none;">INEN TRUJILLO</label>
+                        <input class="form-check-input" type="radio" name="centro_institucion_atencion" id="centro_institucion_atencion_inen_trujillo" value="INEN TRUJILLO" [(ngModel)]="datos.centro_institucion_atencion" style="cursor: pointer; pointer-events: none;" readonly>
+                        <label class="form-check-label" for="centro_institucion_atencion_inen_trujillo" style="cursor: pointer; pointer-events: none; user-select: none;">INEN TRUJILLO</label>
                     </div>
                 </div>
             </div>
@@ -159,14 +159,16 @@
                 <button type="submit">Siguiente: Datos clínicos</button>
             </div> -->
             <!-- Boton -->
-        </form>
+        <!-- </form> -->
 
         <!-- Seccion: Llenado por el PL -->
-        <div class="container-xl">
-            <hr>
-            <br>
-            <form class="row g-3 m-auto border px-5 py-3 bg-white">
-                <div class="col-6">
+        <br>
+        <hr>
+        <br>
+        <br>
+        <div class="row g-3 m-auto border px-5 py-3 mb-5 bg-white">
+            <!-- <form class="row g-3 m-auto border px-5 py-3 bg-white" enctype="multipart/form-data"> -->
+                <!-- <div class="col-6">
                     <p>Firma:</p>
                 </div>
                 <div class="col-6">
@@ -174,12 +176,32 @@
                 </div>
                 <div class="col-12">
                     <p>Nombre:</p>
+                </div> -->
+                <div class="col-6 d-flex align-items-center justify-content-between mb-3">
+                    <label for="startDate" class="form-label">Nombre:</label>
+                    <input type="text" class="form-control py-3" id="startDate" [(ngModel)]="datos.nombre" name="nombre" style="width: 86%; pointer-events: none; user-select: none;" disabled required>
                 </div>
+                <div class="col-6 d-flex align-items-center justify-content-between mb-3">
+                    <label for="formFile" class="form-label">Firma:</label>
+                    <input type="text" class="form-control py-3" id="startDate" [(ngModel)]="datos.firma" name="firma" style="width: 86%; pointer-events: none; user-select: none;" disabled required>
+                    <!-- <input class="form-control" type="file" id="formFile" name="imagen" (change)="onSelectFile($event)" style="width: 86%;"> -->
+                </div>
+                <div class="col-6 d-flex align-items-center justify-content-between mb-3">
+                    <label for="startDate" class="form-label">Fecha:</label>
+                    <input type="date" class="form-control py-3" id="startDate" [(ngModel)]="datos.fecha" name="fecha" style="width: 86%; pointer-events: none; user-select: none;" disabled required>
+                </div>
+                
                 <div class="col-12">
-                    <b><i><p>**Nota: Se recomienda que sea llenado por el PL.</p></i></b>
+                    <b><i><p>**Nota: Se recomienda que sea llenado por el investigador principal.</p></i></b>
                 </div>
-            </form>
+            <!-- </form> -->
         </div>
+        <!-- Boton -->
+        <div class="d-flex justify-content-end">
+            <button type="submit">Siguiente: Ciclos de Tratamiento Quiropráctico</button>
+        </div>
+        <!-- Boton -->
+        </form>
         <!-- Seccion: Llenado por el PL -->
 
     </div>

@@ -8,6 +8,8 @@ import { Formulario2 } from '../models/formulario2.model';
 import { Formulario3 } from '../models/formulario3.model';
 import { Formulario4 } from '../models/formulario4.model';
 import { Formulario5 } from '../models/formulario5.model';
+import { Formulario6 } from '../models/formulario6.model';
+import { Formulario7 } from '../models/formulario7.model';
 
 @Injectable({
   providedIn: 'root'
@@ -167,10 +169,10 @@ export class PacienteService {
   editarPacienteForm5(idPaciente: any, paciente: Formulario5): Observable<any> {
     return this.httpClient.put(`${this.url}/editarPacienteForm5/${idPaciente}`, paciente);
   }
-  // editarPacienteForm6(idPaciente: any, paciente: Formulario6): Observable<any> {
-  //   return this.httpClient.put(`${this.url}/editarPacienteForm6/${idPaciente}`, paciente);
-  // }
-  // editarPacienteForm7(idPaciente: any, paciente: Formulario7): Observable<any> {
-  //   return this.httpClient.put(`${this.url}/editarPacienteForm7/${idPaciente}`, paciente);
-  // }
+  editarPacienteForm6(idPaciente: any, paciente: Formulario6): Observable<any> {
+    return this.httpClient.put(`${this.url}/editarPacienteForm6/${idPaciente}`, paciente);
+  }
+  editarPacienteForm7(idPaciente: any, paciente: Formulario7): Observable<any> {
+    return this.httpClient.put(`${this.url}/editarPacienteForm7/${idPaciente}`, paciente);
+  }
 }

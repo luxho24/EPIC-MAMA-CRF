@@ -56,29 +56,74 @@
 
             <h3 class="mb-4">I. RESULTADOS DE EXÁMENES DE LABORATORIO:</h3>
             <div class="col mb-4">
-                <div class="d-flex align-items-center gap-3 mb-3">
-                    <label for="startDate">1. FECHA DE HEMOGRAMA BASAL:</label>
-                    <input type="date" class="form-control py-3 w-25" id="startDate" [(ngModel)]="datos.fecha_hemograma_basal" name="fecha_hemograma_basal">
+                <div class="d-flex justify-content-between">
+                    <div class="d-flex align-items-center gap-5 mb-3">
+                        <label for="startDate">1. RESULTADOS DE LA HEMOGRAMA:</label>
+                        <!-- <input type="text" class="form-control py-3 w-25" id="startDate" [(ngModel)]="datos.resultados_hemograma" name="resultados_hemograma"> -->
+                        <div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="resultados_hemograma" id="resultados_hemograma_si" value="SI" [(ngModel)]="datos.resultados_hemograma" style="cursor: pointer;">
+                                <label class="form-check-label" for="resultados_hemograma_si" style="cursor: pointer;">SI</label>
+                            </div>
+                            <div class="form-check form-check-inline ps-5">
+                                <input class="form-check-input" type="radio" name="resultados_hemograma" id="resultados_hemograma_no" value="NO" [(ngModel)]="datos.resultados_hemograma" style="cursor: pointer;">
+                                <label class="form-check-label" for="resultados_hemograma_no" style="cursor: pointer;">NO</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-center gap-3 mb-3 w-25">
+                        <label for="startDate">FECHA:</label>
+                        <input type="date" class="form-control py-3" id="startDate" [(ngModel)]="datos.fecha_hemograma" name="fecha_hemograma">
+                    </div>
                 </div>
-                <div class="d-flex align-items-center gap-3 mb-3">
-                    <label for="startDate">2. RESULTADOS DE LA HEMOGRAMA:</label>
-                    <input type="text" class="form-control py-3 w-25" id="startDate" [(ngModel)]="datos.resultados_hemograma" name="resultados_hemograma">
-                </div>
-                <div class="d-flex align-items-center gap-3 mb-3">
+                <!-- <div class="d-flex align-items-center gap-3 mb-3">
                     <label for="startDate">3. FECHA DE OTROS ESTUDIOS DE LABORATORIO:</label>
                     <input type="date" class="form-control py-3 w-25" id="startDate" [(ngModel)]="datos.fecha_otros_estudios_laboratorio" name="fecha_otros_estudios_laboratorio">
+                </div> -->
+                <div class="d-flex justify-content-between">
+                    <div class="d-flex align-items-center gap-5 mb-3">
+                        <label for="startDate">2. RESULTADOS DE OTROS ESTUDIOS:</label>
+                        <!-- <input type="text" class="form-control py-3 w-25" id="startDate" [(ngModel)]="datos.resultados_otros_estudios" name="resultados_otros_estudios"> -->
+                        <div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="resultados_otros_estudios" id="resultados_otros_estudios_si" value="SI" [(ngModel)]="datos.resultados_otros_estudios" style="cursor: pointer;">
+                                <label class="form-check-label" for="resultados_otros_estudios_si" style="cursor: pointer;">SI</label>
+                            </div>
+                            <div class="form-check form-check-inline ps-5">
+                                <input class="form-check-input" type="radio" name="resultados_otros_estudios" id="resultados_otros_estudios_no" value="NO" [(ngModel)]="datos.resultados_otros_estudios" style="cursor: pointer;">
+                                <label class="form-check-label" for="resultados_otros_estudios_no" style="cursor: pointer;">NO</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-center gap-3 mb-3 w-25">
+                        <label for="startDate">FECHA:</label>
+                        <input type="date" class="form-control py-3" id="startDate" [(ngModel)]="datos.fecha_otros_estudios" name="fecha_otros_estudios">
+                    </div>
                 </div>
                 <div class="d-flex align-items-center gap-3 mb-3">
-                    <label for="startDate">4. RESULTADOS DE OTROS ESTUDIOS:</label>
-                    <input type="text" class="form-control py-3 w-25" id="startDate" [(ngModel)]="datos.resultados_otros_estudios" name="resultados_otros_estudios">
+                    <label for="startDate">3. FECHA DE MUESTRA PARA MARCADORES INFLAMATORIOS PRETRATAMIENTO (SÉRICOS):</label>
+                    <input type="date" class="form-control py-3 w-25" id="startDate" [(ngModel)]="datos.fecha_muestra_marcadores_inflamatorios_pretratamiento_sericos" name="fecha_muestra_marcadores_inflamatorios_pretratamiento_sericos">
                 </div>
                 <div class="d-flex align-items-center gap-3 mb-3">
-                    <label for="startDate">5. FECHA DE MUESTRA PARA MARCADORES INFLAMATORIOS PRETRATAMIENTO:</label>
-                    <input type="date" class="form-control py-3 w-25" id="startDate" [(ngModel)]="datos.fecha_muestra_marcadores_inflamatorios_pretratamiento" name="fecha_muestra_marcadores_inflamatorios_pretratamiento">
+                    <label for="startDate">4. CODIGO DE MUESTRA PARA MARCADORES INFLAMATORIOS PRETRATAMIENTO (SÉRICOS):</label>
+                    <input type="text" class="form-control py-3 w-25" id="startDate" [(ngModel)]="datos.codigo_muestra_marcadores_inflamatorios_pretratamiento_sericos" name="codigo_muestra_marcadores_inflamatorios_pretratamiento_sericos">
                 </div>
                 <div class="d-flex align-items-center gap-3 mb-3">
-                    <label for="startDate">6. CODIGO DE MUESTRA PARA MARCADORES INFLAMATORIOS PRETRATAMIENTO:</label>
-                    <input type="text" class="form-control py-3 w-25" id="startDate" [(ngModel)]="datos.codigo_muestra_marcadores_inflamatorios_pretratamiento" name="codigo_muestra_marcadores_inflamatorios_pretratamiento">
+                    <label for="startDate">5. FECHA DE MUESTRA DEL TUMOR:</label>
+                    <input type="date" class="form-control py-3 w-25" id="startDate" [(ngModel)]="datos.fecha_muestra_tumor" name="fecha_muestra_tumor">
+                </div>
+                <div>
+                    <label for="startDate" class="my-3">6. FECHA DE MUESTRA PARA:</label>
+                    <div class="ms-5">
+                        <div class="d-flex align-items-center gap-3 mb-3">
+                            <label for="startDate">MICROBIOMA INTESTINAL:</label>
+                            <input type="date" class="form-control py-3 w-25" id="startDate" [(ngModel)]="datos.fecha_microbioma_intestinal" name="fecha_microbioma_intestinal">
+                        </div>
+                        <div class="d-flex align-items-center gap-3 mb-3">
+                            <label for="startDate">MICROBIOMA SALIVAL:</label>
+                            <input type="date" class="form-control py-3 w-25" id="startDate" [(ngModel)]="datos.fecha_microbioma_salival" name="fecha_microbioma_salival">
+                        </div>
+                    </div>
                 </div>
             </div>
 
@@ -86,27 +131,27 @@
             <div class="col mb-4">
                 <div class="d-flex align-items-center gap-3 mb-3">
                     <label for="startDate" class="w-25">1. ECOGRAFIA:</label>
-                    <input type="text" class="form-control py-3" id="startDate">
+                    <input type="text" class="form-control py-3" id="startDate" [(ngModel)]="datos.ecografia" name="ecografia">
                 </div>
                 <div class="d-flex align-items-center gap-3 mb-3">
                     <label for="startDate" class="w-25">2. MAMOGRAFIA:</label>
-                    <input type="text" class="form-control py-3" id="startDate">
+                    <input type="text" class="form-control py-3" id="startDate" [(ngModel)]="datos.mamografia" name="mamografia">
                 </div>
                 <div class="d-flex align-items-center gap-3 mb-3">
                     <label for="startDate" class="w-25">3. GAMAGRAFIA OSEA:</label>
-                    <input type="text" class="form-control py-3" id="startDate">
+                    <input type="text" class="form-control py-3" id="startDate" [(ngModel)]="datos.gamagrafia_osea" name="gamagrafia_osea">
                 </div>
                 <div class="d-flex align-items-center gap-3 mb-3">
                     <label for="startDate" class="w-25">4. TOMOGRAFIA:</label>
-                    <input type="text" class="form-control py-3" id="startDate">
+                    <input type="text" class="form-control py-3" id="startDate" [(ngModel)]="datos.tomografia" name="tomografia">
                 </div>
                 <div class="d-flex align-items-center gap-3 mb-3">
                     <label for="startDate" class="w-25">5. RMN:</label>
-                    <input type="text" class="form-control py-3" id="startDate">
+                    <input type="text" class="form-control py-3" id="startDate" [(ngModel)]="datos.rmn" name="rmn">
                 </div>
                 <div class="d-flex align-items-center gap-3 mb-3">
                     <label for="startDate" class="w-25">6. PET:</label>
-                    <input type="text" class="form-control py-3" id="startDate">
+                    <input type="text" class="form-control py-3" id="startDate" [(ngModel)]="datos.pet" name="pet">
                 </div>
             </div>
             
@@ -166,18 +211,20 @@
             </div>
 
             <!-- Boton -->
-            <div class="d-flex justify-content-end">
-                <button type="submit" (click)="registrarForm5()">Registrar y Siguiente: Tratamiento Oncológico</button>
-            </div>
+            <!-- <div class="d-flex justify-content-end">
+                <button type="submit" (click)="registrarForm5()">{{ esModoEdicion ? 'Actualizar' : 'Registrar y Siguiente: Tratamiento Oncológico'}}</button>
+            </div> -->
             <!-- Boton -->
-        </form>
+        <!-- </form> -->
 
         <!-- Seccion: Llenado por el PL -->
-        <div class="container-xl">
-            <hr>
-            <br>
-            <form class="row g-3 m-auto border px-5 py-3 bg-white">
-                <div class="col-6">
+        <br>
+        <hr>
+        <br>
+        <br>
+        <div class="row g-3 m-auto border px-5 py-3 mb-5 bg-white">
+            <!-- <form class="row g-3 m-auto border px-5 py-3 bg-white" enctype="multipart/form-data"> -->
+                <!-- <div class="col-6">
                     <p>Firma:</p>
                 </div>
                 <div class="col-6">
@@ -185,12 +232,32 @@
                 </div>
                 <div class="col-12">
                     <p>Nombre:</p>
+                </div> -->
+                <div class="col-6 d-flex align-items-center justify-content-between mb-3">
+                    <label for="startDate" class="form-label">Nombre:</label>
+                    <input type="text" class="form-control py-3" id="startDate" [(ngModel)]="datos.nombre" name="nombre" style="width: 86%; pointer-events: none; user-select: none;" disabled required>
                 </div>
+                <div class="col-6 d-flex align-items-center justify-content-between mb-3">
+                    <label for="formFile" class="form-label">Firma:</label>
+                    <input type="text" class="form-control py-3" id="startDate" [(ngModel)]="datos.firma" name="firma" style="width: 86%; pointer-events: none; user-select: none;" disabled required>
+                    <!-- <input class="form-control" type="file" id="formFile" name="imagen" (change)="onSelectFile($event)" style="width: 86%;"> -->
+                </div>
+                <div class="col-6 d-flex align-items-center justify-content-between mb-3">
+                    <label for="startDate" class="form-label">Fecha:</label>
+                    <input type="date" class="form-control py-3" id="startDate" [(ngModel)]="datos.fecha" name="fecha" style="width: 86%; pointer-events: none; user-select: none;" disabled required>
+                </div>
+                
                 <div class="col-12">
-                    <b><i><p>**Nota: Se recomienda que sea llenado por el PL.</p></i></b>
+                    <b><i><p>**Nota: Se recomienda que sea llenado por el investigador principal.</p></i></b>
                 </div>
-            </form>
+            <!-- </form> -->
         </div>
+        <!-- Boton -->
+        <div class="d-flex justify-content-end">
+            <button type="submit" (click)="registrarForm5()">{{ esModoEdicion ? 'Actualizar' : 'Registrar y Siguiente: Tratamiento Oncológico'}}</button>
+        </div>
+        <!-- Boton -->
+        </form>
         <!-- Seccion: Llenado por el PL -->
 
     </div>

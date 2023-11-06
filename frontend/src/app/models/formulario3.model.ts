@@ -6,6 +6,10 @@ export class Formulario3 {
 
     cuenta_consentimiento_informado: string;
     fecha_consentimiento_informado: string;
+    
+    nombre: string;
+    fecha: string;
+    firma: string;
   
     constructor(
         iniciales_paciente: string,
@@ -14,6 +18,10 @@ export class Formulario3 {
 
         cuenta_consentimiento_informado: string,
         fecha_consentimiento_informado: string,
+        
+        nombre: string,
+        fecha: string,
+        firma: string,
 
     ) {
         this.iniciales_paciente = iniciales_paciente;
@@ -22,5 +30,9 @@ export class Formulario3 {
 
         this.cuenta_consentimiento_informado = cuenta_consentimiento_informado;
         this.fecha_consentimiento_informado = fecha_consentimiento_informado;
+        
+        this.nombre = nombre;
+        this.fecha = fecha;
+        this.firma = firma;
     }
   }

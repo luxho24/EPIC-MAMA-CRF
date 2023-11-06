@@ -20,6 +20,10 @@ export class Formulario4 {
     criterios_exclusion_6: string;
     
     criterios_elegibilidad_estudio: string;
+
+    nombre: string;
+    fecha: string;
+    firma: string;
   
     constructor(
         iniciales_paciente: string,
@@ -42,6 +46,10 @@ export class Formulario4 {
         criterios_exclusion_6: string,
         
         criterios_elegibilidad_estudio: string,
+        
+        nombre: string,
+        fecha: string,
+        firma: string,
 
     ) {
         this.iniciales_paciente = iniciales_paciente;
@@ -64,5 +72,9 @@ export class Formulario4 {
         this.criterios_exclusion_6 = criterios_exclusion_6;
         
         this.criterios_elegibilidad_estudio = criterios_elegibilidad_estudio;
+        
+        this.nombre = nombre;
+        this.fecha = fecha;
+        this.firma = firma;
     }
   }

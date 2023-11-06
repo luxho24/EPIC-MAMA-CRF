@@ -36,6 +36,10 @@ export class Formulario4Component implements OnInit {
           this.datos.iniciales_paciente = res.paciente.iniciales_paciente;
           this.datos.numero_hc = res.paciente.numero_hc;
           this.datos.centro_institucion_atencion = res.paciente.centro_institucion_atencion;
+
+          this.datos.nombre = res.paciente.nombre;
+          this.datos.fecha = res.paciente.fecha;
+          this.datos.firma = res.paciente.firma;
         },
         (error) => {
           console.log(error);
@@ -71,6 +75,10 @@ export class Formulario4Component implements OnInit {
           this.datos.criterios_exclusion_6 = res.paciente.criterios_exclusion_6;
           
           this.datos.criterios_elegibilidad_estudio = res.paciente.criterios_elegibilidad_estudio;
+
+          this.datos.nombre = res.paciente.nombre;
+          this.datos.fecha = res.paciente.fecha;
+          this.datos.firma = res.paciente.firma;
 
           this.esModoEdicion = true;
         },

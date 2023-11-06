@@ -432,4 +432,5 @@ export class VisualizarPacientesComponent implements OnInit {
     }
   }
   /*==================================== VERIFICAR ROL ===================================*/
+  filterPaciente = '';
 }

@@ -28,11 +28,11 @@
             <div class="col mb-4">
                 <div class="d-flex align-items-center gap-4">
                     <div class="group-input d-flex">
-                        <input type="text" class="input" style="pointer-events: none;" disabled required>
+                        <input type="text" class="input" [(ngModel)]="datos.iniciales_paciente" name="iniciales_paciente" style="pointer-events: none;" disabled required>
                         <label for="" class="label" style="top: 25%; font-size: 12px;">Iniciales de la paciente</label>
                     </div>
                     <div class="group-input d-flex">
-                        <input type="text" class="input" style="pointer-events: none;" disabled required>
+                        <input type="text" class="input" [(ngModel)]="datos.numero_hc" name="numero_hc" style="pointer-events: none;" disabled required>
                         <label for="" class="label" style="top: 25%; font-size: 12px;">Número de HC</label>
                     </div>
                 </div>
@@ -40,16 +40,16 @@
                 <h3 class="mb-3">Centro o Institución de atención</h3>
                 <div class="d-flex justify-content-between mb-4">
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="institucion" id="inen_lima" value="option1" style="cursor: pointer; pointer-events: none;" readonly>
-                        <label class="form-check-label" for="inen_lima" style="cursor: pointer; pointer-events: none; user-select: none;">INEN LIMA</label>
+                        <input class="form-check-input" type="radio" name="centro_institucion_atencion" id="centro_institucion_atencion_inen_lima" value="INEN LIMA" [(ngModel)]="datos.centro_institucion_atencion" style="cursor: pointer; pointer-events: none;" readonly>
+                        <label class="form-check-label" for="centro_institucion_atencion_inen_lima" style="cursor: pointer; pointer-events: none; user-select: none;">INEN LIMA</label>
                     </div>
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="institucion" id="inen_arequipa" value="option2" style="cursor: pointer; pointer-events: none;" readonly>
-                        <label class="form-check-label" for="inen_arequipa" style="cursor: pointer; pointer-events: none; user-select: none;">INEN AREQUIPA</label>
+                        <input class="form-check-input" type="radio" name="centro_institucion_atencion" id="centro_institucion_atencion_inen_arequipa" value="INEN AREQUIPA" [(ngModel)]="datos.centro_institucion_atencion" style="cursor: pointer; pointer-events: none;" readonly>
+                        <label class="form-check-label" for="centro_institucion_atencion_inen_arequipa" style="cursor: pointer; pointer-events: none; user-select: none;">INEN AREQUIPA</label>
                     </div>
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="institucion" id="inen_trujillo" value="option1" style="cursor: pointer; pointer-events: none;" readonly>
-                        <label class="form-check-label" for="inen_trujillo" style="cursor: pointer; pointer-events: none; user-select: none;">INEN TRUJILLO</label>
+                        <input class="form-check-input" type="radio" name="centro_institucion_atencion" id="centro_institucion_atencion_inen_trujillo" value="INEN TRUJILLO" [(ngModel)]="datos.centro_institucion_atencion" style="cursor: pointer; pointer-events: none;" readonly>
+                        <label class="form-check-label" for="centro_institucion_atencion_inen_trujillo" style="cursor: pointer; pointer-events: none; user-select: none;">INEN TRUJILLO</label>
                     </div>
                 </div>
             </div>
@@ -60,11 +60,11 @@
                     <label for="startDate">1. CIRUGÍA:</label>
                     <div class="d-flex justify-content-between">
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="cirugia" id="cirugia_si" value="option1" style="cursor: pointer;">
+                            <input class="form-check-input" type="radio" name="cirugia" id="cirugia_si" value="SI" [(ngModel)]="datos.cirugia" style="cursor: pointer;">
                             <label class="form-check-label" for="cirugia_si" style="cursor: pointer;">Sí</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="cirugia" id="cirugia_no" value="option2" style="cursor: pointer;">
+                            <input class="form-check-input" type="radio" name="cirugia" id="cirugia_no" value="NO" [(ngModel)]="datos.cirugia" style="cursor: pointer;">
                             <label class="form-check-label" for="cirugia_no" style="cursor: pointer;">No</label>
                         </div>
                     </div>
@@ -75,19 +75,19 @@
                         <label for="startDate">2. TIPO DE CIRUGÍA:</label>
                         <div class="d-flex justify-content-between w-75">
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="biopsia">
+                                <input class="form-check-input" type="checkbox" [(ngModel)]="datos.tipo_cirugia" name="tipo_cirugia" value="Biopsia" id="biopsia">
                                 <label class="form-check-label" for="biopsia">
                                     Biopsia
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="cuadrantectomia">
+                                <input class="form-check-input" type="checkbox" [(ngModel)]="datos.tipo_cirugia" name="tipo_cirugia" value="Cuadrantectomia" id="cuadrantectomia">
                                 <label class="form-check-label" for="cuadrantectomia">
                                     Cuadrantectomía
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="mastectomia">
+                                <input class="form-check-input" type="checkbox" [(ngModel)]="datos.tipo_cirugia" name="tipo_cirugia" value="Mastectomia" id="mastectomia">
                                 <label class="form-check-label" for="mastectomia">
                                     Mastectomía
                                 </label>
@@ -97,7 +97,7 @@
                     <div class="ms-5">
                         <div class="d-flex align-items-center gap-3 mb-3">
                             <label for="startDate">a. FECHA DE PROCEDIMIENTO:</label>
-                            <input type="date" class="form-control py-3 w-25" id="startDate">
+                            <input type="date" class="form-control py-3 w-25" id="startDate" [(ngModel)]="datos.fecha_procedimiento" name="fecha_procedimiento">
                         </div>
                     </div>
                 </div>
@@ -107,23 +107,23 @@
                         <label for="startDate">3. RECIBIÓ RADIOTERAPIA:</label>
                         <div class="d-flex justify-content-between">
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="radioterapia" id="radioterapia_si" value="option1" style="cursor: pointer;">
-                                <label class="form-check-label" for="radioterapia_si" style="cursor: pointer;">Sí</label>
+                                <input class="form-check-input" type="radio" name="recibio_radioterapia" id="recibio_radioterapia_si" value="SI" [(ngModel)]="datos.recibio_radioterapia" style="cursor: pointer;">
+                                <label class="form-check-label" for="recibio_radioterapia_si" style="cursor: pointer;">Sí</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="radioterapia" id="radioterapia_no" value="option2" style="cursor: pointer;">
-                                <label class="form-check-label" for="radioterapia_no" style="cursor: pointer;">No</label>
+                                <input class="form-check-input" type="radio" name="recibio_radioterapia" id="recibio_radioterapia_si" value="NO" [(ngModel)]="datos.recibio_radioterapia" style="cursor: pointer;">
+                                <label class="form-check-label" for="recibio_radioterapia_no" style="cursor: pointer;">No</label>
                             </div>
                         </div>
                     </div>
                     <div class="ms-5">
                         <div class="d-flex align-items-center gap-3 mb-3">
                             <label for="startDate">a. FECHA DE INICIO:</label>
-                            <input type="date" class="form-control py-3 w-25" id="startDate">
+                            <input type="date" class="form-control py-3 w-25" id="startDate" [(ngModel)]="datos.fecha_inicio_recibio_radioterapia" name="fecha_inicio_recibio_radioterapia">
                         </div>
                         <div class="d-flex align-items-center gap-3 mb-3">
                             <label for="startDate">b. FECHA DE TERMINO:</label>
-                            <input type="date" class="form-control py-3 w-25" id="startDate">
+                            <input type="date" class="form-control py-3 w-25" id="startDate" [(ngModel)]="datos.fecha_termino_recibio_radioterapia" name="fecha_termino_recibio_radioterapia">
                         </div>
                     </div>
                 </div>
@@ -133,23 +133,23 @@
                         <label for="startDate">4. RECIBIÓ HORMONOTERAPIA:</label>
                         <div class="d-flex justify-content-between">
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="hormonoterapia" id="hormonoterapia_si" value="option1" style="cursor: pointer;">
-                                <label class="form-check-label" for="hormonoterapia_si" style="cursor: pointer;">Sí</label>
+                                <input class="form-check-input" type="radio" name="recibio_hormonoterapia" id="recibio_hormonoterapia_si" value="SI" [(ngModel)]="datos.recibio_hormonoterapia" style="cursor: pointer;">
+                                <label class="form-check-label" for="recibio_hormonoterapia_si" style="cursor: pointer;">Sí</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="hormonoterapia" id="hormonoterapia_no" value="option2" style="cursor: pointer;">
-                                <label class="form-check-label" for="hormonoterapia_no" style="cursor: pointer;">No</label>
+                                <input class="form-check-input" type="radio" name="recibio_hormonoterapia" id="recibio_hormonoterapia_no" value="NO" [(ngModel)]="datos.recibio_hormonoterapia" style="cursor: pointer;">
+                                <label class="form-check-label" for="recibio_hormonoterapia_no" style="cursor: pointer;">No</label>
                             </div>
                         </div>
                     </div>
                     <div class="ms-5">
                         <div class="d-flex align-items-center gap-3 mb-3">
                             <label for="startDate">a. FECHA DE INICIO:</label>
-                            <input type="date" class="form-control py-3 w-25" id="startDate">
+                            <input type="date" class="form-control py-3 w-25" id="startDate" [(ngModel)]="datos.fecha_inicio_recibio_hormonoterapia" name="fecha_inicio_recibio_hormonoterapia">
                         </div>
                         <div class="d-flex align-items-center gap-3 mb-3">
                             <label for="startDate">b. FECHA DE TERMINO:</label>
-                            <input type="date" class="form-control py-3 w-25" id="startDate">
+                            <input type="date" class="form-control py-3 w-25" id="startDate" [(ngModel)]="datos.fecha_termino_recibio_hormonoterapia" name="fecha_termino_recibio_hormonoterapia">
                         </div>
                     </div>
                 </div>
@@ -159,23 +159,23 @@
                         <label for="startDate">5. RECIBIÓ QUIMIOTERAPIA:</label>
                         <div class="d-flex justify-content-between">
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="quimioterapia" id="quimioterapia_si" value="option1" style="cursor: pointer;">
-                                <label class="form-check-label" for="quimioterapia_si" style="cursor: pointer;">Sí</label>
+                                <input class="form-check-input" type="radio" name="recibio_quimioterapia" id="recibio_quimioterapia_si" value="SI" [(ngModel)]="datos.recibio_quimioterapia" style="cursor: pointer;">
+                                <label class="form-check-label" for="recibio_quimioterapia_si" style="cursor: pointer;">Sí</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="quimioterapia" id="quimioterapia_no" value="option2" style="cursor: pointer;">
-                                <label class="form-check-label" for="quimioterapia_no" style="cursor: pointer;">No</label>
+                                <input class="form-check-input" type="radio" name="recibio_quimioterapia" id="recibio_quimioterapia_no" value="NO" [(ngModel)]="datos.recibio_quimioterapia" style="cursor: pointer;">
+                                <label class="form-check-label" for="recibio_quimioterapia_no" style="cursor: pointer;">No</label>
                             </div>
                         </div>
                     </div>
                     <div class="ms-5">
                         <div class="d-flex align-items-center gap-3 mb-3">
                             <label for="startDate">a. FECHA DE INICIO:</label>
-                            <input type="date" class="form-control py-3 w-25" id="startDate">
+                            <input type="date" class="form-control py-3 w-25" id="startDate" [(ngModel)]="datos.fecha_inicio_recibio_quimioterapia" name="fecha_inicio_recibio_quimioterapia">
                         </div>
                         <div class="d-flex align-items-center gap-3 mb-3">
                             <label for="startDate">b. FECHA DE TERMINO:</label>
-                            <input type="date" class="form-control py-3 w-25" id="startDate">
+                            <input type="date" class="form-control py-3 w-25" id="startDate" [(ngModel)]="datos.fecha_termino_recibio_quimioterapia" name="fecha_termino_recibio_quimioterapia">
                         </div>
                     </div>
                 </div>
@@ -184,13 +184,13 @@
                     <label for="startDate" class="mb-3">6. DETALLAR CADA MEDICACIÓN QUE LA PACIENTE TOMA O RECIBE:</label>
                     <div class="d-flex justify-content-between mb-4">
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="aines">
+                            <input class="form-check-input" type="checkbox" [(ngModel)]="datos.detallar_medicacion_paciente_toma_recibe" name="aines" value="Aines" id="aines">
                             <label class="form-check-label" for="aines">
                                 AINES
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="corticoides">
+                            <input class="form-check-input" type="checkbox" [(ngModel)]="datos.detallar_medicacion_paciente_toma_recibe" name="corticoides" value="Corticoides" id="corticoides">
                             <label class="form-check-label" for="corticoides">
                                 CORTICOIDES
                             </label>
@@ -198,24 +198,26 @@
                     </div>
                     <div class="group-textarea d-flex">
                         <!-- <input type="text" class="input" required> -->
-                        <textarea name="" id="signos_vitales" cols="30" rows="7" class="textarea" required></textarea>
-                        <label for="signos_vitales" class="label_textarea">OTROS</label>
+                        <textarea [(ngModel)]="datos.detallar_medicacion_paciente_toma_recibe_otros" name="detallar_medicacion_paciente_toma_recibe_otros" id="detallar_medicacion_paciente_toma_recibe_otros" cols="30" rows="7" class="textarea" required></textarea>
+                        <label for="detallar_medicacion_paciente_toma_recibe_otros" class="label_textarea">OTROS</label>
                     </div>
                 </div>
             </div>
             <!-- Boton -->
-            <div class="d-flex justify-content-end">
+            <!-- <div class="d-flex justify-content-end">
                 <button type="submit">Siguiente: Ciclos de Tratamiento Quiropráctico</button>
-            </div>
+            </div> -->
             <!-- Boton -->
-        </form>
+        <!-- </form> -->
 
         <!-- Seccion: Llenado por el PL -->
-        <div class="container-xl">
-            <hr>
-            <br>
-            <form class="row g-3 m-auto border px-5 py-3 bg-white">
-                <div class="col-6">
+        <br>
+        <hr>
+        <br>
+        <br>
+        <div class="row g-3 m-auto border px-5 py-3 mb-5 bg-white">
+            <!-- <form class="row g-3 m-auto border px-5 py-3 bg-white" enctype="multipart/form-data"> -->
+                <!-- <div class="col-6">
                     <p>Firma:</p>
                 </div>
                 <div class="col-6">
@@ -223,12 +225,32 @@
                 </div>
                 <div class="col-12">
                     <p>Nombre:</p>
+                </div> -->
+                <div class="col-6 d-flex align-items-center justify-content-between mb-3">
+                    <label for="startDate" class="form-label">Nombre:</label>
+                    <input type="text" class="form-control py-3" id="startDate" [(ngModel)]="datos.nombre" name="nombre" style="width: 86%; pointer-events: none; user-select: none;" disabled required>
                 </div>
+                <div class="col-6 d-flex align-items-center justify-content-between mb-3">
+                    <label for="formFile" class="form-label">Firma:</label>
+                    <input type="text" class="form-control py-3" id="startDate" [(ngModel)]="datos.firma" name="firma" style="width: 86%; pointer-events: none; user-select: none;" disabled required>
+                    <!-- <input class="form-control" type="file" id="formFile" name="imagen" (change)="onSelectFile($event)" style="width: 86%;"> -->
+                </div>
+                <div class="col-6 d-flex align-items-center justify-content-between mb-3">
+                    <label for="startDate" class="form-label">Fecha:</label>
+                    <input type="date" class="form-control py-3" id="startDate" [(ngModel)]="datos.fecha" name="fecha" style="width: 86%; pointer-events: none; user-select: none;" disabled required>
+                </div>
+                
                 <div class="col-12">
-                    <b><i><p>**Nota: Se recomienda que sea llenado por el PL.</p></i></b>
+                    <b><i><p>**Nota: Se recomienda que sea llenado por el investigador principal.</p></i></b>
                 </div>
-            </form>
+            <!-- </form> -->
         </div>
+        <!-- Boton -->
+        <div class="d-flex justify-content-end">
+            <button type="submit" (click)="registrarForm6()">{{ esModoEdicion ? 'Actualizar' : 'Registrar y Siguiente: Ciclos de Tratamiento Quiropráctico'}}</button>
+        </div>
+        <!-- Boton -->
+        </form>
         <!-- Seccion: Llenado por el PL -->
 
     </div>

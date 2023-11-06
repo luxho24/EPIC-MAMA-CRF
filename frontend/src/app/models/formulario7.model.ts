@@ -1,4 +1,4 @@
-export class Formulario5 {
+export class Formulario7 {
     _id?: number;
     iniciales_paciente: string;
     numero_hc: string;

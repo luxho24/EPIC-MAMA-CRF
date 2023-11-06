@@ -39,8 +39,9 @@ export class Formulario3Component implements OnInit {
           this.datos.numero_hc = res.paciente.numero_hc;
           this.datos.centro_institucion_atencion = res.paciente.centro_institucion_atencion;
           
-          // this.datos.cuenta_consentimiento_informado = res.paciente.cuenta_consentimiento_informado;
-          // this.datos.fecha_consentimiento_informado = res.paciente.fecha_consentimiento_informado;
+          this.datos.nombre = res.paciente.nombre;
+          this.datos.fecha = res.paciente.fecha;
+          this.datos.firma = res.paciente.firma;
         },
         (error) => {
           console.log(error);
@@ -62,6 +63,10 @@ export class Formulario3Component implements OnInit {
           
           this.datos.cuenta_consentimiento_informado = res.paciente.cuenta_consentimiento_informado;
           this.datos.fecha_consentimiento_informado = res.paciente.fecha_consentimiento_informado;
+
+          this.datos.nombre = res.paciente.nombre;
+          this.datos.fecha = res.paciente.fecha;
+          this.datos.firma = res.paciente.firma;
 
           this.esModoEdicion = true;
         },
