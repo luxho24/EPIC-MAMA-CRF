@@ -56,26 +56,79 @@
 
             <h3 class="mb-4">TRATAMIENTO:</h3>
             <div class="col mb-4">
-                <div class="group-textarea d-flex mb-3">
-                    <textarea name="" id="signos_vitales" cols="30" rows="7" class="textarea" required></textarea>
-                    <label for="signos_vitales" class="label_textarea">ESQUEMA DEL TRATAMIENTO:</label>
-                </div>
-                <div class="d-flex align-items-center gap-3 mb-3">
+
+                <!-- TABLA TRATAMIENTO -->
+                <table class="w-100">
+                    <thead>
+                        <tr>
+                            <th colspan="2" class="text-center">ESQUEMA DEL TRATAMIENTO</th>
+                        </tr>
+                        <tr>
+                            <th class="text-center">MEDICAMENTO</th>
+                            <th class="text-center">DOSIS</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1. <input type="text" class="py-2 border-0 bg-transparent" placeholder="Ingresar medicamento" [(ngModel)]="datos.tratamiento_medicamento_1" name="tratamiento_medicamento_1" style="width: 96%; outline: none;"></td>
+                            <td><input type="text" class="py-2 border-0 bg-transparent" placeholder="Ingresar dosis" [(ngModel)]="datos.tratamiento_dosis_1" name="tratamiento_dosis_1" style="width: 100%; outline: none;"></td>
+                        </tr>
+                        <tr>
+                            <td>2. <input type="text" class="py-2 border-0 bg-transparent" placeholder="Ingresar medicamento" [(ngModel)]="datos.tratamiento_medicamento_2" name="tratamiento_medicamento_2" style="width: 96%; outline: none;"></td>
+                            <td><input type="text" class="py-2 border-0 bg-transparent" placeholder="Ingresar dosis" [(ngModel)]="datos.tratamiento_dosis_2" name="tratamiento_dosis_2" style="width: 100%; outline: none;"></td>
+                        </tr>
+                        <tr>
+                            <td>3. <input type="text" class="py-2 border-0 bg-transparent" placeholder="Ingresar medicamento" [(ngModel)]="datos.tratamiento_medicamento_3" name="tratamiento_medicamento_3" style="width: 96%; outline: none;"></td>
+                            <td><input type="text" class="py-2 border-0 bg-transparent" placeholder="Ingresar dosis" [(ngModel)]="datos.tratamiento_dosis_3" name="tratamiento_dosis_3" style="width: 100%; outline: none;"></td>
+                        </tr>
+                        <tr>
+                            <td>4. <input type="text" class="py-2 border-0 bg-transparent" placeholder="Ingresar medicamento" [(ngModel)]="datos.tratamiento_medicamento_4" name="tratamiento_medicamento_4" style="width: 96%; outline: none;"></td>
+                            <td><input type="text" class="py-2 border-0 bg-transparent" placeholder="Ingresar dosis" [(ngModel)]="datos.tratamiento_dosis_4" name="tratamiento_dosis_4" style="width: 100%; outline: none;"></td>
+                        </tr>
+                        <tr>
+                            <td>5. <input type="text" class="py-2 border-0 bg-transparent" placeholder="Ingresar medicamento" [(ngModel)]="datos.tratamiento_medicamento_5" name="tratamiento_medicamento_5" style="width: 96%; outline: none;"></td>
+                            <td><input type="text" class="py-2 border-0 bg-transparent" placeholder="Ingresar dosis" [(ngModel)]="datos.tratamiento_dosis_5" name="tratamiento_dosis_5" style="width: 100%; outline: none;"></td>
+                        </tr>
+                        <tr>
+                            <td>6. <input type="text" class="py-2 border-0 bg-transparent" placeholder="Ingresar medicamento" [(ngModel)]="datos.tratamiento_medicamento_6" name="tratamiento_medicamento_6" style="width: 96%; outline: none;"></td>
+                            <td><input type="text" class="py-2 border-0 bg-transparent" placeholder="Ingresar dosis" [(ngModel)]="datos.tratamiento_dosis_6" name="tratamiento_dosis_6" style="width: 100%; outline: none;"></td>
+                        </tr>
+                        <tr>
+                            <td>7. <input type="text" class="py-2 border-0 bg-transparent" placeholder="Ingresar medicamento" [(ngModel)]="datos.tratamiento_medicamento_7" name="tratamiento_medicamento_7" style="width: 96%; outline: none;"></td>
+                            <td><input type="text" class="py-2 border-0 bg-transparent" placeholder="Ingresar dosis" [(ngModel)]="datos.tratamiento_dosis_7" name="tratamiento_dosis_7" style="width: 100%; outline: none;"></td>
+                        </tr>
+                        <tr>
+                            <td>8. <input type="text" class="py-2 border-0 bg-transparent" placeholder="Ingresar medicamento" [(ngModel)]="datos.tratamiento_medicamento_8" name="tratamiento_medicamento_8" style="width: 96%; outline: none;"></td>
+                            <td><input type="text" class="py-2 border-0 bg-transparent" placeholder="Ingresar dosis" [(ngModel)]="datos.tratamiento_dosis_8" name="tratamiento_dosis_8" style="width: 100%; outline: none;"></td>
+                        </tr>
+                        <tr>
+                            <td>9. <input type="text" class="py-2 border-0 bg-transparent" placeholder="Ingresar medicamento" [(ngModel)]="datos.tratamiento_medicamento_9" name="tratamiento_medicamento_9" style="width: 96%; outline: none;"></td>
+                            <td><input type="text" class="py-2 border-0 bg-transparent" placeholder="Ingresar dosis" [(ngModel)]="datos.tratamiento_dosis_9" name="tratamiento_dosis_9" style="width: 100%; outline: none;"></td>
+                        </tr>
+                        <tr>
+                            <td>10. <input type="text" class="py-2 border-0 bg-transparent" placeholder="Ingresar medicamento" [(ngModel)]="datos.tratamiento_medicamento_10" name="tratamiento_medicamento_10" style="width: 94%; outline: none;"></td>
+                            <td><input type="text" class="py-2 border-0 bg-transparent" placeholder="Ingresar dosis" [(ngModel)]="datos.tratamiento_dosis_10" name="tratamiento_dosis_10" style="width: 100%; outline: none;"></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <!-- TABLA TRATAMIENTO -->
+                
+                <div class="d-flex align-items-center gap-3 mb-5">
                     <label for="startDate">FECHA DEL TRATAMIENTO:</label>
-                    <input type="date" class="form-control py-3 w-25" id="startDate">
+                    <input type="date" class="form-control py-3 w-25" id="startDate" [(ngModel)]="datos.fecha_tratamiento" name="fecha_tratamiento">
                 </div>
                 <div class="d-flex flex-column">
                     <div class="d-flex align-items-center justify-content-between mb-4">
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="ciclo" id="ciclo_1" value="ciclo_1" onclick="removerHidden()" style="cursor: pointer;">
+                            <input class="form-check-input" type="radio" name="ciclo" id="ciclo_1" value="CICLO 01" [(ngModel)]="datos.ciclo" (change)="toggleEvaluacion()" onclick="removerHidden()" style="cursor: pointer;">
                             <label class="form-check-label" for="ciclo_1" style="cursor: pointer;">CICLO 01</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="ciclo" id="ciclo_2" value="ciclo_2" onclick="removerHidden()" style="cursor: pointer;">
+                            <input class="form-check-input" type="radio" name="ciclo" id="ciclo_2" value="CICLO 02" [(ngModel)]="datos.ciclo" (change)="toggleEvaluacion()" onclick="removerHidden()" style="cursor: pointer;">
                             <label class="form-check-label" for="ciclo_2" style="cursor: pointer;">CICLO 02</label>
                         </div>
                         <div class="form-check form-check-inline" style="padding: 5px 5px 5px 30px; background-color: #FFCDFA; border-radius: 4px;">
-                            <input class="form-check-input" type="radio" name="ciclo" id="ciclo_3" value="ciclo_3" onclick="removerHidden()" style="cursor: pointer;">
+                            <input class="form-check-input" type="radio" name="ciclo" id="ciclo_3" value="CICLO 03" [(ngModel)]="datos.ciclo" (change)="toggleEvaluacion()" onclick="removerHidden()" style="cursor: pointer;">
                             <label class="form-check-label" for="ciclo_3" style="cursor: pointer;">CICLO 03</label>
                         </div>
                     </div>
@@ -83,15 +136,15 @@
                 <div class="d-flex flex-column">
                     <div class="d-flex align-items-center justify-content-between mb-4">
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="ciclo" id="ciclo_4" value="ciclo_4" onclick="removerHidden()" style="cursor: pointer;">
+                            <input class="form-check-input" type="radio" name="ciclo" id="ciclo_4" value="CICLO 04" [(ngModel)]="datos.ciclo" (change)="toggleEvaluacion()" onclick="removerHidden()" style="cursor: pointer;">
                             <label class="form-check-label" for="ciclo_4" style="cursor: pointer;">CICLO 04</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="ciclo" id="ciclo_5" value="ciclo_5" onclick="removerHidden()" style="cursor: pointer;">
+                            <input class="form-check-input" type="radio" name="ciclo" id="ciclo_5" value="CICLO 05" [(ngModel)]="datos.ciclo" (change)="toggleEvaluacion()" onclick="removerHidden()" style="cursor: pointer;">
                             <label class="form-check-label" for="ciclo_5" style="cursor: pointer;">CICLO 05</label>
                         </div>
                         <div class="form-check form-check-inline" style="padding: 5px 5px 5px 30px; background-color: #FFCDFA; border-radius: 4px;">
-                            <input class="form-check-input" type="radio" name="ciclo" id="ciclo_6" value="ciclo_6" onclick="removerHidden()" style="cursor: pointer;">
+                            <input class="form-check-input" type="radio" name="ciclo" id="ciclo_6" value="CICLO 06" [(ngModel)]="datos.ciclo" (change)="toggleEvaluacion()" onclick="removerHidden()" style="cursor: pointer;">
                             <label class="form-check-label" for="ciclo_6" style="cursor: pointer;">CICLO 06</label>
                         </div>
                     </div>
@@ -99,16 +152,12 @@
                 <div class="d-flex flex-column">
                     <div class="d-flex justify-content-between mb-4">
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="buena_tolerancia" style="cursor: pointer;">
-                            <label class="form-check-label" for="buena_tolerancia" style="cursor: pointer;">
-                                BUENA TOLERANCIA
-                            </label>
+                            <input class="form-check-input" type="radio" name="tolerancia" id="buena_tolerancia" value="BUENA TOLERANCIA" [(ngModel)]="datos.tolerancia" style="cursor: pointer;">
+                            <label class="form-check-label" for="buena_tolerancia" style="cursor: pointer;">BUENA TOLERANCIA</label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="no_buena_tolerancia" style="cursor: pointer;">
-                            <label class="form-check-label" for="no_buena_tolerancia" style="cursor: pointer;">
-                                NO BUENA TOLERANCIA
-                            </label>
+                            <input class="form-check-input" type="radio" name="tolerancia" id="no_buena_tolerancia" value="NO BUENA TOLERANCIA" [(ngModel)]="datos.tolerancia" style="cursor: pointer;">
+                            <label class="form-check-label" for="no_buena_tolerancia" style="cursor: pointer;">NO BUENA TOLERANCIA</label>
                         </div>
                     </div>
                 </div>
@@ -119,38 +168,30 @@
                 </div>
             </div>
 
-            <!-- <div class="col mb-4 hidden" id="evaluacion_respuesta_tratamiento"> -->
-            <div class="col mb-4" id="evaluacion_respuesta_tratamiento">
+            <div class="col mb-4 hidden" id="evaluacion_respuesta_tratamiento" [ngClass]="{ 'hidden': !mostrarEvaluacion }">
+            <!-- <div class="col mb-4" id="evaluacion_respuesta_tratamiento"> -->
                 <h3 class="mb-4">EVALUACIÓN DE RESPUESTA AL TRATAMIENTO:</h3>
                 <div class="d-flex flex-column">
                     <div class="d-flex justify-content-between mb-4">
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="respuesta_completa" style="cursor: pointer;">
-                            <label class="form-check-label" for="respuesta_completa" style="cursor: pointer;">
-                                RESPUESTA COMPLETA
-                            </label>
+                            <input class="form-check-input" type="radio" name="evaluacion_respuesta_tratamiento" id="respuesta_completa" value="RESPUESTA COMPLETA" [(ngModel)]="datos.evaluacion_respuesta_tratamiento" style="cursor: pointer;">
+                            <label class="form-check-label" for="respuesta_completa" style="cursor: pointer;">RESPUESTA COMPLETA</label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="respuesta_parcial" style="cursor: pointer;">
-                            <label class="form-check-label" for="respuesta_parcial" style="cursor: pointer;">
-                                RESPUESTA PARCIAL
-                            </label>
+                            <input class="form-check-input" type="radio" name="evaluacion_respuesta_tratamiento" id="respuesta_parcial" value="RESPUESTA PARCIAL" [(ngModel)]="datos.evaluacion_respuesta_tratamiento" style="cursor: pointer;">
+                            <label class="form-check-label" for="respuesta_parcial" style="cursor: pointer;">RESPUESTA PARCIAL</label>
                         </div>
                     </div>
                 </div>
                 <div class="d-flex flex-column">
                     <div class="d-flex justify-content-between mb-4">
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="enfermedad_estable" style="cursor: pointer;">
-                            <label class="form-check-label" for="enfermedad_estable" style="cursor: pointer;">
-                                ENFERMEDAD ESTABLE
-                            </label>
+                            <input class="form-check-input" type="radio" name="evaluacion_respuesta_tratamiento" id="enfermedad_estable" value="ENFERMEDAD ESTABLE" [(ngModel)]="datos.evaluacion_respuesta_tratamiento" style="cursor: pointer;">
+                            <label class="form-check-label" for="enfermedad_estable" style="cursor: pointer;">ENFERMEDAD ESTABLE</label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="progresion" style="cursor: pointer;">
-                            <label class="form-check-label" for="progresion" style="cursor: pointer;">
-                                PROGRESIÓN
-                            </label>
+                            <input class="form-check-input" type="radio" name="evaluacion_respuesta_tratamiento" id="progresion" value="PROGRESIÓN" [(ngModel)]="datos.evaluacion_respuesta_tratamiento" style="cursor: pointer;">
+                            <label class="form-check-label" for="progresion" style="cursor: pointer;">PROGRESIÓN</label>
                         </div>
                     </div>
                 </div>
@@ -199,7 +240,7 @@
         </div>
         <!-- Boton -->
         <div class="d-flex justify-content-end">
-            <button type="submit">Siguiente: Ciclos de Tratamiento Quiropráctico</button>
+            <button type="submit"(click)="registrarForm7()">{{ esModoEdicion ? 'Actualizar' : 'Registrar y Volver: Menú de navegación'}}</button>
         </div>
         <!-- Boton -->
         </form>

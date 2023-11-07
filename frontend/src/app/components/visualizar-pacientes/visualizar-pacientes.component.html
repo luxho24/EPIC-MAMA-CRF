@@ -478,20 +478,20 @@
                                 <th scope="col">Iniciales de la paciente</th>
                                 <th scope="col">Número de HC</th>
                                 <th scope="col">Centro o institución de atención</th>
-                                <th scope="col">Criterio de inclusión 1</th>
-                                <th scope="col">Criterio de inclusión 2</th>
-                                <th scope="col">Criterio de inclusión 3</th>
-                                <th scope="col">Criterio de inclusión 4</th>
-                                <th scope="col">Criterio de inclusión 5</th>
-                                <th scope="col">Criterio de inclusión 6</th>
-                                <th scope="col">Criterio de inclusión 7</th>
-                                <th scope="col">Criterio de exclusión 1</th>
-                                <th scope="col">Criterio de exclusión 2</th>
-                                <th scope="col">Criterio de exclusión 3</th>
-                                <th scope="col">Criterio de exclusión 4</th>
-                                <th scope="col">Criterio de exclusión 5</th>
-                                <th scope="col">Criterio de exclusión 6</th>
-                                <th scope="col">Cumple criterios de elegibilidad</th>
+                                <th scope="col">Tratamiento con medicamento y dosis 1</th>
+                                <th scope="col">Tratamiento con medicamento y dosis 2</th>
+                                <th scope="col">Tratamiento con medicamento y dosis 3</th>
+                                <th scope="col">Tratamiento con medicamento y dosis 4</th>
+                                <th scope="col">Tratamiento con medicamento y dosis 5</th>
+                                <th scope="col">Tratamiento con medicamento y dosis 6</th>
+                                <th scope="col">Tratamiento con medicamento y dosis 7</th>
+                                <th scope="col">Tratamiento con medicamento y dosis 8</th>
+                                <th scope="col">Tratamiento con medicamento y dosis 9</th>
+                                <th scope="col">Tratamiento con medicamento y dosis 10</th>
+                                <th scope="col">Fecha de tratamiento</th>
+                                <th scope="col">Ciclo</th>
+                                <th scope="col">Tolerancia</th>
+                                <th scope="col">Evaluación de respuesta al tratamiento</th>
                                 <th scope="col" class="fixed-column-th" *ngIf="isAdmin">Acción</th>
                             </tr>
                         </thead>
@@ -501,20 +501,20 @@
                                 <td>{{pacientef7.iniciales_paciente}}</td>
                                 <td>{{pacientef7.numero_hc}}</td>
                                 <td>{{pacientef7.centro_institucion_atencion}}</td>
-                                <td>{{pacientef7.criterios_inclusion_1}}</td>
-                                <td>{{pacientef7.criterios_inclusion_2}}</td>
-                                <td>{{pacientef7.criterios_inclusion_3}}</td>
-                                <td>{{pacientef7.criterios_inclusion_4}}</td>
-                                <td>{{pacientef7.criterios_inclusion_5}}</td>
-                                <td>{{pacientef7.criterios_inclusion_6}}</td>
-                                <td>{{pacientef7.criterios_inclusion_7}}</td>
-                                <td>{{pacientef7.criterios_exclusion_1}}</td>
-                                <td>{{pacientef7.criterios_exclusion_2}}</td>
-                                <td>{{pacientef7.criterios_exclusion_3}}</td>
-                                <td>{{pacientef7.criterios_exclusion_4}}</td>
-                                <td>{{pacientef7.criterios_exclusion_5}}</td>
-                                <td>{{pacientef7.criterios_exclusion_6}}</td>
-                                <td>{{pacientef7.criterios_elegibilidad_estudio}}</td>
+                                <td>{{pacientef7.tratamiento_medicamento_1}} => {{pacientef7.tratamiento_dosis_1}}</td>
+                                <td>{{pacientef7.tratamiento_medicamento_2}} => {{pacientef7.tratamiento_dosis_2}}</td>
+                                <td>{{pacientef7.tratamiento_medicamento_3}} => {{pacientef7.tratamiento_dosis_3}}</td>
+                                <td>{{pacientef7.tratamiento_medicamento_4}} => {{pacientef7.tratamiento_dosis_4}}</td>
+                                <td>{{pacientef7.tratamiento_medicamento_5}} => {{pacientef7.tratamiento_dosis_5}}</td>
+                                <td>{{pacientef7.tratamiento_medicamento_6}} => {{pacientef7.tratamiento_dosis_6}}</td>
+                                <td>{{pacientef7.tratamiento_medicamento_7}} => {{pacientef7.tratamiento_dosis_7}}</td>
+                                <td>{{pacientef7.tratamiento_medicamento_8}} => {{pacientef7.tratamiento_dosis_8}}</td>
+                                <td>{{pacientef7.tratamiento_medicamento_9}} => {{pacientef7.tratamiento_dosis_9}}</td>
+                                <td>{{pacientef7.tratamiento_medicamento_10}} => {{pacientef7.tratamiento_dosis_10}}</td>
+                                <td>{{pacientef7.fecha_tratamiento}}</td>
+                                <td>{{pacientef7.ciclo}}</td>
+                                <td>{{pacientef7.tolerancia}}</td>
+                                <td>{{pacientef7.evaluacion_respuesta_tratamiento}}</td>
                                 <td class="fixed-column-td" *ngIf="isAdmin">
                                     <button class="btn btn-warning" [routerLink]="['/formulario7/usuario', idUsuario, 'editar', 'paciente', pacientef7._id]">Editar</button>
                                 </td>
