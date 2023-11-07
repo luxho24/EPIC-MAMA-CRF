@@ -332,50 +332,60 @@
                                 <th scope="col">Iniciales de la paciente</th>
                                 <th scope="col">Número de HC</th>
                                 <th scope="col">Centro o institución de atención</th>
-                                <th scope="col">Criterio de inclusión 1</th>
-                                <th scope="col">Criterio de inclusión 2</th>
-                                <th scope="col">Criterio de inclusión 3</th>
-                                <th scope="col">Criterio de inclusión 4</th>
-                                <th scope="col">Criterio de inclusión 5</th>
-                                <th scope="col">Criterio de inclusión 6</th>
-                                <th scope="col">Criterio de inclusión 7</th>
-                                <th scope="col">Criterio de exclusión 1</th>
-                                <th scope="col">Criterio de exclusión 2</th>
-                                <th scope="col">Criterio de exclusión 3</th>
-                                <th scope="col">Criterio de exclusión 4</th>
-                                <th scope="col">Criterio de exclusión 5</th>
-                                <th scope="col">Criterio de exclusión 6</th>
-                                <th scope="col">Cumple criterios de elegibilidad</th>
+                                <th scope="col">Resultados del hemograma</th>
+                                <th scope="col">Fecha del hemograma</th>
+                                <th scope="col">Resultados de otros estudios</th>
+                                <th scope="col">Fecha de otros estudios</th>
+                                <th scope="col">Fecha de muestra de marcadores inflamatorios pretratamiento (séricos)</th>
+                                <th scope="col">Código de muestra de marcadores inflamatorios pretratamiento (séricos)</th>
+                                <th scope="col">Fecha de muestra del tumor</th>
+                                <th scope="col">Fecha del microbioma intestinal</th>
+                                <th scope="col">Fecha del microbioma salival</th>
+                                <th scope="col">Ecografía</th>
+                                <th scope="col">Mamografía</th>
+                                <th scope="col">Gamagrafía ósea</th>
+                                <th scope="col">Tomografía</th>
+                                <th scope="col">RMN</th>
+                                <th scope="col">PET</th>
+                                <th scope="col">Tumor</th>
+                                <th scope="col">Nódulo</th>
+                                <th scope="col">Metástasis</th>
+                                <th scope="col">Estadificación del paciente</th>
                                 <th scope="col" class="fixed-column-th" *ngIf="isAdmin">Acción</th>
                             </tr>
                         </thead>
-                        <tbody *ngIf="datosf4.length > 0">
-                            <tr *ngFor="let pacientef4 of datosf4 | filter: filterPaciente; let i = index">
+                        <tbody *ngIf="datosf5.length > 0">
+                            <tr *ngFor="let pacientef5 of datosf5 | filter: filterPaciente; let i = index">
                                 <td>{{ i + 1 }}</td>
-                                <td>{{pacientef4.iniciales_paciente}}</td>
-                                <td>{{pacientef4.numero_hc}}</td>
-                                <td>{{pacientef4.centro_institucion_atencion}}</td>
-                                <td>{{pacientef4.criterios_inclusion_1}}</td>
-                                <td>{{pacientef4.criterios_inclusion_2}}</td>
-                                <td>{{pacientef4.criterios_inclusion_3}}</td>
-                                <td>{{pacientef4.criterios_inclusion_4}}</td>
-                                <td>{{pacientef4.criterios_inclusion_5}}</td>
-                                <td>{{pacientef4.criterios_inclusion_6}}</td>
-                                <td>{{pacientef4.criterios_inclusion_7}}</td>
-                                <td>{{pacientef4.criterios_exclusion_1}}</td>
-                                <td>{{pacientef4.criterios_exclusion_2}}</td>
-                                <td>{{pacientef4.criterios_exclusion_3}}</td>
-                                <td>{{pacientef4.criterios_exclusion_4}}</td>
-                                <td>{{pacientef4.criterios_exclusion_5}}</td>
-                                <td>{{pacientef4.criterios_exclusion_6}}</td>
-                                <td>{{pacientef4.criterios_elegibilidad_estudio}}</td>
+                                <td>{{pacientef5.iniciales_paciente}}</td>
+                                <td>{{pacientef5.numero_hc}}</td>
+                                <td>{{pacientef5.centro_institucion_atencion}}</td>
+                                <td>{{pacientef5.resultados_hemograma}}</td>
+                                <td>{{pacientef5.fecha_hemograma}}</td>
+                                <td>{{pacientef5.resultados_otros_estudios}}</td>
+                                <td>{{pacientef5.fecha_otros_estudios}}</td>
+                                <td>{{pacientef5.fecha_muestra_marcadores_inflamatorios_pretratamiento_sericos}}</td>
+                                <td>{{pacientef5.codigo_muestra_marcadores_inflamatorios_pretratamiento_sericos}}</td>
+                                <td>{{pacientef5.fecha_muestra_tumor}}</td>
+                                <td>{{pacientef5.fecha_microbioma_intestinal}}</td>
+                                <td>{{pacientef5.fecha_microbioma_salival}}</td>
+                                <td>{{pacientef5.ecografia}}</td>
+                                <td>{{pacientef5.mamografia}}</td>
+                                <td>{{pacientef5.gamagrafia_osea}}</td>
+                                <td>{{pacientef5.tomografia}}</td>
+                                <td>{{pacientef5.rmn}}</td>
+                                <td>{{pacientef5.pet}}</td>
+                                <td>{{pacientef5.tumor}}</td>
+                                <td>{{pacientef5.nodulo}}</td>
+                                <td>{{pacientef5.metastasis}}</td>
+                                <td>{{pacientef5.estadificacion_paciente}}</td>
                                 <td class="fixed-column-td" *ngIf="isAdmin">
-                                    <button class="btn btn-warning" [routerLink]="['/formulario4/usuario', idUsuario, 'editar', 'paciente', pacientef4._id]">Editar</button>
+                                    <button class="btn btn-warning" [routerLink]="['/formulario5/usuario', idUsuario, 'editar', 'paciente', pacientef5._id]">Editar</button>
                                 </td>
                             </tr>
                         </tbody>
                     </table>
-                    <h5 style="text-align: start; margin-top: 10px" *ngIf="datosf4.length == 0">
+                    <h5 style="text-align: start; margin-top: 10px" *ngIf="datosf5.length == 0">
                         No hay pacientes registrados
                     </h5>
                 </div>
@@ -400,50 +410,50 @@
                                 <th scope="col">Iniciales de la paciente</th>
                                 <th scope="col">Número de HC</th>
                                 <th scope="col">Centro o institución de atención</th>
-                                <th scope="col">Criterio de inclusión 1</th>
-                                <th scope="col">Criterio de inclusión 2</th>
-                                <th scope="col">Criterio de inclusión 3</th>
-                                <th scope="col">Criterio de inclusión 4</th>
-                                <th scope="col">Criterio de inclusión 5</th>
-                                <th scope="col">Criterio de inclusión 6</th>
-                                <th scope="col">Criterio de inclusión 7</th>
-                                <th scope="col">Criterio de exclusión 1</th>
-                                <th scope="col">Criterio de exclusión 2</th>
-                                <th scope="col">Criterio de exclusión 3</th>
-                                <th scope="col">Criterio de exclusión 4</th>
-                                <th scope="col">Criterio de exclusión 5</th>
-                                <th scope="col">Criterio de exclusión 6</th>
-                                <th scope="col">Cumple criterios de elegibilidad</th>
+                                <th scope="col">Cirugía</th>
+                                <th scope="col">Tipo de cirugía</th>
+                                <th scope="col">Fecha de procedimiento</th>
+                                <th scope="col">Recibió radioterápia</th>
+                                <th scope="col">Fecha inicio</th>
+                                <th scope="col">Fecha terminó</th>
+                                <th scope="col">Recibió hormonoterápia</th>
+                                <th scope="col">Fecha inicio</th>
+                                <th scope="col">Fecha terminó</th>
+                                <th scope="col">Recibió quimioterápia</th>
+                                <th scope="col">Fecha inicio</th>
+                                <th scope="col">Fecha terminó</th>
+                                <th scope="col">Medicación del paciente que toma o recibe</th>
+                                <th scope="col">Medicación del paciente que toma o recibe (Otros)</th>
                                 <th scope="col" class="fixed-column-th" *ngIf="isAdmin">Acción</th>
                             </tr>
                         </thead>
-                        <tbody *ngIf="datosf4.length > 0">
-                            <tr *ngFor="let pacientef4 of datosf4 | filter: filterPaciente; let i = index">
+                        <tbody *ngIf="datosf6.length > 0">
+                            <tr *ngFor="let pacientef6 of datosf6 | filter: filterPaciente; let i = index">
                                 <td>{{ i + 1 }}</td>
-                                <td>{{pacientef4.iniciales_paciente}}</td>
-                                <td>{{pacientef4.numero_hc}}</td>
-                                <td>{{pacientef4.centro_institucion_atencion}}</td>
-                                <td>{{pacientef4.criterios_inclusion_1}}</td>
-                                <td>{{pacientef4.criterios_inclusion_2}}</td>
-                                <td>{{pacientef4.criterios_inclusion_3}}</td>
-                                <td>{{pacientef4.criterios_inclusion_4}}</td>
-                                <td>{{pacientef4.criterios_inclusion_5}}</td>
-                                <td>{{pacientef4.criterios_inclusion_6}}</td>
-                                <td>{{pacientef4.criterios_inclusion_7}}</td>
-                                <td>{{pacientef4.criterios_exclusion_1}}</td>
-                                <td>{{pacientef4.criterios_exclusion_2}}</td>
-                                <td>{{pacientef4.criterios_exclusion_3}}</td>
-                                <td>{{pacientef4.criterios_exclusion_4}}</td>
-                                <td>{{pacientef4.criterios_exclusion_5}}</td>
-                                <td>{{pacientef4.criterios_exclusion_6}}</td>
-                                <td>{{pacientef4.criterios_elegibilidad_estudio}}</td>
+                                <td>{{pacientef6.iniciales_paciente}}</td>
+                                <td>{{pacientef6.numero_hc}}</td>
+                                <td>{{pacientef6.centro_institucion_atencion}}</td>
+                                <td>{{pacientef6.cirugia}}</td>
+                                <td>{{pacientef6.tipo_cirugia}}</td>
+                                <td>{{pacientef6.fecha_procedimiento}}</td>
+                                <td>{{pacientef6.recibio_radioterapia}}</td>
+                                <td>{{pacientef6.fecha_inicio_recibio_radioterapia}}</td>
+                                <td>{{pacientef6.fecha_termino_recibio_radioterapia}}</td>
+                                <td>{{pacientef6.recibio_hormonoterapia}}</td>
+                                <td>{{pacientef6.fecha_inicio_recibio_hormonoterapia}}</td>
+                                <td>{{pacientef6.fecha_termino_recibio_hormonoterapia}}</td>
+                                <td>{{pacientef6.recibio_quimioterapia}}</td>
+                                <td>{{pacientef6.fecha_inicio_recibio_quimioterapia}}</td>
+                                <td>{{pacientef6.fecha_termino_recibio_quimioterapia}}</td>
+                                <td>{{pacientef6.detallar_medicacion_paciente_toma_recibe}}</td>
+                                <td>{{pacientef6.detallar_medicacion_paciente_toma_recibe_otros}}</td>
                                 <td class="fixed-column-td" *ngIf="isAdmin">
-                                    <button class="btn btn-warning" [routerLink]="['/formulario4/usuario', idUsuario, 'editar', 'paciente', pacientef4._id]">Editar</button>
+                                    <button class="btn btn-warning" [routerLink]="['/formulario6/usuario', idUsuario, 'editar', 'paciente', pacientef6._id]">Editar</button>
                                 </td>
                             </tr>
                         </tbody>
                     </table>
-                    <h5 style="text-align: start; margin-top: 10px" *ngIf="datosf4.length == 0">
+                    <h5 style="text-align: start; margin-top: 10px" *ngIf="datosf6.length == 0">
                         No hay pacientes registrados
                     </h5>
                 </div>
@@ -485,33 +495,33 @@
                                 <th scope="col" class="fixed-column-th" *ngIf="isAdmin">Acción</th>
                             </tr>
                         </thead>
-                        <tbody *ngIf="datosf4.length > 0">
-                            <tr *ngFor="let pacientef4 of datosf4 | filter: filterPaciente; let i = index">
+                        <tbody *ngIf="datosf7.length > 0">
+                            <tr *ngFor="let pacientef7 of datosf7 | filter: filterPaciente; let i = index">
                                 <td>{{ i + 1 }}</td>
-                                <td>{{pacientef4.iniciales_paciente}}</td>
-                                <td>{{pacientef4.numero_hc}}</td>
-                                <td>{{pacientef4.centro_institucion_atencion}}</td>
-                                <td>{{pacientef4.criterios_inclusion_1}}</td>
-                                <td>{{pacientef4.criterios_inclusion_2}}</td>
-                                <td>{{pacientef4.criterios_inclusion_3}}</td>
-                                <td>{{pacientef4.criterios_inclusion_4}}</td>
-                                <td>{{pacientef4.criterios_inclusion_5}}</td>
-                                <td>{{pacientef4.criterios_inclusion_6}}</td>
-                                <td>{{pacientef4.criterios_inclusion_7}}</td>
-                                <td>{{pacientef4.criterios_exclusion_1}}</td>
-                                <td>{{pacientef4.criterios_exclusion_2}}</td>
-                                <td>{{pacientef4.criterios_exclusion_3}}</td>
-                                <td>{{pacientef4.criterios_exclusion_4}}</td>
-                                <td>{{pacientef4.criterios_exclusion_5}}</td>
-                                <td>{{pacientef4.criterios_exclusion_6}}</td>
-                                <td>{{pacientef4.criterios_elegibilidad_estudio}}</td>
+                                <td>{{pacientef7.iniciales_paciente}}</td>
+                                <td>{{pacientef7.numero_hc}}</td>
+                                <td>{{pacientef7.centro_institucion_atencion}}</td>
+                                <td>{{pacientef7.criterios_inclusion_1}}</td>
+                                <td>{{pacientef7.criterios_inclusion_2}}</td>
+                                <td>{{pacientef7.criterios_inclusion_3}}</td>
+                                <td>{{pacientef7.criterios_inclusion_4}}</td>
+                                <td>{{pacientef7.criterios_inclusion_5}}</td>
+                                <td>{{pacientef7.criterios_inclusion_6}}</td>
+                                <td>{{pacientef7.criterios_inclusion_7}}</td>
+                                <td>{{pacientef7.criterios_exclusion_1}}</td>
+                                <td>{{pacientef7.criterios_exclusion_2}}</td>
+                                <td>{{pacientef7.criterios_exclusion_3}}</td>
+                                <td>{{pacientef7.criterios_exclusion_4}}</td>
+                                <td>{{pacientef7.criterios_exclusion_5}}</td>
+                                <td>{{pacientef7.criterios_exclusion_6}}</td>
+                                <td>{{pacientef7.criterios_elegibilidad_estudio}}</td>
                                 <td class="fixed-column-td" *ngIf="isAdmin">
-                                    <button class="btn btn-warning" [routerLink]="['/formulario4/usuario', idUsuario, 'editar', 'paciente', pacientef4._id]">Editar</button>
+                                    <button class="btn btn-warning" [routerLink]="['/formulario7/usuario', idUsuario, 'editar', 'paciente', pacientef7._id]">Editar</button>
                                 </td>
                             </tr>
                         </tbody>
                     </table>
-                    <h5 style="text-align: start; margin-top: 10px" *ngIf="datosf4.length == 0">
+                    <h5 style="text-align: start; margin-top: 10px" *ngIf="datosf7.length == 0">
                         No hay pacientes registrados
                     </h5>
                 </div>

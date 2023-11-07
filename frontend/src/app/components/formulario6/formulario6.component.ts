@@ -100,24 +100,24 @@ export class Formulario6Component implements OnInit {
           this.datos.numero_hc = res.paciente.numero_hc;
           this.datos.centro_institucion_atencion = res.paciente.centro_institucion_atencion;
           
-          this.datos.cirugia = res.cirugia;
-          this.datos.tipo_cirugia = res.tipo_cirugia;
-          this.datos.fecha_procedimiento = res.fecha_procedimiento;
-          this.datos.recibio_radioterapia = res.recibio_radioterapia;
-          this.datos.fecha_inicio_recibio_radioterapia = res.fecha_inicio_recibio_radioterapia;
-          this.datos.fecha_termino_recibio_radioterapia = res.fecha_termino_recibio_radioterapia;
+          this.datos.cirugia = res.paciente.cirugia;
+          this.datos.tipo_cirugia = res.paciente.tipo_cirugia;
+          this.datos.fecha_procedimiento = res.paciente.fecha_procedimiento;
+          this.datos.recibio_radioterapia = res.paciente.recibio_radioterapia;
+          this.datos.fecha_inicio_recibio_radioterapia = res.paciente.fecha_inicio_recibio_radioterapia;
+          this.datos.fecha_termino_recibio_radioterapia = res.paciente.fecha_termino_recibio_radioterapia;
       
-          this.datos.recibio_hormonoterapia = res.recibio_hormonoterapia;
-          this.datos.fecha_inicio_recibio_hormonoterapia = res.fecha_inicio_recibio_hormonoterapia;
-          this.datos.fecha_termino_recibio_hormonoterapia = res.fecha_termino_recibio_hormonoterapia;
+          this.datos.recibio_hormonoterapia = res.paciente.recibio_hormonoterapia;
+          this.datos.fecha_inicio_recibio_hormonoterapia = res.paciente.fecha_inicio_recibio_hormonoterapia;
+          this.datos.fecha_termino_recibio_hormonoterapia = res.paciente.fecha_termino_recibio_hormonoterapia;
           
-          this.datos.recibio_quimioterapia = res.recibio_quimioterapia;
-          this.datos.fecha_inicio_recibio_quimioterapia = res.fecha_inicio_recibio_quimioterapia;
-          this.datos.fecha_termino_recibio_quimioterapia = res.fecha_termino_recibio_quimioterapia;
-          this.datos.detallar_medicacion_paciente_toma_recibe = res.detallar_medicacion_paciente_toma_recibe;
-          // this.datos.detallar_medicacion_paciente_toma_recibe_aines = res.detallar_medicacion_paciente_toma_recibe_aines;
-          // this.datos.detallar_medicacion_paciente_toma_recibe_corticoides = res.detallar_medicacion_paciente_toma_recibe_corticoides;
-          this.datos.detallar_medicacion_paciente_toma_recibe_otros = res.detallar_medicacion_paciente_toma_recibe_otros;
+          this.datos.recibio_quimioterapia = res.paciente.recibio_quimioterapia;
+          this.datos.fecha_inicio_recibio_quimioterapia = res.paciente.fecha_inicio_recibio_quimioterapia;
+          this.datos.fecha_termino_recibio_quimioterapia = res.paciente.fecha_termino_recibio_quimioterapia;
+          this.datos.detallar_medicacion_paciente_toma_recibe = res.paciente.detallar_medicacion_paciente_toma_recibe;
+          // this.datos.detallar_medicacion_paciente_toma_recibe_aines = res.paciente.detallar_medicacion_paciente_toma_recibe_aines;
+          // this.datos.detallar_medicacion_paciente_toma_recibe_corticoides = res.paciente.detallar_medicacion_paciente_toma_recibe_corticoides;
+          this.datos.detallar_medicacion_paciente_toma_recibe_otros = res.paciente.detallar_medicacion_paciente_toma_recibe_otros;
 
           this.datos.nombre = res.paciente.nombre;
           this.datos.fecha = res.paciente.fecha;
