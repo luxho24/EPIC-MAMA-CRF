@@ -29,7 +29,7 @@
 
 .table-wrapper {
     overflow: auto;
-    max-height: 550px;
+    max-height: 440px;
 }
 
 .table-wrapper table {
@@ -43,6 +43,7 @@
     top: 0;
     left: 0;
     background: #009679;
+    z-index: 999 !important;
 }
 
 .table-wrapper table thead tr {

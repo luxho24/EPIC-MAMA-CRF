@@ -6,65 +6,80 @@ const formulario2Schema = new Schema (
         iniciales_paciente: {
             type: String,
             require: true,
+            default: "-",
         },
         numero_hc: {
             type: String,
             require: true,
+            default: "-",
         },
         centro_institucion_atencion: {
             type: String,
             require: true,
+            default: "-",
         },
         // Borrar: Se traera automaticamente del modelo Paciente
 
         signos_sintomas_inicio: {
             type: String,
             require: true,
+            default: "-",
         },
         fecha_inicio_sintomas_signos: {
             type: String,
             require: true,
+            default: "-",
         },
         tiempo_meses_diagnostico: {
             type: String,
             require: true,
+            default: "-",
         },
         tamano_tumor_campo1: {
             type: String,
             require: true,
+            default: "-",
         },
         tamano_tumor_campo2: {
             type: String,
             require: true,
+            default: "-",
         },
         ganglios_axilares: {
             type: String,
             require: true,
+            default: "-",
         },
         tipo_histologico: {
             type: String,
             require: true,
+            default: "-",
         },
         conclusion_informe: {
             type: String,
             require: true,
+            default: "-",
         },
         clasificacion_molecular: {
             type: String,
             require: true,
+            default: "-",
         },
 
         nombre: {
             type: String,
             require: true,
+            default: "-",
         },
         fecha: {
             type: String,
             require: true,
+            default: "-",
         },
         firma: {
             type: String,
             require: true,
+            default: "-",
         },
 
         usuario: {

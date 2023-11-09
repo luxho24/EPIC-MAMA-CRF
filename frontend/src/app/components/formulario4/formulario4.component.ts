@@ -3,6 +3,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Formulario4 } from 'src/app/models/formulario4.model';
 import { AuthService } from 'src/app/services/auth.service';
 import { PacienteService } from 'src/app/services/paciente.service';
+import { ToastrService } from 'ngx-toastr';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-formulario4',
@@ -17,7 +19,7 @@ export class Formulario4Component implements OnInit {
 
   esModoEdicion: boolean = false;
 
-  constructor(private _pacienteService: PacienteService, private _authService: AuthService, private router: Router, private aRoute: ActivatedRoute){};
+  constructor(private _pacienteService: PacienteService, private _authService: AuthService, private router: Router, private aRoute: ActivatedRoute, private toastr: ToastrService){};
 
   ngOnInit(): void {
     this.idUsuario = this.aRoute.snapshot.paramMap.get('idUsuario');
@@ -111,9 +113,33 @@ export class Formulario4Component implements OnInit {
         }
       )
     } else {
+      if (!this.datos.criterios_inclusion_1 ||
+        !this.datos.criterios_inclusion_2 ||
+        !this.datos.criterios_inclusion_3 ||
+        !this.datos.criterios_inclusion_4 ||
+        !this.datos.criterios_inclusion_5 ||
+        !this.datos.criterios_inclusion_6 ||
+        !this.datos.criterios_inclusion_7 ||
+        !this.datos.criterios_exclusion_1 ||
+        !this.datos.criterios_exclusion_2 ||
+        !this.datos.criterios_exclusion_3 ||
+        !this.datos.criterios_exclusion_4 ||
+        !this.datos.criterios_exclusion_5 ||
+        !this.datos.criterios_exclusion_6 ||
+        !this.datos.criterios_elegibilidad_estudio) {
+          Swal.fire({
+            icon: "warning",
+            title: "Campos vacios",
+            text: "Debe llenar todos los campos",
+            allowOutsideClick: false
+          })
+          return
+        }
       this._pacienteService.registerForm4(this.datos).subscribe(
         (res) => {
           console.log(res);
+
+          this.toastr.success('Criterios de selección / screening de la paciente fue registrado con exito!', 'Criterios de Selección / Screening de la Paciente Registrado!')
 
           this._pacienteService.obtenerIds(this.datos.numero_hc).subscribe(
             (result) => {
@@ -128,6 +154,29 @@ export class Formulario4Component implements OnInit {
         },
         (error) => {
           console.log(error);
+          Swal.fire({
+            icon: "error",
+            title: "Datos de la paciente ya existe",
+            text: "Los datos de esta paciente ya fueron registrados anteriormente",
+            showCloseButton: true,
+            allowOutsideClick: false,
+            confirmButtonText: 'Regresar al menú de navegación',
+          }).then((result) => {
+            if (result.isConfirmed) {
+              // Redirigir a la página principal
+              this._pacienteService.obtenerIds(this.datos.numero_hc).subscribe(
+                (result) => {
+                  console.log(result.idUsuario);
+                  console.log(result.idPaciente);
+                  this.router.navigate(['/']);
+                },
+                (err) => {
+                  console.log(err);
+                }
+              )
+            }
+          })
+          return
         }
       )
     }

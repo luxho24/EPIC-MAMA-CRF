@@ -30,7 +30,7 @@
             </div>
             <div class="col-md-6 d-flex align-items-center justify-content-between ps-4">
                 <b><label for="startDate" class="form-label">2. NÚMERO DE HC:</label></b>
-                <input type="text" class="form-control py-3" id="startDate" [(ngModel)]="datos.numero_hc" name="numero_hc" style="width: 75%;">
+                <input type="number" class="form-control py-3" id="startDate" [(ngModel)]="datos.numero_hc" name="numero_hc" style="width: 75%;">
             </div>
             <div class="col-md-6 d-flex align-items-center justify-content-between pe-4">
                 <b><label for="inputState" class="form-label">3. TIPO DE DOCUMENTO:</label></b>
@@ -43,15 +43,15 @@
             </div>
             <div class="col-md-6 d-flex align-items-center justify-content-between ps-4">
                 <b><label for="startDate" class="form-label">4. NÚMERO DE DOCUMENTO:</label></b>
-                <input type="text" class="form-control py-3" id="startDate" [(ngModel)]="datos.numero_documento" name="numero_documento" style="width: 60%;">
+                <input type="number" class="form-control py-3" id="startDate" [(ngModel)]="datos.numero_documento" name="numero_documento" style="width: 60%;">
             </div>
             <div class="col-md-6 d-flex align-items-center justify-content-between pe-4">
                 <b><label for="startDate" class="form-label">5. CELULAR:</label></b>
-                <input type="text" class="form-control py-3" id="startDate" [(ngModel)]="datos.celular" name="celular" style="width: 80%;">
+                <input type="number" class="form-control py-3" id="startDate" [(ngModel)]="datos.celular" name="celular" style="width: 80%;">
             </div>
             <div class="col-md-6 d-flex align-items-center justify-content-between ps-4">
                 <b><label for="startDate" class="form-label">6. E-MAIL:</label></b>
-                <input type="text" class="form-control py-3" id="startDate" [(ngModel)]="datos.email" name="email" style="width: 85%;">
+                <input type="email" class="form-control py-3" id="startDate" [(ngModel)]="datos.email" name="email" placeholder="(Opcional)" style="width: 85%;">
             </div>
             <div class="col-md-6 d-flex align-items-center justify-content-between pe-4">
                 <b><label for="startDate" class="form-label">7. FECHA DE NACIMIENTO:</label></b>
@@ -106,11 +106,11 @@
             </div>
             <div class="col-md-6 d-flex align-items-center justify-content-between pe-4">
                 <b><label for="startDate" class="form-label">13. NÚMERO DE HIJOS:</label></b>
-                <input type="text" class="form-control py-3 ms-3" id="startDate" [(ngModel)]="datos.numero_hijos" name="numero_hijos" style="width: 65%;">
+                <input type="number" class="form-control py-3 ms-3" id="startDate" [(ngModel)]="datos.numero_hijos" name="numero_hijos" style="width: 65%;">
             </div>
             <div class="col-md-6 d-flex align-items-center justify-content-between ps-4">
                 <b><label for="startDate" class="form-label">14. NÚMERO DE GESTACIONES O EMBARAZOS:</label></b>
-                <input type="text" class="form-control py-3 ms-3" id="startDate" [(ngModel)]="datos.numero_gestaciones_embarazos" name="numero_gestaciones_embarazos" style="width: 40%;">
+                <input type="number" class="form-control py-3 ms-3" id="startDate" [(ngModel)]="datos.numero_gestaciones_embarazos" name="numero_gestaciones_embarazos" style="width: 40%;">
             </div>
             <div class="col-md-6 d-flex align-items-center justify-content-between pe-4">
                 <b><label for="startDate" class="form-label">15. LACTANCIA:</label></b>
@@ -126,7 +126,7 @@
                 </div>
                 <div class="col-md-6 d-flex align-items-center justify-content-between">
                     <label for="startDate" class="form-label">TIEMPO (MESES):</label>
-                    <input type="text" class="form-control py-3" id="startDate" [(ngModel)]="datos.tiempo_lactancia" name="tiempo_lactancia" style="width: 50%;">
+                    <input type="number" class="form-control py-3" id="startDate" [(ngModel)]="datos.tiempo_lactancia" name="tiempo_lactancia" style="width: 50%;">
                 </div>
             </div>
             <div class="col-md-6 d-flex align-items-center justify-content-between ps-4">
@@ -143,7 +143,7 @@
                 </div>
                 <div class="col-md-4 d-flex align-items-center justify-content-between">
                     <label for="startDate" class="form-label">TIEMPO (MESES):</label>
-                    <input type="text" class="form-control py-3" id="startDate" [(ngModel)]="datos.tiempo_uso_anticonceptivos" name="tiempo_uso_anticonceptivos" style="width: 35%;">
+                    <input type="number" class="form-control py-3" id="startDate" [(ngModel)]="datos.tiempo_uso_anticonceptivos" name="tiempo_uso_anticonceptivos" style="width: 35%;">
                 </div>
             </div>
             <div class="col-md-6 d-flex align-items-center justify-content-between pe-4 py-3">
@@ -212,17 +212,17 @@
                 <div class="d-flex align-items-center justify-content-between">
                     <div class="col-md-4 d-flex align-items-center">
                         <label for="startDate" class="form-label">A) PESO:</label>
-                        <input type="text" class="form-control py-3 mx-1" id="startDate" [(ngModel)]="datos.peso" name="peso" style="width: 35%;">
+                        <input type="number" class="form-control py-3 mx-1" id="startDate" [(ngModel)]="datos.peso" name="peso" style="width: 35%;">
                         <label for="startDate" class="form-label">kg</label>
                     </div>
                     <div class="col-md-4 d-flex align-items-center">
                         <label for="startDate" class="form-label">B) TALLA:</label>
-                        <input type="text" class="form-control py-3 mx-1" id="startDate" [(ngModel)]="datos.talla" name="talla" style="width: 35%;">
+                        <input type="number" class="form-control py-3 mx-1" id="startDate" [(ngModel)]="datos.talla" name="talla" style="width: 35%;">
                         <label for="startDate" class="form-label">cm</label>
                     </div>
                     <div class="col-md-4 d-flex align-items-center">
                         <label for="startDate" class="form-label">C) CINTURA ABDOMINAL:</label>
-                        <input type="text" class="form-control py-3 mx-1" id="startDate" [(ngModel)]="datos.cintura_abdominal" name="cintura_abdominal" style="width: 35%;">
+                        <input type="number" class="form-control py-3 mx-1" id="startDate" [(ngModel)]="datos.cintura_abdominal" name="cintura_abdominal" style="width: 35%;">
                         <label for="startDate" class="form-label">cm</label>
                     </div>
                 </div>
@@ -232,12 +232,12 @@
                 <div class="d-flex align-items-center justify-content-between row g-5">
                     <div class="col-md-6 d-flex align-items-center justify-content-between">
                         <label for="startDate" class="form-label">FRECUENCIA CARDIACA:</label>
-                        <input type="text" class="form-control py-3 mx-1" id="startDate" [(ngModel)]="datos.frecuencia_cardiaca" name="frecuencia_cardiaca" style="width: 65%;">
+                        <input type="number" class="form-control py-3 mx-1" id="startDate" [(ngModel)]="datos.frecuencia_cardiaca" name="frecuencia_cardiaca" style="width: 65%;">
                         <label for="startDate" class="form-label">Ipm</label>
                     </div>
                     <div class="col-md-6 d-flex align-items-center justify-content-between">
                         <label for="startDate" class="form-label">FRECUENCIA RESPIRATORIA:</label>
-                        <input type="text" class="form-control py-3 mx-1" id="startDate" [(ngModel)]="datos.frecuencia_respiratoria" name="tiempo_uso_anticonceptivos" style="width: 60%;">
+                        <input type="number" class="form-control py-3 mx-1" id="startDate" [(ngModel)]="datos.frecuencia_respiratoria" name="tiempo_uso_anticonceptivos" style="width: 60%;">
                         <label for="startDate" class="form-label">RPM</label>
                     </div>
                     <div class="col-md-6 d-flex align-items-center justify-content-between">
@@ -247,7 +247,7 @@
                     </div>
                     <div class="col-md-6 d-flex align-items-center justify-content-between">
                         <label for="startDate" class="form-label">TEMPERATURA:</label>
-                        <input type="text" class="form-control py-3 mx-1" id="startDate" [(ngModel)]="datos.temperatura" name="tiempo_uso_anticonceptivos" style="width: 75%;">
+                        <input type="number" class="form-control py-3 mx-1" id="startDate" [(ngModel)]="datos.temperatura" name="tiempo_uso_anticonceptivos" style="width: 75%;">
                         <label for="startDate" class="form-label">°C</label>
                     </div>
                 </div>
@@ -270,17 +270,17 @@
                 </div>
                 <div class="col-md-3 d-flex align-items-center justify-content-between">
                     <label for="startDate" class="form-label">¿CUÁNTOS CIGARRILLOS POR DÍA?:</label>
-                    <input type="text" class="form-control py-3" id="startDate" [(ngModel)]="datos.cigarrillos_por_dia" name="cigarrillos_por_dia" style="width: 20%;">
+                    <input type="number" class="form-control py-3" id="startDate" [(ngModel)]="datos.cigarrillos_por_dia" name="cigarrillos_por_dia" style="width: 20%;">
                 </div>
                 <div class="col-md-3 d-flex align-items-center justify-content-end">
                     <label for="startDate" class="form-label">TIEMPO DE FUMAR:</label>
-                    <input type="text" class="form-control py-3 mx-3" id="startDate" [(ngModel)]="datos.tiempo_fumar" name="tiempo_fumar" style="width: 20%;">
+                    <input type="number" class="form-control py-3 mx-3" id="startDate" [(ngModel)]="datos.tiempo_fumar" name="tiempo_fumar" style="width: 20%;">
                     <label for="startDate" class="form-label">AÑOS</label>
                 </div>
             </div>
             <div class="col-md-12 d-flex align-items-center justify-content-between">
                 <b><label for="startDate" class="form-label">27. HORAS PROMEDIO DE SUEÑO POR DÍA:</label></b>
-                <input type="text" class="form-control py-3" id="startDate" [(ngModel)]="datos.horas_sueno_por_dia" name="horas_sueno_por_dia" style="width: 70%;">
+                <input type="number" class="form-control py-3" id="startDate" [(ngModel)]="datos.horas_sueno_por_dia" name="horas_sueno_por_dia" style="width: 70%;">
             </div>
             <div class="col-md-12">
                 <b><label for="startDate" class="form-label">28. SÍNDROME METABÓLICO:</label></b>

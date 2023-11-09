@@ -160,7 +160,7 @@
                 <div class="d-flex justify-content-between mb-4">
                     <div class="d-flex align-items-center gap-3 mb-3">
                         <label for="startDate">Tumor(T)</label>
-                        <select class="form-select" [(ngModel)]="datos.tumor" [ngModelOptions]="{standalone: true}" style="width: 40%;">
+                        <select class="form-select" [(ngModel)]="datos.tumor" [ngModelOptions]="{standalone: true}" style="width: 100%;">
                             <!-- <option selected>T1</option>
                             <option value="1">T2</option>
                             <option value="1">T3</option>
@@ -170,7 +170,7 @@
                     </div>
                     <div class="d-flex align-items-center gap-3 mb-3">
                         <label for="startDate">Nódulo(N)</label>
-                        <select class="form-select" [(ngModel)]="datos.nodulo" [ngModelOptions]="{standalone: true}" style="width: 40%;">
+                        <select class="form-select" [(ngModel)]="datos.nodulo" [ngModelOptions]="{standalone: true}" style="width: 100%;">
                             <!-- <option selected>N0</option>
                             <option value="1">N1</option>
                             <option value="1">N2</option> -->
@@ -179,7 +179,7 @@
                     </div>
                     <div class="d-flex align-items-center gap-3 mb-3">
                         <label for="startDate">Metástasis(M)</label>
-                        <select class="form-select" [(ngModel)]="datos.metastasis" [ngModelOptions]="{standalone: true}" style="width: 40%;">
+                        <select class="form-select" [(ngModel)]="datos.metastasis" [ngModelOptions]="{standalone: true}" style="width: 100%;">
                             <!-- <option selected>M0</option>
                             <option value="1">M1</option> -->
                             <option *ngFor="let metastasis of resultados_metastasis" [value]="metastasis.metastasis">{{metastasis.metastasis}}</option>

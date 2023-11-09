@@ -3,6 +3,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Formulario7 } from 'src/app/models/formulario7.model';
 import { AuthService } from 'src/app/services/auth.service';
 import { PacienteService } from 'src/app/services/paciente.service';
+import { ToastrService } from 'ngx-toastr';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-formulario7',
@@ -34,7 +36,7 @@ export class Formulario7Component {
   
   mostrarEvaluacion: boolean = false;
 
-  constructor(private _pacienteService: PacienteService, private _authService: AuthService, private router: Router, private aRoute: ActivatedRoute){}
+  constructor(private _pacienteService: PacienteService, private _authService: AuthService, private router: Router, private aRoute: ActivatedRoute, private toastr: ToastrService){}
 
   ngOnInit(): void {
     this.idUsuario = this.aRoute.snapshot.paramMap.get('idUsuario');
@@ -147,9 +149,23 @@ export class Formulario7Component {
         }
       )
     } else {
+      if (!this.datos.fecha_tratamiento ||
+        !this.datos.ciclo ||
+        !this.datos.tolerancia) {
+          Swal.fire({
+            icon: "warning",
+            title: "Campos vacios",
+            text: "Debe llenar todos los campos",
+            allowOutsideClick: false
+          })
+          return
+        }
       this._pacienteService.registerForm7(this.datos).subscribe(
         (res) => {
           console.log(res);
+
+          this.toastr.success('Ciclos de tratamiento quiroterápico de la paciente fue registrado con exito!', 'Ciclos de Tratamiento Quiroterápico de la Paciente Registrado!')
+
           /* 
             * Verificar el codigo de abajo 👇
           */
@@ -167,6 +183,29 @@ export class Formulario7Component {
         },
         (error) => {
           console.log(error);
+          Swal.fire({
+            icon: "error",
+            title: "Datos de la paciente ya existe",
+            text: "Los datos de esta paciente ya fueron registrados anteriormente",
+            showCloseButton: true,
+            allowOutsideClick: false,
+            confirmButtonText: 'Regresar al menú de navegación',
+          }).then((result) => {
+            if (result.isConfirmed) {
+              // Redirigir a la página principal
+              this._pacienteService.obtenerIds(this.datos.numero_hc).subscribe(
+                (result) => {
+                  console.log(result.idUsuario);
+                  console.log(result.idPaciente);
+                  this.router.navigate(['/']);
+                },
+                (err) => {
+                  console.log(err);
+                }
+              )
+            }
+          })
+          return
         }
       )
     }
