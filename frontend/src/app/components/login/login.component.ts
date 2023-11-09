@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Usuario } from 'src/app/models/usuario.model'; 
 import { AuthService } from '../../services/auth.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-login',
@@ -40,6 +41,16 @@ export class LoginComponent implements OnInit {
   }
 
   loginUsuario() {
+    if (!this.datos.username ||
+      !this.datos.password) {
+        Swal.fire({
+          icon: "warning",
+          title: "Campos vacios",
+          text: "Debe llenar todos los campos",
+          allowOutsideClick: false
+        })
+        return
+      }
     this._authService.login(this.datos).subscribe(
       (res) => {
         console.log(res);
@@ -49,6 +60,13 @@ export class LoginComponent implements OnInit {
       },
       (error) => {
         console.log(error);
+        Swal.fire({
+          icon: "error",
+          title: "Credenciales incorrectas",
+          text: "Usuario o contraseña incorrectas",
+          allowOutsideClick: false
+        })
+        return
       }
     );
   }
