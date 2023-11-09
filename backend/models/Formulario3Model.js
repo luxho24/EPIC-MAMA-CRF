@@ -6,37 +6,45 @@ const formulario3Schema = new Schema (
         iniciales_paciente: {
             type: String,
             require: true,
+            default: "-",
         },
         numero_hc: {
             type: String,
             require: true,
+            default: "-",
         },
         centro_institucion_atencion: {
             type: String,
             require: true,
+            default: "-",
         },
         // Borrar: Se traera automaticamente del modelo Paciente
 
         cuenta_consentimiento_informado: {
             type: String,
             require: true,
+            default: "-",
         },
         fecha_consentimiento_informado: {
             type: String,
             require: true,
+            default: "-",
         },
 
         nombre: {
             type: String,
             require: true,
+            default: "-",
         },
         fecha: {
             type: String,
             require: true,
+            default: "-",
         },
         firma: {
             type: String,
             require: true,
+            default: "-",
         },
 
         usuario: {

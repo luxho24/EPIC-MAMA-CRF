@@ -3,6 +3,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Formulario6 } from 'src/app/models/formulario6.model'
 import { AuthService } from 'src/app/services/auth.service';
 import { PacienteService } from 'src/app/services/paciente.service';
+import { ToastrService } from 'ngx-toastr';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-formulario6',
@@ -37,7 +39,7 @@ export class Formulario6Component implements OnInit {
 
   esModoEdicion: boolean = false;
 
-  constructor(private _pacienteService: PacienteService, private _authService: AuthService, private router: Router, private aRoute: ActivatedRoute){
+  constructor(private _pacienteService: PacienteService, private _authService: AuthService, private router: Router, private aRoute: ActivatedRoute, private toastr: ToastrService){
     this.opciones = []
   }
 
@@ -163,9 +165,37 @@ export class Formulario6Component implements OnInit {
           this.datos.detallar_medicacion_paciente_toma_recibe += ', ' + this.opciones[index];
         }
       }
+
+      if (!this.datos.cirugia ||
+        // !this.datos.tipo_cirugia ||
+        // !this.datos.fecha_procedimiento ||
+        !this.datos.recibio_radioterapia ||
+        // !this.datos.fecha_inicio_recibio_radioterapia ||
+        // !this.datos.fecha_termino_recibio_radioterapia ||
+        !this.datos.recibio_hormonoterapia ||
+        // !this.datos.fecha_inicio_recibio_hormonoterapia ||
+        // !this.datos.fecha_termino_recibio_hormonoterapia ||
+        !this.datos.recibio_quimioterapia ||
+        // !this.datos.fecha_inicio_recibio_quimioterapia ||
+        // !this.datos.fecha_termino_recibio_quimioterapia ||
+        !this.datos.detallar_medicacion_paciente_toma_recibe
+        // !this.datos.detallar_medicacion_paciente_toma_recibe_otros
+        ) {
+          Swal.fire({
+            icon: "warning",
+            title: "Campos vacios",
+            text: "Debe llenar todos los campos",
+            allowOutsideClick: false
+          })
+          return
+        }
+
       this._pacienteService.registerForm6(this.datos).subscribe(
         (res) => {
           console.log(res);
+
+          this.toastr.success('Tratamiento oncológico de la paciente fue registrado con exito!', 'Tratamiento Oncológico de la Paciente Registrado!')
+
           /* 
             * Verificar el codigo de abajo 👇
           */
@@ -183,6 +213,29 @@ export class Formulario6Component implements OnInit {
         },
         (error) => {
           console.log(error);
+          Swal.fire({
+            icon: "error",
+            title: "Datos de la paciente ya existe",
+            text: "Los datos de esta paciente ya fueron registrados anteriormente",
+            showCloseButton: true,
+            allowOutsideClick: false,
+            confirmButtonText: 'Regresar al menú de navegación',
+          }).then((result) => {
+            if (result.isConfirmed) {
+              // Redirigir a la página principal
+              this._pacienteService.obtenerIds(this.datos.numero_hc).subscribe(
+                (result) => {
+                  console.log(result.idUsuario);
+                  console.log(result.idPaciente);
+                  this.router.navigate(['/']);
+                },
+                (err) => {
+                  console.log(err);
+                }
+              )
+            }
+          })
+          return
         }
       )
     }

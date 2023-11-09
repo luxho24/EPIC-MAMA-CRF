@@ -149,7 +149,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="d-flex flex-column">
+                <div class="d-flex flex-column my-4">
                     <div class="d-flex justify-content-between mb-4">
                         <div class="form-check">
                             <input class="form-check-input" type="radio" name="tolerancia" id="buena_tolerancia" value="BUENA TOLERANCIA" [(ngModel)]="datos.tolerancia" style="cursor: pointer;">
@@ -161,14 +161,13 @@
                         </div>
                     </div>
                 </div>
-
-                <div class="d-flex align-items-center gap-2">
-                    <div style="width: 50px; height: 30px; background: #FFCDFA; border-radius: 4px;"></div>
-                    <span>En caso de estar coloreada la casilla , PREVIAMENTE evaluar:</span>
-                </div>
             </div>
 
             <div class="col mb-4 hidden" id="evaluacion_respuesta_tratamiento" [ngClass]="{ 'hidden': !mostrarEvaluacion }">
+                <div class="d-flex align-items-center gap-2 mb-4">
+                    <div style="width: 50px; height: 30px; background: #FFCDFA; border-radius: 4px;"></div>
+                    <span>En caso de estar coloreada la casilla , PREVIAMENTE evaluar:</span>
+                </div>
             <!-- <div class="col mb-4" id="evaluacion_respuesta_tratamiento"> -->
                 <h3 class="mb-4">EVALUACIÓN DE RESPUESTA AL TRATAMIENTO:</h3>
                 <div class="d-flex flex-column">

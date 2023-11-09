@@ -3,6 +3,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Formulario5 } from 'src/app/models/formulario5.model'
 import { AuthService } from 'src/app/services/auth.service';
 import { PacienteService } from 'src/app/services/paciente.service';
+import { ToastrService } from 'ngx-toastr';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-formulario5',
@@ -32,7 +34,7 @@ export class Formulario5Component implements OnInit {
 
   esModoEdicion: boolean = false;
 
-  constructor(private _pacienteService: PacienteService, private _authService: AuthService, private router: Router, private aRoute: ActivatedRoute){}
+  constructor(private _pacienteService: PacienteService, private _authService: AuthService, private router: Router, private aRoute: ActivatedRoute, private toastr: ToastrService){}
 
   ngOnInit(): void {
     this.idUsuario = this.aRoute.snapshot.paramMap.get('idUsuario');
@@ -133,9 +135,39 @@ export class Formulario5Component implements OnInit {
         }
       )
     } else {
+      if (!this.datos.resultados_hemograma ||
+        !this.datos.fecha_hemograma ||
+        !this.datos.resultados_otros_estudios ||
+        !this.datos.fecha_otros_estudios ||
+        !this.datos.fecha_muestra_marcadores_inflamatorios_pretratamiento_sericos ||
+        !this.datos.codigo_muestra_marcadores_inflamatorios_pretratamiento_sericos ||
+        !this.datos.fecha_muestra_tumor ||
+        !this.datos.fecha_microbioma_intestinal ||
+        !this.datos.fecha_microbioma_salival ||
+        !this.datos.ecografia ||
+        !this.datos.mamografia ||
+        !this.datos.gamagrafia_osea ||
+        !this.datos.tomografia ||
+        !this.datos.rmn ||
+        !this.datos.pet ||
+        !this.datos.tumor ||
+        !this.datos.nodulo ||
+        !this.datos.metastasis ||
+        !this.datos.estadificacion_paciente) {
+          Swal.fire({
+            icon: "warning",
+            title: "Campos vacios",
+            text: "Debe llenar todos los campos",
+            allowOutsideClick: false
+          })
+          return
+        }
       this._pacienteService.registerForm5(this.datos).subscribe(
         (res) => {
           console.log(res);
+
+          this.toastr.success('Exámenes complementarios de la paciente fue registrado con exito!', 'Exámenes Complementarios de la Paciente Registrado!')
+
           /* 
             * Verificar el codigo de abajo 👇
           */
@@ -153,6 +185,29 @@ export class Formulario5Component implements OnInit {
         },
         (error) => {
           console.log(error);
+          Swal.fire({
+            icon: "error",
+            title: "Datos de la paciente ya existe",
+            text: "Los datos de esta paciente ya fueron registrados anteriormente",
+            showCloseButton: true,
+            allowOutsideClick: false,
+            confirmButtonText: 'Regresar al menú de navegación',
+          }).then((result) => {
+            if (result.isConfirmed) {
+              // Redirigir a la página principal
+              this._pacienteService.obtenerIds(this.datos.numero_hc).subscribe(
+                (result) => {
+                  console.log(result.idUsuario);
+                  console.log(result.idPaciente);
+                  this.router.navigate(['/']);
+                },
+                (err) => {
+                  console.log(err);
+                }
+              )
+            }
+          })
+          return
         }
       )
     }
