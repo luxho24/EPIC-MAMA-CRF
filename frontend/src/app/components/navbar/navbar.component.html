@@ -49,10 +49,16 @@
             <!-- No muestra nada -->
         </ng-container>
         <ng-template #loggedin>
-            <button class="btn btn-primary d-flex align-items-center me-5" style="cursor: pointer" (click)="_authService.logout()">
+            <!-- Boton Cerrar Sesión CON alerta SweetAlert2 -->
+            <button class="btn btn-primary d-flex align-items-center me-5" style="cursor: pointer" (click)="logout()">
                 <i class='bx bx-log-out me-2 fs-5'></i>
                 Cerrar Sesión
             </button>
+            <!-- Boton Cerrar Sesión SIN alerta SweetAlert2 -->
+            <!-- <button class="btn btn-primary d-flex align-items-center me-5" style="cursor: pointer" (click)="_authService.logout()">
+                <i class='bx bx-log-out me-2 fs-5'></i>
+                Cerrar Sesión
+            </button> -->
         </ng-template>
     </div>
 </div>
