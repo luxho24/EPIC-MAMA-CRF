@@ -505,7 +505,7 @@ const obtenerPacienteForm1PorIdPaciente = async (req, res) => {
 
     try {
         // Busca al paciente utilizando el pacienteId
-        const paciente = await PacienteModel.findOne({_id:idPaciente});
+        const paciente = await PacienteModel.findOne({paciente:idPaciente});
 
         if (!paciente) {
             return res.status(404).json({ msg: "Paciente no encontrado" });
@@ -525,7 +525,8 @@ const obtenerPacienteForm2PorIdPaciente = async (req, res) => {
 
     try {
         // Busca al paciente utilizando el pacienteId
-        const paciente = await Formulario2Model.findOne({_id:idPaciente});
+        const paciente = await Formulario2Model.findOne({paciente:idPaciente});
+        console.log(paciente)
 
         if (!paciente) {
             return res.status(404).json({ msg: "Paciente no encontrado" });
@@ -545,7 +546,7 @@ const obtenerPacienteForm3PorIdPaciente = async (req, res) => {
 
     try {
         // Busca al paciente utilizando el pacienteId
-        const paciente = await Formulario3Model.findOne({_id:idPaciente});
+        const paciente = await Formulario3Model.findOne({paciente:idPaciente});
 
         if (!paciente) {
             return res.status(404).json({ msg: "Paciente no encontrado" });
@@ -565,7 +566,7 @@ const obtenerPacienteForm4PorIdPaciente = async (req, res) => {
 
     try {
         // Busca al paciente utilizando el pacienteId
-        const paciente = await Formulario4Model.findOne({_id:idPaciente});
+        const paciente = await Formulario4Model.findOne({paciente:idPaciente});
 
         if (!paciente) {
             return res.status(404).json({ msg: "Paciente no encontrado" });
@@ -585,7 +586,7 @@ const obtenerPacienteForm5PorIdPaciente = async (req, res) => {
 
     try {
         // Busca al paciente utilizando el pacienteId
-        const paciente = await Formulario5Model.findOne({_id:idPaciente});
+        const paciente = await Formulario5Model.findOne({paciente:idPaciente});
 
         if (!paciente) {
             return res.status(404).json({ msg: "Paciente no encontrado" });
@@ -605,7 +606,7 @@ const obtenerPacienteForm6PorIdPaciente = async (req, res) => {
 
     try {
         // Busca al paciente utilizando el pacienteId
-        const paciente = await Formulario6Model.findOne({_id:idPaciente});
+        const paciente = await Formulario6Model.findOne({paciente:idPaciente});
 
         if (!paciente) {
             return res.status(404).json({ msg: "Paciente no encontrado" });
@@ -625,7 +626,7 @@ const obtenerPacienteForm7PorIdPaciente = async (req, res) => {
 
     try {
         // Busca al paciente utilizando el pacienteId
-        const paciente = await Formulario7Model.findOne({_id:idPaciente});
+        const paciente = await Formulario7Model.findOne({paciente:idPaciente});
 
         if (!paciente) {
             return res.status(404).json({ msg: "Paciente no encontrado" });

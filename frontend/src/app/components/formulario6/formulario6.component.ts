@@ -37,6 +37,9 @@ export class Formulario6Component implements OnInit {
   idUsuario!: any;
   idPaciente!: any;
 
+  public isAdmin: boolean = false;
+  public isUser: boolean = false;
+
   esModoEdicion: boolean = false;
 
   constructor(private _pacienteService: PacienteService, private _authService: AuthService, private router: Router, private aRoute: ActivatedRoute, private toastr: ToastrService){
@@ -65,8 +68,35 @@ export class Formulario6Component implements OnInit {
   ngOnInit(): void {
     this.idUsuario = this.aRoute.snapshot.paramMap.get('idUsuario');
     this.idPaciente = this.aRoute.snapshot.paramMap.get('idPaciente');
-    this.mostrarDatosPacienteSA()
-    this.mostrarDatos();
+    
+    /** ! Este codigo es momentaneo, ya que posteriormente bloqueare los botones del menu de navegacion
+     * para que no puedan actualizar o volver a registrar paciente que ya existan en la base de datos,
+     * esto en lo que se refiere al usuario normal */
+    if (this.idUsuario !== null) {
+
+      const token = sessionStorage.getItem('token')
+      if (token) {
+        this._authService.obtenerRolUsuarioDesdeToken(token).subscribe(
+          (res) => {
+            console.log(res);
+            this.isAdmin = res === 'administrador';
+            // * Si el token le pertenece al administrador, entonces en la tabla mostrara todos los datos de los pacientes
+            // * registrados en cada formulario sin restriccion de id de usuario
+            if (res === 'administrador') {
+              this.mostrarDatosPacienteSA()
+            } else {
+              this.mostrarDatos();
+            }
+          },
+          (error) => {
+            console.log(error);
+          }
+        );
+      }
+    }
+
+    // this.mostrarDatosPacienteSA()
+    // this.mostrarDatos();
   }
 
   // Funcion para autocompletar los campos segun el id del paciente en la url
