@@ -93,6 +93,26 @@ export class Formulario1Component implements OnInit {
     }
   }
 
+  // //** Esta funcion solo trae "iniciales_paciente", "numero_hc", "centro_institucion_atencion", "nombre", "fecha" y "firma" unicamente con el id del paciente para poder registrar (SUPERADMIN) */
+  // obtenerDatosPaciente(){
+  //   this._pacienteService.obtenerPacientePorIdPaciente(this.idPaciente).subscribe(
+  //     (res) => {
+  //       console.log(res);
+  //       this.datos.iniciales_paciente = res.paciente.iniciales_paciente;
+  //       this.datos.numero_hc = res.paciente.numero_hc;
+  //       this.datos.centro_institucion_atencion = res.paciente.centro_institucion_atencion;
+        
+  //       this.datos.nombre = res.paciente.nombre;
+  //       this.datos.fecha = res.paciente.fecha;
+  //       this.datos.firma = res.paciente.firma;
+  //     },
+  //     (error) => {
+  //       console.log(error);
+  //     }
+  //   )
+  // }
+
+  //** Esta funcion es para (USUARIO) */
   // Funcion para autocompletar los campos segun el id del paciente en la url
   mostrarDatos() {
     if (this.idPaciente !== null) {
@@ -114,6 +134,7 @@ export class Formulario1Component implements OnInit {
     }
   }
 
+  //** Esta funcion es para (SUPERADMIN) */
   mostrarDatosPacienteSA() {
     if (this.idPaciente !== null) {
       console.log(this.idPaciente);
@@ -351,7 +372,7 @@ export class Formulario1Component implements OnInit {
           (res) => {
             console.log(res);
             
-            this.toastr.success('Los datos de la paciente fueron registrados con exito!', 'Paciente Registrado!')
+            this.toastr.success('Datos sociodemográficos de la paciente fue registrado con exito!', 'Datos Sociodemográficos de la Paciente Registrado!')
 
             this._pacienteService.obtenerIds(this.datos.numero_hc).subscribe(
               (result) => {
