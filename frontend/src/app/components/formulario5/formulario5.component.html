@@ -253,7 +253,8 @@
             <!-- </form> -->
         </div>
         <!-- Boton -->
-        <div class="d-flex justify-content-end">
+        <div class="d-flex justify-content-between">
+            <button type="submit" (click)="regresar()">{{ esModoEdicion ? 'Cancelar' : 'Volver al menú de navegación'}}</button>
             <button type="submit" (click)="registrarForm5()">{{ esModoEdicion ? 'Actualizar' : 'Registrar y Siguiente: Tratamiento Oncológico'}}</button>
         </div>
         <!-- Boton -->

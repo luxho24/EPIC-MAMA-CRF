@@ -2,6 +2,7 @@ import { Router } from "express";
 import {
     obtenerPaciente,
     obtenerIds,
+    obtenerIdsForm,
     obtenerPacientePorId,
     registrarPacienteForm1,
     registrarPacienteForm2,
@@ -70,6 +71,7 @@ router.get("/obtenerPacientesSAForm7/:idUsuario", checkAuth, obtenerPacientesSAF
 
 router.get("/obtenerPaciente", checkAuth, obtenerPaciente);
 router.get("/obtenerIds", checkAuth, obtenerIds);
+router.get("/obtenerIdsForm", checkAuth, obtenerIdsForm);
 router.get("/obtenerPacientePorId", checkAuth, obtenerPacientePorId);
 router.get("/obtenerPacientePorId/:idUsuario/:idPaciente", checkAuth, obtenerPacientePorId)
 

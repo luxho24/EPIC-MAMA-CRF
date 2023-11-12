@@ -118,6 +118,10 @@ export class PacienteService {
   obtenerIds(numero_hc: string): Observable<any> {
     return this.httpClient.get<any>(`${this.url}/obtenerIds?numero_hc=${numero_hc}`);
   }
+  // Funcion para obtener los ids del usuario y paciente de acuerdo al "numero_hc" (Usado en el boton formulario2 de "menu.ts")
+  obtenerIdsForm(numero_hc: string): Observable<any> {
+    return this.httpClient.get<any>(`${this.url}/obtenerIdsForm?numero_hc=${numero_hc}`);
+  }
   // Funcion para obetner el "iniciales_paciente, numero_hc, institucion_centro_atencion" del paciente (Usado en el "ngOnInit" de la pagina formulario2.ts)
   obtenerPacientePorId(idUsuario:any, idPaciente: any): Observable<any> {
     return this.httpClient.get(`${this.url}/obtenerPacientePorId/${idUsuario}/${idPaciente}`);
