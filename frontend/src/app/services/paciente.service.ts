@@ -126,6 +126,10 @@ export class PacienteService {
   obtenerPacientePorId(idUsuario:any, idPaciente: any): Observable<any> {
     return this.httpClient.get(`${this.url}/obtenerPacientePorId/${idUsuario}/${idPaciente}`);
   }
+  // Funcion para obetner el "iniciales_paciente, numero_hc, institucion_centro_atencion" del paciente (Usado en el "ngOnInit" de la pagina formulario2.ts)
+  obtenerPacientePorIdPaciente(idPaciente: any): Observable<any> {
+    return this.httpClient.get(`${this.url}/obtenerPacientePorIdPaciente/${idPaciente}`);
+  }
 
   // * Obtener los datos del paciente solo por el idPaciente
   // Funcion para obetner los datos del paciente para el formulario 1 solo con el idPaciente

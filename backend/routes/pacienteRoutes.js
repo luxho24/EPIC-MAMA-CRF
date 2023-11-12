@@ -4,6 +4,7 @@ import {
     obtenerIds,
     obtenerIdsForm,
     obtenerPacientePorId,
+    obtenerPacientePorIdPaciente,
     registrarPacienteForm1,
     registrarPacienteForm2,
     registrarPacienteForm3,
@@ -74,6 +75,7 @@ router.get("/obtenerIds", checkAuth, obtenerIds);
 router.get("/obtenerIdsForm", checkAuth, obtenerIdsForm);
 router.get("/obtenerPacientePorId", checkAuth, obtenerPacientePorId);
 router.get("/obtenerPacientePorId/:idUsuario/:idPaciente", checkAuth, obtenerPacientePorId)
+router.get("/obtenerPacientePorIdPaciente/:idPaciente", checkAuth, obtenerPacientePorIdPaciente)
 
 router.get("/obtenerPacienteForm1PorIdPaciente/:idPaciente", checkAuth, obtenerPacienteForm1PorIdPaciente)
 router.get("/obtenerPacienteForm2PorIdPaciente/:idPaciente", checkAuth, obtenerPacienteForm2PorIdPaciente)

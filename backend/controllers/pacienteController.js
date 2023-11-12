@@ -435,6 +435,28 @@ const obtenerPacientePorId = async (req, res) => {
         res.status(500).json({ msg: "Ha ocurrido un error" });
     }
 };
+// Funcion para extraer datos del paciente por medio de "idUsuario" y "idPaciente"
+const obtenerPacientePorIdPaciente = async (req, res) => {
+    const { idPaciente } = req.params;
+
+    try {
+        // Aquí asumiremos que tienes un modelo de Mongoose llamado `Paciente` que representa a los pacientes en tu base de datos
+
+        // Luego, busca al paciente utilizando el usuario y el pacienteId
+        const paciente = await PacienteModel.findOne({ _id: idPaciente});
+
+        if (!paciente) {
+            return res.status(404).json({ msg: "Paciente no encontrado" });
+        }
+
+        // Si el paciente existe y está vinculado al usuario, lo devolvemos
+        res.status(200).json({ paciente });
+
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ msg: "Ha ocurrido un error" });
+    }
+};
 
 // * Obtencion de los datos de todos los pacientes registrados por todos los Usuarios
 // Funcion para obtener pacientes del formulario 1
@@ -800,6 +822,7 @@ export {
     obtenerIds,
     obtenerIdsForm,
     obtenerPacientePorId,
+    obtenerPacientePorIdPaciente,
     obtenerPacienteForm1PorIdPaciente,
     obtenerPacienteForm2PorIdPaciente,
     obtenerPacienteForm3PorIdPaciente,
