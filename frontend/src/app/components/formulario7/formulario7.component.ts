@@ -240,4 +240,31 @@ export class Formulario7Component {
       )
     }
   }
+
+  regresar() {
+    if (this.esModoEdicion) {
+      if (this.idPaciente !== null) {
+        this._authService.obtenerUsuarioPorId(this.idUsuario).subscribe(
+          (res) => {
+            // console.log(res);
+            this.router.navigate(['/visualizar-pacientes/usuario/', res._id]);
+          },
+          (error) => {
+            console.log(error);
+          }
+        )
+      }
+    } else {
+      this._pacienteService.obtenerIds(this.datos.numero_hc).subscribe(
+        (result) => {
+          console.log(result.idUsuario);
+          console.log(result.idPaciente);
+          this.router.navigate(['/']);
+        },
+        (err) => {
+          console.log(err);
+        }
+      )
+    }
+  }
 }

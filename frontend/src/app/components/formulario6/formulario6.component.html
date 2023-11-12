@@ -181,7 +181,7 @@
                 </div>
                 
                 <div class="d-flex flex-column">
-                    <label for="startDate" class="mb-3">6. DETALLAR CADA MEDICACIÓN QUE LA PACIENTE TOMA O RECIBE:</label>
+                    <label class="mb-3">6. DETALLAR CADA MEDICACIÓN QUE LA PACIENTE TOMA O RECIBE:</label>
                     <div class="d-flex justify-content-between mb-4">
                         <div class="form-check" *ngFor="let c of detallar_medicacion_paciente_toma_recibe, let i = index">
                             <input class="form-check-input" type="checkbox" [value]="c" (click)="verificar(c)" [(ngModel)]="datos.detallar_medicacion_paciente_toma_recibe" id="detallar_medicacion_paciente_toma_recibe{{i}}">
@@ -250,8 +250,9 @@
             <!-- </form> -->
         </div>
         <!-- Boton -->
-        <div class="d-flex justify-content-end">
-            <button type="submit" (click)="registrarForm6()">{{ esModoEdicion ? 'Actualizar' : 'Registrar y Siguiente: Ciclos de Tratamiento Quiropráctico'}}</button>
+        <div class="d-flex justify-content-between">
+            <button type="submit" (click)="regresar()">{{ esModoEdicion ? 'Cancelar' : 'Volver al menú de navegación'}}</button>
+            <button type="submit" (click)="registrarForm6()">{{ esModoEdicion ? 'Actualizar' : 'Registrar y Siguiente: Ciclos de Tratamiento Quimioterápico'}}</button>
         </div>
         <!-- Boton -->
         </form>

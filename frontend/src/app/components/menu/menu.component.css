@@ -1,6 +1,6 @@
 /* Form */
 .form {
-    height: 414px;
+    height: 446px;
     /* overflow:hidden; */
     overflow-y: auto;
     overflow-x: hidden;
@@ -36,6 +36,32 @@
 .btn-pink:hover {
     background: #fa7ddd;
 }
+
+/* Resaltar botones de los formularios */
+/* Estilos base para los botones */
+.boton-habilitado {
+    /* padding: 10px;
+    margin: 5px; */
+    cursor: pointer;
+    box-shadow: 0 0 1px 5px #3586ff;
+    /* color: #ffffff; */
+    font-weight: bold;
+    animation: borderBlink 2s infinite; /* 2s de duración, bucle infinito */
+  }
+  
+  /* Animación de parpadeo del borde */
+  @keyframes borderBlink {
+    0%, 100% {
+      box-shadow: 0 0 1px 5px #3586ff;
+      /* color: #ffffff; */
+    }
+  
+    50% {
+      box-shadow: 0 0 1px 5px #ffffff; /* Cambia al color que desees */
+      /* color: #ffffff; */
+    }
+  }
+/* Resaltar botones de los formularios */
 
 /* Footer */
 footer {

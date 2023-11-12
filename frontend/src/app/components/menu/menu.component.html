@@ -12,15 +12,18 @@
             <button type="submit" (click)="obtenerPaciente()">Buscar</button>
         </form> -->
 
-        <div class="d-flex justify-content-between">
-            <form class="d-flex w-25 mb-4" role="search">
-                <input class="form-control me-2" type="search" name="numero_hc" [(ngModel)]="numero_hc" placeholder="Buscar por numero de HC" aria-label="Search">
-                <button class="btn btn-outline-success" type="submit" (click)="obtenerPaciente()">Buscar</button>
-            </form>
-            <button class="btn btn-info h-25 text-white" (click)="ingresarVerPacientes()">Ver Pacientes</button>
+        <div class="d-flex justify-content-between mb-4">
+            <div class="d-flex gap-4 w-50">
+                <form class="d-flex w-50" role="search">
+                    <input class="form-control me-2" type="search" name="numero_hc" [(ngModel)]="numero_hc" placeholder="Buscar por numero de HC" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit" (click)="obtenerPaciente()">Buscar</button>
+                </form>
+                <button class="btn btn-warning" [disabled]="!busquedaRealizada" (click)="restablecerBotones()">Restablecer Botones</button>
+            </div>
+            <button class="btn btn-info  text-white" (click)="ingresarVerPacientes()">Ver Pacientes</button>
         </div>
 
-        <form class="row g-3 px-1 form">
+        <form class="row g-3 p-3 form">
 
             <!-- <div class="col-md-12">
                 <button [routerLink]="['/formulario1']" class=" btn btn-f1 btn-success w-100 py-5" [disabled]="!botonesHabilitadosForm1" style="background-image: url('../../../assets/svg/i_groups_perspective_crowd.svg'); background-repeat: no-repeat; background-position-y: 10px; background-position-x: -30px; background-size: 140px;">
@@ -28,12 +31,12 @@
                 </button>
             </div> -->
             <div class="col-md-12">
-                <button class=" btn btn-f1 btn-success w-100 py-5" [disabled]="!botonesHabilitadosForm1" (click)="ingresarFormulario1()" style="background-image: url('../../../assets/svg/i_groups_perspective_crowd.svg'); background-repeat: no-repeat; background-position-y: 10px; background-position-x: -30px; background-size: 140px;">
+                <button class=" btn btn-f1 btn-success w-100 py-5 btn-formulario" [ngClass]="{'boton-habilitado': botonesHabilitadosForm1, 'boton-deshabilitado': !botonesHabilitadosForm1}" [disabled]="!botonesHabilitadosForm1" (click)="ingresarFormulario1()" style="background-image: url('../../../assets/svg/i_groups_perspective_crowd.svg'); background-repeat: no-repeat; background-position-y: 10px; background-position-x: -30px; background-size: 140px;">
                     I. Datos Sociodemográficos de la Paciente
                 </button>
             </div>
             <div class="col-md-4">
-                <button class="btn btn-secondary w-100 py-5" [disabled]="!botonesHabilitados" (click)="ingresarFormulario2()" style="background-image: url('../../../assets/svg/i_exam_multiple_choice.svg'); background-repeat: no-repeat; background-position-y: 10px; background-position-x: -30px; background-size: 140px;">
+                <button class="btn btn-secondary w-100 py-5 btn-formulario" [ngClass]="{'boton-habilitado': botonesHabilitadosForm2, 'boton-deshabilitado': !botonesHabilitadosForm2}" [disabled]="!botonesHabilitadosForm2" (click)="ingresarFormulario2()" style="background-image: url('../../../assets/svg/i_exam_multiple_choice.svg'); background-repeat: no-repeat; background-position-y: 10px; background-position-x: -30px; background-size: 140px;">
                     II. Datos Clínicos de la Paciente
                 </button>
             </div>
@@ -43,28 +46,28 @@
                 </button>
             </div> -->
             <div class="col-md-4">
-                <button class="btn btn-primary w-100 py-5" [disabled]="!botonesHabilitados" (click)="ingresarFormulario3()" style="background-image: url('../../../assets/svg/health_worker_form.svg'); background-repeat: no-repeat; background-position-y: 10px; background-position-x: -30px; background-size: 140px;">
+                <button class="btn btn-primary w-100 py-5 btn-formulario" [ngClass]="{'boton-habilitado': botonesHabilitadosForm3, 'boton-deshabilitado': !botonesHabilitadosForm3}" [disabled]="!botonesHabilitadosForm3" (click)="ingresarFormulario3()" style="background-image: url('../../../assets/svg/health_worker_form.svg'); background-repeat: no-repeat; background-position-y: 10px; background-position-x: -30px; background-size: 140px;">
                     III. Consentimientos Informados
                 </button>
             </div>
             <div class="col-md-4">
-                <button class="btn btn-warning w-100 py-5" [disabled]="!botonesHabilitados" (click)="ingresarFormulario4()" style="background-image: url('../../../assets/svg/clinical_f.svg'); background-repeat: no-repeat; background-position-y: 10px; background-position-x: -30px; background-size: 140px;">
+                <button class="btn btn-warning w-100 py-5 btn-formulario" [ngClass]="{'boton-habilitado': botonesHabilitadosForm4, 'boton-deshabilitado': !botonesHabilitadosForm4}" [disabled]="!botonesHabilitadosForm4" (click)="ingresarFormulario4()" style="background-image: url('../../../assets/svg/clinical_f.svg'); background-repeat: no-repeat; background-position-y: 10px; background-position-x: -30px; background-size: 140px;">
                     IV. Criterios de Selección / Sreening
                     <!-- IV. Datos Clínicos del Paciente -->
                 </button>
             </div>
             <div class="col-md-4">
-                <button class="btn btn-info w-100 py-5" [disabled]="!botonesHabilitados" (click)="ingresarFormulario5()" style="background-image: url('../../../assets/svg/outpatient_department.svg'); background-repeat: no-repeat; background-position-y: 10px; background-position-x: -30px; background-size: 140px;">
+                <button class="btn btn-info w-100 py-5 btn-formulario" [ngClass]="{'boton-habilitado': botonesHabilitadosForm5, 'boton-deshabilitado': !botonesHabilitadosForm5}" [disabled]="!botonesHabilitadosForm5" (click)="ingresarFormulario5()" style="background-image: url('../../../assets/svg/outpatient_department.svg'); background-repeat: no-repeat; background-position-y: 10px; background-position-x: -30px; background-size: 140px;">
                     V. Exámenes Complementarios
                 </button>
             </div>
             <div class="col-md-4">
-                <button class="btn btn-pink w-100 py-5" [disabled]="!botonesHabilitados" (click)="ingresarFormulario6()" style="background-image: url('../../../assets/svg/oncology.svg'); background-repeat: no-repeat; background-position-y: 10px; background-position-x: -30px; background-size: 140px;">
+                <button class="btn btn-pink w-100 py-5 btn-formulario" [ngClass]="{'boton-habilitado': botonesHabilitadosForm6, 'boton-deshabilitado': !botonesHabilitadosForm6}" [disabled]="!botonesHabilitadosForm6" (click)="ingresarFormulario6()" style="background-image: url('../../../assets/svg/oncology.svg'); background-repeat: no-repeat; background-position-y: 10px; background-position-x: -30px; background-size: 140px;">
                     VI. Tratamiento Oncológico
                 </button>
             </div>
             <div class="col-md-4">
-                <button class="btn btn-danger w-100 py-5" [disabled]="!botonesHabilitados" (click)="ingresarFormulario7()" style="background-image: url('../../../assets/svg/blood_a_p.svg'); background-repeat: no-repeat; background-position-y: 10px; background-position-x: -30px; background-size: 140px;">
+                <button class="btn btn-danger w-100 py-5 btn-formulario" [ngClass]="{'boton-habilitado': botonesHabilitadosForm7, 'boton-deshabilitado': !botonesHabilitadosForm7}" [disabled]="!botonesHabilitadosForm7" (click)="ingresarFormulario7()" style="background-image: url('../../../assets/svg/blood_a_p.svg'); background-repeat: no-repeat; background-position-y: 10px; background-position-x: -30px; background-size: 140px;">
                     VII. Ciclos de Tratamiento Quimioterápico
                 </button>
             </div>
