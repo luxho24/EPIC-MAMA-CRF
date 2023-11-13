@@ -230,10 +230,10 @@ export class Formulario6Component implements OnInit {
         !this.datos.recibio_hormonoterapia ||
         // !this.datos.fecha_inicio_recibio_hormonoterapia ||
         // !this.datos.fecha_termino_recibio_hormonoterapia ||
-        !this.datos.recibio_quimioterapia ||
+        !this.datos.recibio_quimioterapia
         // !this.datos.fecha_inicio_recibio_quimioterapia ||
         // !this.datos.fecha_termino_recibio_quimioterapia ||
-        !this.datos.detallar_medicacion_paciente_toma_recibe
+        // !this.datos.detallar_medicacion_paciente_toma_recibe ||
         // !this.datos.detallar_medicacion_paciente_toma_recibe_otros
         ) {
           Swal.fire({
