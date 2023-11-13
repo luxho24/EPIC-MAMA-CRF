@@ -57,6 +57,9 @@ export class Formulario1Component implements OnInit {
   idUsuario!: any;
   idPaciente!: any;
 
+  public isAdmin: boolean = false;
+  public isUser: boolean = false;
+
   esModoEdicion: boolean = false;
 
   constructor(private _pacienteService: PacienteService, private _authService: AuthService, private router: Router, private aRoute: ActivatedRoute, private toastr: ToastrService){}
@@ -64,10 +67,52 @@ export class Formulario1Component implements OnInit {
   ngOnInit(): void {
     this.idUsuario = this.aRoute.snapshot.paramMap.get('idUsuario');
     this.idPaciente = this.aRoute.snapshot.paramMap.get('idPaciente');
-    this.mostrarDatosPacienteSA();
-    this.mostrarDatos();
+    // this.mostrarDatosPacienteSA();
+    // this.mostrarDatos();
+    if (this.idUsuario !== null) {
+
+      const token = sessionStorage.getItem('token')
+      if (token) {
+        this._authService.obtenerRolUsuarioDesdeToken(token).subscribe(
+          (res) => {
+            console.log(res);
+            this.isAdmin = res === 'administrador';
+            // * Si el token le pertenece al administrador, entonces en la tabla mostrara todos los datos de los pacientes
+            // * registrados en cada formulario sin restriccion de id de usuario
+            if (res === 'administrador') {
+              this.mostrarDatosPacienteSA()
+            } else {
+              this.mostrarDatos();
+            }
+          },
+          (error) => {
+            console.log(error);
+          }
+        );
+      }
+    }
   }
 
+  // //** Esta funcion solo trae "iniciales_paciente", "numero_hc", "centro_institucion_atencion", "nombre", "fecha" y "firma" unicamente con el id del paciente para poder registrar (SUPERADMIN) */
+  // obtenerDatosPaciente(){
+  //   this._pacienteService.obtenerPacientePorIdPaciente(this.idPaciente).subscribe(
+  //     (res) => {
+  //       console.log(res);
+  //       this.datos.iniciales_paciente = res.paciente.iniciales_paciente;
+  //       this.datos.numero_hc = res.paciente.numero_hc;
+  //       this.datos.centro_institucion_atencion = res.paciente.centro_institucion_atencion;
+        
+  //       this.datos.nombre = res.paciente.nombre;
+  //       this.datos.fecha = res.paciente.fecha;
+  //       this.datos.firma = res.paciente.firma;
+  //     },
+  //     (error) => {
+  //       console.log(error);
+  //     }
+  //   )
+  // }
+
+  //** Esta funcion es para (USUARIO) */
   // Funcion para autocompletar los campos segun el id del paciente en la url
   mostrarDatos() {
     if (this.idPaciente !== null) {
@@ -89,6 +134,7 @@ export class Formulario1Component implements OnInit {
     }
   }
 
+  //** Esta funcion es para (SUPERADMIN) */
   mostrarDatosPacienteSA() {
     if (this.idPaciente !== null) {
       console.log(this.idPaciente);
@@ -177,6 +223,9 @@ export class Formulario1Component implements OnInit {
       this._pacienteService.editarPacienteForm1(this.idPaciente, this.datos).subscribe(
         (res) => {
           console.log(res);
+
+          this.toastr.info('Los datos de la paciente fueron actualizados con exito!', 'Paciente Actualizado!')
+
           this._authService.obtenerUsuarioPorId(this.idUsuario).subscribe(
             (res) => {
               // console.log(res);
@@ -323,7 +372,7 @@ export class Formulario1Component implements OnInit {
           (res) => {
             console.log(res);
             
-            this.toastr.success('El paciente fue registrado con exito!', 'Paciente Registrado!')
+            this.toastr.success('Datos sociodemográficos de la paciente fue registrado con exito!', 'Datos Sociodemográficos de la Paciente Registrado!')
 
             this._pacienteService.obtenerIds(this.datos.numero_hc).subscribe(
               (result) => {
@@ -367,6 +416,24 @@ export class Formulario1Component implements OnInit {
       //   console.log("error");
       //   // Muestra un mensaje de error o realiza alguna acción si no se seleccionó una imagen.
       // }
+    }
+  }
+
+  regresar() {
+    if (this.esModoEdicion) {
+      if (this.idPaciente !== null) {
+        this._authService.obtenerUsuarioPorId(this.idUsuario).subscribe(
+          (res) => {
+            // console.log(res);
+            this.router.navigate(['/visualizar-pacientes/usuario/', res._id]);
+          },
+          (error) => {
+            console.log(error);
+          }
+        )
+      }
+    } else {
+          this.router.navigate(['/']);
     }
   }
 

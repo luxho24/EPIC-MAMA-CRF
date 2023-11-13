@@ -375,6 +375,38 @@ const obtenerIds = async (req, res) => {
     }
     // res.status(200).json({ idUsuario, idPaciente });
 };
+// Funcion para solo extraer los "idUsuario" y "idPaciente"
+const obtenerIdsForm = async (req, res) => {
+    // const {numero_hc} = req.body;
+    const numero_hc = req.query.numero_hc;
+    // const paciente = new PacienteModel(req.body);
+    try {
+        const paciente = await PacienteModel.findOne({numero_hc});
+        const pacientef2 = await Formulario2Model.findOne({numero_hc});
+        const pacientef3 = await Formulario3Model.findOne({numero_hc});
+        const pacientef4 = await Formulario4Model.findOne({numero_hc});
+        const pacientef5 = await Formulario5Model.findOne({numero_hc});
+        const pacientef6 = await Formulario6Model.findOne({numero_hc});
+        const pacientef7 = await Formulario7Model.findOne({numero_hc});
+        if (!paciente) return res.status(404).json({ msg: "No encontrado" });
+        const idsFormularios = {
+            idpaciente: paciente._id,
+            idpacientef2: pacientef2 ? pacientef2._id : null,
+            idpacientef3: pacientef3 ? pacientef3._id : null,
+            idpacientef4: pacientef4 ? pacientef4._id : null,
+            idpacientef5: pacientef5 ? pacientef5._id : null,
+            idpacientef6: pacientef6 ? pacientef6._id : null,
+            idpacientef7: pacientef7 ? pacientef7._id : null,
+        };
+
+        res.status(200).json(idsFormularios);
+        // res.status(200).json(paciente);
+        // res.status(200).json({ idpaciente, idpacientef2, idpacientef3, idpacientef4, idpacientef5, idpacientef6, idpacientef7 });
+    } catch (error) {
+        res.status(500).json({ msg: "A ocurrido un error" });
+    }
+    // res.status(200).json({ idUsuario, idPaciente });
+};
 // Funcion para extraer datos del paciente por medio de "idUsuario" y "idPaciente"
 const obtenerPacientePorId = async (req, res) => {
     const { idUsuario, idPaciente } = req.params;
@@ -390,6 +422,28 @@ const obtenerPacientePorId = async (req, res) => {
 
         // Luego, busca al paciente utilizando el usuario y el pacienteId
         const paciente = await PacienteModel.findOne({ _id: idPaciente, usuario: idUsuario });
+
+        if (!paciente) {
+            return res.status(404).json({ msg: "Paciente no encontrado" });
+        }
+
+        // Si el paciente existe y está vinculado al usuario, lo devolvemos
+        res.status(200).json({ paciente });
+
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ msg: "Ha ocurrido un error" });
+    }
+};
+// Funcion para extraer datos del paciente por medio de "idUsuario" y "idPaciente"
+const obtenerPacientePorIdPaciente = async (req, res) => {
+    const { idPaciente } = req.params;
+
+    try {
+        // Aquí asumiremos que tienes un modelo de Mongoose llamado `Paciente` que representa a los pacientes en tu base de datos
+
+        // Luego, busca al paciente utilizando el usuario y el pacienteId
+        const paciente = await PacienteModel.findOne({ _id: idPaciente});
 
         if (!paciente) {
             return res.status(404).json({ msg: "Paciente no encontrado" });
@@ -505,7 +559,7 @@ const obtenerPacienteForm1PorIdPaciente = async (req, res) => {
 
     try {
         // Busca al paciente utilizando el pacienteId
-        const paciente = await PacienteModel.findOne({paciente:idPaciente});
+        const paciente = await PacienteModel.findOne({_id:idPaciente}); // ! NOTA: Hubo un problema con este codigo, "_id" se cambio por "paciente" ya que no mostraba los datos del paciente en los formularios de usuario normal. Ahora ya se volvio a colocar "_id" porque se soluciono con habilitar y deshabilitar botones en el menu de navegacion del frontend*/
 
         if (!paciente) {
             return res.status(404).json({ msg: "Paciente no encontrado" });
@@ -525,7 +579,7 @@ const obtenerPacienteForm2PorIdPaciente = async (req, res) => {
 
     try {
         // Busca al paciente utilizando el pacienteId
-        const paciente = await Formulario2Model.findOne({paciente:idPaciente});
+        const paciente = await Formulario2Model.findOne({_id:idPaciente}); // ! NOTA: Hubo un problema con este codigo, "_id" se cambio por "paciente" ya que no mostraba los datos del paciente en los formularios de usuario normal. Ahora ya se volvio a colocar "_id" porque se soluciono con habilitar y deshabilitar botones en el menu de navegacion del frontend*/
         console.log(paciente)
 
         if (!paciente) {
@@ -546,7 +600,7 @@ const obtenerPacienteForm3PorIdPaciente = async (req, res) => {
 
     try {
         // Busca al paciente utilizando el pacienteId
-        const paciente = await Formulario3Model.findOne({paciente:idPaciente});
+        const paciente = await Formulario3Model.findOne({_id:idPaciente}); // ! NOTA: Hubo un problema con este codigo, "_id" se cambio por "paciente" ya que no mostraba los datos del paciente en los formularios de usuario normal. Ahora ya se volvio a colocar "_id" porque se soluciono con habilitar y deshabilitar botones en el menu de navegacion del frontend*/
 
         if (!paciente) {
             return res.status(404).json({ msg: "Paciente no encontrado" });
@@ -566,7 +620,7 @@ const obtenerPacienteForm4PorIdPaciente = async (req, res) => {
 
     try {
         // Busca al paciente utilizando el pacienteId
-        const paciente = await Formulario4Model.findOne({paciente:idPaciente});
+        const paciente = await Formulario4Model.findOne({_id:idPaciente}); // ! NOTA: Hubo un problema con este codigo, "_id" se cambio por "paciente" ya que no mostraba los datos del paciente en los formularios de usuario normal. Ahora ya se volvio a colocar "_id" porque se soluciono con habilitar y deshabilitar botones en el menu de navegacion del frontend*/
 
         if (!paciente) {
             return res.status(404).json({ msg: "Paciente no encontrado" });
@@ -586,7 +640,7 @@ const obtenerPacienteForm5PorIdPaciente = async (req, res) => {
 
     try {
         // Busca al paciente utilizando el pacienteId
-        const paciente = await Formulario5Model.findOne({paciente:idPaciente});
+        const paciente = await Formulario5Model.findOne({_id:idPaciente}); // ! NOTA: Hubo un problema con este codigo, "_id" se cambio por "paciente" ya que no mostraba los datos del paciente en los formularios de usuario normal. Ahora ya se volvio a colocar "_id" porque se soluciono con habilitar y deshabilitar botones en el menu de navegacion del frontend*/
 
         if (!paciente) {
             return res.status(404).json({ msg: "Paciente no encontrado" });
@@ -606,7 +660,7 @@ const obtenerPacienteForm6PorIdPaciente = async (req, res) => {
 
     try {
         // Busca al paciente utilizando el pacienteId
-        const paciente = await Formulario6Model.findOne({paciente:idPaciente});
+        const paciente = await Formulario6Model.findOne({_id:idPaciente}); // ! NOTA: Hubo un problema con este codigo, "_id" se cambio por "paciente" ya que no mostraba los datos del paciente en los formularios de usuario normal. Ahora ya se volvio a colocar "_id" porque se soluciono con habilitar y deshabilitar botones en el menu de navegacion del frontend*/
 
         if (!paciente) {
             return res.status(404).json({ msg: "Paciente no encontrado" });
@@ -626,7 +680,7 @@ const obtenerPacienteForm7PorIdPaciente = async (req, res) => {
 
     try {
         // Busca al paciente utilizando el pacienteId
-        const paciente = await Formulario7Model.findOne({paciente:idPaciente});
+        const paciente = await Formulario7Model.findOne({_id:idPaciente}); // ! NOTA: Hubo un problema con este codigo, "_id" se cambio por "paciente" ya que no mostraba los datos del paciente en los formularios de usuario normal. Ahora ya se volvio a colocar "_id" porque se soluciono con habilitar y deshabilitar botones en el menu de navegacion del frontend*/
 
         if (!paciente) {
             return res.status(404).json({ msg: "Paciente no encontrado" });
@@ -766,7 +820,9 @@ export {
     obtenerPacientesSAForm7,
     obtenerPaciente,
     obtenerIds,
+    obtenerIdsForm,
     obtenerPacientePorId,
+    obtenerPacientePorIdPaciente,
     obtenerPacienteForm1PorIdPaciente,
     obtenerPacienteForm2PorIdPaciente,
     obtenerPacienteForm3PorIdPaciente,

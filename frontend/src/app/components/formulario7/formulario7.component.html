@@ -8,7 +8,7 @@
             <h5 style="font-weight: 350;"><b style="font-weight: 500;">PROTOCOLO:</b> PERFIL INFLAMATORIO EN PACIENTES CON CÁNCER DE MAMA Y SU ASOCIACIÓN CON EL VALOR PRONÓSTICO DE LA ENFERMERDAD</h5>
         </div>
         <div class="border p-3 bg-white">
-            <h5 style="font-weight: 350;"><b style="font-weight: 500;">FORMATO N° 007:</b> CICLOS DE TRATAMIENTO QUIROPRÁCTICO</h5>
+            <h5 style="font-weight: 350;"><b style="font-weight: 500;">FORMATO N° 007:</b> CICLOS DE TRATAMIENTO QUIMIOTERÁPICO</h5>
         </div>
         <div class="border p-3 bg-white">
             <h5 style="font-weight: 350;"><b style="font-weight: 500;">VERSIÓN:</b> 001</h5>
@@ -238,7 +238,8 @@
             <!-- </form> -->
         </div>
         <!-- Boton -->
-        <div class="d-flex justify-content-end">
+        <div class="d-flex justify-content-between">
+            <button type="submit" (click)="regresar()">{{ esModoEdicion ? 'Cancelar' : 'Volver al menú de navegación'}}</button>
             <button type="submit"(click)="registrarForm7()">{{ esModoEdicion ? 'Actualizar' : 'Registrar y Volver: Menú de navegación'}}</button>
         </div>
         <!-- Boton -->

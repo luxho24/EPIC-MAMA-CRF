@@ -84,6 +84,7 @@ export class Formulario6Component implements OnInit {
             // * registrados en cada formulario sin restriccion de id de usuario
             if (res === 'administrador') {
               this.mostrarDatosPacienteSA()
+              this.obtenerDatosPaciente()
             } else {
               this.mostrarDatos();
             }
@@ -99,6 +100,26 @@ export class Formulario6Component implements OnInit {
     // this.mostrarDatos();
   }
 
+  //** Esta funcion solo trae "iniciales_paciente", "numero_hc", "centro_institucion_atencion", "nombre", "fecha" y "firma" unicamente con el id del paciente para poder registrar (SUPERADMIN) */
+  obtenerDatosPaciente(){
+    this._pacienteService.obtenerPacientePorIdPaciente(this.idPaciente).subscribe(
+      (res) => {
+        console.log(res);
+        this.datos.iniciales_paciente = res.paciente.iniciales_paciente;
+        this.datos.numero_hc = res.paciente.numero_hc;
+        this.datos.centro_institucion_atencion = res.paciente.centro_institucion_atencion;
+        
+        this.datos.nombre = res.paciente.nombre;
+        this.datos.fecha = res.paciente.fecha;
+        this.datos.firma = res.paciente.firma;
+      },
+      (error) => {
+        console.log(error);
+      }
+    )
+  }
+
+  //** Esta funcion es para (USUARIO) */
   // Funcion para autocompletar los campos segun el id del paciente en la url
   mostrarDatos() {
     if (this.idPaciente !== null) {
@@ -121,6 +142,7 @@ export class Formulario6Component implements OnInit {
     }
   }
 
+  //** Esta funcion es para (SUPERADMIN) */
   mostrarDatosPacienteSA() {
     if (this.idPaciente !== null) {
       console.log(this.idPaciente);
@@ -171,6 +193,9 @@ export class Formulario6Component implements OnInit {
       this._pacienteService.editarPacienteForm6(this.idPaciente, this.datos).subscribe(
         (res) => {
           console.log(res);
+
+          this.toastr.info('Los datos de la paciente fueron actualizados con exito!', 'Paciente Actualizado!')
+
           this._authService.obtenerUsuarioPorId(this.idUsuario).subscribe(
             (res) => {
               // console.log(res);
@@ -266,6 +291,33 @@ export class Formulario6Component implements OnInit {
             }
           })
           return
+        }
+      )
+    }
+  }
+
+  regresar() {
+    if (this.esModoEdicion) {
+      if (this.idPaciente !== null) {
+        this._authService.obtenerUsuarioPorId(this.idUsuario).subscribe(
+          (res) => {
+            // console.log(res);
+            this.router.navigate(['/visualizar-pacientes/usuario/', res._id]);
+          },
+          (error) => {
+            console.log(error);
+          }
+        )
+      }
+    } else {
+      this._pacienteService.obtenerIds(this.datos.numero_hc).subscribe(
+        (result) => {
+          console.log(result.idUsuario);
+          console.log(result.idPaciente);
+          this.router.navigate(['/']);
+        },
+        (err) => {
+          console.log(err);
         }
       )
     }

@@ -60,6 +60,7 @@ export class Formulario7Component {
             // * registrados en cada formulario sin restriccion de id de usuario
             if (res === 'administrador') {
               this.mostrarDatosPacienteSA()
+              this.obtenerDatosPaciente()
             } else {
               this.mostrarDatos();
             }
@@ -75,6 +76,25 @@ export class Formulario7Component {
     // this.mostrarDatos();
   }
 
+  //** Esta funcion solo trae "iniciales_paciente", "numero_hc", "centro_institucion_atencion", "nombre", "fecha" y "firma" unicamente con el id del paciente para poder registrar (SUPERADMIN) */
+  obtenerDatosPaciente(){
+    this._pacienteService.obtenerPacientePorIdPaciente(this.idPaciente).subscribe(
+      (res) => {
+        console.log(res);
+        this.datos.iniciales_paciente = res.paciente.iniciales_paciente;
+        this.datos.numero_hc = res.paciente.numero_hc;
+        this.datos.centro_institucion_atencion = res.paciente.centro_institucion_atencion;
+        
+        this.datos.nombre = res.paciente.nombre;
+        this.datos.fecha = res.paciente.fecha;
+        this.datos.firma = res.paciente.firma;
+      },
+      (error) => {
+        console.log(error);
+      }
+    )
+  }
+
   toggleEvaluacion() {
     // Si se selecciona Ciclo 3 o Ciclo 6, mostrar el bloque de Evaluación de respuesta al tratamiento
     if (this.datos.ciclo === 'CICLO 03' || this.datos.ciclo === 'CICLO 06') {
@@ -84,6 +104,7 @@ export class Formulario7Component {
     }
   }
 
+  //** Esta funcion es para (USUARIO) */
   // Funcion para autocompletar los campos segun el id del paciente en la url
   mostrarDatos() {
     if (this.idPaciente !== null) {
@@ -106,6 +127,7 @@ export class Formulario7Component {
     }
   }
 
+  //** Esta funcion es para (SUPERADMIN) */
   mostrarDatosPacienteSA() {
     if (this.idPaciente !== null) {
       console.log(this.idPaciente);
@@ -164,6 +186,9 @@ export class Formulario7Component {
       this._pacienteService.editarPacienteForm7(this.idPaciente, this.datos).subscribe(
         (res) => {
           console.log(res);
+
+          this.toastr.info('Los datos de la paciente fueron actualizados con exito!', 'Paciente Actualizado!')
+
           this._authService.obtenerUsuarioPorId(this.idUsuario).subscribe(
             (res) => {
               // console.log(res);
@@ -236,6 +261,33 @@ export class Formulario7Component {
             }
           })
           return
+        }
+      )
+    }
+  }
+
+  regresar() {
+    if (this.esModoEdicion) {
+      if (this.idPaciente !== null) {
+        this._authService.obtenerUsuarioPorId(this.idUsuario).subscribe(
+          (res) => {
+            // console.log(res);
+            this.router.navigate(['/visualizar-pacientes/usuario/', res._id]);
+          },
+          (error) => {
+            console.log(error);
+          }
+        )
+      }
+    } else {
+      this._pacienteService.obtenerIds(this.datos.numero_hc).subscribe(
+        (result) => {
+          console.log(result.idUsuario);
+          console.log(result.idPaciente);
+          this.router.navigate(['/']);
+        },
+        (err) => {
+          console.log(err);
         }
       )
     }
