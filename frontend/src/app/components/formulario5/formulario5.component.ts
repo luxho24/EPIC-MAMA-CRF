@@ -191,9 +191,9 @@ export class Formulario5Component implements OnInit {
       )
     } else {
       if (!this.datos.resultados_hemograma ||
-        !this.datos.fecha_hemograma ||
+        // !this.datos.fecha_hemograma ||
         !this.datos.resultados_otros_estudios ||
-        !this.datos.fecha_otros_estudios ||
+        // !this.datos.fecha_otros_estudios ||
         !this.datos.fecha_muestra_marcadores_inflamatorios_pretratamiento_sericos ||
         !this.datos.codigo_muestra_marcadores_inflamatorios_pretratamiento_sericos ||
         !this.datos.fecha_muestra_tumor ||

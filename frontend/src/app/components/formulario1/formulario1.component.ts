@@ -26,8 +26,8 @@ export class Formulario1Component implements OnInit {
   ]
   centro_institucion_atencion = [
     {institucion: "INEN LIMA"},
-    {institucion: "INEN AREQUIPA"},
-    {institucion: "INEN TRUJILLO"}
+    {institucion: "IREN AREQUIPA"},
+    {institucion: "IREN TRUJILLO"}
   ]
   estado_civil = [
     {estado: "CASADA"},
