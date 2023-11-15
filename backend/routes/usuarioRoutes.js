@@ -8,7 +8,7 @@ import getRolUserToken from "../middleware/getRolUserToken.js"
 const router = Router();
 
 router.post("/register", registrar);
-router.post("/", autenticar);
+router.post("/login", autenticar);
 router.get("/obtenerUsuarioPorId/:idUsuario", checkAuth, obtenerUsuarioPorId);
 
 router.post('/obtenerIdUsuarioToken', checkAuth, getIdUserToken)

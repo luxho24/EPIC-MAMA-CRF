@@ -13,8 +13,8 @@ import { AuthGuard } from './guards/auth.guard';
 import { VisualizarPacientesComponent } from './components/visualizar-pacientes/visualizar-pacientes.component';
 
 const routes: Routes = [
-  {path: "", redirectTo: "/", pathMatch: "full"},
-  {path: "/", component: LoginComponent},
+  {path: "", redirectTo: "/login", pathMatch: "full"},
+  {path: "/login", component: LoginComponent},
   // {path: "menu", component: MenuComponent, canActivate: [AuthGuard]},
   {path: "menu/usuario/:idUsuario", component: MenuComponent, canActivate: [AuthGuard]},
   {path: "menu/usuario/:idUsuario/paciente/:idPaciente", component: MenuComponent, canActivate: [AuthGuard]},

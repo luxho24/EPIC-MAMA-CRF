@@ -36,5 +36,5 @@ app.use(function(req, res, next){
 const PORT = process.env.PORT || 4000;
 
 app.listen(PORT, () => {
-    console.log(`Server ejecutandose en http://34.224.140.51:${PORT}`);
+    console.log(`Server ejecutandose en https://34.224.140.51:${PORT}`);
 })
