@@ -35,6 +35,8 @@ const routes: Routes = [
   {path: "formulario5/usuario/:idUsuario/editar/paciente/:idPaciente", component: Formulario5Component, canActivate: [AuthGuard]},
   {path: "formulario6/usuario/:idUsuario/editar/paciente/:idPaciente", component: Formulario6Component, canActivate: [AuthGuard]},
   {path: "formulario7/usuario/:idUsuario/editar/paciente/:idPaciente", component: Formulario7Component, canActivate: [AuthGuard]},
+  // Ruta comodín para redirigir a la página principal si la ruta no coincide
+  { path: '**', redirectTo: '' }
 ];
 
 @NgModule({
