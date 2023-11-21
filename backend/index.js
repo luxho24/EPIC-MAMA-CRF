@@ -9,6 +9,15 @@ import multerImage from "./middleware/imageMiddleware.js";
 const app = express();
 
 app.use(cors());
+
+// Opciones de configuración personalizada si es necesario
+app.use(cors({
+  origin: 'https://inicibprotocolos.urp.edu.pe',
+  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+  credentials: true,
+  optionsSuccessStatus: 204,
+}));
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
