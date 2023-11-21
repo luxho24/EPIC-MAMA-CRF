@@ -9,6 +9,15 @@ import multerImage from "./middleware/imageMiddleware.js";
 const app = express();
 
 app.use(cors());
+
+// Opciones de configuración personalizada si es necesario
+app.use(cors({
+  origin: 'https://inicibprotocolos.urp.edu.pe',
+  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+  credentials: true,
+  optionsSuccessStatus: 204,
+}));
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
@@ -36,5 +45,5 @@ app.use(function(req, res, next){
 const PORT = process.env.PORT || 4000;
 
 app.listen(PORT, () => {
-    console.log(`Server ejecutandose en https://https://inicibprotocolos.urp.edu.pe/api/usuarios/login:${PORT}`);
+    console.log(`Server ejecutandose en https://inicibprotocolos.urp.edu.pe/api/usuarios/login:${PORT}`);
 })
