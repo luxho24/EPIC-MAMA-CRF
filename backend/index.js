@@ -12,11 +12,19 @@ app.use(cors());
 
 // Opciones de configuración personalizada si es necesario
 app.use(cors({
+<<<<<<< HEAD
     origin: 'https://inicibprotocolos.urp.edu.pe/',
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
     credentials: true,
     optionsSuccessStatus: 204,
   }));
+=======
+  origin: 'https://inicibprotocolos.urp.edu.pe',
+  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+  credentials: true,
+  optionsSuccessStatus: 204,
+}));
+>>>>>>> 56a9bbb6abacf536e8adf75166773866c1dccc01
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
