@@ -25,7 +25,7 @@ export class AuthService {
 
   logout() {
     sessionStorage.removeItem('token');
-    this.router.navigate(['/login']);
+    this.router.navigate(['/inicibprotocolos.urp.edu.pe/api/usuarios']);
   }
 
 
