@@ -12,7 +12,7 @@
             <button class="btn btn-primary" [ngClass]="{'active': isButtonSelected === 1}" (click)="mostrarTabla(1)">I. Datos Sociodemográficos de la Paciente</button><br>
             <button class="btn btn-primary" [ngClass]="{'active': isButtonSelected === 2}" (click)="mostrarTabla(2)">II. Datos Clínicos de la Paciente</button><br>
             <button class="btn btn-primary" [ngClass]="{'active': isButtonSelected === 3}" (click)="mostrarTabla(3)">III. Consentimientos Informados</button><br>
-            <button class="btn btn-primary" [ngClass]="{'active': isButtonSelected === 4}" (click)="mostrarTabla(4)">IV. Criterios de Selección / Sreening</button><br>
+            <button class="btn btn-primary" [ngClass]="{'active': isButtonSelected === 4}" (click)="mostrarTabla(4)">IV. Criterios de Selección / Screening</button><br>
             <button class="btn btn-primary" [ngClass]="{'active': isButtonSelected === 5}" (click)="mostrarTabla(5)">V. Exámenes Complementarios</button><br>
             <button class="btn btn-primary" [ngClass]="{'active': isButtonSelected === 6}" (click)="mostrarTabla(6)">VI. Tratamiento Oncológico</button><br>
             <button class="btn btn-primary" [ngClass]="{'active': isButtonSelected === 7}" (click)="mostrarTabla(7)">VII. Ciclos de Tratamiento Quimioterápico</button>
@@ -248,16 +248,16 @@
 
             <!-- Tabla Formulario 4 -->
             <div *ngIf="tablaVisible === 4">
-                <h3>IV. Criterios de Selección / Sreening</h3>
+                <h3>IV. Criterios de Selección / Screening</h3>
                 <div class="d-flex justify-content-between align-items-center mb-3">
                     <div class="input-group my-3 w-50">
                         <input type="text" class="form-control form-control-lg" placeholder="Buscar paciente por numero de hc..." name="filterPaciente" [(ngModel)]="filterPaciente">
                         <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-magnifying-glass"></i></span>
                     </div>
-                    <button class="btn btn-success d-flex align-items-center" *ngIf="isAdmin" (click)="exportExcelForm('Criterios_de_Seleccion_/_Sreening')" [disabled]="!hasData('Criterios_de_Seleccion_/_Sreening')"><i class="fa-solid fa-file-excel fs-4 me-2"></i>Exportar a Excel</button>
+                    <button class="btn btn-success d-flex align-items-center" *ngIf="isAdmin" (click)="exportExcelForm('Screening')" [disabled]="!hasData('Screening')"><i class="fa-solid fa-file-excel fs-4 me-2"></i>Exportar a Excel</button>
                 </div>
                 <div class="table-wrapper">
-                    <table id="Criterios_de_Seleccion_/_Sreening">
+                    <table id="Screening">
                         <thead>
                             <tr>
                                 <th scope="col">#</th>
@@ -468,10 +468,10 @@
                         <input type="text" class="form-control form-control-lg" placeholder="Buscar paciente por numero de hc..." name="filterPaciente" [(ngModel)]="filterPaciente">
                         <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-magnifying-glass"></i></span>
                     </div>
-                    <button class="btn btn-success d-flex align-items-center" *ngIf="isAdmin" (click)="exportExcelForm('Ciclos_de_Tratamiento_Quimioterapico')" [disabled]="!hasData('Ciclos_de_Tratamiento_Quimioterapico')"><i class="fa-solid fa-file-excel fs-4 me-2"></i>Exportar a Excel</button>
+                    <button class="btn btn-success d-flex align-items-center" *ngIf="isAdmin" (click)="exportExcelForm('Tratamiento_Quimioterapico')" [disabled]="!hasData('Tratamiento_Quimioterapico')"><i class="fa-solid fa-file-excel fs-4 me-2"></i>Exportar a Excel</button>
                 </div>
                 <div class="table-wrapper">
-                    <table id="Ciclos_de_Tratamiento_Quimioterapico">
+                    <table id="Tratamiento_Quimioterapico">
                         <thead>
                             <tr>
                                 <th scope="col">#</th>
