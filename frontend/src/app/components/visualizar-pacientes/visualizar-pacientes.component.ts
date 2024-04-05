@@ -381,8 +381,13 @@ export class VisualizarPacientesComponent implements OnInit {
 
     // generate workbook and add the worksheet
     const wb: XLSX.WorkBook = XLSX.utils.book_new();
-    // XLSX.utils.book_append_sheet(wb, ws, 'Sheet1');
-    XLSX.utils.book_append_sheet(wb, ws, `${id}`);
+
+    // Trunca el nombre de la hoja si es mayor de 31 caracteres
+    const sheetName = id.length > 31 ? id.substring(0, 31) : id;
+    XLSX.utils.book_append_sheet(wb, ws, sheetName);
+
+    // // XLSX.utils.book_append_sheet(wb, ws, 'Sheet1');
+    // XLSX.utils.book_append_sheet(wb, ws, `${id}`); // Descomentar, Funciona bien
 
     // Trae el nombre del usuario para posteriormente colocarlo como nombre en el archivo excel
     const token = sessionStorage.getItem('token')
